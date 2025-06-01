@@ -25,6 +25,7 @@ import Blog from './components/Blog';
 import BlogLanding from "./pages/BlogLanding";
 import BlogPost from "./pages/BlogPost";
 import { Analytics } from '@vercel/analytics/react';
+import { Typewriter } from 'react-simple-typewriter';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -136,8 +137,16 @@ const App = () => {
                   <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
                     Hi, I'm <span className="text-white">Venkata Sai Charan</span>
                   </h1>
-                  <h2 className="text-xl md:text-2xl font-semibold mb-4 text-pink-200">
-                    Cloud & Backend Developer
+                  <h2 className="text-xl md:text-2xl font-semibold mb-4 text-pink-200 min-h-[2.5rem]">
+                    <Typewriter
+                      words={['Cloud & Backend Developer', 'Web Developer', 'Software Engineer', 'Network Analyst', 'Data Enthusiast']}
+                      loop={0}
+                      cursor
+                      cursorStyle="|"
+                      typeSpeed={60}
+                      deleteSpeed={40}
+                      delaySpeed={1500}
+                    />
                   </h2>
                   <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 max-w-xl mx-auto">
                     Software Engineer & Problem Solver. Engineer by skill, problem-solver by mindset. Let's build what matters.
