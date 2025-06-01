@@ -170,7 +170,7 @@ const App = () => {
               {/* ABOUT SECTION - Clean white card */}
               <section className="about py-12 px-4 bg-gray-50" id="about">
                 <div className="max-w-3xl mx-auto">
-                  <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                  <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                     <h2 className="text-3xl font-bold mb-6 text-center">About <span className="text-[#e13a7a]">Me</span></h2>
                     <span className="block text-lg text-[#e13a7a] font-semibold mb-4 text-center">
                       "I believe great technology is built at the intersection of curiosity, creativity, and code."
@@ -186,7 +186,7 @@ const App = () => {
                     </p>
                   </div>
                   <div className="flex justify-center mt-8 gap-8">
-                    <div className="bg-white rounded-2xl shadow p-6 text-center text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-6 text-center text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-3xl font-bold mb-2 text-[#e13a7a]">4+</h3>
                       <p className="text-base">Years Experience</p>
                     </div>
@@ -266,14 +266,14 @@ const App = () => {
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Education</span></h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* UMKC Education */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">University of Missouri - Kansas City</h3>
                       <p className="text-[#e13a7a] mb-4">August 2022 – December 2023</p>
                       <h4 className="text-lg text-gray-700 mb-2">Master of Science in Computer Science</h4>
                       <p className="text-gray-500">GPA: 3.75</p>
                     </div>
                     {/* St. Joseph's Education */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">St. Joseph's College of Engineering</h3>
                       <p className="text-[#e13a7a] mb-4">August 2017 – August 2021</p>
                       <h4 className="text-lg text-gray-700 mb-2">Bachelor of Engineering in Electronics and Communication Engineering</h4>
