@@ -83,7 +83,7 @@ const App = () => {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/" element={
             <div className="bg-white min-h-screen text-gray-900 font-sans relative">
-              <header className="fixed w-full top-0 z-50 bg-white/90 shadow-md border-b-2 border-[#e13a7a]">
+              <header className="fixed w-full top-0 z-50 bg-white shadow-md border-b-2 border-[#e13a7a]">
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                   <a href="#home" className="flex items-center gap-2" aria-label="Home">
                     <span className="inline-flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE]">
