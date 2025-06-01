@@ -290,20 +290,20 @@ const App = () => {
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Certifications</span></h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* AWS Certification */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">AWS Certified Solutions Architect – Associate</h3>
                       <p className="text-[#e13a7a] mb-4">Amazon Web Services (AWS)</p>
                       <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2a4a927b8cf14781975cd89adc323106" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">Verify Credential</a>
                     </div>
                     {/* Python Professional Certificate */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Programming with Python – Professional Certificate</h3>
                       <p className="text-[#e13a7a] mb-2">OpenEDG Python Institute</p>
                       <p className="text-gray-500 mb-4">Issued: March 2024</p>
                       <a href="https://www.linkedin.com/learning/certificates/f8e0636b56af1ab2e8459ff6754f9c036f804d17c4fb3e50fd51bc59ced19f04" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">View Certificate</a>
                     </div>
                     {/* Edureka Python Professional */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Python Professional</h3>
                       <p className="text-[#e13a7a] mb-2">Edureka</p>
                       <p className="text-gray-500 mb-2">Issued: March 2024</p>
@@ -320,7 +320,7 @@ const App = () => {
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Experience</span></h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Source Consulting Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
                       <p className="text-[#e13a7a] mb-2">January 2025 – Present</p>
                       <h4 className="text-lg text-[#e13a7a]">Source Consulting LLC – Remote (<a href="https://touchwindow.com" target="_blank" rel="noopener noreferrer" className="underline">Client: Touch Screens Inc</a>)</h4>
@@ -331,7 +331,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* Trbhi INC Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Network Operation Analyst</h3>
                       <p className="text-[#e13a7a] mb-2">April 2024 – December 2024</p>
                       <h4 className="text-lg text-[#e13a7a]">Trbhi INC – Remote (<a href="https://ziplyfiber.com" target="_blank" rel="noopener noreferrer" className="underline">Client: Ziply Fiber Technology</a>)</h4>
@@ -341,7 +341,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* UMKC TA Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Graduate Student Technical Assistant</h3>
                       <p className="text-[#e13a7a] mb-2">May 2023 – December 2023</p>
                       <h4 className="text-lg text-[#e13a7a]">University of Missouri - Kansas City – Kansas City, MO, USA</h4>
@@ -352,7 +352,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* Wipro Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
                       <p className="text-[#e13a7a] mb-2">September 2021 – July 2022</p>
                       <h4 className="text-lg text-[#e13a7a]">Wipro Technologies – Bengaluru, KA, India</h4>
@@ -364,7 +364,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* Merizon Technologies Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
                       <p className="text-[#e13a7a] mb-2">May 2019 – August 2021</p>
                       <h4 className="text-lg text-[#e13a7a]">Merizon Technologies LLC – Remote</h4>
@@ -384,7 +384,7 @@ const App = () => {
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Projects</span></h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Portfolio Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
                       <p className="text-[#e13a7a] mb-4">2024</p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
@@ -398,7 +398,7 @@ const App = () => {
                       </div>
                     </div>
                     {/* 2023 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Enhancing Security & Privacy of Cryptocurrency Transactions</h3>
                       <p className="text-[#e13a7a] mb-4">January 2023 – May 2023</p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
@@ -409,7 +409,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* 2022 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">YouTube Data Analysis</h3>
                       <p className="text-[#e13a7a] mb-4">August 2022 – December 2022</p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
@@ -420,7 +420,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* 2022 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">IoT Sensor Data Analysis for Soil Moisture</h3>
                       <p className="text-[#e13a7a] mb-4">August 2022 – December 2022</p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
@@ -431,7 +431,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* 2021 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">A 120 Mbps WDM-Based VLC System for IoT Implementation</h3>
                       <p className="text-[#e13a7a] mb-4">August 2020 – January 2021</p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
@@ -442,7 +442,7 @@ const App = () => {
                       </ul>
                     </div>
                     {/* 2019-2021 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Therapy for Autistic Children Using Robot</h3>
                       <p className="text-[#e13a7a] mb-4">December 2019 – January 2021</p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
