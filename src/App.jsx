@@ -195,7 +195,7 @@ const App = () => {
               </section>
 
               <section className="skills py-12 px-4 bg-gray-50" id="skills">
-                <div className="max-w-3xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                   <div className="bg-white rounded-2xl shadow p-8 text-gray-900 flex flex-col items-center">
                     <FaTools className="text-3xl text-[#e13a7a] mb-2" />
                     <h2 className="text-3xl font-bold mb-2 text-center">My <span className="text-[#e13a7a]">Skills</span></h2>
@@ -286,9 +286,9 @@ const App = () => {
 
               {/* CERTIFICATIONS SECTION */}
               <section className="certifications py-12 px-4 bg-gray-50" id="certifications">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Certifications</span></h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* AWS Certification */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
                       <h3 className="text-xl font-bold mb-2">AWS Certified Solutions Architect – Associate</h3>
@@ -316,9 +316,9 @@ const App = () => {
 
               {/* EXPERIENCE SECTION */}
               <section className="experience py-12 px-4 bg-gray-50" id="experience">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Experience</span></h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Source Consulting Experience */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
@@ -380,9 +380,9 @@ const App = () => {
 
               {/* PROJECTS SECTION */}
               <section className="projects py-12 px-4 bg-gray-50" id="projects">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Projects</span></h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Portfolio Project */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900">
                       <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
