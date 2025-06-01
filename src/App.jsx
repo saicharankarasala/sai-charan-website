@@ -158,9 +158,9 @@ const App = () => {
                     <a href="#contact" className="btn bg-[#e13a7a] text-white font-bold px-8 py-3 rounded-full shadow hover:bg-pink-400 hover:text-white transition-all duration-300">Contact Me</a>
                   </div>
                 </div>
-                <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
-                  <div className="relative flex items-center justify-center">
-                    <span className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] blur-3xl opacity-80 animate-pulse z-0"></span>
+                <div className="flex-1 flex justify-center items-center mt-8 md:mt-0 overflow-visible">
+                  <div className="relative flex items-center justify-center overflow-visible">
+                    <span className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] blur-2xl opacity-40 animate-pulse z-0"></span>
                     <img 
                       src="/images/profile.JPG" 
                       alt="Venkata Sai Charan - UI/UX Designer & Software Engineer" 
