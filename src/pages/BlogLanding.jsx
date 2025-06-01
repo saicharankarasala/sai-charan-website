@@ -13,10 +13,10 @@ const BlogLanding = () => {
 
   return (
     <div className="bg-white min-h-screen text-gray-900 font-sans">
-      {/* Back to Portfolio Button */}
+      {/* Back to Portfolio Link */}
       <div className="w-full flex justify-start px-4 pt-6">
-        <a href="/" className="inline-flex items-center gap-2 bg-[#e13a7a] text-white font-semibold px-5 py-2 rounded-full shadow hover:bg-[#6d217f] transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+        <a href="/" className="inline-flex items-center gap-1 text-[#e13a7a] font-medium text-base hover:underline hover:text-[#6d217f] transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           Back to Portfolio
         </a>
       </div>
