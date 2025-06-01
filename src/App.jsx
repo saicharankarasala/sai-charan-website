@@ -160,7 +160,7 @@ const App = () => {
                 </div>
                 <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
                   <div className="relative flex items-center justify-center">
-                    <span className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] blur-2xl opacity-60 animate-pulse-slow z-0"></span>
+                    <span className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] blur-3xl opacity-80 animate-pulse z-0"></span>
                     <img 
                       src="/images/profile.JPG" 
                       alt="Venkata Sai Charan - UI/UX Designer & Software Engineer" 
