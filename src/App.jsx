@@ -158,15 +158,12 @@ const App = () => {
                     <a href="#contact" className="btn bg-[#e13a7a] text-white font-bold px-8 py-3 rounded-full shadow hover:bg-pink-400 hover:text-white transition-all duration-300">Contact Me</a>
                   </div>
                 </div>
-                <div className="flex-1 flex justify-center items-center mt-8 md:mt-0 overflow-visible">
-                  <div className="relative flex items-center justify-center overflow-visible">
-                    <span className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] blur-2xl opacity-40 animate-pulse z-0"></span>
-                    <img 
-                      src="/images/profile.JPG" 
-                      alt="Venkata Sai Charan - UI/UX Designer & Software Engineer" 
-                      className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow object-cover relative z-10"
-                    />
-                  </div>
+                <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
+                  <img 
+                    src="/images/profile.JPG" 
+                    alt="Venkata Sai Charan - UI/UX Designer & Software Engineer" 
+                    className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow object-cover"
+                  />
                 </div>
               </section>
 
@@ -293,20 +290,23 @@ const App = () => {
                   <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Certifications</span></h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* AWS Certification */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300 flex flex-col items-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" className="w-12 h-12 mb-4" />
                       <h3 className="text-xl font-bold mb-2">AWS Certified Solutions Architect – Associate</h3>
                       <p className="text-[#e13a7a] mb-4">Amazon Web Services (AWS)</p>
                       <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2a4a927b8cf14781975cd89adc323106" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">Verify Credential</a>
                     </div>
                     {/* Python Professional Certificate */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300 flex flex-col items-center">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-12 h-12 mb-4" />
                       <h3 className="text-xl font-bold mb-2">Programming with Python – Professional Certificate</h3>
                       <p className="text-[#e13a7a] mb-2">OpenEDG Python Institute</p>
                       <p className="text-gray-500 mb-4">Issued: March 2024</p>
                       <a href="https://www.linkedin.com/learning/certificates/f8e0636b56af1ab2e8459ff6754f9c036f804d17c4fb3e50fd51bc59ced19f04" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">View Certificate</a>
                     </div>
                     {/* Edureka Python Professional */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300 flex flex-col items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#e13a7a" className="w-12 h-12 mb-4"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75A2.25 2.25 0 0014.25 4.5h-4.5A2.25 2.25 0 007.5 6.75v3.75m9 0v6.75a2.25 2.25 0 01-2.25 2.25h-4.5A2.25 2.25 0 017.5 17.25V10.5m9 0h-9" /></svg>
                       <h3 className="text-xl font-bold mb-2">Python Professional</h3>
                       <p className="text-[#e13a7a] mb-2">Edureka</p>
                       <p className="text-gray-500 mb-2">Issued: March 2024</p>
