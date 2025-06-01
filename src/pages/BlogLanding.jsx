@@ -13,15 +13,15 @@ const BlogLanding = () => {
 
   return (
     <div className="bg-white min-h-screen text-gray-900 font-sans">
-      {/* Back to Portfolio Link */}
-      <div className="w-full flex justify-start px-4 pt-6">
-        <a href="/" className="inline-flex items-center gap-1 text-[#e13a7a] font-medium text-base hover:underline hover:text-[#6d217f] transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-          Back to Portfolio
-        </a>
-      </div>
       {/* Hero Section */}
-      <div className="w-full min-h-[380px] flex flex-col items-center justify-center bg-gradient-to-tr from-[#2d014d] via-[#6d217f] to-[#e13a7a] text-white text-center px-4">
+      <div className="w-full min-h-[380px] flex flex-col items-center justify-center bg-gradient-to-tr from-[#2d014d] via-[#6d217f] to-[#e13a7a] text-white text-center px-4 relative">
+        {/* Back to Portfolio Link (top-left, white) */}
+        <div className="absolute left-6 top-6">
+          <a href="/" className="inline-flex items-center gap-1 text-white font-medium text-base hover:underline hover:text-[#e13a7a] transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+            Back to Portfolio
+          </a>
+        </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-4">Welcome to the <span className="text-white">SAI CHARAN'S Blog</span></h1>
         <p className="text-xl md:text-2xl font-normal text-white/80 mb-8">Join us on my Journey of Web Development</p>
         <div className="max-w-xl w-full mx-auto flex items-center mt-2">
