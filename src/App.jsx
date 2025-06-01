@@ -85,10 +85,10 @@ const App = () => {
             <div className="bg-white min-h-screen text-gray-900 font-sans relative">
               <header className="fixed w-full top-0 z-50 bg-white/90 shadow-md border-b-2 border-[#e13a7a]">
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-                  <a href="#home" className="flex items-center gap-2 text-2xl font-extrabold tracking-tight">
-                    <span className="text-[#6d217f]">V</span>
-                    <span className="text-[#00FFEE]">S</span>
-                    <span className="text-[#e13a7a]">C</span>
+                  <a href="#home" className="flex items-center gap-2" aria-label="Home">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE]">
+                      <span className="text-white text-2xl font-extrabold tracking-tight">VSC</span>
+                    </span>
                   </a>
                   <div className="hidden md:flex items-center gap-8">
                     <a href="#about" className="text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors">About</a>
