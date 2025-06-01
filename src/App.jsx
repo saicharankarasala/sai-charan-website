@@ -133,11 +133,9 @@ const App = () => {
 
               {/* HERO SECTION - Clean, modern, balanced */}
               <section className="w-full min-h-[480px] flex flex-col md:flex-row items-center justify-center bg-gradient-to-tr from-[#6d217f] to-[#e13a7a] text-white px-4 pt-32 pb-12" id="home">
-                <div className="flex-1 flex flex-col items-center justify-center text-center px-4 md:px-12 lg:px-20 xl:px-32">
-                  <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
-                    Hi, I'm <span className="text-white">Venkata Sai Charan</span>
-                  </h1>
-                  <h2 className="text-xl md:text-2xl font-semibold mb-4 text-pink-200 min-h-[2.5rem]">
+                <div className="flex-1 flex flex-col justify-center md:items-start items-center text-left md:text-left gap-4 max-w-2xl w-full pl-8 md:pl-16 lg:pl-24 xl:pl-32">
+                  <h1 className="text-4xl md:text-5xl font-extrabold mb-2 leading-tight">Hi, I'm <span className="text-white">Venkata Sai Charan</span></h1>
+                  <h2 className="text-xl md:text-2xl font-semibold mb-2 text-pink-200 min-h-[2.5rem]">
                     <Typewriter
                       words={['Cloud & Backend Developer', 'Web Developer', 'Software Engineer', 'Network Analyst', 'Data Enthusiast']}
                       loop={0}
@@ -148,10 +146,10 @@ const App = () => {
                       delaySpeed={1500}
                     />
                   </h2>
-                  <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 max-w-xl mx-auto">
+                  <p className="text-base md:text-lg text-white/90 leading-relaxed mb-4 max-w-xl">
                     Software Engineer & Problem Solver. Engineer by skill, problem-solver by mindset. Let's build what matters.
                   </p>
-                  <div className="flex flex-row items-center gap-4 mb-8 justify-center">
+                  <div className="flex flex-row items-center gap-4 mb-4 justify-start">
                     <a href="https://www.linkedin.com/in/sai-charan-k-v/" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center w-10 h-10 bg-white/20 border-2 border-white text-white rounded-full text-xl hover:bg-white hover:text-[#e13a7a] transition-all duration-300">
                       <i className='bx bxl-linkedin'></i>
                     </a>
@@ -162,7 +160,7 @@ const App = () => {
                       <FaGithub />
                     </a>
                   </div>
-                  <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto justify-center md:justify-center">
+                  <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto justify-start">
                     <a href="/cv.pdf" className="btn bg-white text-[#e13a7a] font-bold px-8 py-3 rounded-full shadow hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300" target="_blank" rel="noopener noreferrer">Download CV</a>
                     <a href="#contact" className="btn bg-[#e13a7a] text-white font-bold px-8 py-3 rounded-full shadow hover:bg-pink-400 hover:text-white transition-all duration-300">Contact Me</a>
                   </div>
