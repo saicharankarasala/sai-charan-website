@@ -72,8 +72,8 @@
 
   /* Text selection */
   ::selection {
-    background: #00ffee;
-    color: #111;
+    background: #e13a7a;
+    color: #fff;
   }
 
   /* Focus styles */
