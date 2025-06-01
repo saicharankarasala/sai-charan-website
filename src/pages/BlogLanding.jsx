@@ -13,6 +13,13 @@ const BlogLanding = () => {
 
   return (
     <div className="bg-white min-h-screen text-gray-900 font-sans">
+      {/* Back to Portfolio Button */}
+      <div className="w-full flex justify-start px-4 pt-6">
+        <a href="/" className="inline-flex items-center gap-2 bg-[#e13a7a] text-white font-semibold px-5 py-2 rounded-full shadow hover:bg-[#6d217f] transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          Back to Portfolio
+        </a>
+      </div>
       {/* Hero Section */}
       <div className="w-full min-h-[380px] flex flex-col items-center justify-center bg-gradient-to-tr from-[#2d014d] via-[#6d217f] to-[#e13a7a] text-white text-center px-4">
         <h1 className="text-5xl md:text-6xl font-bold mb-4">Welcome to the <span className="text-white">SAI CHARAN'S Blog</span></h1>
