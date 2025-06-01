@@ -91,12 +91,12 @@ const App = () => {
                     </span>
                   </a>
                   <div className="hidden md:flex items-center gap-8">
-                    <a href="#about" className="text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors">About</a>
-                    <a href="#skills" className="text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors">Skills</a>
-                    <a href="#education" className="text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors">Education</a>
-                    <a href="#certifications" className="text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors">Certifications</a>
-                    <a href="#experience" className="text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors">Experience</a>
-                    <a href="#projects" className="text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors">Projects</a>
+                    <a href="#about" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">About</a>
+                    <a href="#skills" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Skills</a>
+                    <a href="#education" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Education</a>
+                    <a href="#certifications" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Certifications</a>
+                    <a href="#experience" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Experience</a>
+                    <a href="#projects" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Projects</a>
                     <a href="#contact" className="text-white bg-[#e13a7a] px-4 py-2 rounded-full font-bold shadow hover:bg-[#6d217f] transition">Contact</a>
                     <a href="/blog" className="text-[#6d217f] hover:text-[#e13a7a] font-semibold transition-colors" target="_blank" rel="noopener noreferrer">Blog</a>
                   </div>
