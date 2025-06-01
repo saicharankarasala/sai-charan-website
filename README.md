@@ -42,6 +42,19 @@ Here's a glimpse of what the portfolio looks like:
   - The blog is a single-page app with 7 major sections, each styled as a "Page" and accessible via the TOC.
 - **Troubleshooting & Debugging:**
   - Documented steps for debugging blank pages, MIME type errors, and Vercel static asset/routing issues.
+- **Hero Section Animation & Alignment:**
+  - Added a typewriter animation to the hero subtitle, cycling through roles (Cloud & Backend Developer, Web Developer, etc.) using `react-simple-typewriter`.
+  - Professionally aligned hero section: left-aligned text with responsive padding, vertically centered image, and balanced spacing.
+- **Card & Nav Interactivity:**
+  - All cards (projects, experience, certifications, education, stats) now have smooth scale and shadow hover effects for a modern, interactive feel.
+  - Navigation links feature an animated underline on hover and focus for a polished, interactive navbar.
+- **Blog Page Polish:**
+  - 'Back to Portfolio' link is now integrated at the top-left of the blog hero section, styled in white for a subtle, non-intrusive look.
+- **Styling & UX:**
+  - Improved spacing, padding, and visual hierarchy across all sections for a more professional appearance.
+  - Updated text selection color to match brand accent.
+- **Dependencies:**
+  - Added `react-simple-typewriter` for animated hero subtitle.
 
 ---
 
@@ -50,17 +63,18 @@ Here's a glimpse of what the portfolio looks like:
 This portfolio website is packed with features designed to present information clearly and engagingly:
 
 *   **Modern, Responsive UI/UX**: A clean, intuitive, and fully responsive design built with Tailwind CSS, ensuring a seamless experience on desktops, tablets, and mobile phones.
+*   **Animated Hero Section**: Eye-catching typewriter animation cycles through multiple roles/titles in the hero subtitle, powered by `react-simple-typewriter`.
 *   **Dynamic Sections**: Clearly defined sections for different aspects of my profile, including:
     *   👤 **About Me**: A detailed introduction to my background, skills, and professional philosophy.
     *   💡 **Skills**: A comprehensive showcase of my technical proficiencies, presented using interactive and visually appealing tags.
-    *   📚 **Education**: A clear overview of my academic background and achievements, presented in a clean card format.
-    *   🏅 **Certifications Showcase**: Highlighted professional certifications with verification links, also presented in a card format.
-    *   💼 **Experience**: Detailed information about my professional roles, responsibilities, and key accomplishments, presented in an easy-to-read card format.
-    *   🏆 **Projects**: Interactive project cards showcasing various personal and professional projects, complete with descriptions, tech stacks used, and relevant links.
-    *   📝 **Blog**: A single-page blog with a professional, sticky Table of Contents (TOC) sidebar, anchor links for each section, and improved navigation and styling.
+    *   📚 **Education**: A clear overview of my academic background and achievements, presented in a clean card format with hover effects.
+    *   🏅 **Certifications Showcase**: Highlighted professional certifications with verification links, also presented in a card format with hover effects.
+    *   💼 **Experience**: Detailed information about my professional roles, responsibilities, and key accomplishments, presented in an easy-to-read card format with hover effects.
+    *   🏆 **Projects**: Interactive project cards showcasing various personal and professional projects, complete with descriptions, tech stacks used, and relevant links, all with hover effects.
+    *   📝 **Blog**: A single-page blog with a professional, sticky Table of Contents (TOC) sidebar, anchor links for each section, improved navigation and styling, and a 'Back to Portfolio' link in the hero section.
 *   **Interactive Contact Form**: A functional contact form powered by EmailJS, allowing visitors to send messages directly. Includes a fun confetti animation on successful submission!
 *   **Integrated Social Links**: Easy access to my professional social media profiles (LinkedIn, Email) for networking and contact.
-*   **Animations & Transitions**: Smooth and modern animations implemented using AOS (Animate On Scroll) and Framer Motion to enhance the user experience and visual appeal.
+*   **Animations & Transitions**: Smooth and modern animations, including card hover effects and animated nav underlines, to enhance the user experience and visual appeal.
 *   **Optimized for Performance**: Leveraging Vite for a fast development and build process, and deployed on Vercel for reliable, high-performance global content delivery.
 
 ---
@@ -79,6 +93,7 @@ This project leverages a robust and modern technology stack to deliver a fast, s
 *   **Animations**:
     *   ✨ **AOS (Animate On Scroll)**: A library to easily add reveal animations to elements as they scroll into view.
     *   🖼️ **Framer Motion**: A production-ready motion library for React, used here for creating smooth and performant animations and gestures.
+    *   ⌨️ **react-simple-typewriter**: Used for the animated typewriter effect in the hero subtitle.
 *   **Email Integration**:
     *   ✉️ **EmailJS**: Allows sending emails directly from client-side JavaScript, without needing a backend server. Securely handles sending form data.
 *   **Performance Monitoring**:
@@ -201,6 +216,8 @@ Personalizing this portfolio template is straightforward. Here's how you can mak
     *   Modify existing utility classes in your JSX files (`.text-xl`, `.mb-4`, etc.) or add new custom CSS in `src/index.css` using Tailwind's `@apply` directive if needed.
 *   **Edit Blog Sections & TOC:**
     *   To add or update blog sections, edit the relevant components in `src/` and update the TOC/sidebar for new anchor links.
+*   **Animated Hero Roles:**
+  - To customize the animated roles/titles in the hero section, edit the `words` array in the `<Typewriter />` component in `src/App.jsx`.
 
 ---
 
