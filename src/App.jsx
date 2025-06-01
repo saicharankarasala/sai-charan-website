@@ -98,7 +98,7 @@ const App = () => {
                     <a href="#experience" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Experience</a>
                     <a href="#projects" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Projects</a>
                     <a href="#contact" className="text-white bg-[#e13a7a] px-4 py-2 rounded-full font-bold shadow hover:bg-[#6d217f] transition">Contact</a>
-                    <a href="/blog" className="text-[#6d217f] hover:text-[#e13a7a] font-semibold transition-colors" target="_blank" rel="noopener noreferrer">Blog</a>
+                    <a href="/blog" className="relative text-[#6d217f] hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3" target="_blank" rel="noopener noreferrer">Blog</a>
                   </div>
                   {/* Hamburger for mobile */}
                   <div className="md:hidden flex items-center">
