@@ -478,7 +478,7 @@ const App = () => {
                     <a href="mailto:saicharankarasala@gmail.com" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:text-[#6d217f] text-xl"><i className='bx bx-envelope'></i></a>
                     <a href="https://github.com/KVSC1511" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:text-[#6d217f] text-xl"><i className='bx bxl-github'></i></a>
                   </div>
-                  <span className="text-xs text-gray-500">© Venkata Sai Charan | All Rights Reserved</span>
+                  <span className="text-xs text-gray-500">© Venkata Sai Charan 🇺🇸 | All Rights Reserved</span>
                 </div>
               </footer>
               <SpeedInsights />
