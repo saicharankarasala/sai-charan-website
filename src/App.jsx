@@ -10,7 +10,7 @@ import {
   FaCodeBranch, FaProjectDiagram, FaNetworkWired, FaCertificate,
   FaCogs, FaTools, FaLaptopCode, FaTerminal, FaCode as FaCodeAlt,
   FaBriefcase, FaGraduationCap, FaExternalLinkAlt, FaChevronDown,
-  FaTwitter, FaInstagram
+  FaTwitter, FaInstagram, FaUser
 } from 'react-icons/fa';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -178,7 +178,10 @@ const App = () => {
               <section className="about py-12 px-4 bg-gray-50" id="about">
                 <div className="max-w-3xl mx-auto">
                   <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                    <h2 className="text-3xl font-bold mb-6 text-center">About <span className="text-[#e13a7a]">Me</span></h2>
+                    <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                      <FaUser className="text-[#e13a7a] text-2xl" />
+                      About <span className="text-[#e13a7a]">Me</span>
+                    </h2>
                     <span className="block text-lg text-[#e13a7a] font-semibold mb-4 text-center">
                       "I believe great technology is built at the intersection of curiosity, creativity, and code."
                     </span>
@@ -270,7 +273,10 @@ const App = () => {
               {/* EDUCATION SECTION - Already styled */}
               <section className="education pb-12 px-4 bg-gray-50" id="education">
                 <div className="max-w-4xl mx-auto">
-                  <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Education</span></h2>
+                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                    <FaGraduationCap className="text-[#e13a7a] text-2xl" />
+                    My <span className="text-[#e13a7a]">Education</span>
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* UMKC Education */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -294,7 +300,10 @@ const App = () => {
               {/* CERTIFICATIONS SECTION */}
               <section className="certifications py-12 px-4 bg-gray-50" id="certifications">
                 <div className="max-w-7xl mx-auto">
-                  <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Certifications</span></h2>
+                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                    <FaCertificate className="text-[#e13a7a] text-2xl" />
+                    My <span className="text-[#e13a7a]">Certifications</span>
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* AWS Certification */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -324,7 +333,10 @@ const App = () => {
               {/* EXPERIENCE SECTION */}
               <section className="experience py-12 px-4 bg-gray-50" id="experience">
                 <div className="max-w-7xl mx-auto">
-                  <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Experience</span></h2>
+                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                    <FaBriefcase className="text-[#e13a7a] text-2xl" />
+                    My <span className="text-[#e13a7a]">Experience</span>
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Source Consulting Experience */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -388,7 +400,10 @@ const App = () => {
               {/* PROJECTS SECTION */}
               <section className="projects py-12 px-4 bg-gray-50" id="projects">
                 <div className="max-w-7xl mx-auto">
-                  <h2 className="text-3xl font-bold mb-6 text-center">My <span className="text-[#e13a7a]">Projects</span></h2>
+                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                    <FaProjectDiagram className="text-[#e13a7a] text-2xl" />
+                    My <span className="text-[#e13a7a]">Projects</span>
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Portfolio Project */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -466,6 +481,10 @@ const App = () => {
               {/* CONTACT SECTION - Beautiful, modern, centered */}
               <section className="contact py-16 px-4 bg-gray-50" id="contact">
                 <div className="max-w-3xl mx-auto">
+                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                    <FaEnvelope className="text-[#e13a7a] text-2xl" />
+                    Contact <span className="text-[#e13a7a]">Me</span>
+                  </h2>
                   <Contact />
                 </div>
               </section>
