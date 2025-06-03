@@ -481,10 +481,6 @@ const App = () => {
               {/* CONTACT SECTION - Beautiful, modern, centered */}
               <section className="contact py-16 px-4 bg-gray-50" id="contact">
                 <div className="max-w-3xl mx-auto">
-                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
-                    <FaEnvelope className="text-[#e13a7a] text-2xl" />
-                    Contact <span className="text-[#e13a7a]">Me</span>
-                  </h2>
                   <Contact />
                 </div>
               </section>
