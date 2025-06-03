@@ -486,7 +486,7 @@ const App = () => {
               </section>
 
               {/* FOOTER - Clean, minimal, accent icons */}
-              <footer className="bg-gray-100 border-t border-gray-200 py-8 mt-16">
+              <footer className="bg-gray-100 border-t border-gray-200 py-8">
                 <div className="container mx-auto flex flex-col items-center justify-center">
                   <div className="flex gap-6 mb-3">
                     <a href="https://www.linkedin.com/in/sai-charan-k-v/" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:text-[#6d217f] text-xl"><i className='bx bxl-linkedin'></i></a>
