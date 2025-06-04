@@ -15,10 +15,6 @@ export const blogPosts = [
     lastUpdated: "05-10-2025",
     content: `
 <article class="prose lg:prose-xl max-w-none mx-auto p-6">
-  <h1 class="mb-8 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 text-center relative">
-    The Code Behind the Canvas: How I Engineered My Personal Portfolio with React, Tailwind & Analytics
-    <span class="block w-16 h-1 bg-[#e13a7a] rounded-full mx-auto mt-3"></span>
-  </h1>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <p class="mb-4">In today's digital-first world, your portfolio is your handshake. It's not just about listing skills — it's about proving them. When I set out to build <a href="https://www.venkatasaicharan.com" target="_blank">venkatasaicharan.com</a>, my goal was clear: to create a portfolio that reflects who I am as a software engineer — clean, fast, interactive, and thoughtfully engineered.</p>
     <p>This blog shares how I built my portfolio from the ground up using <strong>React</strong>, <strong>Vite</strong>, <strong>Tailwind CSS</strong>, and <strong>Framer Motion</strong> — and the key decisions, tools, and techniques that brought it all together.</p>
