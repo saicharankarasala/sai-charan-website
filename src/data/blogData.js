@@ -118,16 +118,17 @@ graph TD
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-cyan-400 pl-4 bg-white/80 rounded shadow-sm">🙌 Want to Build Your Own?</h2>
-    <p class="mb-4">If you're a developer starting out:</p>
+    <p class="mb-4">Ready to launch your own portfolio? Here's my advice for developers starting out:</p>
     <ul class="list-disc pl-6 space-y-2">
       <li>Start small and build iteratively.</li>
       <li>Choose tools you enjoy using and want to master.</li>
-      <li>Don't just list features — explain decisions.</li>
+      <li>Don't just list features — explain your decisions and process.</li>
     </ul>
-    <blockquote class="border-l-4 border-cyan-400 bg-cyan-50/60 italic text-lg p-4 rounded-lg my-6">
-      You can find the source code here: 
-      <a href="https://github.com/KVSC1511/My-Personal-Portfolio.git" target="_blank">GitHub – My Personal Portfolio</a>
-    </blockquote>
+    <div class="flex justify-center mt-8">
+      <a href="https://github.com/KVSC1511/My-Personal-Portfolio.git" target="_blank" class="inline-block bg-[#e13a7a] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#6d217f] transition-all text-lg">
+        🚀 View Source Code on GitHub
+      </a>
+    </div>
   </section>
 </article>
     `
