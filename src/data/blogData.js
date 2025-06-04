@@ -39,12 +39,17 @@ export const blogPosts = [
     <h3 class="mb-4 text-xl font-semibold text-gray-900 border-l-2 border-cyan-300 pl-3 bg-cyan-50/60 rounded shadow">Site Architecture</h3>
     <pre class="mermaid mb-6">
 graph TD
-  A[App.jsx] --> B[Navbar]
-  A --> C[Routes]
-  C --> D[Home.jsx]
-  C --> E[Projects.jsx]
-  C --> F[Contact.jsx]
-  A --> G[ThemeProvider]
+  A[App.jsx] --> B[Header/Navbar]
+  A --> C[Main Sections]
+  A --> D[Footer]
+  C --> E[About]
+  C --> F[Skills]
+  C --> G[Education]
+  C --> H[Certifications]
+  C --> I[Experience]
+  C --> J[Projects]
+  C --> K[Contact]
+  C --> L[Blog]
 </pre>
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
