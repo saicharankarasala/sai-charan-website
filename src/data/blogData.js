@@ -125,7 +125,7 @@ graph TD
       <li>Don't just list features — explain your decisions and process.</li>
     </ul>
     <div class="flex justify-center mt-8">
-      <a href="https://github.com/KVSC1511/My-Personal-Portfolio.git" target="_blank" class="inline-block bg-[#e13a7a] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#6d217f] transition-all text-lg">
+      <a href="https://github.com/KVSC1511/MyPortfolio" target="_blank" class="inline-block bg-[#e13a7a] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#6d217f] transition-all text-lg">
         🚀 View Source Code on GitHub
       </a>
     </div>
