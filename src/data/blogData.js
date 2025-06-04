@@ -15,6 +15,7 @@ export const blogPosts = [
     lastUpdated: "05-10-2025",
     content: `
 <article class="prose lg:prose-xl max-w-none mx-auto p-6">
+  <h2 class="mb-6 text-xl md:text-2xl font-semibold text-center text-gray-800">🚀 Building My Portfolio with React & Tailwind: A Developer's Journey</h2>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <p class="mb-4">In today's digital-first world, your portfolio is your handshake. It's not just about listing skills — it's about proving them. When I set out to build <a href="https://www.venkatasaicharan.com" target="_blank">venkatasaicharan.com</a>, my goal was clear: to create a portfolio that reflects who I am as a software engineer — clean, fast, interactive, and thoughtfully engineered.</p>
     <p>This blog shares how I built my portfolio from the ground up using <strong>React</strong>, <strong>Vite</strong>, <strong>Tailwind CSS</strong>, and <strong>Framer Motion</strong> — and the key decisions, tools, and techniques that brought it all together.</p>
