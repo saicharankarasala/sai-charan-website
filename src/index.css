@@ -1269,14 +1269,18 @@
   margin-top: 2rem !important;
 }
 
+.prose {
+  max-width: 100% !important;
+}
+
 .mermaid {
   width: 100% !important;
-  max-width: 700px;
-  margin: 2rem auto;
-  font-size: 1.15rem;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
-  padding: 2rem 1.5rem;
-  display: block;
+  max-width: 1000px !important;
+  margin: 2.5rem auto !important;
+  font-size: 1.5rem !important;
+  background: white !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10) !important;
+  padding: 2.5rem 2rem !important;
+  display: block !important;
 } 
