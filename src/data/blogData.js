@@ -56,10 +56,13 @@ graph TD
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-cyan-400 pl-4 bg-white/80 rounded shadow-sm">📂 Project Sections Built with Purpose</h2>
     <ul class="list-disc pl-6 space-y-2">
       <li><strong>About Me</strong>: Snapshot of my journey and personality.</li>
+      <li><strong>Skills</strong>: My technical proficiencies and tools I use.</li>
+      <li><strong>Education</strong>: Academic background and degrees.</li>
+      <li><strong>Certifications</strong>: Proof of my commitment to continuous learning.</li>
+      <li><strong>Experience</strong>: Professional roles and impactful work.</li>
       <li><strong>Projects</strong>: Real-world applications showcasing both frontend and backend skills.</li>
-      <li><strong>Experience & Education</strong>: Timeline format for clarity and context.</li>
-      <li><strong>Certifications</strong>: Proving my commitment to continuous learning.</li>
-      <li><strong>Contact</strong>: Conversion-optimized and functional.</li>
+      <li><strong>Contact</strong>: Conversion-optimized and functional way to reach me.</li>
+      <li><strong>Blog</strong>: In-depth case studies, technical write-ups, and personal insights.</li>
     </ul>
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
