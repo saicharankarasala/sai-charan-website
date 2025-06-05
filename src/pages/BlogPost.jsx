@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { blogPosts } from "../data/blogData";
 import mermaid from "mermaid";
@@ -74,6 +74,7 @@ const BlogPost = () => {
   const { slug } = useParams();
   const post = blogPosts.find(p => p.slug === slug);
   const url = typeof window !== 'undefined' ? window.location.href : '';
+  const [feedback, setFeedback] = useState(null);
 
   useEffect(() => {
     mermaid.initialize({ startOnLoad: true });
@@ -130,6 +131,35 @@ const BlogPost = () => {
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-gray-900">{post.title}</h1>
           <article className="prose prose-lg lg:prose-xl prose-headings:text-gray-900 max-w-none leading-relaxed text-gray-900" dangerouslySetInnerHTML={{ __html: post.content }} />
+
+          {/* Feedback Widget */}
+          <div className="mt-12 flex flex-col items-center">
+            <div className="text-lg font-semibold mb-3 text-gray-800">
+              Was this helpful?
+            </div>
+            {feedback === null ? (
+              <div className="flex gap-6">
+                <button
+                  onClick={() => setFeedback("yes")}
+                  className="text-2xl px-5 py-2 rounded-full bg-green-50 hover:bg-green-100 border border-green-200 transition"
+                  aria-label="Helpful"
+                >
+                  👍
+                </button>
+                <button
+                  onClick={() => setFeedback("no")}
+                  className="text-2xl px-5 py-2 rounded-full bg-red-50 hover:bg-red-100 border border-red-200 transition"
+                  aria-label="Not Helpful"
+                >
+                  👎
+                </button>
+              </div>
+            ) : (
+              <div className="mt-2 text-green-600 font-medium">
+                Thank you for your feedback!
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
