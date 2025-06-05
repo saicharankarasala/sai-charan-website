@@ -136,6 +136,19 @@ const BlogPost = () => {
     "🙌 Want to Build Your Own?": "Build Your Own"
   };
 
+  // Smooth scroll handler for TOC links
+  const handleTocClick = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const yOffset = -32; // Offset for sticky header
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      // Update hash in URL without jumping
+      window.history.replaceState(null, '', `#${id}`);
+    }
+  };
+
   if (!post) return <div className="p-8 text-center">Post not found.</div>;
 
   return (
@@ -182,6 +195,7 @@ const BlogPost = () => {
                 <li key={h.id} className="ml-0" style={{listStyle: 'none'}}>
                   <a
                     href={`#${h.id}`}
+                    onClick={e => handleTocClick(e, h.id)}
                     className={`block px-2 py-1 rounded transition text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""} text-base font-medium`}
                   >
                     {`${idx + 1}. ${tocLabelMap[h.text] || h.text}`}
