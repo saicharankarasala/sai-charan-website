@@ -122,6 +122,20 @@ const BlogPost = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [toc]);
 
+  // Professional TOC label mapping
+  const tocLabelMap = {
+    "🚀 Building My Portfolio with React & Tailwind: A Developer's Journey": "Introduction",
+    "🧱 Why I Chose React + Tailwind": "Why React & Tailwind",
+    "✨ Features That Set It Apart": "Key Features",
+    "Site Architecture": "Site Architecture",
+    "📂 Project Sections Built with Purpose": "Project Sections",
+    "🛠️ Tech Stack": "Tech Stack",
+    "Tech Stack Overview": "Tech Stack Overview",
+    "🧠 Lessons Learned": "Lessons Learned",
+    "📣 Takeaway for Employers": "Takeaway for Employers",
+    "🙌 Want to Build Your Own?": "Build Your Own"
+  };
+
   if (!post) return <div className="p-8 text-center">Post not found.</div>;
 
   return (
@@ -170,7 +184,7 @@ const BlogPost = () => {
                     href={`#${h.id}`}
                     className={`block px-2 py-1 rounded transition font-medium text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""}`}
                   >
-                    {h.text}
+                    {tocLabelMap[h.text] || h.text}
                   </a>
                 </li>
               ))}
