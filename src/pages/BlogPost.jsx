@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { blogPosts } from "../data/blogData";
 import mermaid from "mermaid";
@@ -75,11 +75,54 @@ const BlogPost = () => {
   const post = blogPosts.find(p => p.slug === slug);
   const url = typeof window !== 'undefined' ? window.location.href : '';
   const [feedback, setFeedback] = useState(null);
+  const [toc, setToc] = useState([]);
+  const [activeId, setActiveId] = useState(null);
+  const articleRef = useRef(null);
 
   useEffect(() => {
     mermaid.initialize({ startOnLoad: true });
     mermaid.contentLoaded();
   }, []);
+
+  // Extract headings for TOC after article is rendered
+  useEffect(() => {
+    if (!articleRef.current) return;
+    const headings = Array.from(
+      articleRef.current.querySelectorAll("h2, h3")
+    ).map((el) => ({
+      id: el.id || el.textContent.replace(/\s+/g, "-").toLowerCase(),
+      text: el.textContent,
+      level: el.tagName === "H2" ? 2 : 3,
+    }));
+    // Set IDs for headings if not present
+    headings.forEach((h) => {
+      const el = articleRef.current.querySelector(
+        `[id='${h.id}'], h2:contains('${h.text}'), h3:contains('${h.text}')`
+      );
+      if (el && !el.id) el.id = h.id;
+    });
+    setToc(headings);
+  }, [post.content]);
+
+  // Scroll spy for active section
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!articleRef.current) return;
+      const headings = Array.from(
+        articleRef.current.querySelectorAll("h2, h3")
+      );
+      let lastId = null;
+      for (const heading of headings) {
+        const rect = heading.getBoundingClientRect();
+        if (rect.top <= 120) {
+          lastId = heading.id;
+        }
+      }
+      setActiveId(lastId);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [toc]);
 
   if (!post) return <div className="p-8 text-center">Post not found.</div>;
 
@@ -117,6 +160,26 @@ const BlogPost = () => {
         ))}
         <div className="w-px h-12 bg-gray-200 mt-2" />
       </div>
+      {/* Sticky TOC (Desktop only) */}
+      {toc.length > 1 && (
+        <nav className="hidden lg:block fixed right-8 top-32 w-64 z-30">
+          <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-5 sticky top-32">
+            <div className="font-bold text-gray-800 mb-3 text-lg">On this page</div>
+            <ul className="space-y-2">
+              {toc.map((h) => (
+                <li key={h.id} className={h.level === 3 ? "ml-4" : ""}>
+                  <a
+                    href={`#${h.id}`}
+                    className={`block px-2 py-1 rounded transition font-medium text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""}`}
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      )}
       <div className="max-w-4xl w-full py-12 px-4 sm:px-8">
         <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-12">
           <Link to="/blog" className="text-pink-600 font-semibold hover:underline mb-8 inline-block text-base">&larr; Back to Blog</Link>
@@ -130,7 +193,7 @@ const BlogPost = () => {
             <span className="text-xs text-gray-500">{post.date}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-gray-900">{post.title}</h1>
-          <article className="prose prose-lg lg:prose-xl prose-headings:text-gray-900 max-w-none leading-relaxed text-gray-900" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <article ref={articleRef} className="prose prose-lg lg:prose-xl prose-headings:text-gray-900 max-w-none leading-relaxed text-gray-900" dangerouslySetInnerHTML={{ __html: post.content }} />
 
           {/* Feedback Widget */}
           <div className="mt-12 flex flex-col items-center">
