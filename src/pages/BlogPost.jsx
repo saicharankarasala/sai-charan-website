@@ -89,17 +89,15 @@ const BlogPost = () => {
     if (!articleRef.current) return;
     const headings = Array.from(
       articleRef.current.querySelectorAll("h2, h3")
-    ).map((el) => ({
-      id: el.id || el.textContent.replace(/\s+/g, "-").toLowerCase(),
-      text: el.textContent,
-      level: el.tagName === "H2" ? 2 : 3,
-    }));
-    // Set IDs for headings if not present
-    headings.forEach((h) => {
-      const el = articleRef.current.querySelector(
-        `[id='${h.id}'], h2:contains('${h.text}'), h3:contains('${h.text}')`
-      );
-      if (el && !el.id) el.id = h.id;
+    ).map((el) => {
+      // Generate a safe ID by removing special characters
+      let safeId = el.id || el.textContent.replace(/[^a-zA-Z0-9\s]/g, "").replace(/\s+/g, "-").toLowerCase();
+      if (!el.id) el.id = safeId;
+      return {
+        id: el.id,
+        text: el.textContent,
+        level: el.tagName === "H2" ? 2 : 3,
+      };
     });
     setToc(headings);
   }, [post.content]);
