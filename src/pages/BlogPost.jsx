@@ -177,12 +177,13 @@ const BlogPost = () => {
         <nav className="hidden lg:block fixed right-8 top-32 w-64 z-30">
           <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-5 sticky top-32">
             <div className="font-bold text-gray-800 mb-3 text-lg">On this page</div>
-            <ul className="space-y-2 list-disc list-inside">
+            <ul className="space-y-2">
               {toc.map((h) => (
-                <li key={h.id} className={h.level === 3 ? "ml-6 list-[circle]" : "ml-0 list-disc"}>
+                <li key={h.id} className={h.level === 3 ? "ml-6" : "ml-0"} style={{listStyle: 'none'}}>
                   <a
                     href={`#${h.id}`}
                     className={`block px-2 py-1 rounded transition font-medium text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""}`}
+                    style={{fontSize: '1.1rem', fontWeight: 500}}
                   >
                     {tocLabelMap[h.text] || h.text}
                   </a>
