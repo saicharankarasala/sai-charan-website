@@ -178,13 +178,13 @@ const BlogPost = () => {
           <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-5 sticky top-32">
             <div className="font-bold text-gray-800 mb-3 text-lg">On this page</div>
             <ul className="space-y-1">
-              {toc.map((h) => (
-                <li key={h.id} className={h.level === 3 ? "ml-6" : "ml-0"} style={{listStyle: 'none'}}>
+              {toc.filter(h => h.level === 2).map((h, idx) => (
+                <li key={h.id} className="ml-0" style={{listStyle: 'none'}}>
                   <a
                     href={`#${h.id}`}
-                    className={`block px-2 py-1 rounded transition text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""} ${h.level === 3 ? 'text-sm font-normal' : 'text-base font-medium'}`}
+                    className={`block px-2 py-1 rounded transition text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""} text-base font-medium`}
                   >
-                    {tocLabelMap[h.text] || h.text}
+                    {`${idx + 1}. ${tocLabelMap[h.text] || h.text}`}
                   </a>
                 </li>
               ))}
