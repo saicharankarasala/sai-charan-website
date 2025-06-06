@@ -1309,4 +1309,16 @@
     font-size: 0.95rem;
     word-break: break-word;
   }
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 90vw !important;
+    max-width: 400px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    border-radius: 1.5rem !important;
+    top: 4.5rem !important;
+  }
 } 
