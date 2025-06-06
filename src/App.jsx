@@ -116,13 +116,13 @@ const App = () => {
                     </button>
                     {isMenuOpen && (
                       <div className="dropdown-menu open absolute right-4 top-16 bg-white rounded-xl shadow-lg flex flex-col gap-2 p-6 z-50 border border-[#e13a7a] animate-fade-in">
-                        <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-[#e13a7a] font-semibold">Home</a>
-                        <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-[#e13a7a] font-semibold">About</a>
-                        <a href="#skills" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-[#e13a7a] font-semibold">Skills</a>
-                        <a href="#education" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-[#e13a7a] font-semibold">Education</a>
-                        <a href="#certifications" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-[#e13a7a] font-semibold">Certifications</a>
-                        <a href="#experience" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-[#e13a7a] font-semibold">Experience</a>
-                        <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-[#e13a7a] font-semibold">Projects</a>
+                        <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Home</a>
+                        <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">About</a>
+                        <a href="#skills" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Skills</a>
+                        <a href="#education" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Education</a>
+                        <a href="#certifications" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Certifications</a>
+                        <a href="#experience" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Experience</a>
+                        <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Projects</a>
                         <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-white bg-[#e13a7a] px-4 py-2 rounded-full font-bold shadow hover:bg-[#6d217f] transition">Contact</a>
                         <a href="/blog" onClick={() => setIsMenuOpen(false)} className="text-[#6d217f] hover:text-[#e13a7a] font-semibold" target="_blank" rel="noopener noreferrer">Blog</a>
                       </div>

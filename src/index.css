@@ -745,7 +745,7 @@
 
   .dropdown-menu {
     @apply fixed top-[4rem] right-0 w-64 h-[calc(100vh-4rem)]
-           bg-black/90 backdrop-blur-md py-6 px-4
+           backdrop-blur-md py-6 px-4
            transform transition-all duration-300 ease-in-out
            flex flex-col gap-4 z-40
            border-l border-[rgb(0,255,238,0.2)];
@@ -1320,5 +1320,19 @@
     transform: translateX(-50%) !important;
     border-radius: 1.5rem !important;
     top: 4.5rem !important;
+  }
+}
+
+/* --- Ensure mobile dropdown menu style is last for highest specificity --- */
+@media (max-width: 768px) {
+  .dropdown-menu.open {
+    background: #fff !important;
+    color: #111827 !important; /* Tailwind gray-900 */
+  }
+  .dropdown-menu.open a {
+    color: #111827 !important;
+  }
+  .dropdown-menu.open a.bg-\[\#e13a7a\] {
+    color: #fff !important;
   }
 } 
