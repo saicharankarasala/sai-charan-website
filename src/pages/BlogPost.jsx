@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { blogPosts } from "../data/blogData";
 import mermaid from "mermaid";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const shareLinks = (title, url) => [
   {
