@@ -212,6 +212,14 @@ const BlogPost = () => {
       )}
       <div className="max-w-4xl w-full py-12 px-4 sm:px-8">
         <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-12">
+          {/* Breadcrumb Navigation */}
+          <nav className="mb-6 text-sm text-gray-500 flex items-center gap-2" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-[#e13a7a] font-medium">Home</Link>
+            <span className="mx-1">&gt;</span>
+            <Link to="/blog" className="hover:text-[#e13a7a] font-medium">Blog</Link>
+            <span className="mx-1">&gt;</span>
+            <span className="text-gray-700 font-semibold truncate max-w-xs" title={post.title}>{post.title}</span>
+          </nav>
           <Link to="/blog" className="text-pink-600 font-semibold hover:underline mb-8 inline-block text-base">&larr; Back to Blog</Link>
           <img src={post.image} alt={post.title + ' preview'} loading="lazy" className="w-full h-80 object-cover rounded-2xl shadow-lg mb-8" />
           <div className="mb-6 flex items-center gap-4">
