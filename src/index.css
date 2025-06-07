@@ -1386,4 +1386,19 @@
   border-radius: 9999px;
   position: relative;
   z-index: 2;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+@media (max-width: 640px) {
+  .fixed.bottom-8.right-8 {
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+  }
 } 

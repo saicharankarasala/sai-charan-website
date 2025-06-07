@@ -37,6 +37,7 @@ const App = () => {
     projects: null
   });
   const [activeSection, setActiveSection] = useState('');
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const handleCardClick = (section, index) => {
     setExpandedCards(prev => ({
@@ -49,7 +50,11 @@ const App = () => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('header nav a');
-
+      if (window.scrollY > 200) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
       sections.forEach(sec => {
         const top = window.scrollY;
         const offset = sec.offsetTop - 150;
@@ -74,6 +79,10 @@ const App = () => {
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -543,6 +552,17 @@ const App = () => {
                 </div>
               </footer>
               <SpeedInsights />
+              {showBackToTop && (
+                <button
+                  className="fixed bottom-8 right-8 z-[100] bg-[#e13a7a] text-white rounded-full shadow-lg p-4 hover:bg-[#6d217f] transition-all duration-300 flex items-center justify-center text-2xl animate-fade-in"
+                  onClick={handleBackToTop}
+                  aria-label="Back to Top"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-7 h-7">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                  </svg>
+                </button>
+              )}
             </div>
           } />
       </Routes>
