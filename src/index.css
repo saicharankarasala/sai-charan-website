@@ -1337,26 +1337,27 @@
   }
 }
 
-/* Animated glowing border for profile image */
 .profile-glow-border {
   position: relative;
-  display: inline-block;
-  width: 16rem; /* 64 (md) */
-  height: 16rem;
-  max-width: 100vw;
-  max-height: 100vw;
+  width: 13rem; /* 48 (w-48) + border + glow */
+  height: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .profile-glow-border {
-    width: 12rem; /* 48 */
-    height: 12rem;
+    width: 16rem; /* md:w-64 */
+    height: 16rem;
   }
 }
 .profile-glow-border::before {
   content: '';
   position: absolute;
-  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  inset: 0;
   border-radius: 9999px;
+  z-index: 1;
+  padding: 0.25rem;
   background: conic-gradient(
     from 0deg,
     #e13a7a 0deg,
@@ -1365,15 +1366,15 @@
     #e13a7a 360deg
   );
   filter: blur(8px) brightness(1.2);
-  z-index: 1;
-  animation: glow-rotate 4s linear infinite;
+  animation: border-rotate 3.5s linear infinite;
+}
+@keyframes border-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .profile-img {
+  background: #fff;
+  border-radius: 9999px;
   position: relative;
   z-index: 2;
-  background: white;
-}
-@keyframes glow-rotate {
-  0% { filter: blur(8px) brightness(1.2); transform: rotate(0deg); }
-  100% { filter: blur(8px) brightness(1.2); transform: rotate(360deg); }
 } 
