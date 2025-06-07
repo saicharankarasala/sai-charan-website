@@ -166,11 +166,13 @@ const App = () => {
                   </div>
                 </div>
                 <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
-                  <img 
-                    src="/images/profile.JPG" 
-                    alt="Venkata Sai Charan - UI/UX Designer & Software Engineer" 
-                    className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow object-cover"
-                  />
+                  <div className="profile-glow-border">
+                    <img 
+                      src="/images/profile.JPG" 
+                      alt="Venkata Sai Charan - UI/UX Designer & Software Engineer" 
+                      className="profile-img w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow object-cover"
+                    />
+                  </div>
                 </div>
               </section>
 

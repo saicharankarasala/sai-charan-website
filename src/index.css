@@ -1335,4 +1335,45 @@
   .dropdown-menu.open a.bg-\[\#e13a7a\] {
     color: #fff !important;
   }
+}
+
+/* Animated glowing border for profile image */
+.profile-glow-border {
+  position: relative;
+  display: inline-block;
+  width: 16rem; /* 64 (md) */
+  height: 16rem;
+  max-width: 100vw;
+  max-height: 100vw;
+}
+@media (max-width: 768px) {
+  .profile-glow-border {
+    width: 12rem; /* 48 */
+    height: 12rem;
+  }
+}
+.profile-glow-border::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    #e13a7a 0deg,
+    #00ffee 120deg,
+    #6d217f 240deg,
+    #e13a7a 360deg
+  );
+  filter: blur(8px) brightness(1.2);
+  z-index: 1;
+  animation: glow-rotate 4s linear infinite;
+}
+.profile-img {
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+@keyframes glow-rotate {
+  0% { filter: blur(8px) brightness(1.2); transform: rotate(0deg); }
+  100% { filter: blur(8px) brightness(1.2); transform: rotate(360deg); }
 } 
