@@ -416,6 +416,13 @@ const App = () => {
                         <li>Showcases professional experience, academic projects, and certifications with smooth animated transitions, dark mode, and EmailJS-powered contact form.</li>
                         <li>Integrated Framer Motion for UI animations and implemented modern design principles for an optimized user experience.</li>
                       </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        <span className="tech-tag bg-[#61dafb] text-black">React</span>
+                        <span className="tech-tag bg-[#646cff] text-white">Vite</span>
+                        <span className="tech-tag bg-[#38bdf8] text-white">Tailwind CSS</span>
+                        <span className="tech-tag bg-[#e13a7a] text-white">Framer Motion</span>
+                        <span className="tech-tag bg-[#f7b42c] text-black">EmailJS</span>
+                      </div>
                       <div className="flex gap-4 mt-4">
                         <a href="https://github.com/KVSC1511/Portfolio" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">GitHub</a>
                         <a href="https://www.venkatasaicharan.com" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">Live Site</a>
@@ -431,6 +438,13 @@ const App = () => {
                         <li>Used Snowflake for data analysis and performance optimization.</li>
                         <li>Strengthened transaction integrity and reduced vulnerabilities.</li>
                       </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        <span className="tech-tag bg-[#f7df1e] text-black">Java</span>
+                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
+                        <span className="tech-tag bg-[#00758f] text-white">SQL</span>
+                        <span className="tech-tag bg-[#56b4e9] text-black">Snowflake</span>
+                        <span className="tech-tag bg-[#e13a7a] text-white">Cryptography</span>
+                      </div>
                     </div>
                     {/* 2022 Project */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -442,6 +456,13 @@ const App = () => {
                         <li>Built interactive dashboards in Tableau to visualize key metrics.</li>
                         <li>Provided strategic recommendations for content optimization and audience growth.</li>
                       </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        <span className="tech-tag bg-[#ff9900] text-white">Apache Kafka</span>
+                        <span className="tech-tag bg-[#e13a7a] text-white">Spark</span>
+                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
+                        <span className="tech-tag bg-[#00758f] text-white">SQL</span>
+                        <span className="tech-tag bg-[#1f77b4] text-white">Tableau</span>
+                      </div>
                     </div>
                     {/* 2022 Project */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -453,6 +474,16 @@ const App = () => {
                         <li>Processed large-scale IoT data with PySpark and Hadoop.</li>
                         <li>Created dashboards in Tableau and Power BI; automated ETL with Azure Data Factory and Synapse Analytics.</li>
                       </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        <span className="tech-tag bg-[#00b4d8] text-white">IoT</span>
+                        <span className="tech-tag bg-[#0078d4] text-white">Azure</span>
+                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
+                        <span className="tech-tag bg-[#e13a7a] text-white">PySpark</span>
+                        <span className="tech-tag bg-[#1f77b4] text-white">Tableau</span>
+                        <span className="tech-tag bg-[#f7b42c] text-black">Power BI</span>
+                        <span className="tech-tag bg-[#e13a7a] text-white">Matplotlib</span>
+                        <span className="tech-tag bg-[#ff6384] text-white">Plotly</span>
+                      </div>
                     </div>
                     {/* 2021 Project */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -464,6 +495,13 @@ const App = () => {
                         <li>Analyzed system performance with SQL and Python; presented results using Tableau.</li>
                         <li>Enhanced collaboration and system design for mobile and front-end applications.</li>
                       </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        <span className="tech-tag bg-[#e13a7a] text-white">VLC</span>
+                        <span className="tech-tag bg-[#6d217f] text-white">OptiSystem</span>
+                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
+                        <span className="tech-tag bg-[#00758f] text-white">SQL</span>
+                        <span className="tech-tag bg-[#1f77b4] text-white">Tableau</span>
+                      </div>
                     </div>
                     {/* 2019-2021 Project */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
@@ -475,6 +513,12 @@ const App = () => {
                         <li>Conducted usability testing and implemented iterative improvements.</li>
                         <li>Used data visualization to present insights and drive design decisions.</li>
                       </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        <span className="tech-tag bg-[#512bd4] text-white">.NET</span>
+                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
+                        <span className="tech-tag bg-[#e13a7a] text-white">UI/UX</span>
+                        <span className="tech-tag bg-[#1f77b4] text-white">Data Visualization</span>
+                      </div>
                     </div>
                   </div>
                 </div>
