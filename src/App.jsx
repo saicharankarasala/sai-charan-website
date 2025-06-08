@@ -574,33 +574,35 @@ const App = () => {
                 </div>
               </footer>
               <SpeedInsights />
-              {showBackToTop && (
+              {/* Floating Button Stack (Back to Top & Easter Egg) */}
+              <div className="fixed bottom-8 right-8 z-[200] flex flex-col items-end gap-4">
+                {showBackToTop && (
+                  <button
+                    className="bg-[#e13a7a] text-white rounded-full shadow-lg p-4 hover:bg-[#6d217f] transition-all duration-300 flex items-center justify-center text-2xl animate-fade-in"
+                    onClick={handleBackToTop}
+                    aria-label="Back to Top"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-7 h-7">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                  </button>
+                )}
                 <button
-                  className="fixed bottom-8 right-8 z-[100] bg-[#e13a7a] text-white rounded-full shadow-lg p-4 hover:bg-[#6d217f] transition-all duration-300 flex items-center justify-center text-2xl animate-fade-in"
-                  onClick={handleBackToTop}
-                  aria-label="Back to Top"
+                  className="easter-egg-btn bg-white/90 hover:bg-white text-[#e13a7a] border-2 border-[#e13a7a] rounded-full shadow-lg p-4 flex items-center justify-center text-3xl transition-all duration-300 group"
+                  style={{ pointerEvents: showMascot ? 'none' : 'auto' }}
+                  onClick={() => { setShowMascot(true); setTimeout(() => setShowMascot(false), 7000); }}
+                  aria-label="Say Hi!"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-7 h-7">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
+                  <span className="inline-block animate-sparkle">✨</span>
+                  <span className="easter-egg-tooltip group-hover:opacity-100">Say Hi!</span>
                 </button>
-              )}
+              </div>
               {showMascot && (
                 <div className="fixed bottom-8 left-8 z-[100] animate-mascot-fade-in-out flex items-end gap-3">
                   <span className="inline-block text-5xl animate-wave select-none" role="img" aria-label="Waving Hand">👋</span>
                   <span className="speech-bubble">Hi! Thanks for visiting my portfolio!</span>
                 </div>
               )}
-              {/* Easter Egg Trigger Button */}
-              <button
-                className="easter-egg-btn fixed bottom-8 right-8 z-[200] bg-white/90 hover:bg-white text-[#e13a7a] border-2 border-[#e13a7a] rounded-full shadow-lg p-4 flex items-center justify-center text-3xl transition-all duration-300 group"
-                style={{ pointerEvents: showMascot ? 'none' : 'auto' }}
-                onClick={() => { setShowMascot(true); setTimeout(() => setShowMascot(false), 7000); }}
-                aria-label="Say Hi!"
-              >
-                <span className="inline-block animate-sparkle">✨</span>
-                <span className="easter-egg-tooltip group-hover:opacity-100">Say Hi!</span>
-              </button>
             </div>
           } />
       </Routes>

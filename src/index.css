@@ -1397,9 +1397,14 @@
 }
 
 @media (max-width: 640px) {
-  .fixed.bottom-8.right-8 {
+  .easter-egg-btn, .fixed.bottom-8.right-8, .fixed.bottom-8.left-8 {
     bottom: 1.25rem !important;
     right: 1.25rem !important;
+    left: auto !important;
+  }
+  .speech-bubble {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
   }
 }
 
@@ -1478,9 +1483,10 @@
   z-index: 200;
 }
 @media (max-width: 640px) {
-  .easter-egg-btn, .fixed.bottom-8.right-8 {
+  .easter-egg-btn, .fixed.bottom-8.right-8, .fixed.bottom-8.left-8 {
     bottom: 1.25rem !important;
     right: 1.25rem !important;
+    left: auto !important;
   }
   .speech-bubble {
     font-size: 1rem;
