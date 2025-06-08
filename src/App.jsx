@@ -99,6 +99,13 @@ const App = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Show mascot on first visit
+  useEffect(() => {
+    setShowMascot(true);
+    const timer = setTimeout(() => setShowMascot(false), 7000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -589,12 +596,12 @@ const App = () => {
                 )}
                 <button
                   className="easter-egg-btn bg-white/90 hover:bg-white text-[#e13a7a] border-2 border-[#e13a7a] rounded-full shadow-lg p-4 flex items-center justify-center text-3xl transition-all duration-300 group"
-                  style={{ pointerEvents: showMascot ? 'none' : 'auto' }}
-                  onClick={() => { setShowMascot(true); setTimeout(() => setShowMascot(false), 7000); }}
-                  aria-label="Say Hi!"
+                  aria-label="Just for fun!"
+                  tabIndex="0"
+                  style={{ pointerEvents: 'auto', cursor: 'pointer' }}
                 >
                   <span className="inline-block animate-sparkle">✨</span>
-                  <span className="easter-egg-tooltip group-hover:opacity-100">Say Hi!</span>
+                  <span className="easter-egg-tooltip group-hover:opacity-100">Just for fun!</span>
                 </button>
               </div>
               {showMascot && (
