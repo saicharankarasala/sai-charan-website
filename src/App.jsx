@@ -593,7 +593,7 @@ const App = () => {
               )}
               {/* Easter Egg Trigger Button */}
               <button
-                className="easter-egg-btn fixed bottom-8 left-8 z-[90] bg-white/80 hover:bg-white text-[#e13a7a] border border-[#e13a7a] rounded-full shadow p-2 flex items-center justify-center text-2xl transition-all duration-300 group"
+                className="easter-egg-btn fixed bottom-8 right-8 z-[200] bg-white/90 hover:bg-white text-[#e13a7a] border-2 border-[#e13a7a] rounded-full shadow-lg p-4 flex items-center justify-center text-3xl transition-all duration-300 group"
                 style={{ pointerEvents: showMascot ? 'none' : 'auto' }}
                 onClick={() => { setShowMascot(true); setTimeout(() => setShowMascot(false), 7000); }}
                 aria-label="Say Hi!"

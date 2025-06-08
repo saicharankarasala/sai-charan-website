@@ -1464,7 +1464,7 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  left: 110%;
+  right: 110%;
   bottom: 50%;
   transform: translateY(50%);
   background: #e13a7a;
@@ -1478,9 +1478,9 @@
   z-index: 200;
 }
 @media (max-width: 640px) {
-  .easter-egg-btn, .fixed.bottom-8.left-8 {
+  .easter-egg-btn, .fixed.bottom-8.right-8 {
     bottom: 1.25rem !important;
-    left: 1.25rem !important;
+    right: 1.25rem !important;
   }
   .speech-bubble {
     font-size: 1rem;
