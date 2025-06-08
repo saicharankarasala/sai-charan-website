@@ -50,29 +50,25 @@ const App = () => {
   
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('header nav a');
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(sectionId);
+        }
+      });
+
+      // Show/hide back to top button
       if (window.scrollY > 200) {
         setShowBackToTop(true);
       } else {
         setShowBackToTop(false);
       }
-      sections.forEach(sec => {
-        const top = window.scrollY;
-        const offset = sec.offsetTop - 150;
-        const height = sec.offsetHeight;
-        const id = sec.getAttribute('id');
-        
-        if(top >= offset && top < offset + height) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            const navLink = document.querySelector('header nav a[href*=' + id + ']');
-            if (navLink) {
-              navLink.classList.add('active');
-            }
-          });
-        }
-      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -122,7 +118,7 @@ const App = () => {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/" element={
             <div className="bg-white min-h-screen text-gray-900 font-sans relative">
-              <header className="fixed w-full top-0 z-50 bg-white shadow-md border-b-2 border-[#e13a7a]">
+              <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-lg border-b-2 border-[#e13a7a] transition-all duration-300">
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                   <a href="#home" className="flex items-center gap-2" aria-label="Home">
                     <span className="inline-flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE]">
@@ -130,14 +126,14 @@ const App = () => {
                     </span>
                   </a>
                   <div className="hidden md:flex items-center gap-8">
-                    <a href="#about" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">About</a>
-                    <a href="#skills" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Skills</a>
-                    <a href="#education" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Education</a>
-                    <a href="#certifications" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Certifications</a>
-                    <a href="#experience" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Experience</a>
-                    <a href="#projects" className="relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3">Projects</a>
+                    <a href="#about" className={`relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 ${activeSection === 'about' ? 'text-[#e13a7a] after:w-2/3' : ''}`}>About</a>
+                    <a href="#skills" className={`relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 ${activeSection === 'skills' ? 'text-[#e13a7a] after:w-2/3' : ''}`}>Skills</a>
+                    <a href="#education" className={`relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 ${activeSection === 'education' ? 'text-[#e13a7a] after:w-2/3' : ''}`}>Education</a>
+                    <a href="#certifications" className={`relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 ${activeSection === 'certifications' ? 'text-[#e13a7a] after:w-2/3' : ''}`}>Certifications</a>
+                    <a href="#experience" className={`relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 ${activeSection === 'experience' ? 'text-[#e13a7a] after:w-2/3' : ''}`}>Experience</a>
+                    <a href="#projects" className={`relative text-gray-700 hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 ${activeSection === 'projects' ? 'text-[#e13a7a] after:w-2/3' : ''}`}>Projects</a>
                     <a href="#contact" className="text-white bg-[#e13a7a] px-4 py-2 rounded-full font-bold shadow hover:bg-[#6d217f] transition">Contact</a>
-                    <a href="/blog" className="relative text-[#6d217f] hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3 active:after:w-2/3" target="_blank" rel="noopener noreferrer">Blog</a>
+                    <a href="/blog" className="relative text-[#6d217f] hover:text-[#e13a7a] font-semibold transition-colors after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-[#e13a7a] after:rounded-full after:transition-all after:duration-300 hover:after:w-2/3 focus:after:w-2/3" target="_blank" rel="noopener noreferrer">Blog</a>
                   </div>
                   {/* Hamburger for mobile */}
                   <div className="md:hidden flex items-center">
@@ -154,13 +150,13 @@ const App = () => {
                     </button>
                     {isMenuOpen && (
                       <div className="dropdown-menu open absolute right-4 top-16 bg-white rounded-xl shadow-lg flex flex-col gap-2 p-6 z-50 border border-[#e13a7a] animate-fade-in">
-                        <a href="#home" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Home</a>
-                        <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">About</a>
-                        <a href="#skills" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Skills</a>
-                        <a href="#education" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Education</a>
-                        <a href="#certifications" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Certifications</a>
-                        <a href="#experience" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Experience</a>
-                        <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-gray-900 hover:text-[#e13a7a] font-semibold">Projects</a>
+                        <a href="#home" onClick={() => setIsMenuOpen(false)} className={`text-gray-900 hover:text-[#e13a7a] font-semibold ${activeSection === 'home' ? 'text-[#e13a7a]' : ''}`}>Home</a>
+                        <a href="#about" onClick={() => setIsMenuOpen(false)} className={`text-gray-900 hover:text-[#e13a7a] font-semibold ${activeSection === 'about' ? 'text-[#e13a7a]' : ''}`}>About</a>
+                        <a href="#skills" onClick={() => setIsMenuOpen(false)} className={`text-gray-900 hover:text-[#e13a7a] font-semibold ${activeSection === 'skills' ? 'text-[#e13a7a]' : ''}`}>Skills</a>
+                        <a href="#education" onClick={() => setIsMenuOpen(false)} className={`text-gray-900 hover:text-[#e13a7a] font-semibold ${activeSection === 'education' ? 'text-[#e13a7a]' : ''}`}>Education</a>
+                        <a href="#certifications" onClick={() => setIsMenuOpen(false)} className={`text-gray-900 hover:text-[#e13a7a] font-semibold ${activeSection === 'certifications' ? 'text-[#e13a7a]' : ''}`}>Certifications</a>
+                        <a href="#experience" onClick={() => setIsMenuOpen(false)} className={`text-gray-900 hover:text-[#e13a7a] font-semibold ${activeSection === 'experience' ? 'text-[#e13a7a]' : ''}`}>Experience</a>
+                        <a href="#projects" onClick={() => setIsMenuOpen(false)} className={`text-gray-900 hover:text-[#e13a7a] font-semibold ${activeSection === 'projects' ? 'text-[#e13a7a]' : ''}`}>Projects</a>
                         <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-white bg-[#e13a7a] px-4 py-2 rounded-full font-bold shadow hover:bg-[#6d217f] transition">Contact</a>
                         <a href="/blog" onClick={() => setIsMenuOpen(false)} className="text-[#6d217f] hover:text-[#e13a7a] font-semibold" target="_blank" rel="noopener noreferrer">Blog</a>
                       </div>
