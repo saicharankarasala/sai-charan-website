@@ -38,6 +38,8 @@ const App = () => {
   });
   const [activeSection, setActiveSection] = useState('');
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showMascot, setShowMascot] = useState(false);
+  const konamiCode = useRef([]);
 
   const handleCardClick = (section, index) => {
     setExpandedCards(prev => ({
@@ -75,6 +77,26 @@ const App = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const code = [
+      'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+      'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'
+    ];
+    const handleKeyDown = (e) => {
+      konamiCode.current.push(e.key);
+      if (konamiCode.current.length > code.length) {
+        konamiCode.current.shift();
+      }
+      if (konamiCode.current.join(',') === code.join(',')) {
+        setShowMascot(true);
+        setTimeout(() => setShowMascot(false), 7000);
+        konamiCode.current = [];
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const handleMenuToggle = () => {
@@ -562,6 +584,11 @@ const App = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
                   </svg>
                 </button>
+              )}
+              {showMascot && (
+                <div className="fixed bottom-8 left-8 z-[100] animate-mascot-fade-in-out">
+                  <span className="inline-block text-5xl animate-wave select-none" role="img" aria-label="Waving Hand">👋</span>
+                </div>
               )}
             </div>
           } />
