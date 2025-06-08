@@ -1425,4 +1425,65 @@
 .animate-wave {
   animation: wave 2s infinite;
   display: inline-block;
+}
+
+.speech-bubble {
+  background: #fff;
+  color: #e13a7a;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  position: relative;
+  animation: mascot-bubble-fade-in 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes mascot-bubble-fade-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.easter-egg-btn {
+  opacity: 0.7;
+}
+.easter-egg-btn:hover {
+  opacity: 1;
+  box-shadow: 0 4px 16px #e13a7a33;
+}
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); filter: brightness(1.1); }
+  20% { transform: scale(1.2) rotate(-10deg); filter: brightness(1.3); }
+  40% { transform: scale(1.1) rotate(10deg); filter: brightness(1.2); }
+  60% { transform: scale(1.2) rotate(-8deg); filter: brightness(1.3); }
+  80% { transform: scale(1.1) rotate(8deg); filter: brightness(1.2); }
+}
+.animate-sparkle {
+  animation: sparkle 2.2s infinite;
+}
+.easter-egg-tooltip {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 110%;
+  bottom: 50%;
+  transform: translateY(50%);
+  background: #e13a7a;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 0.75rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px #e13a7a22;
+  transition: opacity 0.2s;
+  z-index: 200;
+}
+@media (max-width: 640px) {
+  .easter-egg-btn, .fixed.bottom-8.left-8 {
+    bottom: 1.25rem !important;
+    left: 1.25rem !important;
+  }
+  .speech-bubble {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
 } 

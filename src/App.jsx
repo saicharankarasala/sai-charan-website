@@ -586,10 +586,21 @@ const App = () => {
                 </button>
               )}
               {showMascot && (
-                <div className="fixed bottom-8 left-8 z-[100] animate-mascot-fade-in-out">
+                <div className="fixed bottom-8 left-8 z-[100] animate-mascot-fade-in-out flex items-end gap-3">
                   <span className="inline-block text-5xl animate-wave select-none" role="img" aria-label="Waving Hand">👋</span>
+                  <span className="speech-bubble">Hi! Thanks for visiting my portfolio!</span>
                 </div>
               )}
+              {/* Easter Egg Trigger Button */}
+              <button
+                className="easter-egg-btn fixed bottom-8 left-8 z-[90] bg-white/80 hover:bg-white text-[#e13a7a] border border-[#e13a7a] rounded-full shadow p-2 flex items-center justify-center text-2xl transition-all duration-300 group"
+                style={{ pointerEvents: showMascot ? 'none' : 'auto' }}
+                onClick={() => { setShowMascot(true); setTimeout(() => setShowMascot(false), 7000); }}
+                aria-label="Say Hi!"
+              >
+                <span className="inline-block animate-sparkle">✨</span>
+                <span className="easter-egg-tooltip group-hover:opacity-100">Say Hi!</span>
+              </button>
             </div>
           } />
       </Routes>
