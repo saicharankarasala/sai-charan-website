@@ -46,17 +46,20 @@
 
   /* Custom native scrollbar for all browsers */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
     background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--main-color);
     border-radius: 8px;
   }
 
+  ::-webkit-scrollbar-thumb {
+    background: #e13a7a;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #e13a7a22;
+    border: 2px solid #f1f1f1;
+  }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #00e6d6;
+    background: #6d217f;
   }
 
   ::-webkit-scrollbar-track {
@@ -66,7 +69,7 @@
 
   /* Firefox */
   html {
-    scrollbar-color: var(--main-color) #f1f1f1;
+    scrollbar-color: #e13a7a #f1f1f1;
     scrollbar-width: thin;
   }
 
