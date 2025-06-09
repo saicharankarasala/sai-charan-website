@@ -215,7 +215,7 @@ const App = () => {
                 <div className="max-w-3xl mx-auto">
                   <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                     <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
-                      <FaUser className="text-[#e13a7a] text-2xl" />
+                      <FaUser className="text-[#e13a7a] text-2xl section-icon" />
                       About <span className="text-[#e13a7a]">Me</span>
                     </h2>
                     <span className="block text-lg text-[#e13a7a] font-semibold mb-4 text-center">
@@ -243,7 +243,7 @@ const App = () => {
               <section className="skills py-12 px-4 bg-gray-50" id="skills">
                 <div className="max-w-7xl mx-auto">
                   <div className="bg-white rounded-2xl shadow p-8 text-gray-900 flex flex-col items-center">
-                    <FaTools className="text-3xl text-[#e13a7a] mb-2" />
+                    <FaTools className="text-3xl text-[#e13a7a] mb-2 section-icon" />
                     <h2 className="text-3xl font-bold mb-2 text-center">My <span className="text-[#e13a7a]">Skills</span></h2>
                     <div className="w-16 h-1 bg-[#e13a7a] rounded-full mb-6"></div>
                     <div className="flex flex-wrap gap-3 justify-center">
@@ -310,7 +310,7 @@ const App = () => {
               <section className="education pb-12 px-4 bg-gray-50" id="education">
                 <div className="max-w-4xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
-                    <FaGraduationCap className="text-[#e13a7a] text-2xl" />
+                    <FaGraduationCap className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Education</span>
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -337,7 +337,7 @@ const App = () => {
               <section className="certifications py-12 px-4 bg-gray-50" id="certifications">
                 <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
-                    <FaCertificate className="text-[#e13a7a] text-2xl" />
+                    <FaCertificate className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Certifications</span>
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -370,7 +370,7 @@ const App = () => {
               <section className="experience py-12 px-4 bg-gray-50" id="experience">
                 <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
-                    <FaBriefcase className="text-[#e13a7a] text-2xl" />
+                    <FaBriefcase className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Experience</span>
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -437,7 +437,7 @@ const App = () => {
               <section className="projects py-12 px-4 bg-gray-50" id="projects">
                 <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
-                    <FaProjectDiagram className="text-[#e13a7a] text-2xl" />
+                    <FaProjectDiagram className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Projects</span>
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
