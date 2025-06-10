@@ -119,7 +119,7 @@ const Blog = () => {
         <meta name="description" content="A full case study blog by Venkat Sai Charan on building his personal portfolio using React, Tailwind, Vite, and Framer Motion." />
       </Helmet>
       <div className="relative bg-white min-h-screen w-full px-2 md:px-8 py-10 pt-20 text-gray-900 prose lg:prose-xl prose-a:text-[--main-color] prose-a:no-underline hover:prose-a:underline prose-headings:!text-gray-900 prose-strong:text-[--main-color]">
-        <div className="flex flex-row gap-8 lg:pr-[27rem] xl:pr-[32rem]">
+        <div className="flex flex-row gap-8">
           {/* Mobile TOC */}
           <div className="lg:hidden mb-6">
             <button
@@ -150,7 +150,7 @@ const Blog = () => {
             )}
           </div>
           {/* Blog Content */}
-          <main className="flex-1 min-w-0">
+          <main className="flex-1 min-w-0 max-w-3xl mx-auto w-full">
             {/* Blog Content */}
             <div className="mb-4 flex items-center gap-2 text-[--main-color] text-base font-medium">
               <span role="img" aria-label="timer">⏱️</span> {readingTime} min read
