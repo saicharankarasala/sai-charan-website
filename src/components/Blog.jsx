@@ -119,7 +119,7 @@ const Blog = () => {
         <meta name="description" content="A full case study blog by Venkat Sai Charan on building his personal portfolio using React, Tailwind, Vite, and Framer Motion." />
       </Helmet>
       <div className="relative bg-white min-h-screen w-full px-2 md:px-8 py-10 pt-20 text-gray-900 prose lg:prose-xl prose-a:text-[--main-color] prose-a:no-underline hover:prose-a:underline prose-headings:!text-gray-900 prose-strong:text-[--main-color]">
-        <div className="flex flex-row gap-8">
+        <div className="flex flex-row gap-8 xl:items-start">
           {/* Mobile TOC */}
           <div className="lg:hidden mb-6">
             <button
@@ -772,19 +772,16 @@ const Blog = () => {
               <Divider />
           </motion.section>
           </main>
-          {/* Sidebar TOC (Desktop, Fixed, Right) */}
+          {/* TOC Sidebar: Fixed on lg, sticky and in-flow on xl+ */}
           <motion.aside
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="hidden lg:block w-64 xl:w-80 flex-shrink-0"
+            className="hidden lg:block w-64 xl:w-80 flex-shrink-0 lg:fixed xl:static xl:sticky xl:top-24"
             style={{
-              position: 'fixed',
-              top: '6rem',
-              right: '2rem',
-              zIndex: 30,
-              maxHeight: '80vh',
-              overflowY: 'auto'
+              ...(window.innerWidth >= 1280
+                ? { position: 'sticky', top: '6rem', right: 'unset', zIndex: 30, maxHeight: '80vh', overflowY: 'auto' }
+                : { position: 'fixed', top: '6rem', right: '2rem', zIndex: 30, maxHeight: '80vh', overflowY: 'auto' })
             }}
           >
             {/* Back to Portfolio Button (Desktop only) */}
