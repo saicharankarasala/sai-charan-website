@@ -444,7 +444,7 @@ const App = () => {
                     {/* Portfolio Project */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
-                      <p className="text-[#e13a7a] mb-4">2024</p>
+                      <p className="text-[#e13a7a] mb-4">2025</p>
                       <ul className="list-disc pl-5 text-gray-700 space-y-2">
                         <li>Developed and deployed a fully responsive personal portfolio using React, Vite, and Tailwind CSS, hosted on Vercel.</li>
                         <li>Showcases professional experience, academic projects, and certifications with smooth animated transitions, dark mode, and EmailJS-powered contact form.</li>
