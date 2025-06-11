@@ -187,19 +187,19 @@ const BlogPost = () => {
       </div>
       {/* Sticky TOC (Desktop only) */}
       {toc.length > 1 && (
-        <nav className="hidden lg:block fixed right-8 top-32 w-64 z-30">
-          <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-5 sticky top-32">
-            <div className="font-bold text-gray-800 mb-3 text-lg">On this page</div>
-            <ul className="space-y-1">
+        <nav className="hidden lg:block fixed right-4 top-24 w-48 max-w-xs z-30">
+          <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-3 sticky top-24">
+            <div className="font-bold text-gray-800 mb-2 text-base">On this page</div>
+            <ul className="space-y-0.5">
               {toc.filter(h => h.level === 2).map((h, idx) => {
                 // Remove any leading number and dot from the heading text for TOC
-                const cleanText = (tocLabelMap[h.text] || h.text).replace(/^\d+\.\s*/, "");
+                const cleanText = (tocLabelMap[h.text] || h.text).replace(/^[0-9]+\.\s*/, "");
                 return (
                   <li key={h.id} className="ml-0" style={{listStyle: 'none'}}>
                     <a
                       href={`#${h.id}`}
                       onClick={e => handleTocClick(e, h.id)}
-                      className={`block px-2 py-1 rounded transition text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""} text-base font-medium`}
+                      className={`block px-2 py-1 rounded transition text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""} text-sm font-medium`}
                     >
                       {`${idx + 1}. ${cleanText}`}
                     </a>
