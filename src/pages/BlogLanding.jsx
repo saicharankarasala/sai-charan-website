@@ -40,9 +40,7 @@ const BlogLanding = () => {
       {/* Blog Grid */}
       <div className="max-w-7xl mx-auto px-4 py-16 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {filteredPosts.map(post => (
-          <div className="shadow-xl rounded-2xl bg-white" key={post.slug}>
-            <BlogCard post={post} />
-          </div>
+          <BlogCard post={post} key={post.slug} />
         ))}
         {filteredPosts.length === 0 && (
           <div className="col-span-full text-center text-gray-500 py-12">No posts found.</div>
