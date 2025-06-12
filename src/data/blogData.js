@@ -148,41 +148,93 @@ graph TD
     readingTime: "7 min read",
     lastUpdated: "06-10-2025",
     content: `
-<article class="prose lg:prose-xl max-w-none mx-auto p-6">
-  <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900">1. The Mirage of Ultimate Efficiency</h2>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <p>We celebrate every new tool that promises to make us "10x" more productive. Yet, as AI takes over repetitive and even creative tasks, we risk losing context, skill, and the satisfaction of problem-solving. Are we trading depth for speed?</p>
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Robot hand typing on keyboard" class="w-full rounded-xl shadow mb-4" />
+<article class="prose lg:prose-xl max-w-none mx-auto px-4 sm:px-8 py-10">
+  <header class="text-center mb-16">
+    <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 mb-4">The AI Illusion: Are We Automating Ourselves Into Irrelevance?</h1>
+    <p class="text-gray-600 text-xl">AI is no longer just assisting us — it's replacing us. As we cheer for efficiency, are we quietly coding ourselves out of purpose?</p>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.amRHdMKyk8OYhvFPUeNZgAHaD4?pid=Api" alt="AI Chip - Hero Image" class="mx-auto rounded-xl shadow-md mt-6 w-3/4 sm:w-1/2">
+  </header>
+
+  <section class="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white/90 rounded-3xl shadow-xl border border-gray-100 p-8">
+    <div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">1. The Mirage of Ultimate Efficiency</h2>
+      <p>We celebrate every new tool that promises to make us "10x" more productive. Yet, as AI takes over repetitive and even creative tasks, we risk losing context, skill, and the satisfaction of problem-solving. Are we trading depth for speed?</p>
+    </div>
+    <div>
+      <img src="https://tse3.mm.bing.net/th/id/OIP.9_qMebjylb3gGgtsr-zN0QHaEK?pid=Api" alt="Glowing AI cube" class="rounded-lg shadow w-full max-w-sm mx-auto">
+      <p class="text-sm text-gray-500 italic text-center mt-2">A glowing AI cube: powerful, yet disconnected from real context.</p>
+    </div>
   </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">2. Automation vs. Human Meaning</h2>
-    <p>Efficiency is not the same as fulfillment. Humans crave mastery, impact, and connection. When machines do everything, what remains for us to feel proud of? The risk is not just job loss, but meaning loss.</p>
-    <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=80" alt="Human and robot handshake" class="w-full rounded-xl shadow mb-4" />
+
+  <section class="mb-16 bg-white/90 rounded-3xl shadow-xl border border-gray-100 p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">2. Human Meaning vs. Machine Productivity</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <p>Efficiency is not the same as fulfillment. Humans crave mastery, impact, and connection. When machines do everything, what remains for us to feel proud of? The risk is not just job loss, but meaning loss.</p>
+      </div>
+      <div>
+        <img src="https://tse3.mm.bing.net/th/id/OIP.FtB-Q0KYMIGU2DEccAIPXgHaEN?pid=Api" alt="Humanoid AI face" class="rounded-lg shadow w-full max-w-sm mx-auto">
+        <p class="text-sm text-gray-500 italic text-center mt-2">Automation may save time—but it cannot save purpose.</p>
+      </div>
+    </div>
   </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">3. The Disappearing Middle Class of Knowledge Work</h2>
-    <p>AI is rapidly automating roles once considered "safe": junior developers, copywriters, designers, analysts. The top experts still thrive, but entry-level opportunities are shrinking. The career ladder is being pulled up from the bottom.</p>
-    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="AI replacing knowledge workers" class="w-full rounded-xl shadow mb-4" />
+
+  <section class="mb-16 bg-white/90 rounded-3xl shadow-xl border border-gray-100 p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">3. Vanishing Entry Points: AI and the Middle Class of Knowledge Work</h2>
+    <p class="mb-6">Here's a breakdown of how automation is impacting traditional job roles:</p>
+    <table class="table-auto w-full text-left border border-gray-200">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="p-2 border">Role</th>
+          <th class="p-2 border">AI Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-2 border">Junior Developer</td>
+          <td class="p-2 border">Code generation and bug-fixing via AI assistants</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">Copywriter</td>
+          <td class="p-2 border">Marketing and SEO content automated by GPT-like models</td>
+        </tr>
+        <tr>
+          <td class="p-2 border">Analyst</td>
+          <td class="p-2 border">Data parsing and reporting tools replacing manual effort</td>
+        </tr>
+      </tbody>
+    </table>
+    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="AI replacing knowledge workers" class="rounded-lg shadow mx-auto mt-6 w-2/3">
+    <p class="text-sm text-gray-500 italic text-center mt-2">Automation is skipping the ladder—leaving fewer rungs to climb.</p>
   </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">4. The Creative Paradox</h2>
+
+  <section class="mb-16 bg-white/90 rounded-3xl shadow-xl border border-gray-100 p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">4. The Creative Paradox</h2>
     <p>AI excels at replication, not originality. As we automate content, code, and communication, we risk standardizing creativity itself. Ironically, the more we optimize, the more average we become. Is uniqueness a liability in an AI world?</p>
-    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="AI and creative process" class="w-full rounded-xl shadow mb-4" />
+    <div class="flex justify-center mt-6">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.FtB-Q0KYMIGU2DEccAIPXgHaEN?pid=Api" alt="Futuristic AI face" class="rounded-xl shadow w-2/3">
+    </div>
+    <p class="text-sm text-gray-500 italic text-center mt-2">Aesthetic AI renders beauty—but lacks the soul of true art.</p>
   </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">5. What We Must Not Automate</h2>
+
+  <section class="mb-16 bg-white/90 rounded-3xl shadow-xl border border-gray-100 p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">5. What We Must Not Automate</h2>
     <p>Some boundaries must remain human: empathy, judgment, relationships, responsibility. Let machines take tasks, but never the meaning behind them.</p>
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Empathy in AI" class="w-full rounded-xl shadow mb-4" />
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Empathy in AI" class="rounded-xl shadow mx-auto mt-6 w-2/3">
+    <p class="text-sm text-gray-500 italic text-center mt-2">Empathy and moral judgment: not yet programmable.</p>
   </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">6. Call to Action: From Tool-User to System Thinker</h2>
-    <p>The future belongs to those who design, interpret, and connect the dots. We must evolve from being just users to architects of the system, from being replaced to redefining what only humans can do.</p>
-    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="System thinker AI" class="w-full rounded-xl shadow mb-4" />
+
+  <section class="mb-20 bg-white/90 rounded-3xl shadow-xl border border-gray-100 p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">6. From Tool-User to System Thinker</h2>
+    <p>The future belongs to those who design, interpret, and connect the dots. We must evolve from being just users to architects of the system—from being replaced to redefining what only humans can do.</p>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.CeDoFlswEjUS5cXM87MfzQHaD4?pid=Api" alt="Digital hand on AI network" class="rounded-xl shadow mx-auto mt-6 w-2/3">
+    <p class="text-sm text-gray-500 italic text-center mt-2">System thinkers shape the future—not the tools they use.</p>
   </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100 text-center">
-    <h2 class="mb-6 text-2xl font-extrabold tracking-wide text-gray-900">🔚 Closing Line</h2>
-    <blockquote class="border-l-4 border-pink-400 bg-pink-50/60 italic text-lg p-4 rounded-lg my-6">"AI won't make us irrelevant — unless we stop asking why we matter."</blockquote>
-  </section>
+
+  <footer class="text-center mt-10">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">🔚 Closing Reflection</h2>
+    <blockquote class="border-l-4 border-pink-400 bg-pink-50 italic text-lg p-6 rounded-xl mx-auto w-4/5 shadow-md">"AI won't make us irrelevant — unless we stop asking why we matter."</blockquote>
+  </footer>
 </article>
     `
   },
