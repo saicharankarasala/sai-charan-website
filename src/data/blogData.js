@@ -139,7 +139,7 @@ graph TD
     date: "06-09-2024",
     category: "AI & Society",
     excerpt: "AI is no longer just assisting us — it's replacing us. As we cheer for efficiency, are we quietly coding ourselves out of purpose? Explore the paradox of automation, meaning, and what we must never let machines take from us.",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
     author: {
       name: "Venkata Sai Charan",
       avatar: "/images/avatar.jpg",
@@ -151,90 +151,39 @@ graph TD
 <article class="prose lg:prose-xl max-w-none mx-auto p-6">
   <h1 class="mb-10 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">🧠 The AI Illusion: Are We Automating Ourselves Into Irrelevance?</h1>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <p class="mb-4 text-lg">Every day, a new tool promises to automate your job, write your emails, or even think for you. AI is no longer just assisting us — it's replacing us. But as we cheer for efficiency, are we quietly coding ourselves out of purpose?</p>
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="AI at work" class="w-full rounded-xl shadow mb-4" />
-    <p class="text-xs text-gray-500 mb-2">Image by <a href="https://unsplash.com/photos/1506744038136" target="_blank" rel="noopener">Unsplash</a></p>
+    <p class="mb-4 text-lg">Artificial Intelligence is everywhere: writing code, generating art, answering emails, and even making decisions. But as we automate more, are we also erasing what makes us human?</p>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="AI neural network visualization" class="w-full rounded-xl shadow mb-4" />
+    <p class="text-xs text-gray-500 mb-2">Image: Neural network visualization (Unsplash)</p>
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">1. The Mirage of Ultimate Efficiency</h2>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>Everyone is obsessed with "10x productivity."</li>
-      <li>Tools like ChatGPT, AutoGPT, and Copilot are eliminating repetitive tasks.</li>
-      <li>But behind every automated system is a person losing context, skill, or decision-making power.</li>
-    </ul>
-    <blockquote class="border-l-4 border-pink-400 bg-pink-50/60 italic text-lg p-4 rounded-lg my-6">"We're getting faster — but are we getting dumber?"</blockquote>
+    <p>We celebrate every new tool that promises to make us "10x" more productive. Yet, as AI takes over repetitive and even creative tasks, we risk losing context, skill, and the satisfaction of problem-solving. Are we trading depth for speed?</p>
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Robot hand typing on keyboard" class="w-full rounded-xl shadow mb-4" />
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">2. Automation vs. Human Meaning</h2>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>There's a difference between doing less and doing nothing.</li>
-      <li>Humans don't just work for money — they crave impact, growth, mastery.</li>
-      <li>When machines do everything, what's left for us to feel proud of?</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Robot and human hand" class="w-full rounded-xl shadow mb-4" />
+    <p>Efficiency is not the same as fulfillment. Humans crave mastery, impact, and connection. When machines do everything, what remains for us to feel proud of? The risk is not just job loss, but meaning loss.</p>
+    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=800&q=80" alt="Human and robot handshake" class="w-full rounded-xl shadow mb-4" />
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">3. The Disappearing Middle Class of Knowledge Work</h2>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>AI is squeezing out:</li>
-      <li>Junior developers</li>
-      <li>Copywriters</li>
-      <li>Designers</li>
-      <li>Analysts</li>
-      <li>Top-tier experts and decision-makers still thrive. Entry-level workers are getting displaced before they learn.</li>
-      <li>The ladder is being pulled up — from the bottom.</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80" alt="AI replacing jobs" class="w-full rounded-xl shadow mb-4" />
+    <p>AI is rapidly automating roles once considered "safe": junior developers, copywriters, designers, analysts. The top experts still thrive, but entry-level opportunities are shrinking. The career ladder is being pulled up from the bottom.</p>
+    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="AI replacing knowledge workers" class="w-full rounded-xl shadow mb-4" />
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">4. The Creative Paradox</h2>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>AI is great at replicating, not originating.</li>
-      <li>When we automate content, code, or communication, we standardize it.</li>
-      <li>Ironically, AI makes us more average.</li>
-      <li>Is uniqueness becoming a liability in an optimized world?</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Creative paradox AI" class="w-full rounded-xl shadow mb-4" />
+    <p>AI excels at replication, not originality. As we automate content, code, and communication, we risk standardizing creativity itself. Ironically, the more we optimize, the more average we become. Is uniqueness a liability in an AI world?</p>
+    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="AI and creative process" class="w-full rounded-xl shadow mb-4" />
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">5. What We Must Not Automate</h2>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>Ethical boundaries we must preserve:</li>
-      <li>Empathy</li>
-      <li>Judgment</li>
-      <li>Relationships</li>
-      <li>Responsibility</li>
-      <li>Let machines take tasks — but never the meaning behind them.</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Empathy and AI" class="w-full rounded-xl shadow mb-4" />
+    <p>Some boundaries must remain human: empathy, judgment, relationships, responsibility. Let machines take tasks, but never the meaning behind them.</p>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Empathy in AI" class="w-full rounded-xl shadow mb-4" />
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">6. Call to Action: From Tool-User to System Thinker</h2>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>We must evolve:</li>
-      <li>From being just users to architects of the system.</li>
-      <li>From being replaced to redefining what only humans can do.</li>
-      <li>The future belongs to those who design, interpret, and connect the dots.</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=800&q=80" alt="System thinker AI" class="w-full rounded-xl shadow mb-4" />
-  </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <h2 class="mb-6 text-2xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">🎯 Bonus: What parts of your job are truly human?</h2>
-    <form class="mb-6">
-      <label class="block mb-2 font-semibold">Take this quick quiz:</label>
-      <ul class="list-disc pl-6 space-y-2">
-        <li><input type="checkbox" disabled /> Building relationships</li>
-        <li><input type="checkbox" disabled /> Making ethical decisions</li>
-        <li><input type="checkbox" disabled /> Solving ambiguous problems</li>
-        <li><input type="checkbox" disabled /> Repetitive data entry</li>
-        <li><input type="checkbox" disabled /> Creative brainstorming</li>
-      </ul>
-      <p class="mt-4 text-sm text-gray-500">Reflect: Which of these do you want to automate? Which do you want to keep?</p>
-    </form>
-    <div class="p-6 bg-pink-50/60 rounded-xl border-l-4 border-pink-400 mt-6">
-      <h3 class="text-xl font-bold mb-2">Reader Challenge:</h3>
-      <p>Try one week without AI tools. No ChatGPT, no Copilot, no smart autocomplete. At the end, reflect: What did you miss? What did you rediscover?</p>
-    </div>
+    <p>The future belongs to those who design, interpret, and connect the dots. We must evolve from being just users to architects of the system, from being replaced to redefining what only humans can do.</p>
+    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="System thinker AI" class="w-full rounded-xl shadow mb-4" />
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100 text-center">
     <h2 class="mb-6 text-2xl font-extrabold tracking-wide text-gray-900">🔚 Closing Line</h2>
