@@ -150,7 +150,6 @@ graph TD
     content: `
 <article class="prose lg:prose-xl max-w-none mx-auto px-4 sm:px-8 py-10">
   <header class="text-center mb-16">
-    <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 mb-4">The AI Illusion: Are We Automating Ourselves Into Irrelevance?</h1>
     <p class="text-gray-600 text-xl">AI is no longer just assisting us — it's replacing us. As we cheer for efficiency, are we quietly coding ourselves out of purpose?</p>
     <img src="https://tse2.mm.bing.net/th/id/OIP.amRHdMKyk8OYhvFPUeNZgAHaD4?pid=Api" alt="AI Chip - Hero Image" class="mx-auto rounded-xl shadow-md mt-6 w-3/4 sm:w-1/2">
   </header>
