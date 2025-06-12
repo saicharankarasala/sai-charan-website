@@ -149,14 +149,8 @@ graph TD
     lastUpdated: "06-09-2024",
     content: `
 <article class="prose lg:prose-xl max-w-none mx-auto p-6">
-  <h1 class="mb-10 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">🧠 The AI Illusion: Are We Automating Ourselves Into Irrelevance?</h1>
+  <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900">1. The Mirage of Ultimate Efficiency</h2>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <p class="mb-4 text-lg">Artificial Intelligence is everywhere: writing code, generating art, answering emails, and even making decisions. But as we automate more, are we also erasing what makes us human?</p>
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="AI neural network visualization" class="w-full rounded-xl shadow mb-4" />
-    <p class="text-xs text-gray-500 mb-2">Image: Neural network visualization (Unsplash)</p>
-  </section>
-  <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
-    <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">1. The Mirage of Ultimate Efficiency</h2>
     <p>We celebrate every new tool that promises to make us "10x" more productive. Yet, as AI takes over repetitive and even creative tasks, we risk losing context, skill, and the satisfaction of problem-solving. Are we trading depth for speed?</p>
     <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Robot hand typing on keyboard" class="w-full rounded-xl shadow mb-4" />
   </section>
