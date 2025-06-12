@@ -152,8 +152,8 @@ graph TD
   <h1 class="mb-10 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">🧠 The AI Illusion: Are We Automating Ourselves Into Irrelevance?</h1>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <p class="mb-4 text-lg">Every day, a new tool promises to automate your job, write your emails, or even think for you. AI is no longer just assisting us — it's replacing us. But as we cheer for efficiency, are we quietly coding ourselves out of purpose?</p>
-    <img src="https://marketoonist.com/wp-content/uploads/2024/04/aicopilots_marketoonist.png" alt="AI at work cartoon by Marketoonist" class="w-full rounded-xl shadow mb-4" />
-    <p class="text-xs text-gray-500 mb-2">Cartoon by <a href="https://marketoonist.com/2024/04/aicopilots.html" target="_blank" rel="noopener">Marketoonist / Tom Fishburne</a> (used for commentary/educational purposes)</p>
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="AI at work" class="w-full rounded-xl shadow mb-4" />
+    <p class="text-xs text-gray-500 mb-2">Image by <a href="https://unsplash.com/photos/1506744038136" target="_blank" rel="noopener">Unsplash</a></p>
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">1. The Mirage of Ultimate Efficiency</h2>
