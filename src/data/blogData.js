@@ -157,7 +157,7 @@ graph TD
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">2. Automation vs. Human Meaning</h2>
     <p>Efficiency is not the same as fulfillment. Humans crave mastery, impact, and connection. When machines do everything, what remains for us to feel proud of? The risk is not just job loss, but meaning loss.</p>
-    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=800&q=80" alt="Human and robot handshake" class="w-full rounded-xl shadow mb-4" />
+    <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=80" alt="Human and robot handshake" class="w-full rounded-xl shadow mb-4" />
   </section>
   <section class="mb-14 p-8 bg-white/90 rounded-2xl shadow-lg border border-gray-100">
     <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900 border-l-4 border-pink-400 pl-4 bg-white/80 rounded shadow-sm">3. The Disappearing Middle Class of Knowledge Work</h2>
