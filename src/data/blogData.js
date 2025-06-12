@@ -136,7 +136,7 @@ graph TD
   {
     slug: "ai-illusion-automation-irrelevance",
     title: "The AI Illusion: Are We Automating Ourselves Into Irrelevance?",
-    date: "06-09-2024",
+    date: "06-10-2024",
     category: "AI & Society",
     excerpt: "AI is no longer just assisting us — it's replacing us. As we cheer for efficiency, are we quietly coding ourselves out of purpose? Explore the paradox of automation, meaning, and what we must never let machines take from us.",
     image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
@@ -146,7 +146,7 @@ graph TD
       role: "Full Stack Developer"
     },
     readingTime: "7 min read",
-    lastUpdated: "06-09-2024",
+    lastUpdated: "06-10-2024",
     content: `
 <article class="prose lg:prose-xl max-w-none mx-auto p-6">
   <h2 class="mb-6 text-3xl font-extrabold tracking-wide text-gray-900">1. The Mirage of Ultimate Efficiency</h2>
