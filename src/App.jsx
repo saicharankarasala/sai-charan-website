@@ -121,8 +121,8 @@ const App = () => {
               <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-lg border-b-2 border-[#e13a7a] transition-all duration-300">
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                   <a href="#home" className="flex items-center gap-2" aria-label="Home">
-                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE]">
-                      <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                    <span className="inline-flex items-center justify-center w-14 h-14 rounded-full shadow-lg bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] gap-2">
+                      <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
                         <rect x="12" y="12" width="24" height="24" rx="4" fill="white" />
                         <rect x="18" y="18" width="12" height="12" rx="2" fill="#e13a7a" />
                         <rect x="22" y="4" width="4" height="6" rx="2" fill="#6d217f" />
@@ -130,6 +130,7 @@ const App = () => {
                         <rect x="4" y="22" width="6" height="4" rx="2" fill="#6d217f" />
                         <rect x="38" y="22" width="6" height="4" rx="2" fill="#6d217f" />
                       </svg>
+                      <span className="text-white text-xl font-extrabold tracking-tight drop-shadow-lg" style={{letterSpacing: '0.08em'}}>VSC</span>
                     </span>
                   </a>
                   <div className="hidden md:flex items-center gap-8">
