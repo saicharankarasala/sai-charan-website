@@ -204,7 +204,7 @@ const App = () => {
                     <img 
                       src="/images/profile.JPG" 
                       alt="Venkata Sai Charan - UI/UX Designer & Software Engineer" 
-                      className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow object-cover relative z-10 profile-img"
+                      className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow object-cover object-top relative z-10 profile-img"
                     />
                   </div>
                 </div>
