@@ -122,7 +122,14 @@ const App = () => {
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                   <a href="#home" className="flex items-center gap-2" aria-label="Home">
                     <span className="inline-flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE]">
-                      <span className="text-white text-2xl font-extrabold tracking-tight">VSC</span>
+                      <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                        <rect x="12" y="12" width="24" height="24" rx="4" fill="white" />
+                        <rect x="18" y="18" width="12" height="12" rx="2" fill="#e13a7a" />
+                        <rect x="22" y="4" width="4" height="6" rx="2" fill="#6d217f" />
+                        <rect x="22" y="38" width="4" height="6" rx="2" fill="#6d217f" />
+                        <rect x="4" y="22" width="6" height="4" rx="2" fill="#6d217f" />
+                        <rect x="38" y="22" width="6" height="4" rx="2" fill="#6d217f" />
+                      </svg>
                     </span>
                   </a>
                   <div className="hidden md:flex items-center gap-8">
