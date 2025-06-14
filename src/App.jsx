@@ -482,7 +482,7 @@ const App = () => {
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
                       <p className="text-[#e13a7a] mb-2">January 2025 – Present</p>
                       <h4 className="text-lg text-[#e13a7a]">Source Consulting LLC – Remote (<a href="https://touchwindow.com" target="_blank" rel="noopener noreferrer" className="underline">Client: Touch Screens Inc</a>)</h4>
-                      <div className="flex flex-wrap gap-2 mt-2 mb-2">
+                      <div className="flex flex-wrap gap-2 mt-4 mb-2">
                         <span className="tech-tag bg-[#e13a7a] text-white">Python</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Pandas</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">AWS Lambda</span>
