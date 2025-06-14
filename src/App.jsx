@@ -40,6 +40,8 @@ const App = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [showMascot, setShowMascot] = useState(false);
   const konamiCode = useRef([]);
+  const [projectFilter, setProjectFilter] = useState('All');
+  const [projectSort, setProjectSort] = useState('Newest');
 
   const handleCardClick = (section, index) => {
     setExpandedCards(prev => ({
@@ -109,6 +111,99 @@ const App = () => {
   const handleBackToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Project data (move to a separate file if needed)
+  const projects = [
+    {
+      title: 'Personal Portfolio Website',
+      year: 2025,
+      tech: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'EmailJS'],
+      type: 'Web',
+      description: [
+        'Developed and deployed a fully responsive personal portfolio using React, Vite, and Tailwind CSS, hosted on Vercel.',
+        'Showcases professional experience, academic projects, and certifications with smooth animated transitions, dark mode, and EmailJS-powered contact form.',
+        'Integrated Framer Motion for UI animations and implemented modern design principles for an optimized user experience.'
+      ],
+      links: [
+        { label: 'GitHub', url: 'https://github.com/KVSC1511/Portfolio' },
+        { label: 'Live Site', url: 'https://www.venkatasaicharan.com' }
+      ]
+    },
+    {
+      title: 'Enhancing Security & Privacy of Cryptocurrency Transactions',
+      year: 2023,
+      tech: ['Java', 'Python', 'SQL', 'Snowflake', 'Cryptography'],
+      type: 'Backend',
+      description: [
+        'Developed secure backend systems using Java and cryptographic algorithms to safeguard blockchain transactions.',
+        'Conducted risk assessments and implemented security protocols using Python and SQL.',
+        'Used Snowflake for data analysis and performance optimization.',
+        'Strengthened transaction integrity and reduced vulnerabilities.'
+      ]
+    },
+    {
+      title: 'YouTube Data Analysis',
+      year: 2022,
+      tech: ['Apache Kafka', 'Spark', 'Python', 'SQL', 'Tableau'],
+      type: 'Data',
+      description: [
+        'Designed a real-time data pipeline using Apache Kafka and Apache Spark to analyze YouTube viewer behavior.',
+        'Enabled sentiment analysis and trend forecasting; automated data cleaning and analysis with Python and SQL.',
+        'Built interactive dashboards in Tableau to visualize key metrics.',
+        'Provided strategic recommendations for content optimization and audience growth.'
+      ]
+    },
+    {
+      title: 'IoT Sensor Data Analysis for Soil Moisture',
+      year: 2022,
+      tech: ['IoT', 'Azure', 'Python', 'PySpark', 'Tableau', 'Power BI', 'Matplotlib', 'Plotly'],
+      type: 'IoT',
+      description: [
+        'Built an IoT system using ultrasonic sensors and Azure cloud for soil moisture monitoring and decision-making.',
+        'Used Python and Arduino IDE for processing; visualized data with Matplotlib, Plotly, and Tableau.',
+        'Processed large-scale IoT data with PySpark and Hadoop.',
+        'Created dashboards in Tableau and Power BI; automated ETL with Azure Data Factory and Synapse Analytics.'
+      ]
+    },
+    {
+      title: 'A 120 Mbps WDM-Based VLC System for IoT Implementation',
+      year: 2021,
+      tech: ['VLC', 'OptiSystem', 'Python', 'SQL', 'Tableau'],
+      type: 'Research',
+      description: [
+        'Designed and simulated a high-speed Visible Light Communication (VLC) system using OptiSystem and mathematical models.',
+        'Improved efficiency by 25% and predictive accuracy by 20%.',
+        'Analyzed system performance with SQL and Python; presented results using Tableau.',
+        'Enhanced collaboration and system design for mobile and front-end applications.'
+      ]
+    },
+    {
+      title: 'Therapy for Autistic Children Using Robot',
+      year: 2021,
+      tech: ['.NET', 'Python', 'UI/UX', 'Data Visualization'],
+      type: 'AI/Robotics',
+      description: [
+        'Developed an interactive robot using .NET and Python to improve social skills in autistic children, enhancing engagement by 30%.',
+        'Designed a user-friendly interface and conducted needs analysis with therapists to align robot functionality with user needs.',
+        'Conducted usability testing and implemented iterative improvements.',
+        'Used data visualization to present insights and drive design decisions.'
+      ]
+    }
+  ];
+
+  // Unique techs/types/years for filter dropdowns
+  const allTechs = Array.from(new Set(projects.flatMap(p => p.tech))).sort();
+  const allTypes = Array.from(new Set(projects.map(p => p.type)));
+  const allYears = Array.from(new Set(projects.map(p => p.year))).sort((a, b) => b - a);
+
+  // Filter and sort logic
+  let filteredProjects = projects.filter(p =>
+    (projectFilter === 'All' || p.tech.includes(projectFilter) || p.type === projectFilter || p.year === projectFilter)
+  );
+  if (projectSort === 'Newest') filteredProjects.sort((a, b) => b.year - a.year);
+  if (projectSort === 'Oldest') filteredProjects.sort((a, b) => a.year - b.year);
+  if (projectSort === 'A-Z') filteredProjects.sort((a, b) => a.title.localeCompare(b.title));
+  if (projectSort === 'Z-A') filteredProjects.sort((a, b) => b.title.localeCompare(a.title));
 
   return (
     <HelmetProvider>
@@ -448,120 +543,49 @@ const App = () => {
                     <FaProjectDiagram className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Projects</span>
                   </h2>
+                  {/* Filter & Sort Controls */}
+                  <div className="flex flex-wrap gap-4 mb-8 justify-center items-center">
+                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectFilter} onChange={e => setProjectFilter(e.target.value)}>
+                      <option value="All">All</option>
+                      <optgroup label="Tech Stack">
+                        {allTechs.map(tech => <option key={tech} value={tech}>{tech}</option>)}
+                      </optgroup>
+                      <optgroup label="Type">
+                        {allTypes.map(type => <option key={type} value={type}>{type}</option>)}
+                      </optgroup>
+                      <optgroup label="Year">
+                        {allYears.map(year => <option key={year} value={year}>{year}</option>)}
+                      </optgroup>
+                    </select>
+                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectSort} onChange={e => setProjectSort(e.target.value)}>
+                      <option value="Newest">Newest</option>
+                      <option value="Oldest">Oldest</option>
+                      <option value="A-Z">A-Z</option>
+                      <option value="Z-A">Z-A</option>
+                    </select>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Portfolio Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Personal Portfolio Website</h3>
-                      <p className="text-[#e13a7a] mb-4">2025</p>
-                      <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Developed and deployed a fully responsive personal portfolio using React, Vite, and Tailwind CSS, hosted on Vercel.</li>
-                        <li>Showcases professional experience, academic projects, and certifications with smooth animated transitions, dark mode, and EmailJS-powered contact form.</li>
-                        <li>Integrated Framer Motion for UI animations and implemented modern design principles for an optimized user experience.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#61dafb] text-black">React</span>
-                        <span className="tech-tag bg-[#646cff] text-white">Vite</span>
-                        <span className="tech-tag bg-[#38bdf8] text-white">Tailwind CSS</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Framer Motion</span>
-                        <span className="tech-tag bg-[#f7b42c] text-black">EmailJS</span>
+                    {filteredProjects.map((project, idx) => (
+                      <div key={project.title} className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                        <p className="text-[#e13a7a] mb-4">{project.year}</p>
+                        <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                          {project.description.map((desc, i) => <li key={i}>{desc}</li>)}
+                        </ul>
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {project.tech.map(tech => (
+                            <span key={tech} className="tech-tag bg-[#e13a7a] text-white">{tech}</span>
+                          ))}
+                        </div>
+                        {project.links && (
+                          <div className="flex gap-4 mt-4">
+                            {project.links.map(link => (
+                              <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">{link.label}</a>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                      <div className="flex gap-4 mt-4">
-                        <a href="https://github.com/KVSC1511/Portfolio" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">GitHub</a>
-                        <a href="https://www.venkatasaicharan.com" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">Live Site</a>
-                      </div>
-                    </div>
-                    {/* 2023 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Enhancing Security & Privacy of Cryptocurrency Transactions</h3>
-                      <p className="text-[#e13a7a] mb-4">January 2023 – May 2023</p>
-                      <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Developed secure backend systems using Java and cryptographic algorithms to safeguard blockchain transactions.</li>
-                        <li>Conducted risk assessments and implemented security protocols using Python and SQL.</li>
-                        <li>Used Snowflake for data analysis and performance optimization.</li>
-                        <li>Strengthened transaction integrity and reduced vulnerabilities.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#f7df1e] text-black">Java</span>
-                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
-                        <span className="tech-tag bg-[#00758f] text-white">SQL</span>
-                        <span className="tech-tag bg-[#56b4e9] text-black">Snowflake</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Cryptography</span>
-                      </div>
-                    </div>
-                    {/* 2022 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">YouTube Data Analysis</h3>
-                      <p className="text-[#e13a7a] mb-4">August 2022 – December 2022</p>
-                      <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Designed a real-time data pipeline using Apache Kafka and Apache Spark to analyze YouTube viewer behavior.</li>
-                        <li>Enabled sentiment analysis and trend forecasting; automated data cleaning and analysis with Python and SQL.</li>
-                        <li>Built interactive dashboards in Tableau to visualize key metrics.</li>
-                        <li>Provided strategic recommendations for content optimization and audience growth.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#ff9900] text-white">Apache Kafka</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Spark</span>
-                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
-                        <span className="tech-tag bg-[#00758f] text-white">SQL</span>
-                        <span className="tech-tag bg-[#1f77b4] text-white">Tableau</span>
-                      </div>
-                    </div>
-                    {/* 2022 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">IoT Sensor Data Analysis for Soil Moisture</h3>
-                      <p className="text-[#e13a7a] mb-4">August 2022 – December 2022</p>
-                      <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Built an IoT system using ultrasonic sensors and Azure cloud for soil moisture monitoring and decision-making.</li>
-                        <li>Used Python and Arduino IDE for processing; visualized data with Matplotlib, Plotly, and Tableau.</li>
-                        <li>Processed large-scale IoT data with PySpark and Hadoop.</li>
-                        <li>Created dashboards in Tableau and Power BI; automated ETL with Azure Data Factory and Synapse Analytics.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#00b4d8] text-white">IoT</span>
-                        <span className="tech-tag bg-[#0078d4] text-white">Azure</span>
-                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">PySpark</span>
-                        <span className="tech-tag bg-[#1f77b4] text-white">Tableau</span>
-                        <span className="tech-tag bg-[#f7b42c] text-black">Power BI</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Matplotlib</span>
-                        <span className="tech-tag bg-[#ff6384] text-white">Plotly</span>
-                      </div>
-                    </div>
-                    {/* 2021 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">A 120 Mbps WDM-Based VLC System for IoT Implementation</h3>
-                      <p className="text-[#e13a7a] mb-4">August 2020 – January 2021</p>
-                      <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Designed and simulated a high-speed Visible Light Communication (VLC) system using OptiSystem and mathematical models.</li>
-                        <li>Improved efficiency by 25% and predictive accuracy by 20%.</li>
-                        <li>Analyzed system performance with SQL and Python; presented results using Tableau.</li>
-                        <li>Enhanced collaboration and system design for mobile and front-end applications.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#e13a7a] text-white">VLC</span>
-                        <span className="tech-tag bg-[#6d217f] text-white">OptiSystem</span>
-                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
-                        <span className="tech-tag bg-[#00758f] text-white">SQL</span>
-                        <span className="tech-tag bg-[#1f77b4] text-white">Tableau</span>
-                      </div>
-                    </div>
-                    {/* 2019-2021 Project */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Therapy for Autistic Children Using Robot</h3>
-                      <p className="text-[#e13a7a] mb-4">December 2019 – January 2021</p>
-                      <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Developed an interactive robot using .NET and Python to improve social skills in autistic children, enhancing engagement by 30%.</li>
-                        <li>Designed a user-friendly interface and conducted needs analysis with therapists to align robot functionality with user needs.</li>
-                        <li>Conducted usability testing and implemented iterative improvements.</li>
-                        <li>Used data visualization to present insights and drive design decisions.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#512bd4] text-white">.NET</span>
-                        <span className="tech-tag bg-[#3572A5] text-white">Python</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">UI/UX</span>
-                        <span className="tech-tag bg-[#1f77b4] text-white">Data Visualization</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </section>
