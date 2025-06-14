@@ -482,7 +482,12 @@ const App = () => {
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
                       <p className="text-[#e13a7a] mb-2">January 2025 – Present</p>
                       <h4 className="text-lg text-[#e13a7a]">Source Consulting LLC – Remote (<a href="https://touchwindow.com" target="_blank" rel="noopener noreferrer" className="underline">Client: Touch Screens Inc</a>)</h4>
-                      <div className="flex flex-wrap gap-2 mt-4 mb-2">
+                      <ul className="list-disc pl-5 mt-2 text-gray-700">
+                        <li>Automated pricing for 100K+ SKUs using Python, Pandas, AWS Lambda, Google Sheets API</li>
+                        <li>Built ETL pipelines with Hadoop, Snowflake, Pentaho, improving vendor data sync</li>
+                        <li>Visualized KPIs with Tableau, Power BI; implemented REST & Bash scripts for backups</li>
+                      </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
                         <span className="tech-tag bg-[#e13a7a] text-white">Python</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Pandas</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">AWS Lambda</span>
@@ -495,18 +500,17 @@ const App = () => {
                         <span className="tech-tag bg-[#e13a7a] text-white">REST</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Bash</span>
                       </div>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Automated pricing for 100K+ SKUs using Python, Pandas, AWS Lambda, Google Sheets API</li>
-                        <li>Built ETL pipelines with Hadoop, Snowflake, Pentaho, improving vendor data sync</li>
-                        <li>Visualized KPIs with Tableau, Power BI; implemented REST & Bash scripts for backups</li>
-                      </ul>
                     </div>
                     {/* Trbhi INC Experience */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Network Operation Analyst</h3>
                       <p className="text-[#e13a7a] mb-2">April 2024 – December 2024</p>
                       <h4 className="text-lg text-[#e13a7a]">Trbhi INC – Remote (<a href="https://ziplyfiber.com" target="_blank" rel="noopener noreferrer" className="underline">Client: Ziply Fiber Technology</a>)</h4>
-                      <div className="flex flex-wrap gap-2 mt-2 mb-2">
+                      <ul className="list-disc pl-5 mt-2 text-gray-700">
+                        <li>Reduced MTTR by 40% with Python/Bash automation & Dynatrace-based monitoring</li>
+                        <li>Debugged D365 and APIs using PowerShell, SQL Server, and ServiceNow RCA flows</li>
+                      </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
                         <span className="tech-tag bg-[#e13a7a] text-white">Python</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Bash</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Dynatrace</span>
@@ -515,17 +519,18 @@ const App = () => {
                         <span className="tech-tag bg-[#e13a7a] text-white">ServiceNow</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">D365</span>
                       </div>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Reduced MTTR by 40% with Python/Bash automation & Dynatrace-based monitoring</li>
-                        <li>Debugged D365 and APIs using PowerShell, SQL Server, and ServiceNow RCA flows</li>
-                      </ul>
                     </div>
                     {/* UMKC TA Experience */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Graduate Student Technical Assistant</h3>
                       <p className="text-[#e13a7a] mb-2">May 2023 – December 2023</p>
                       <h4 className="text-lg text-[#e13a7a]">University of Missouri - Kansas City – Kansas City, MO, USA</h4>
-                      <div className="flex flex-wrap gap-2 mt-2 mb-2">
+                      <ul className="list-disc pl-5 mt-2 text-gray-700">
+                        <li>Managed 150+ lab systems with PXE, GPO, Linux/Windows Dual Boot</li>
+                        <li>Automated diagnostics using Python & Bash, cutting support tickets by 35%</li>
+                        <li>Raised student support satisfaction by 40% via one-on-one support and feedback tracking.</li>
+                      </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
                         <span className="tech-tag bg-[#e13a7a] text-white">PXE</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">GPO</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Linux</span>
@@ -534,18 +539,19 @@ const App = () => {
                         <span className="tech-tag bg-[#e13a7a] text-white">Bash</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Support Automation</span>
                       </div>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Managed 150+ lab systems with PXE, GPO, Linux/Windows Dual Boot</li>
-                        <li>Automated diagnostics using Python & Bash, cutting support tickets by 35%</li>
-                        <li>Raised student support satisfaction by 40% via one-on-one support and feedback tracking.</li>
-                      </ul>
                     </div>
                     {/* Wipro Experience */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
                       <p className="text-[#e13a7a] mb-2">September 2021 – July 2022</p>
                       <h4 className="text-lg text-[#e13a7a]">Wipro Technologies – Bengaluru, KA, India</h4>
-                      <div className="flex flex-wrap gap-2 mt-2 mb-2">
+                      <ul className="list-disc pl-5 mt-2 text-gray-700">
+                        <li>Built ETL pipelines using Informatica, PL/SQL, Unix Shell, and CI via GitLab</li>
+                        <li>Automated reporting flows with Python, Excel Macros, improving ETL transparency</li>
+                        <li>Managed metadata and repositories to streamline project execution.</li>
+                        <li>Supported cross-functional teams with technical insights using SQL and Python.</li>
+                      </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
                         <span className="tech-tag bg-[#e13a7a] text-white">Informatica</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">PL/SQL</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Unix Shell</span>
@@ -554,19 +560,18 @@ const App = () => {
                         <span className="tech-tag bg-[#e13a7a] text-white">Excel Macros</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">SQL</span>
                       </div>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Built ETL pipelines using Informatica, PL/SQL, Unix Shell, and CI via GitLab</li>
-                        <li>Automated reporting flows with Python, Excel Macros, improving ETL transparency</li>
-                        <li>Managed metadata and repositories to streamline project execution.</li>
-                        <li>Supported cross-functional teams with technical insights using SQL and Python.</li>
-                      </ul>
                     </div>
                     {/* Merizon Technologies Experience */}
                     <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                       <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
                       <p className="text-[#e13a7a] mb-2">May 2019 – August 2021</p>
                       <h4 className="text-lg text-[#e13a7a]">Merizon Technologies LLC – Remote</h4>
-                      <div className="flex flex-wrap gap-2 mt-2 mb-2">
+                      <ul className="list-disc pl-5 mt-2 text-gray-700">
+                        <li>Developed full-stack apps with Java, Spring Boot, MySQL, JS</li>
+                        <li>Implemented CI using GitHub Actions, improved test coverage via JUnit & Selenium</li>
+                        <li>Improved API performance by 25% through SQL query optimization.</li>
+                      </ul>
+                      <div className="flex flex-wrap gap-2 mt-4">
                         <span className="tech-tag bg-[#e13a7a] text-white">Java</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">Spring Boot</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">MySQL</span>
@@ -576,11 +581,6 @@ const App = () => {
                         <span className="tech-tag bg-[#e13a7a] text-white">Selenium</span>
                         <span className="tech-tag bg-[#e13a7a] text-white">SQL</span>
                       </div>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Developed full-stack apps with Java, Spring Boot, MySQL, JS</li>
-                        <li>Implemented CI using GitHub Actions, improved test coverage via JUnit & Selenium</li>
-                        <li>Improved API performance by 25% through SQL query optimization.</li>
-                      </ul>
                     </div>
                   </div>
                 </div>
