@@ -621,6 +621,27 @@ const App = () => {
                     <FaProjectDiagram className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Projects</span>
                   </h2>
+                  {/* Filter & Sort Controls */}
+                  <div className="flex flex-wrap gap-4 mb-8 justify-center items-center">
+                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectFilter} onChange={e => setProjectFilter(e.target.value)}>
+                      <option value="All">All</option>
+                      <optgroup label="Tech Stack">
+                        {allTechs.map(tech => <option key={tech} value={tech}>{tech}</option>)}
+                      </optgroup>
+                      <optgroup label="Type">
+                        {allTypes.map(type => <option key={type} value={type}>{type}</option>)}
+                      </optgroup>
+                      <optgroup label="Year">
+                        {allYears.map(year => <option key={year} value={year}>{year}</option>)}
+                      </optgroup>
+                    </select>
+                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectSort} onChange={e => setProjectSort(e.target.value)}>
+                      <option value="Newest">Newest</option>
+                      <option value="Oldest">Oldest</option>
+                      <option value="A-Z">A-Z</option>
+                      <option value="Z-A">Z-A</option>
+                    </select>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((project, idx) => (
                       <div key={project.title} className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
