@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true,
+    sourcemap: false,
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -25,9 +25,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: undefined,
-        entryFileNames: `assets/[name].${new Date().getTime()}.js`,
-        chunkFileNames: `assets/[name].${new Date().getTime()}.js`,
-        assetFileNames: `assets/[name].${new Date().getTime()}.[ext]`
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`
       },
     },
   },
@@ -44,5 +44,10 @@ export default defineConfig({
       'react-icons',
       'react-vertical-timeline-component',
     ],
+    exclude: [
+      '@vercel/analytics',
+      '@vercel/speed-insights',
+      'framer-motion'
+    ]
   },
 }) 
