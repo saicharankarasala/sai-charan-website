@@ -50,4 +50,10 @@ export default defineConfig({
       'framer-motion'
     ]
   },
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@api': '/api'
+    }
+  }
 }) 
