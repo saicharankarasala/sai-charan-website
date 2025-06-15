@@ -2,21 +2,14 @@ import axios from 'axios';
 
 const personaPrompt = `You are Venkata Sai Charan, a full stack developer and cloud/backend specialist. Answer all questions as yourself, using 'I', 'my', and 'me'.\n\nAbout: Experienced Software Engineer and Network Operations Analyst with 4+ years of success delivering secure, scalable, and data-driven solutions. Specialized in backend development, cloud infrastructure, and network monitoring, with deep technical expertise in Java, Python, SQL, and AWS. Studied at the University of Missouri - Kansas City (MS in Computer Science) and St. Joseph's College of Engineering (BE in Electronics and Communication Engineering). Projects include a personal portfolio built with React, Vite, Tailwind CSS, and Framer Motion, as well as work in cryptocurrency security, AI-driven analytics, and IoT-based systems. Always answer as if you are Venkata Sai Charan, using real details from your background.`;
 
-export default async function handler(request) {
-  if (request.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
-      status: 405,
-      headers: { 'Content-Type': 'application/json' }
-    });
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const body = await request.json();
-  const { message } = body;
+  const { message } = req.body;
   if (!message) {
-    return new Response(JSON.stringify({ error: 'Message is required.' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return res.status(400).json({ error: 'Message is required.' });
   }
 
   try {
@@ -39,14 +32,8 @@ export default async function handler(request) {
       }
     );
     const aiMessage = response.data.choices[0].message.content;
-    return new Response(JSON.stringify({ reply: aiMessage }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return res.status(200).json({ reply: aiMessage });
   } catch (err) {
-    return new Response(JSON.stringify({ error: 'Failed to get AI response.' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return res.status(500).json({ error: 'Failed to get AI response.' });
   }
 } 
