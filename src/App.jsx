@@ -42,6 +42,8 @@ const App = () => {
   const konamiCode = useRef([]);
   const [projectFilter, setProjectFilter] = useState('All');
   const [projectSort, setProjectSort] = useState('Newest');
+  const [experienceFilter, setExperienceFilter] = useState('All');
+  const [experienceSort, setExperienceSort] = useState('Newest');
 
   const handleCardClick = (section, index) => {
     setExpandedCards(prev => ({
@@ -191,10 +193,92 @@ const App = () => {
     }
   ];
 
+  // Experience data
+  const experiences = [
+    {
+      title: 'Software Engineer',
+      company: 'Source Consulting LLC – Remote',
+      companyUrl: 'https://touchwindow.com',
+      client: 'Touch Screens Inc',
+      date: 'January 2025 – Present',
+      year: 2025,
+      type: 'Full-time',
+      tech: ['Python', 'Pandas', 'AWS Lambda', 'Google Sheets API', 'Hadoop', 'Snowflake', 'Pentaho', 'Tableau', 'Power BI', 'REST', 'Bash'],
+      bullets: [
+        'Automated pricing for 100K+ SKUs using Python, Pandas, AWS Lambda, Google Sheets API',
+        'Built ETL pipelines with Hadoop, Snowflake, Pentaho, improving vendor data sync',
+        'Visualized KPIs with Tableau, Power BI; implemented REST & Bash scripts for backups'
+      ]
+    },
+    {
+      title: 'Network Operation Analyst',
+      company: 'Trbhi INC – Remote',
+      companyUrl: 'https://ziplyfiber.com',
+      client: 'Ziply Fiber Technology',
+      date: 'April 2024 – December 2024',
+      year: 2024,
+      type: 'Full-time',
+      tech: ['Python', 'Bash', 'Dynatrace', 'PowerShell', 'SQL Server', 'ServiceNow', 'D365'],
+      bullets: [
+        'Reduced MTTR by 40% with Python/Bash automation & Dynatrace-based monitoring',
+        'Debugged D365 and APIs using PowerShell, SQL Server, and ServiceNow RCA flows'
+      ]
+    },
+    {
+      title: 'Graduate Student Technical Assistant',
+      company: 'University of Missouri - Kansas City – Kansas City, MO, USA',
+      companyUrl: '',
+      client: '',
+      date: 'May 2023 – December 2023',
+      year: 2023,
+      type: 'Assistant',
+      tech: ['PXE', 'GPO', 'Linux', 'Windows', 'Python', 'Bash', 'Support Automation'],
+      bullets: [
+        'Managed 150+ lab systems with PXE, GPO, Linux/Windows Dual Boot',
+        'Automated diagnostics using Python & Bash, cutting support tickets by 35%',
+        'Raised student support satisfaction by 40% via one-on-one support and feedback tracking.'
+      ]
+    },
+    {
+      title: 'Software Engineer',
+      company: 'Wipro Technologies – Bengaluru, KA, India',
+      companyUrl: '',
+      client: '',
+      date: 'September 2021 – July 2022',
+      year: 2021,
+      type: 'Full-time',
+      tech: ['Informatica', 'PL/SQL', 'Unix Shell', 'GitLab CI', 'Python', 'Excel Macros', 'SQL'],
+      bullets: [
+        'Built ETL pipelines using Informatica, PL/SQL, Unix Shell, and CI via GitLab',
+        'Automated reporting flows with Python, Excel Macros, improving ETL transparency',
+        'Managed metadata and repositories to streamline project execution.',
+        'Supported cross-functional teams with technical insights using SQL and Python.'
+      ]
+    },
+    {
+      title: 'Software Engineer',
+      company: 'Merizon Technologies LLC – Remote',
+      companyUrl: '',
+      client: '',
+      date: 'May 2019 – August 2021',
+      year: 2021,
+      type: 'Full-time',
+      tech: ['Java', 'Spring Boot', 'MySQL', 'JavaScript', 'GitHub Actions', 'JUnit', 'Selenium', 'SQL'],
+      bullets: [
+        'Developed full-stack apps with Java, Spring Boot, MySQL, JS',
+        'Implemented CI using GitHub Actions, improved test coverage via JUnit & Selenium',
+        'Improved API performance by 25% through SQL query optimization.'
+      ]
+    }
+  ];
+
   // Unique techs/types/years for filter dropdowns
   const allTechs = Array.from(new Set(projects.flatMap(p => p.tech))).sort();
   const allTypes = Array.from(new Set(projects.map(p => p.type)));
   const allYears = Array.from(new Set(projects.map(p => p.year))).sort((a, b) => b - a);
+  const allExpTechs = Array.from(new Set(experiences.flatMap(e => e.tech))).sort();
+  const allExpTypes = Array.from(new Set(experiences.map(e => e.type)));
+  const allExpYears = Array.from(new Set(experiences.map(e => e.year))).sort((a, b) => b - a);
 
   // Filter and sort logic
   let filteredProjects = projects.filter(p =>
@@ -204,6 +288,14 @@ const App = () => {
   if (projectSort === 'Oldest') filteredProjects.sort((a, b) => a.year - b.year);
   if (projectSort === 'A-Z') filteredProjects.sort((a, b) => a.title.localeCompare(b.title));
   if (projectSort === 'Z-A') filteredProjects.sort((a, b) => b.title.localeCompare(a.title));
+
+  let filteredExperiences = experiences.filter(e =>
+    (experienceFilter === 'All' || e.tech.includes(experienceFilter) || e.type === experienceFilter || e.year === experienceFilter)
+  );
+  if (experienceSort === 'Newest') filteredExperiences.sort((a, b) => b.year - a.year);
+  if (experienceSort === 'Oldest') filteredExperiences.sort((a, b) => a.year - b.year);
+  if (experienceSort === 'A-Z') filteredExperiences.sort((a, b) => a.title.localeCompare(b.title));
+  if (experienceSort === 'Z-A') filteredExperiences.sort((a, b) => b.title.localeCompare(a.title));
 
   return (
     <HelmetProvider>
@@ -476,112 +568,48 @@ const App = () => {
                     <FaBriefcase className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Experience</span>
                   </h2>
+                  {/* Filter & Sort Controls */}
+                  <div className="flex flex-wrap gap-4 mb-8 justify-center items-center">
+                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={experienceFilter} onChange={e => setExperienceFilter(e.target.value)}>
+                      <option value="All">All</option>
+                      <optgroup label="Tech Stack">
+                        {allExpTechs.map(tech => <option key={tech} value={tech}>{tech}</option>)}
+                      </optgroup>
+                      <optgroup label="Type">
+                        {allExpTypes.map(type => <option key={type} value={type}>{type}</option>)}
+                      </optgroup>
+                      <optgroup label="Year">
+                        {allExpYears.map(year => <option key={year} value={year}>{year}</option>)}
+                      </optgroup>
+                    </select>
+                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={experienceSort} onChange={e => setExperienceSort(e.target.value)}>
+                      <option value="Newest">Newest</option>
+                      <option value="Oldest">Oldest</option>
+                      <option value="A-Z">A-Z</option>
+                      <option value="Z-A">Z-A</option>
+                    </select>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Source Consulting Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
-                      <p className="text-[#e13a7a] mb-2">January 2025 – Present</p>
-                      <h4 className="text-lg text-[#e13a7a]">Source Consulting LLC – Remote (<a href="https://touchwindow.com" target="_blank" rel="noopener noreferrer" className="underline">Client: Touch Screens Inc</a>)</h4>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Automated pricing for 100K+ SKUs using Python, Pandas, AWS Lambda, Google Sheets API</li>
-                        <li>Built ETL pipelines with Hadoop, Snowflake, Pentaho, improving vendor data sync</li>
-                        <li>Visualized KPIs with Tableau, Power BI; implemented REST & Bash scripts for backups</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#e13a7a] text-white">Python</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Pandas</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">AWS Lambda</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Google Sheets API</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Hadoop</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Snowflake</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Pentaho</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Tableau</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Power BI</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">REST</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Bash</span>
+                    {filteredExperiences.map((exp, idx) => (
+                      <div key={exp.title + exp.date} className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                        <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
+                        <p className="text-[#e13a7a] mb-2">{exp.date}</p>
+                        <h4 className="text-lg text-[#e13a7a]">
+                          {exp.company}
+                          {exp.companyUrl && (
+                            <> (<a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="underline">Client: {exp.client}</a>)</>
+                          )}
+                        </h4>
+                        <ul className="list-disc pl-5 mt-2 text-gray-700">
+                          {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                        </ul>
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {exp.tech.map(tech => (
+                            <span key={tech} className="tech-tag bg-[#e13a7a] text-white">{tech}</span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    {/* Trbhi INC Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Network Operation Analyst</h3>
-                      <p className="text-[#e13a7a] mb-2">April 2024 – December 2024</p>
-                      <h4 className="text-lg text-[#e13a7a]">Trbhi INC – Remote (<a href="https://ziplyfiber.com" target="_blank" rel="noopener noreferrer" className="underline">Client: Ziply Fiber Technology</a>)</h4>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Reduced MTTR by 40% with Python/Bash automation & Dynatrace-based monitoring</li>
-                        <li>Debugged D365 and APIs using PowerShell, SQL Server, and ServiceNow RCA flows</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#e13a7a] text-white">Python</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Bash</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Dynatrace</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">PowerShell</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">SQL Server</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">ServiceNow</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">D365</span>
-                      </div>
-                    </div>
-                    {/* UMKC TA Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Graduate Student Technical Assistant</h3>
-                      <p className="text-[#e13a7a] mb-2">May 2023 – December 2023</p>
-                      <h4 className="text-lg text-[#e13a7a]">University of Missouri - Kansas City – Kansas City, MO, USA</h4>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Managed 150+ lab systems with PXE, GPO, Linux/Windows Dual Boot</li>
-                        <li>Automated diagnostics using Python & Bash, cutting support tickets by 35%</li>
-                        <li>Raised student support satisfaction by 40% via one-on-one support and feedback tracking.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#e13a7a] text-white">PXE</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">GPO</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Linux</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Windows</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Python</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Bash</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Support Automation</span>
-                      </div>
-                    </div>
-                    {/* Wipro Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
-                      <p className="text-[#e13a7a] mb-2">September 2021 – July 2022</p>
-                      <h4 className="text-lg text-[#e13a7a]">Wipro Technologies – Bengaluru, KA, India</h4>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Built ETL pipelines using Informatica, PL/SQL, Unix Shell, and CI via GitLab</li>
-                        <li>Automated reporting flows with Python, Excel Macros, improving ETL transparency</li>
-                        <li>Managed metadata and repositories to streamline project execution.</li>
-                        <li>Supported cross-functional teams with technical insights using SQL and Python.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#e13a7a] text-white">Informatica</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">PL/SQL</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Unix Shell</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">GitLab CI</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Python</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Excel Macros</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">SQL</span>
-                      </div>
-                    </div>
-                    {/* Merizon Technologies Experience */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
-                      <p className="text-[#e13a7a] mb-2">May 2019 – August 2021</p>
-                      <h4 className="text-lg text-[#e13a7a]">Merizon Technologies LLC – Remote</h4>
-                      <ul className="list-disc pl-5 mt-2 text-gray-700">
-                        <li>Developed full-stack apps with Java, Spring Boot, MySQL, JS</li>
-                        <li>Implemented CI using GitHub Actions, improved test coverage via JUnit & Selenium</li>
-                        <li>Improved API performance by 25% through SQL query optimization.</li>
-                      </ul>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="tech-tag bg-[#e13a7a] text-white">Java</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Spring Boot</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">MySQL</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">JavaScript</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">GitHub Actions</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">JUnit</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">Selenium</span>
-                        <span className="tech-tag bg-[#e13a7a] text-white">SQL</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </section>
@@ -593,27 +621,6 @@ const App = () => {
                     <FaProjectDiagram className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Projects</span>
                   </h2>
-                  {/* Filter & Sort Controls */}
-                  <div className="flex flex-wrap gap-4 mb-8 justify-center items-center">
-                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectFilter} onChange={e => setProjectFilter(e.target.value)}>
-                      <option value="All">All</option>
-                      <optgroup label="Tech Stack">
-                        {allTechs.map(tech => <option key={tech} value={tech}>{tech}</option>)}
-                      </optgroup>
-                      <optgroup label="Type">
-                        {allTypes.map(type => <option key={type} value={type}>{type}</option>)}
-                      </optgroup>
-                      <optgroup label="Year">
-                        {allYears.map(year => <option key={year} value={year}>{year}</option>)}
-                      </optgroup>
-                    </select>
-                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectSort} onChange={e => setProjectSort(e.target.value)}>
-                      <option value="Newest">Newest</option>
-                      <option value="Oldest">Oldest</option>
-                      <option value="A-Z">A-Z</option>
-                      <option value="Z-A">Z-A</option>
-                    </select>
-                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((project, idx) => (
                       <div key={project.title} className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
