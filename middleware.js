@@ -78,19 +78,16 @@ export function middleware(request) {
 
     // Check against known spam domains
     if (SPAM_DOMAINS.some(domain => refererHost.includes(domain))) {
-      console.log(`Blocked spam domain: ${refererHost}`);
       return new NextResponse(null, { status: 403 });
     }
 
     // Check for suspicious hostname patterns
     if (isSuspiciousHostname(refererHost)) {
-      console.log(`Blocked suspicious hostname: ${refererHost}`);
       return new NextResponse(null, { status: 403 });
     }
 
     // Check against spam patterns
     if (SPAM_PATTERNS.some(pattern => pattern.test(referer))) {
-      console.log(`Blocked spam pattern: ${referer}`);
       return new NextResponse(null, { status: 403 });
     }
 
@@ -101,7 +98,6 @@ export function middleware(request) {
 
   } catch (error) {
     // If URL parsing fails, allow the request but mark it as suspicious
-    console.log(`Suspicious referrer parsing error: ${error.message}`);
     const response = NextResponse.next();
     response.headers.set('X-Referrer-Status', 'suspicious');
     return response;
