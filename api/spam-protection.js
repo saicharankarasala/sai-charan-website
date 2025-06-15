@@ -1,5 +1,3 @@
-import { NextResponse } from 'next/server';
-
 // List of known spam domains and patterns
 const SPAM_DOMAINS = [
   'semalt.com',
@@ -64,12 +62,12 @@ const isSuspiciousHostname = (hostname) => {
   return false;
 };
 
-export function middleware(request) {
+export default function handler(request) {
   const referer = request.headers.get('referer');
   
   // If no referer, allow the request
   if (!referer) {
-    return NextResponse.next();
+    return new Response(null, { status: 200 });
   }
 
   try {
@@ -78,42 +76,34 @@ export function middleware(request) {
 
     // Check against known spam domains
     if (SPAM_DOMAINS.some(domain => refererHost.includes(domain))) {
-      return new NextResponse(null, { status: 403 });
+      return new Response(null, { status: 403 });
     }
 
     // Check for suspicious hostname patterns
     if (isSuspiciousHostname(refererHost)) {
-      return new NextResponse(null, { status: 403 });
+      return new Response(null, { status: 403 });
     }
 
     // Check against spam patterns
     if (SPAM_PATTERNS.some(pattern => pattern.test(referer))) {
-      return new NextResponse(null, { status: 403 });
+      return new Response(null, { status: 403 });
     }
 
     // Add custom header to mark legitimate referrers
-    const response = NextResponse.next();
-    response.headers.set('X-Referrer-Status', 'verified');
-    return response;
+    return new Response(null, {
+      status: 200,
+      headers: {
+        'X-Referrer-Status': 'verified'
+      }
+    });
 
   } catch (error) {
     // If URL parsing fails, allow the request but mark it as suspicious
-    const response = NextResponse.next();
-    response.headers.set('X-Referrer-Status', 'suspicious');
-    return response;
+    return new Response(null, {
+      status: 200,
+      headers: {
+        'X-Referrer-Status': 'suspicious'
+      }
+    });
   }
-}
-
-// Configure which paths the middleware should run on
-export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
-}; 
+} 
