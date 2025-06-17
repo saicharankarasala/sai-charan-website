@@ -26,7 +26,6 @@ import BlogLanding from "./pages/BlogLanding";
 import BlogPost from "./pages/BlogPost";
 import { Analytics } from '@vercel/analytics/react';
 import { Typewriter } from 'react-simple-typewriter';
-import ChatWidget from './components/ChatWidget';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -717,7 +716,6 @@ const App = () => {
                   <span className="speech-bubble">Hi! Thanks for visiting my portfolio!</span>
                 </div>
               )}
-              <ChatWidget />
             </div>
           } />
       </Routes>
