@@ -382,7 +382,7 @@ Feel free to reach out for collaborations, questions, or just to say hello!
 
 ## 🙋‍♂️ Author
 
-This portfolio was designed and developed by:
+This portfolio was designed and developed by
 
 **Venkata Sai Charan Karasala**
 
