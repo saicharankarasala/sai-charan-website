@@ -384,6 +384,6 @@ Feel free to reach out for collaborations, questions, or just to say hello!
 
 This portfolio was designed and developed by
 
-**Venkata Sai Charan**
+** Sai Charan**
 
 
