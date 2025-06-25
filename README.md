@@ -172,7 +172,7 @@ Feel free to reach out for collaborations, questions, or just to say hello!
 ---
 
 ## 🙋‍♂️ Author
-**Venkata Sai Charan**
+** Sai Charan**
 
 > **Note:** This README reflects the current, clean, and modern state of the project as of 2025. For any questions or suggestions, feel free to reach out!
 
