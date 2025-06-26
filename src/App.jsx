@@ -581,8 +581,8 @@ const App = () => {
                     My <span className="text-[#e13a7a]">Certifications</span>
                   </h2>
                   <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* AWS Certification - 1st Card (slides from left) */}
-                    <div className="certification-card-slide-left bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-all duration-500 transform translate-x-[-100%] opacity-0">
+                    {/* AWS Certification - 1st Card (slides from behind center) */}
+                    <div className="certification-card-slide-left bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-all duration-500 transform scale-80 opacity-0">
                       <h3 className="text-xl font-bold mb-2">AWS Certified Solutions Architect – Associate</h3>
                       <p className="text-[#e13a7a] mb-4">Amazon Web Services (AWS)</p>
                       <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2a4a927b8cf14781975cd89adc323106" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">Verify Credential</a>
@@ -594,8 +594,8 @@ const App = () => {
                       <p className="text-gray-500 mb-4">Issued: March 2024</p>
                       <a href="https://www.linkedin.com/learning/certificates/f8e0636b56af1ab2e8459ff6754f9c036f804d17c4fb3e50fd51bc59ced19f04" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">View Certificate</a>
                     </div>
-                    {/* Edureka Python Professional - 3rd Card (slides from right) */}
-                    <div className="certification-card-slide-right bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-all duration-500 transform translate-x-[100%] opacity-0">
+                    {/* Edureka Python Professional - 3rd Card (slides from behind center) */}
+                    <div className="certification-card-slide-right bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-all duration-500 transform scale-80 opacity-0">
                       <h3 className="text-xl font-bold mb-2">Python Professional</h3>
                       <p className="text-[#e13a7a] mb-2">Edureka</p>
                       <p className="text-gray-500 mb-2">Issued: March 2024</p>
