@@ -969,9 +969,9 @@
     will-change: transform, opacity;
   }
 
-  /* Initial states - cards 1 and 3 start behind card 2 */
+  /* Initial states - cards 1 and 3 start directly behind card 2 */
   .certification-card-slide-left {
-    transform: translateX(-50%) scale(0.7);
+    transform: scale(0.6);
     opacity: 0;
     z-index: 1;
   }
@@ -983,14 +983,14 @@
   }
 
   .certification-card-slide-right {
-    transform: translateX(50%) scale(0.7);
+    transform: scale(0.6);
     opacity: 0;
     z-index: 1;
   }
 
   /* Animated states when in view */
   .certification-card-slide-left.animate-slide-in {
-    transform: translateX(0) scale(1) !important;
+    transform: scale(1) !important;
     opacity: 1 !important;
   }
 
@@ -1000,7 +1000,7 @@
   }
 
   .certification-card-slide-right.animate-slide-in {
-    transform: translateX(0) scale(1) !important;
+    transform: scale(1) !important;
     opacity: 1 !important;
   }
 
@@ -1015,17 +1015,14 @@
 
   /* Mobile responsive adjustments */
   @media (max-width: 768px) {
-    .certification-card-slide-left {
-      transform: translateY(30px) scale(0.8);
-    }
-    
+    .certification-card-slide-left,
     .certification-card-slide-right {
-      transform: translateY(30px) scale(0.8);
+      transform: scale(0.7);
     }
     
     .certification-card-slide-left.animate-slide-in,
     .certification-card-slide-right.animate-slide-in {
-      transform: translateY(0) scale(1) !important;
+      transform: scale(1) !important;
     }
   }
 }
