@@ -971,7 +971,7 @@
 
   /* Initial states */
   .certification-card-slide-left {
-    transform: translateX(-100%) scale(0.8);
+    transform: scale(0.8) translateZ(-50px);
     opacity: 0;
     z-index: 1;
   }
@@ -983,14 +983,14 @@
   }
 
   .certification-card-slide-right {
-    transform: translateX(100%) scale(0.8);
+    transform: scale(0.8) translateZ(-50px);
     opacity: 0;
     z-index: 1;
   }
 
   /* Animated states when in view */
   .certification-card-slide-left.animate-slide-in {
-    transform: translateX(0) scale(1) !important;
+    transform: scale(1) translateZ(0) !important;
     opacity: 1 !important;
   }
 
@@ -1000,7 +1000,7 @@
   }
 
   .certification-card-slide-right.animate-slide-in {
-    transform: translateX(0) scale(1) !important;
+    transform: scale(1) translateZ(0) !important;
     opacity: 1 !important;
   }
 
@@ -1017,12 +1017,12 @@
   @media (max-width: 768px) {
     .certification-card-slide-left,
     .certification-card-slide-right {
-      transform: translateY(50px) scale(0.9);
+      transform: scale(0.8) translateZ(-30px);
     }
     
     .certification-card-slide-left.animate-slide-in,
     .certification-card-slide-right.animate-slide-in {
-      transform: translateY(0) scale(1) !important;
+      transform: scale(1) translateZ(0) !important;
     }
   }
 }
