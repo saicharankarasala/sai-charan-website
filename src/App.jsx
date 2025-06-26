@@ -79,8 +79,8 @@ const App = () => {
       const certificationSection = document.getElementById('certifications');
       if (certificationSection) {
         const rect = certificationSection.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
-        const isOutOfView = rect.bottom < 0 || rect.top > window.innerHeight;
+        const isInView = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
+        const isOutOfView = rect.bottom < window.innerHeight * 0.2 || rect.top > window.innerHeight * 0.8;
         
         if (isInView && !certificationAnimated) {
           const cards = certificationSection.querySelectorAll('.certification-card-slide-left, .certification-card-center, .certification-card-slide-right');
@@ -137,7 +137,7 @@ const App = () => {
     const certificationSection = document.getElementById('certifications');
     if (certificationSection) {
       const rect = certificationSection.getBoundingClientRect();
-      const isInView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+      const isInView = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
       
       if (isInView && !certificationAnimated) {
         const cards = certificationSection.querySelectorAll('.certification-card-slide-left, .certification-card-center, .certification-card-slide-right');
