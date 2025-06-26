@@ -39,6 +39,7 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('');
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [showMascot, setShowMascot] = useState(false);
+  const [certificationAnimated, setCertificationAnimated] = useState(false);
   const konamiCode = useRef([]);
   const [projectFilter, setProjectFilter] = useState('All');
   const [projectSort, setProjectSort] = useState('Newest');
@@ -73,11 +74,36 @@ const App = () => {
       } else {
         setShowBackToTop(false);
       }
+
+      // Handle certification card animations
+      const certificationSection = document.getElementById('certifications');
+      if (certificationSection) {
+        const rect = certificationSection.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+        const isOutOfView = rect.bottom < 0 || rect.top > window.innerHeight;
+        
+        if (isInView && !certificationAnimated) {
+          const cards = certificationSection.querySelectorAll('.certification-card-slide-left, .certification-card-center, .certification-card-slide-right');
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('animate-slide-in');
+            }, index * 200); // Stagger the animations
+          });
+          setCertificationAnimated(true);
+        } else if (isOutOfView && certificationAnimated) {
+          // Reset animation when section goes out of view
+          const cards = certificationSection.querySelectorAll('.certification-card-slide-left, .certification-card-center, .certification-card-slide-right');
+          cards.forEach(card => {
+            card.classList.remove('animate-slide-in');
+          });
+          setCertificationAnimated(false);
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [certificationAnimated]);
 
   useEffect(() => {
     const code = [
@@ -105,6 +131,25 @@ const App = () => {
     const timer = setTimeout(() => setShowMascot(false), 7000);
     return () => clearTimeout(timer);
   }, []);
+
+  // Check if certification section is in view on mount
+  useEffect(() => {
+    const certificationSection = document.getElementById('certifications');
+    if (certificationSection) {
+      const rect = certificationSection.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+      
+      if (isInView && !certificationAnimated) {
+        const cards = certificationSection.querySelectorAll('.certification-card-slide-left, .certification-card-center, .certification-card-slide-right');
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('animate-slide-in');
+          }, index * 200);
+        });
+        setCertificationAnimated(true);
+      }
+    }
+  }, [certificationAnimated]);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -535,22 +580,22 @@ const App = () => {
                     <FaCertificate className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Certifications</span>
                   </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* AWS Certification */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                  <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* AWS Certification - 1st Card (slides from left) */}
+                    <div className="certification-card-slide-left bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-all duration-500 transform translate-x-[-100%] opacity-0">
                       <h3 className="text-xl font-bold mb-2">AWS Certified Solutions Architect – Associate</h3>
                       <p className="text-[#e13a7a] mb-4">Amazon Web Services (AWS)</p>
                       <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2a4a927b8cf14781975cd89adc323106" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">Verify Credential</a>
                     </div>
-                    {/* Python Professional Certificate */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                    {/* Python Professional Certificate - 2nd Card (center, stays in place) */}
+                    <div className="certification-card-center bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-all duration-500 transform scale-95 opacity-0 z-10 relative">
                       <h3 className="text-xl font-bold mb-2">Programming with Python – Professional Certificate</h3>
                       <p className="text-[#e13a7a] mb-2">OpenEDG Python Institute</p>
                       <p className="text-gray-500 mb-4">Issued: March 2024</p>
                       <a href="https://www.linkedin.com/learning/certificates/f8e0636b56af1ab2e8459ff6754f9c036f804d17c4fb3e50fd51bc59ced19f04" target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">View Certificate</a>
                     </div>
-                    {/* Edureka Python Professional */}
-                    <div className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                    {/* Edureka Python Professional - 3rd Card (slides from right) */}
+                    <div className="certification-card-slide-right bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-all duration-500 transform translate-x-[100%] opacity-0">
                       <h3 className="text-xl font-bold mb-2">Python Professional</h3>
                       <p className="text-[#e13a7a] mb-2">Edureka</p>
                       <p className="text-gray-500 mb-2">Issued: March 2024</p>

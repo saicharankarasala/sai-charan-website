@@ -960,6 +960,71 @@
     0%, 100% { filter: drop-shadow(0 0 0 #e13a7a00); }
     50% { filter: drop-shadow(0 0 12px #e13a7a); }
   }
+
+  /* Certification Cards Sliding Animation */
+  .certification-card-slide-left,
+  .certification-card-slide-right,
+  .certification-card-center {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+  }
+
+  /* Initial states */
+  .certification-card-slide-left {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .certification-card-center {
+    transform: scale(0.9);
+    opacity: 0;
+    z-index: 10;
+  }
+
+  .certification-card-slide-right {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  /* Animated states when in view */
+  .certification-card-slide-left.animate-slide-in {
+    transform: translateX(0) scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  .certification-card-center.animate-slide-in {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  .certification-card-slide-right.animate-slide-in {
+    transform: translateX(0) scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  /* Hover effects with enhanced depth */
+  .certification-card-slide-left:hover,
+  .certification-card-slide-right:hover,
+  .certification-card-center:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(225, 58, 122, 0.3);
+    z-index: 20;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 768px) {
+    .certification-card-slide-left,
+    .certification-card-slide-right {
+      transform: translateY(50px) scale(0.9);
+    }
+    
+    .certification-card-slide-left.animate-slide-in,
+    .certification-card-slide-right.animate-slide-in {
+      transform: translateY(0) scale(1) !important;
+    }
+  }
 }
 
 @layer utilities {
