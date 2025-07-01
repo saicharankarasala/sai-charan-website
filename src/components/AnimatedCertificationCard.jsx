@@ -4,6 +4,11 @@ import { FaCertificate, FaExternalLinkAlt, FaDownload } from 'react-icons/fa';
 
 const AnimatedCertificationCard = ({ certification }) => {
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Debug logging
+  console.log('Certification data:', certification);
+  console.log('Verify URL:', certification.verifyUrl);
+  console.log('Download URL:', certification.downloadUrl);
 
   const getIconForCertification = (title) => {
     if (title.toLowerCase().includes('aws')) return FaCertificate;
@@ -105,33 +110,51 @@ const AnimatedCertificationCard = ({ certification }) => {
         )}
         
         {/* Action buttons */}
-        <div className="flex gap-2 mt-4">
-          {certification.verifyUrl && (
+        <div className="flex gap-2 mt-4 w-full">
+          {certification.verifyUrl ? (
             <motion.a
               href={certification.verifyUrl}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 bg-[#e13a7a] text-white py-2 px-3 rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-sm"
+              className="flex-1 bg-[#e13a7a] text-white py-2 px-3 rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-sm cursor-pointer border border-[#e13a7a]"
+              onClick={(e) => {
+                e.stopPropagation();
+                console.log('Verify link clicked:', certification.verifyUrl);
+              }}
             >
               <FaExternalLinkAlt />
               Verify
             </motion.a>
+          ) : (
+            <div className="flex-1 bg-gray-600 text-gray-400 py-2 px-3 rounded-lg font-medium flex items-center justify-center gap-2 text-sm cursor-not-allowed">
+              <FaExternalLinkAlt />
+              No Verify Link
+            </div>
           )}
           
-          {certification.downloadUrl && (
+          {certification.downloadUrl ? (
             <motion.a
               href={certification.downloadUrl}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 bg-gray-700 text-white py-2 px-3 rounded-lg font-medium hover:bg-[#e13a7a] transition-colors duration-300 flex items-center justify-center gap-2 text-sm"
+              className="flex-1 bg-gray-700 text-white py-2 px-3 rounded-lg font-medium hover:bg-[#e13a7a] transition-colors duration-300 flex items-center justify-center gap-2 text-sm cursor-pointer border border-gray-600"
+              onClick={(e) => {
+                e.stopPropagation();
+                console.log('Download link clicked:', certification.downloadUrl);
+              }}
             >
               <FaDownload />
               Download
             </motion.a>
+          ) : (
+            <div className="flex-1 bg-gray-600 text-gray-400 py-2 px-3 rounded-lg font-medium flex items-center justify-center gap-2 text-sm cursor-not-allowed">
+              <FaDownload />
+              No Download
+            </div>
           )}
         </div>
         
