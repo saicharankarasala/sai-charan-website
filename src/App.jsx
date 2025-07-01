@@ -36,6 +36,7 @@ import EnhancedContact from './components/EnhancedContact';
 import ProjectShowcase from './components/ProjectShowcase';
 import AnimatedSkillCard from './components/AnimatedSkillCard';
 import AnimatedCertificationCard from './components/AnimatedCertificationCard';
+import SkillsCarousel from './components/SkillsCarousel';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -440,7 +441,7 @@ const App = () => {
         <ScrollProgress />
         <CustomCursor />
         
-        <Routes>
+      <Routes>
           <Route path="/blog" element={<BlogLanding />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/" element={
@@ -583,17 +584,7 @@ const App = () => {
                     <FaTools className="text-3xl text-[#e13a7a] mb-2 section-icon" />
                     <h2 className="text-3xl font-bold mb-2 text-center">My <span className="text-[#e13a7a]">Skills</span></h2>
                     <div className="w-16 h-1 bg-[#e13a7a] rounded-full mb-6"></div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
-                      {skills.map((skill, index) => (
-                        <AnimatedSkillCard
-                          key={skill.name}
-                          skill={skill.name}
-                          icon={skill.icon}
-                          level={skill.level}
-                          color={skill.color}
-                        />
-                      ))}
-                    </div>
+                    <SkillsCarousel skills={skills} />
                   </div>
                 </div>
               </section>
