@@ -28,7 +28,7 @@ const ScrollProgress = () => {
         y: showIndicator ? 0 : -20
       }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00ffee] to-[#00ccff] origin-left z-50"
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] origin-left z-50"
       style={{ scaleX }}
     />
   );

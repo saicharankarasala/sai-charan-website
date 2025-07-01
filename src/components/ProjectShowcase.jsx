@@ -34,8 +34,8 @@ const ProjectShowcase = ({ projects }) => {
             onClick={() => setFilter(category)}
             className={`px-6 py-2 rounded-full border-2 transition-all duration-300 ${
               filter === category
-                ? 'border-[#00ffee] bg-[#00ffee] text-black'
-                : 'border-gray-600 text-gray-300 hover:border-[#00ffee] hover:text-[#00ffee]'
+                ? 'border-[#e13a7a] bg-[#e13a7a] text-white'
+                : 'border-gray-600 text-gray-300 hover:border-[#e13a7a] hover:text-[#e13a7a]'
             }`}
           >
             {category}
@@ -81,21 +81,21 @@ const ProjectShowcase = ({ projects }) => {
                 
                 {/* Hover overlay */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#00ffee]20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-br from-[#e13a7a]20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
                 
                 {/* Year badge */}
-                <div className="absolute top-4 right-4 bg-[#00ffee] text-black px-3 py-1 rounded-full text-sm font-bold">
+                <div className="absolute top-4 right-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
                   {project.year}
                 </div>
                 
                 {/* Project type */}
-                <div className="text-[#00ffee] text-sm font-medium mb-3">
+                <div className="text-[#e13a7a] text-sm font-medium mb-3">
                   {project.type}
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#00ffee] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#e13a7a] transition-colors duration-300">
                   {project.title}
                 </h3>
                 
@@ -123,7 +123,7 @@ const ProjectShowcase = ({ projects }) => {
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="flex-1 bg-[#00ffee] text-black py-2 px-4 rounded-lg font-medium hover:bg-[#00ccff] transition-colors duration-300 flex items-center justify-center gap-2"
+                    className="flex-1 bg-[#e13a7a] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2"
                   >
                     <FaEye />
                     View Details
@@ -133,7 +133,7 @@ const ProjectShowcase = ({ projects }) => {
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-2 bg-gray-700 text-white rounded-lg hover:bg-[#00ffee] hover:text-black transition-colors duration-300"
+                      className="p-2 bg-gray-700 text-white rounded-lg hover:bg-[#e13a7a] hover:text-white transition-colors duration-300"
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(project.links[0].url, '_blank');
@@ -194,9 +194,9 @@ const ProjectShowcase = ({ projects }) => {
                   <h4 className="text-white font-medium mb-2">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.tech.map(tech => (
-                      <span key={tech} className="px-3 py-1 bg-[#00ffee] text-black rounded-full text-sm">
-                        {tech}
-                      </span>
+                                              <span key={tech} className="px-3 py-1 bg-[#e13a7a] text-white rounded-full text-sm">
+                          {tech}
+                        </span>
                     ))}
                   </div>
                 </div>
@@ -211,7 +211,7 @@ const ProjectShowcase = ({ projects }) => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-4 py-2 bg-[#00ffee] text-black rounded-lg font-medium hover:bg-[#00ccff] transition-colors duration-300"
+                        className="flex items-center gap-2 px-4 py-2 bg-[#e13a7a] text-white rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300"
                       >
                         {link.label === 'GitHub' ? <FaGithub /> : <FaExternalLinkAlt />}
                         {link.label}

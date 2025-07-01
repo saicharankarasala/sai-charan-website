@@ -73,7 +73,7 @@ const CustomCursor = () => {
           mass: 0.5,
         }}
       >
-        <div className="w-10 h-10 bg-[#00ffee] rounded-full blur-sm" />
+        <div className="w-10 h-10 bg-[#e13a7a] rounded-full blur-sm" />
       </motion.div>
 
       {/* Trail effect */}
@@ -90,7 +90,7 @@ const CustomCursor = () => {
           mass: 0.5,
         }}
       >
-        <div className="w-2 h-2 bg-[#00ffee] rounded-full opacity-50" />
+        <div className="w-2 h-2 bg-[#e13a7a] rounded-full opacity-50" />
       </motion.div>
     </>
   );

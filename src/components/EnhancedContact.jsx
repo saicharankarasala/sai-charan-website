@@ -68,7 +68,7 @@ const EnhancedContact = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
-            Let's <span className="text-[#00ffee]">Connect</span>
+            Let's <span className="text-[#e13a7a]">Connect</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Ready to collaborate on exciting projects? Drop me a message and let's bring your ideas to life!
@@ -108,7 +108,7 @@ const EnhancedContact = () => {
                       onBlur={() => setFocusedField(null)}
                       placeholder={field.label}
                       rows="5"
-                      className="w-full pl-12 pr-4 py-4 bg-gray-800 border-2 border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-[#00ffee] focus:outline-none transition-all duration-300 resize-none"
+                      className="w-full pl-12 pr-4 py-4 bg-gray-800 border-2 border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-[#e13a7a] focus:outline-none transition-all duration-300 resize-none"
                       required
                     />
                   ) : (
@@ -120,7 +120,7 @@ const EnhancedContact = () => {
                       onFocus={() => setFocusedField(field.name)}
                       onBlur={() => setFocusedField(null)}
                       placeholder={field.label}
-                      className="w-full pl-12 pr-4 py-4 bg-gray-800 border-2 border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-[#00ffee] focus:outline-none transition-all duration-300"
+                      className="w-full pl-12 pr-4 py-4 bg-gray-800 border-2 border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-[#e13a7a] focus:outline-none transition-all duration-300"
                       required
                     />
                   )}
@@ -135,7 +135,7 @@ const EnhancedContact = () => {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="absolute inset-0 rounded-lg border-2 border-[#00ffee] opacity-50" />
+                    <div className="absolute inset-0 rounded-lg border-2 border-[#e13a7a] opacity-50" />
                   </motion.div>
                 </div>
               </motion.div>
@@ -146,7 +146,7 @@ const EnhancedContact = () => {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-[#00ffee] to-[#00ccff] text-black py-4 px-8 rounded-lg font-bold text-lg flex items-center justify-center gap-3 hover:from-[#00ccff] hover:to-[#00ffee] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-[#e13a7a] to-[#6d217f] text-white py-4 px-8 rounded-lg font-bold text-lg flex items-center justify-center gap-3 hover:from-[#6d217f] hover:to-[#e13a7a] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <AnimatePresence mode="wait">
                 {isSubmitting ? (
@@ -221,12 +221,12 @@ const EnhancedContact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-gray-800 p-6 rounded-lg border border-gray-700 text-center hover:border-[#00ffee] transition-colors duration-300"
+              className="bg-gray-800 p-6 rounded-lg border border-gray-700 text-center hover:border-[#e13a7a] transition-colors duration-300"
             >
-              <info.icon className="text-3xl text-[#00ffee] mx-auto mb-3" />
+                             <info.icon className="text-3xl text-[#e13a7a] mx-auto mb-3" />
               <h3 className="text-white font-semibold mb-1">{info.label}</h3>
               {info.href ? (
-                <a href={info.href} className="text-gray-400 hover:text-[#00ffee] transition-colors duration-300">
+                                 <a href={info.href} className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">
                   {info.value}
                 </a>
               ) : (

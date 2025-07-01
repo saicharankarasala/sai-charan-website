@@ -1600,12 +1600,12 @@
 
 @keyframes glow-pulse {
   0%, 100% { 
-    box-shadow: 0 0 20px rgba(0, 255, 238, 0.3);
-    text-shadow: 0 0 10px rgba(0, 255, 238, 0.5);
+    box-shadow: 0 0 20px rgba(225, 58, 122, 0.3);
+    text-shadow: 0 0 10px rgba(225, 58, 122, 0.5);
   }
   50% { 
-    box-shadow: 0 0 40px rgba(0, 255, 238, 0.6);
-    text-shadow: 0 0 20px rgba(0, 255, 238, 0.8);
+    box-shadow: 0 0 40px rgba(225, 58, 122, 0.6);
+    text-shadow: 0 0 20px rgba(225, 58, 122, 0.8);
   }
 }
 
@@ -1708,7 +1708,7 @@
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 238, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(225, 58, 122, 0.2), transparent);
   background-size: 200px 100%;
   animation: shimmer 2s infinite;
 }
@@ -1720,7 +1720,7 @@
 
 .hover-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 255, 238, 0.2);
+  box-shadow: 0 10px 25px rgba(225, 58, 122, 0.2);
 }
 
 .hover-glow {
@@ -1728,7 +1728,7 @@
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(0, 255, 238, 0.5);
+  box-shadow: 0 0 20px rgba(225, 58, 122, 0.5);
 }
 
 /* Glass morphism effect */
@@ -1740,7 +1740,7 @@
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(45deg, #00ffee, #00ccff, #00ffee);
+  background: linear-gradient(45deg, #e13a7a, #6d217f, #e13a7a);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
