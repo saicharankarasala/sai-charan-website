@@ -169,20 +169,20 @@ const App = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Skills data for animated cards
+  // Skills data for animated cards - using your brand colors
   const skills = [
-    { name: 'Python', icon: FaPython, level: 'expert', color: '#3776AB' },
-    { name: 'Java', icon: FaJava, level: 'advanced', color: '#ED8B00' },
-    { name: 'JavaScript', icon: FaJs, level: 'advanced', color: '#F7DF1E' },
-    { name: 'React', icon: FaReact, level: 'advanced', color: '#61DAFB' },
-    { name: 'HTML5', icon: FaHtml5, level: 'expert', color: '#E34F26' },
-    { name: 'CSS3', icon: FaCss3Alt, level: 'expert', color: '#1572B6' },
-    { name: 'Git', icon: FaGitAlt, level: 'advanced', color: '#F05032' },
-    { name: 'AWS', icon: FaAws, level: 'intermediate', color: '#FF9900' },
-    { name: 'Linux', icon: FaLinux, level: 'advanced', color: '#FCC624' },
-    { name: 'Database', icon: FaDatabase, level: 'advanced', color: '#336791' },
-    { name: 'Cloud', icon: FaCloud, level: 'intermediate', color: '#4285F4' },
-    { name: 'Server', icon: FaServer, level: 'advanced', color: '#00D4AA' }
+    { name: 'Python', icon: FaPython, level: 'expert', color: '#e13a7a' },
+    { name: 'Java', icon: FaJava, level: 'advanced', color: '#e13a7a' },
+    { name: 'JavaScript', icon: FaJs, level: 'advanced', color: '#e13a7a' },
+    { name: 'React', icon: FaReact, level: 'advanced', color: '#e13a7a' },
+    { name: 'HTML5', icon: FaHtml5, level: 'expert', color: '#e13a7a' },
+    { name: 'CSS3', icon: FaCss3Alt, level: 'expert', color: '#e13a7a' },
+    { name: 'Git', icon: FaGitAlt, level: 'advanced', color: '#e13a7a' },
+    { name: 'AWS', icon: FaAws, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Linux', icon: FaLinux, level: 'advanced', color: '#e13a7a' },
+    { name: 'Database', icon: FaDatabase, level: 'advanced', color: '#e13a7a' },
+    { name: 'Cloud', icon: FaCloud, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Server', icon: FaServer, level: 'advanced', color: '#e13a7a' }
   ];
 
   // Project data (move to a separate file if needed)

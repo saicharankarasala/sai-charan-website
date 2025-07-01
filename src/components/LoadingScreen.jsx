@@ -59,7 +59,7 @@ const LoadingScreen = ({ onComplete }) => {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="w-16 h-16 border-4 border-[#00ffee] border-t-transparent rounded-full mx-auto mb-8"
+            className="w-16 h-16 border-4 border-[#e13a7a] border-t-transparent rounded-full mx-auto mb-8"
           />
           
           <motion.h1
@@ -77,7 +77,7 @@ const LoadingScreen = ({ onComplete }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="text-[#00ffee] text-lg mb-8"
+            className="text-[#e13a7a] text-lg mb-8"
           >
             {loadingTexts[currentText]}
           </motion.p>
@@ -87,7 +87,7 @@ const LoadingScreen = ({ onComplete }) => {
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.1 }}
-              className="h-full bg-gradient-to-r from-[#00ffee] to-[#00ccff] rounded-full"
+              className="h-full bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-full"
             />
           </div>
           

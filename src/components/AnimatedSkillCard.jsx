@@ -12,6 +12,9 @@ const AnimatedSkillCard = ({ skill, icon: Icon, level, color = "#00ffee" }) => {
   };
 
   const levelInfo = skillLevels[level] || skillLevels.intermediate;
+  
+  // Use your brand colors instead of individual tech colors
+  const brandColor = "#e13a7a"; // Your main pink accent
 
   return (
     <motion.div
@@ -36,7 +39,7 @@ const AnimatedSkillCard = ({ skill, icon: Icon, level, color = "#00ffee" }) => {
         style={{
           transformStyle: 'preserve-3d',
           background: isHovered 
-            ? `linear-gradient(135deg, rgba(0,255,238,0.1) 0%, rgba(0,0,0,0.9) 100%)`
+            ? `linear-gradient(135deg, rgba(225,58,122,0.1) 0%, rgba(0,0,0,0.9) 100%)`
             : 'linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 100%)'
         }}
       >
@@ -44,7 +47,7 @@ const AnimatedSkillCard = ({ skill, icon: Icon, level, color = "#00ffee" }) => {
         <motion.div
           className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
-            background: `radial-gradient(circle at center, ${color}20 0%, transparent 70%)`,
+            background: `radial-gradient(circle at center, ${brandColor}20 0%, transparent 70%)`,
             filter: 'blur(20px)'
           }}
         />
@@ -60,7 +63,7 @@ const AnimatedSkillCard = ({ skill, icon: Icon, level, color = "#00ffee" }) => {
         >
           <Icon 
             className="text-4xl" 
-            style={{ color: color }}
+            style={{ color: brandColor }}
           />
         </motion.div>
         
@@ -82,7 +85,7 @@ const AnimatedSkillCard = ({ skill, icon: Icon, level, color = "#00ffee" }) => {
           <div className="w-full bg-gray-700 rounded-full h-2">
             <motion.div
               className="h-2 rounded-full"
-              style={{ backgroundColor: color }}
+              style={{ backgroundColor: brandColor }}
               initial={{ width: 0 }}
               whileInView={{ width: `${levelInfo.width}%` }}
               viewport={{ once: true }}
@@ -98,7 +101,7 @@ const AnimatedSkillCard = ({ skill, icon: Icon, level, color = "#00ffee" }) => {
               <motion.div
                 key={i}
                 className="absolute w-1 h-1 rounded-full"
-                style={{ backgroundColor: color }}
+                style={{ backgroundColor: brandColor }}
                 initial={{ 
                   x: Math.random() * 100, 
                   y: Math.random() * 100,
