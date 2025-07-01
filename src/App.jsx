@@ -182,7 +182,42 @@ const App = () => {
     { name: 'Linux', icon: FaLinux, level: 'advanced', color: '#e13a7a' },
     { name: 'Database', icon: FaDatabase, level: 'advanced', color: '#e13a7a' },
     { name: 'Cloud', icon: FaCloud, level: 'intermediate', color: '#e13a7a' },
-    { name: 'Server', icon: FaServer, level: 'advanced', color: '#e13a7a' }
+    { name: 'Server', icon: FaServer, level: 'advanced', color: '#e13a7a' },
+    { name: 'SQL', icon: FaDatabase, level: 'expert', color: '#e13a7a' },
+    { name: 'Spring Boot', icon: FaCode, level: 'advanced', color: '#e13a7a' },
+    { name: 'MySQL', icon: FaDatabase, level: 'advanced', color: '#e13a7a' },
+    { name: 'Bash', icon: FaTerminal, level: 'advanced', color: '#e13a7a' },
+    { name: 'PowerShell', icon: FaTerminal, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Tableau', icon: FaChartBar, level: 'advanced', color: '#e13a7a' },
+    { name: 'Power BI', icon: FaChartPie, level: 'advanced', color: '#e13a7a' },
+    { name: 'Snowflake', icon: FaDatabase, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Hadoop', icon: FaServer, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Informatica', icon: FaCodeBranch, level: 'intermediate', color: '#e13a7a' },
+    { name: 'PL/SQL', icon: FaDatabase, level: 'advanced', color: '#e13a7a' },
+    { name: 'Unix Shell', icon: FaTerminal, level: 'advanced', color: '#e13a7a' },
+    { name: 'GitLab CI', icon: FaCodeBranch, level: 'intermediate', color: '#e13a7a' },
+    { name: 'JUnit', icon: FaCode, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Selenium', icon: FaCode, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Dynatrace', icon: FaChartLine, level: 'intermediate', color: '#e13a7a' },
+    { name: 'ServiceNow', icon: FaCogs, level: 'intermediate', color: '#e13a7a' },
+    { name: 'D365', icon: FaMicrosoft, level: 'intermediate', color: '#e13a7a' },
+    { name: 'PXE', icon: FaNetworkWired, level: 'intermediate', color: '#e13a7a' },
+    { name: 'GPO', icon: FaCogs, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Windows', icon: FaWindows, level: 'advanced', color: '#e13a7a' },
+    { name: 'Pandas', icon: FaCode, level: 'advanced', color: '#e13a7a' },
+    { name: 'AWS Lambda', icon: FaAws, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Pentaho', icon: FaTools, level: 'intermediate', color: '#e13a7a' },
+    { name: 'REST API', icon: FaCode, level: 'advanced', color: '#e13a7a' },
+    { name: 'IoT', icon: FaMicrochip, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Azure', icon: FaMicrosoft, level: 'intermediate', color: '#e13a7a' },
+    { name: 'PySpark', icon: FaCode, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Matplotlib', icon: FaChartBar, level: 'advanced', color: '#e13a7a' },
+    { name: 'Plotly', icon: FaChartLine, level: 'intermediate', color: '#e13a7a' },
+    { name: 'VLC', icon: FaNetworkWired, level: 'intermediate', color: '#e13a7a' },
+    { name: 'OptiSystem', icon: FaProjectDiagram, level: 'intermediate', color: '#e13a7a' },
+    { name: '.NET', icon: FaMicrosoft, level: 'intermediate', color: '#e13a7a' },
+    { name: 'UI/UX', icon: FaLaptopCode, level: 'intermediate', color: '#e13a7a' },
+    { name: 'Data Visualization', icon: FaChartBar, level: 'advanced', color: '#e13a7a' }
   ];
 
   // Project data (move to a separate file if needed)
@@ -519,7 +554,7 @@ const App = () => {
                     <FaTools className="text-3xl text-[#e13a7a] mb-2 section-icon" />
                     <h2 className="text-3xl font-bold mb-2 text-center">My <span className="text-[#e13a7a]">Skills</span></h2>
                     <div className="w-16 h-1 bg-[#e13a7a] rounded-full mb-6"></div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-full">
                       {skills.map((skill, index) => (
                         <AnimatedSkillCard
                           key={skill.name}
