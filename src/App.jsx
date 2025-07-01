@@ -27,7 +27,17 @@ import BlogPost from "./pages/BlogPost";
 import { Analytics } from '@vercel/analytics/react';
 import { Typewriter } from 'react-simple-typewriter';
 
+// Enhanced Components
+import ParticleBackground from './components/ParticleBackground';
+import ScrollProgress from './components/ScrollProgress';
+import CustomCursor from './components/CustomCursor';
+import LoadingScreen from './components/LoadingScreen';
+import EnhancedContact from './components/EnhancedContact';
+import ProjectShowcase from './components/ProjectShowcase';
+import AnimatedSkillCard from './components/AnimatedSkillCard';
+
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedCards, setExpandedCards] = useState({
     skills: null,
@@ -158,6 +168,22 @@ const App = () => {
   const handleBackToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Skills data for animated cards
+  const skills = [
+    { name: 'Python', icon: FaPython, level: 'expert', color: '#3776AB' },
+    { name: 'Java', icon: FaJava, level: 'advanced', color: '#ED8B00' },
+    { name: 'JavaScript', icon: FaJs, level: 'advanced', color: '#F7DF1E' },
+    { name: 'React', icon: FaReact, level: 'advanced', color: '#61DAFB' },
+    { name: 'HTML5', icon: FaHtml5, level: 'expert', color: '#E34F26' },
+    { name: 'CSS3', icon: FaCss3Alt, level: 'expert', color: '#1572B6' },
+    { name: 'Git', icon: FaGitAlt, level: 'advanced', color: '#F05032' },
+    { name: 'AWS', icon: FaAws, level: 'intermediate', color: '#FF9900' },
+    { name: 'Linux', icon: FaLinux, level: 'advanced', color: '#FCC624' },
+    { name: 'Database', icon: FaDatabase, level: 'advanced', color: '#336791' },
+    { name: 'Cloud', icon: FaCloud, level: 'intermediate', color: '#4285F4' },
+    { name: 'Server', icon: FaServer, level: 'advanced', color: '#00D4AA' }
+  ];
 
   // Project data (move to a separate file if needed)
   const projects = [
@@ -345,7 +371,12 @@ const App = () => {
   return (
     <HelmetProvider>
       <BrowserRouter>
-      <Routes>
+        {/* Enhanced Components */}
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+        <ScrollProgress />
+        <CustomCursor />
+        
+        <Routes>
           <Route path="/blog" element={<BlogLanding />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/" element={
@@ -406,7 +437,8 @@ const App = () => {
               </header>
 
               {/* HERO SECTION - Clean, modern, balanced */}
-              <section className="w-full min-h-[480px] flex flex-col md:flex-row items-center justify-center bg-gradient-to-tr from-[#6d217f] to-[#e13a7a] text-white px-4 pt-32 pb-12" id="home">
+              <section className="w-full min-h-[480px] flex flex-col md:flex-row items-center justify-center bg-gradient-to-tr from-[#6d217f] to-[#e13a7a] text-white px-4 pt-32 pb-12 relative overflow-hidden" id="home">
+                <ParticleBackground />
                 <div className="flex-1 flex flex-col justify-center md:items-start items-center text-left md:text-left gap-4 max-w-2xl w-full pl-8 md:pl-16 lg:pl-24 xl:pl-32">
                   <h1 className="text-4xl md:text-5xl font-extrabold mb-2 leading-tight">Hi, I'm <span className="text-white">Venkata Sai Charan</span></h1>
                   <h2 className="text-xl md:text-2xl font-semibold mb-2 text-pink-200 min-h-[2.5rem]">
@@ -480,67 +512,23 @@ const App = () => {
                 </div>
               </section>
 
+              {/* SKILLS SECTION - Enhanced with animated cards */}
               <section className="skills py-12 px-4 bg-gray-50" id="skills">
                 <div className="max-w-7xl mx-auto">
                   <div className="bg-white rounded-2xl shadow p-8 text-gray-900 flex flex-col items-center">
                     <FaTools className="text-3xl text-[#e13a7a] mb-2 section-icon" />
                     <h2 className="text-3xl font-bold mb-2 text-center">My <span className="text-[#e13a7a]">Skills</span></h2>
                     <div className="w-16 h-1 bg-[#e13a7a] rounded-full mb-6"></div>
-                    <div className="flex flex-wrap gap-3 justify-center">
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Python</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Java</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">C#/.NET</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">JavaScript (Node.js)</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">SQL</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">HTML</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">CSS</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">MySQL</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">SQL Server</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Hadoop</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Apache Spark</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Apache Hive</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Apache Pig</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">AWS</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Microsoft Azure</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Docker</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Kubernetes</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Git</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Azure Data Factory</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">UiPath RPA</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Tableau</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Power BI</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Microsoft Power Platform</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Informatica PowerCenter</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">RESTful APIs</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Microservices</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Kafka</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Penetration Testing</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Cryptographic Algorithms</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Linux Shell Scripting</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Visual Studio</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Visual Studio Code</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Postman</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">JIRA</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Microsoft Office Suite</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Windows</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Linux</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Ubuntu</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">macOS</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Network Troubleshooting</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">IP Addressing</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Wireless Networking</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Network Configuration</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">IoT</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Ultrasonic Sensors</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Raspberry Pi</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Agile</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Data Visualization</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">ETL Pipelines</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">System Integration</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Big Data Technologies</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Data Analytics</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Cloud-Based Solutions</span>
-                      <span className="bg-[#e13a7a] text-white font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200 hover:bg-white hover:text-[#e13a7a]">Secure Backend Architectures</span>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+                      {skills.map((skill, index) => (
+                        <AnimatedSkillCard
+                          key={skill.name}
+                          skill={skill.name}
+                          icon={skill.icon}
+                          level={skill.level}
+                          color={skill.color}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -659,66 +647,19 @@ const App = () => {
                 </div>
               </section>
 
-              {/* PROJECTS SECTION */}
+              {/* PROJECTS SECTION - Enhanced with 3D cards and filtering */}
               <section className="projects py-12 px-4 bg-gray-50" id="projects">
                 <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
                     <FaProjectDiagram className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Projects</span>
                   </h2>
-                  {/* Filter & Sort Controls */}
-                  <div className="flex flex-wrap gap-4 mb-8 justify-center items-center">
-                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectFilter} onChange={e => setProjectFilter(e.target.value)}>
-                      <option value="All">All</option>
-                      <optgroup label="Tech Stack">
-                        {allTechs.map(tech => <option key={tech} value={tech}>{tech}</option>)}
-                      </optgroup>
-                      <optgroup label="Type">
-                        {allTypes.map(type => <option key={type} value={type}>{type}</option>)}
-                      </optgroup>
-                      <optgroup label="Year">
-                        {allYears.map(year => <option key={year} value={year}>{year}</option>)}
-                      </optgroup>
-                    </select>
-                    <select className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" value={projectSort} onChange={e => setProjectSort(e.target.value)}>
-                      <option value="Newest">Newest</option>
-                      <option value="Oldest">Oldest</option>
-                      <option value="A-Z">A-Z</option>
-                      <option value="Z-A">Z-A</option>
-                    </select>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredProjects.map((project, idx) => (
-                      <div key={project.title} className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                        <p className="text-[#e13a7a] mb-4">{project.year}</p>
-                        <ul className="list-disc pl-5 text-gray-700 space-y-2">
-                          {project.description.map((desc, i) => <li key={i}>{desc}</li>)}
-                        </ul>
-                        <div className="flex flex-wrap gap-2 mt-4">
-                          {project.tech.map(tech => (
-                            <span key={tech} className="tech-tag bg-[#e13a7a] text-white">{tech}</span>
-                          ))}
-                        </div>
-                        {project.links && (
-                          <div className="flex gap-4 mt-4">
-                            {project.links.map(link => (
-                              <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[#e13a7a] hover:underline">{link.label}</a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                  <ProjectShowcase projects={projects} />
                 </div>
               </section>
 
-              {/* CONTACT SECTION - Beautiful, modern, centered */}
-              <section className="contact py-16 px-4 bg-gray-50" id="contact">
-                <div className="max-w-3xl mx-auto">
-                  <Contact />
-                </div>
-              </section>
+              {/* CONTACT SECTION - Enhanced with animations */}
+              <EnhancedContact />
 
               {/* FOOTER - Clean, minimal, accent icons */}
               <footer className="bg-gray-100 border-t border-gray-200 py-8">
