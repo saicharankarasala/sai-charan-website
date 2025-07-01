@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaEnvelope, FaUser, FaMessage, FaPaperPlane, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaComment, FaPaperPlane, FaCheck, FaTimes } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const EnhancedContact = () => {
@@ -47,7 +47,7 @@ const EnhancedContact = () => {
   const inputFields = [
     { name: 'name', label: 'Your Name', icon: FaUser, type: 'text' },
     { name: 'email', label: 'Your Email', icon: FaEnvelope, type: 'email' },
-    { name: 'message', label: 'Your Message', icon: FaMessage, type: 'textarea' }
+    { name: 'message', label: 'Your Message', icon: FaComment, type: 'textarea' }
   ];
 
   return (
@@ -212,7 +212,7 @@ const EnhancedContact = () => {
           {[
             { icon: FaEnvelope, label: 'Email', value: 'venkatasaicharan1511@gmail.com', href: 'mailto:venkatasaicharan1511@gmail.com' },
             { icon: FaUser, label: 'Location', value: 'Hyderabad, India' },
-            { icon: FaMessage, label: 'Response Time', value: 'Within 24 hours' }
+            { icon: FaComment, label: 'Response Time', value: 'Within 24 hours' }
           ].map((info, index) => (
             <motion.div
               key={info.label}
