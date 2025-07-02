@@ -62,27 +62,14 @@ const ProjectShowcase = ({ projects }) => {
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
-              layout
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              whileHover={{ 
-                y: -10,
-                rotateY: 5,
-                rotateX: 5
-              }}
-              className="group cursor-pointer"
-              style={{ perspective: 1000 }}
+              className="relative group bg-[#181f2a] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col h-full"
+              whileHover={{ scale: 1.025 }}
               onClick={() => setSelectedProject(project)}
+              style={{ cursor: 'pointer' }}
             >
+              {/* Card content remains always visible */}
               <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 
                               shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                
-                {/* Hover overlay */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#e13a7a]20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
                 
                 {/* Year badge */}
                 <div className="absolute top-4 right-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
