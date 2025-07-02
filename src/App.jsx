@@ -28,7 +28,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Typewriter } from 'react-simple-typewriter';
 
 // Enhanced Components
-import ParticleBackground from './components/ParticleBackground';
+// import ParticleBackground from './components/ParticleBackground';
 import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
@@ -503,7 +503,7 @@ const App = () => {
 
               {/* HERO SECTION - Clean, modern, balanced */}
               <section className="w-full min-h-[480px] flex flex-col md:flex-row items-center justify-center bg-gradient-to-tr from-[#6d217f] to-[#e13a7a] text-white px-4 pt-32 pb-12 relative overflow-hidden" id="home">
-                <ParticleBackground />
+                {/* <ParticleBackground /> */}
                 <div className="flex-1 flex flex-col justify-center md:items-start items-center text-left md:text-left gap-4 max-w-2xl w-full pl-8 md:pl-16 lg:pl-24 xl:pl-32">
                   <h1 className="text-4xl md:text-5xl font-extrabold mb-2 leading-tight">Hi, I'm <span className="text-white">Venkata Sai Charan</span></h1>
                   <h2 className="text-xl md:text-2xl font-semibold mb-2 text-pink-200 min-h-[2.5rem]">
@@ -581,7 +581,7 @@ const App = () => {
               <section className="skills py-12 px-4 bg-gray-50" id="skills">
                 <div className="max-w-7xl mx-auto">
                   <div className="bg-white rounded-2xl shadow p-8 text-gray-900 flex flex-col items-center">
-                    <FaTools className="text-3xl text-[#e13a7a] mb-2 section-icon" />
+                    <FaCogs className="text-3xl text-[#e13a7a] mb-2 section-icon" />
                     <h2 className="text-3xl font-bold mb-2 text-center">My <span className="text-[#e13a7a]">Skills</span></h2>
                     <div className="w-16 h-1 bg-[#e13a7a] rounded-full mb-6"></div>
                     <SkillsCarousel skills={skills} />
