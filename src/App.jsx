@@ -26,6 +26,7 @@ import BlogLanding from "./pages/BlogLanding";
 import BlogPost from "./pages/BlogPost";
 import { Analytics } from '@vercel/analytics/react';
 import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
 
 // Enhanced Components
 // import ParticleBackground from './components/ParticleBackground';
@@ -665,7 +666,12 @@ const App = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredExperiences.map((exp, idx) => (
-                      <div key={exp.title + exp.date} className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                      <motion.div
+                        key={exp.title + exp.date}
+                        className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col h-full"
+                        whileHover={{ scale: 1.025 }}
+                        style={{ cursor: 'pointer' }}
+                      >
                         <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
                         <p className="text-[#e13a7a] mb-2">{exp.date}</p>
                         <h4 className="text-lg text-[#e13a7a]">
@@ -682,7 +688,7 @@ const App = () => {
                             <span key={tech} className="tech-tag bg-[#e13a7a] text-white">{tech}</span>
                           ))}
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
