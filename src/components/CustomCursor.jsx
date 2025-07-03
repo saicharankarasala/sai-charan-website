@@ -1,98 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
 const CustomCursor = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const cursorRef = useRef(null);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const moveCursor = (e) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+      }
     };
-
-    const handleMouseEnter = () => {
-      setIsHovering(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovering(false);
-    };
-
-    // Add event listeners for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .interactive');
-    
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', handleMouseEnter);
-      el.addEventListener('mouseleave', handleMouseLeave);
-    });
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      interactiveElements.forEach(el => {
-        el.removeEventListener('mouseenter', handleMouseEnter);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
-    };
+    document.addEventListener('mousemove', moveCursor);
+    return () => document.removeEventListener('mousemove', moveCursor);
   }, []);
 
   return (
-    <>
-      {/* Main cursor */}
-      <motion.div
-        className="fixed pointer-events-none z-50 mix-blend-difference"
-        animate={{
-          x: mousePosition.x - 8,
-          y: mousePosition.y - 8,
-          scale: isHovering ? 1.5 : 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5,
-        }}
-      >
-        <div className="w-4 h-4 bg-white rounded-full" />
-      </motion.div>
-
-      {/* Glow effect */}
-      <motion.div
-        className="fixed pointer-events-none z-40"
-        animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
-          scale: isHovering ? 2 : 1,
-          opacity: isHovering ? 0.3 : 0.1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 25,
-          mass: 0.5,
-        }}
-      >
-        <div className="w-10 h-10 bg-[#e13a7a] rounded-full blur-sm" />
-      </motion.div>
-
-      {/* Trail effect */}
-      <motion.div
-        className="fixed pointer-events-none z-30"
-        animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 20,
-          mass: 0.5,
-        }}
-      >
-        <div className="w-2 h-2 bg-[#e13a7a] rounded-full opacity-50" />
-      </motion.div>
-    </>
+    <div
+      ref={cursorRef}
+      className="fixed top-0 left-0 w-5 h-5 bg-[#e13a7a] rounded-full pointer-events-none z-[9999]"
+      style={{ transform: 'translate3d(-100px, -100px, 0)', willChange: 'transform' }}
+    />
   );
 };
 
