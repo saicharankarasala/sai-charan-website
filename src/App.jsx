@@ -637,7 +637,7 @@ const App = () => {
               </section>
 
               {/* EXPERIENCE SECTION */}
-              <section className="experience py-12 px-4 bg-[#181f2a]" id="experience">
+              <section className="experience py-12 px-4 bg-gray-50" id="experience">
                 <div className="max-w-7xl mx-auto">
                   <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2 text-white">
                     <FaBriefcase className="text-[#e13a7a] text-2xl section-icon" />
