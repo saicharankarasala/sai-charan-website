@@ -65,6 +65,18 @@ const AnimatedCertificationCard = ({ certification }) => {
             Verify
           </a>
         )}
+        {certification.downloadUrl && (
+          <a
+            href={certification.downloadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-[#e13a7a] text-white py-2 px-3 rounded-lg font-bold hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-base mt-4 z-10 cursor-pointer border border-[#e13a7a]"
+            style={{ pointerEvents: 'auto' }}
+            tabIndex={0}
+          >
+            View Certificate
+          </a>
+        )}
       </div>
     </motion.div>
   );
