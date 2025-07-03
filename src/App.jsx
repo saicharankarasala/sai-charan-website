@@ -637,9 +637,9 @@ const App = () => {
               </section>
 
               {/* EXPERIENCE SECTION */}
-              <section className="experience py-12 px-4 bg-gray-50" id="experience">
+              <section className="experience py-12 px-4 bg-[#181f2a]" id="experience">
                 <div className="max-w-7xl mx-auto">
-                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                  <h2 className="text-3xl font-bold mb-6 text-center flex items-center justify-center gap-2 text-white">
                     <FaBriefcase className="text-[#e13a7a] text-2xl section-icon" />
                     My <span className="text-[#e13a7a]">Experience</span>
                   </h2>
@@ -668,19 +668,19 @@ const App = () => {
                     {filteredExperiences.map((exp, idx) => (
                       <motion.div
                         key={exp.title + exp.date}
-                        className="bg-white rounded-2xl shadow p-8 text-gray-900 hover:shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col h-full"
+                        className="bg-[#181f2a] rounded-2xl shadow p-8 text-white transition-transform duration-300 flex flex-col h-full hover:shadow-2xl"
                         whileHover={{ scale: 1.025 }}
                         style={{ cursor: 'pointer' }}
                       >
-                        <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
+                        <h3 className="text-xl font-bold mb-2 text-white">{exp.title}</h3>
                         <p className="text-[#e13a7a] mb-2">{exp.date}</p>
                         <h4 className="text-lg text-[#e13a7a]">
                           {exp.company}
                           {exp.companyUrl && (
-                            <> (<a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="underline">Client: {exp.client}</a>)</>
+                            <> (<a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="underline text-[#e13a7a]">Client: {exp.client}</a>)</>
                           )}
                         </h4>
-                        <ul className="list-disc pl-5 mt-2 text-gray-700">
+                        <ul className="list-disc pl-5 mt-2 text-gray-300">
                           {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
                         </ul>
                         <div className="flex flex-wrap gap-2 mt-4">
