@@ -669,23 +669,30 @@ const App = () => {
                     {filteredExperiences.map((exp, idx) => (
                       <motion.div
                         key={exp.title + exp.date}
-                        className="bg-[#181f2a] rounded-2xl shadow p-8 text-white transition-transform duration-300 flex flex-col h-full hover:shadow-2xl"
+                        className="relative group bg-[#181f2a] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col h-full"
                         whileHover={{ scale: 1.025 }}
                         style={{ cursor: 'pointer' }}
-                        onClick={() => setSelectedExperience(exp)}
                       >
-                        <h3 className="text-xl font-bold mb-2 text-white">{exp.title}</h3>
-                        <p className="text-[#e13a7a] mb-2">{exp.date}</p>
-                        <h4 className="text-lg text-[#e13a7a]">
-                          {exp.company}
-                          {exp.companyUrl && (
-                            <> (<a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="underline text-[#e13a7a]">Client: {exp.client}</a>)</>
-                          )}
-                        </h4>
-                        {/* Show only the first bullet as a summary, if available */}
-                        {exp.bullets && exp.bullets.length > 0 && (
-                          <p className="text-gray-300 mt-4 text-sm line-clamp-2">{exp.bullets[0]}</p>
-                        )}
+                        {/* Type/category label */}
+                        <div className="absolute top-4 left-4 text-[#e13a7a] text-sm font-medium">
+                          {exp.type}
+                        </div>
+                        {/* Year badge */}
+                        <div className="absolute top-4 right-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
+                          {exp.year}
+                        </div>
+                        {/* Title and company */}
+                        <h3 className="text-xl font-bold text-white mb-2 mt-8">{exp.title}</h3>
+                        <p className="text-[#e13a7a] mb-2 font-semibold">{exp.company}</p>
+                        {/* View Details button */}
+                        <div className="mt-auto pt-4">
+                          <button
+                            className="w-full bg-[#e13a7a] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-base"
+                            onClick={e => { e.stopPropagation(); setSelectedExperience(exp); }}
+                          >
+                            View Details
+                          </button>
+                        </div>
                       </motion.div>
                     ))}
                   </div>
