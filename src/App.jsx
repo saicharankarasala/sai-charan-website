@@ -341,6 +341,7 @@ const App = () => {
       date: 'January 2025 – Present',
       year: 2025,
       type: 'Full-time',
+      domain: 'Backend',
       tech: ['Python', 'Pandas', 'AWS Lambda', 'Google Sheets API', 'Hadoop', 'Snowflake', 'Pentaho', 'Tableau', 'Power BI', 'REST', 'Bash'],
       bullets: [
         'Automated pricing for 100K+ SKUs using Python, Pandas, AWS Lambda, Google Sheets API',
@@ -356,6 +357,7 @@ const App = () => {
       date: 'April 2024 – December 2024',
       year: 2024,
       type: 'Full-time',
+      domain: 'DevOps',
       tech: ['Python', 'Bash', 'Dynatrace', 'PowerShell', 'SQL Server', 'ServiceNow', 'D365'],
       bullets: [
         'Reduced MTTR by 40% with Python/Bash automation & Dynatrace-based monitoring',
@@ -370,6 +372,7 @@ const App = () => {
       date: 'May 2023 – December 2023',
       year: 2023,
       type: 'Assistant',
+      domain: 'IT Support',
       tech: ['PXE', 'GPO', 'Linux', 'Windows', 'Python', 'Bash', 'Support Automation'],
       bullets: [
         'Managed 150+ lab systems with PXE, GPO, Linux/Windows Dual Boot',
@@ -385,6 +388,7 @@ const App = () => {
       date: 'September 2021 – July 2022',
       year: 2021,
       type: 'Full-time',
+      domain: 'Data Engineering',
       tech: ['Informatica', 'PL/SQL', 'Unix Shell', 'GitLab CI', 'Python', 'Excel Macros', 'SQL'],
       bullets: [
         'Built ETL pipelines using Informatica, PL/SQL, Unix Shell, and CI via GitLab',
@@ -401,6 +405,7 @@ const App = () => {
       date: 'May 2019 – August 2021',
       year: 2021,
       type: 'Full-time',
+      domain: 'Full Stack',
       tech: ['Java', 'Spring Boot', 'MySQL', 'JavaScript', 'GitHub Actions', 'JUnit', 'Selenium', 'SQL'],
       bullets: [
         'Developed full-stack apps with Java, Spring Boot, MySQL, JS',
@@ -673,9 +678,9 @@ const App = () => {
                         whileHover={{ scale: 1.025 }}
                         style={{ cursor: 'pointer' }}
                       >
-                        {/* Type/category label */}
+                        {/* Domain badge */}
                         <div className="absolute top-4 left-4 text-[#e13a7a] text-sm font-medium">
-                          {exp.type}
+                          {exp.domain}
                         </div>
                         {/* Year badge */}
                         <div className="absolute top-4 right-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
