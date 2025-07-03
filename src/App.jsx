@@ -682,14 +682,10 @@ const App = () => {
                             <> (<a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="underline text-[#e13a7a]">Client: {exp.client}</a>)</>
                           )}
                         </h4>
-                        <ul className="list-disc pl-5 mt-2 text-gray-300">
-                          {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                        </ul>
-                        <div className="flex flex-wrap gap-2 mt-4">
-                          {exp.tech.map(tech => (
-                            <span key={tech} className="tech-tag bg-[#e13a7a] text-white">{tech}</span>
-                          ))}
-                        </div>
+                        {/* Show only the first bullet as a summary, if available */}
+                        {exp.bullets && exp.bullets.length > 0 && (
+                          <p className="text-gray-300 mt-4 text-sm line-clamp-2">{exp.bullets[0]}</p>
+                        )}
                       </motion.div>
                     ))}
                   </div>
