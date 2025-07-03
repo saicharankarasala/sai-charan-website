@@ -58,6 +58,7 @@ const App = () => {
   const [projectSort, setProjectSort] = useState('Newest');
   const [experienceFilter, setExperienceFilter] = useState('All');
   const [experienceSort, setExperienceSort] = useState('Newest');
+  const [selectedExperience, setSelectedExperience] = useState(null);
 
   const handleCardClick = (section, index) => {
     setExpandedCards(prev => ({
@@ -671,6 +672,7 @@ const App = () => {
                         className="bg-[#181f2a] rounded-2xl shadow p-8 text-white transition-transform duration-300 flex flex-col h-full hover:shadow-2xl"
                         whileHover={{ scale: 1.025 }}
                         style={{ cursor: 'pointer' }}
+                        onClick={() => setSelectedExperience(exp)}
                       >
                         <h3 className="text-xl font-bold mb-2 text-white">{exp.title}</h3>
                         <p className="text-[#e13a7a] mb-2">{exp.date}</p>
@@ -691,6 +693,43 @@ const App = () => {
                       </motion.div>
                     ))}
                   </div>
+                  {/* Experience Modal */}
+                  {selectedExperience && (
+                    <div className="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center" onClick={() => setSelectedExperience(null)}>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.3 }}
+                        className="relative bg-[#181f2a] rounded-2xl shadow-2xl p-8 max-w-2xl w-full text-white z-[210]"
+                        onClick={e => e.stopPropagation()}
+                      >
+                        <button
+                          className="absolute top-4 right-4 text-white bg-[#e13a7a] hover:bg-[#6d217f] rounded-full p-2 text-xl z-20"
+                          onClick={() => setSelectedExperience(null)}
+                          aria-label="Close"
+                        >
+                          &times;
+                        </button>
+                        <h3 className="text-2xl font-bold mb-2 text-white">{selectedExperience.title}</h3>
+                        <p className="text-[#e13a7a] mb-2">{selectedExperience.date}</p>
+                        <h4 className="text-lg text-[#e13a7a] mb-2">
+                          {selectedExperience.company}
+                          {selectedExperience.companyUrl && (
+                            <> (<a href={selectedExperience.companyUrl} target="_blank" rel="noopener noreferrer" className="underline text-[#e13a7a]">Client: {selectedExperience.client}</a>)</>
+                          )}
+                        </h4>
+                        <ul className="list-disc pl-5 mt-2 text-gray-300 mb-4">
+                          {selectedExperience.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                        </ul>
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {selectedExperience.tech.map(tech => (
+                            <span key={tech} className="tech-tag bg-[#e13a7a] text-white">{tech}</span>
+                          ))}
+                        </div>
+                      </motion.div>
+                    </div>
+                  )}
                 </div>
               </section>
 
