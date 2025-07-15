@@ -12,7 +12,7 @@ import {
   FaBriefcase, FaGraduationCap, FaExternalLinkAlt, FaChevronDown,
   FaTwitter, FaInstagram, FaUser, FaHome, FaInfoCircle, FaCogs as FaSkills,
   FaProjectDiagram as FaProjects, FaBriefcase as FaExperience, 
-  FaCertificate as FaCertifications, FaEnvelope as FaContact, FaBlog
+  FaCertificate as FaCertifications, FaEnvelope as FaContact, FaBlog, FaMapMarker
 } from 'react-icons/fa';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -251,7 +251,7 @@ const App = () => {
                       </a>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaMapMarkerAlt className="text-[#e13a7a]" />
+                      <FaMapMarker className="text-[#e13a7a]" />
                       Kansas City, MO, USA
                     </li>
                     <li className="flex items-center gap-2">
