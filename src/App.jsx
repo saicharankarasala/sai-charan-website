@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Link as ScrollLink } from 'react-scroll';
 import { 
@@ -38,6 +38,29 @@ import ProjectShowcase from './components/ProjectShowcase';
 import AnimatedSkillCard from './components/AnimatedSkillCard';
 import AnimatedCertificationCard from './components/AnimatedCertificationCard';
 import SkillsCarousel from './components/SkillsCarousel';
+
+// Placeholder page components
+const Home = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-4xl font-bold mb-4 text-[#e13a7a]">Welcome to My Portfolio</h1><p className="text-lg text-gray-600">Explore my work, skills, and journey!</p></div>;
+const About = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-3xl font-bold mb-4 text-[#e13a7a]">About Me</h1><p className="text-lg text-gray-600">(About content will go here)</p></div>;
+const Skills = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-3xl font-bold mb-4 text-[#e13a7a]">Skills</h1><p className="text-lg text-gray-600">(Skills content will go here)</p></div>;
+const Projects = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-3xl font-bold mb-4 text-[#e13a7a]">Projects</h1><p className="text-lg text-gray-600">(Projects content will go here)</p></div>;
+const Experience = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-3xl font-bold mb-4 text-[#e13a7a]">Experience</h1><p className="text-lg text-gray-600">(Experience content will go here)</p></div>;
+const Certifications = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-3xl font-bold mb-4 text-[#e13a7a]">Certifications</h1><p className="text-lg text-gray-600">(Certifications content will go here)</p></div>;
+const Contact = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-3xl font-bold mb-4 text-[#e13a7a]">Contact</h1><p className="text-lg text-gray-600">(Contact form will go here)</p></div>;
+const Blog = () => <div className="min-h-[60vh] flex flex-col items-center justify-center"><h1 className="text-3xl font-bold mb-4 text-[#e13a7a]">Blog</h1><p className="text-lg text-gray-600">(Blog posts will go here)</p></div>;
+
+const Navbar = () => (
+  <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200 shadow-sm py-3 px-6 flex justify-center gap-6">
+    <Link to="/" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">Home</Link>
+    <Link to="/about" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">About</Link>
+    <Link to="/skills" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">Skills</Link>
+    <Link to="/projects" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">Projects</Link>
+    <Link to="/experience" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">Experience</Link>
+    <Link to="/certifications" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">Certifications</Link>
+    <Link to="/contact" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">Contact</Link>
+    <Link to="/blog" className="font-bold text-[#e13a7a] hover:text-[#6d217f] transition">Blog</Link>
+  </nav>
+);
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -443,13 +466,21 @@ const App = () => {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <Navbar />
         {/* Enhanced Components */}
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
         <ScrollProgress />
         <CustomCursor />
         
-      <Routes>
-          <Route path="/blog" element={<BlogLanding />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/certifications" element={<Certifications />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/" element={
             <div className="bg-white min-h-screen text-gray-900 font-sans relative">
@@ -798,7 +829,7 @@ const App = () => {
               )}
             </div>
           } />
-      </Routes>
+        </Routes>
       </BrowserRouter>
       <Analytics />
     </HelmetProvider>
