@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub,
   FaTwitter, FaInstagram, FaPaperPlane, FaUser, FaBuilding,
-  FaMessage, FaCheckCircle, FaTimes
+  FaComment, FaCheckCircle, FaTimes
 } from 'react-icons/fa';
 import EnhancedContact from '../components/EnhancedContact';
 
@@ -185,7 +185,7 @@ const Contact = () => {
                 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    <FaMessage className="inline mr-2 text-[#e13a7a]" />
+                    <FaComment className="inline mr-2 text-[#e13a7a]" />
                     Subject *
                   </label>
                   <input
@@ -201,7 +201,7 @@ const Contact = () => {
                 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    <FaMessage className="inline mr-2 text-[#e13a7a]" />
+                    <FaComment className="inline mr-2 text-[#e13a7a]" />
                     Message *
                   </label>
                   <textarea
