@@ -69,36 +69,36 @@ const Navigation = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="container mx-auto px-6 py-4">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo and Name */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white font-bold text-lg">VSC</span>
+              <div className="w-10 h-10 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                <span className="text-white font-bold text-sm">VSC</span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-xl blur-lg opacity-30 group-hover:opacity-50 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg blur-md opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">Venkata Sai Charan</h1>
-              <p className="text-sm text-gray-600">Software Engineer</p>
+              <h1 className="text-lg font-bold text-gray-900 leading-tight">Venkata Sai Charan</h1>
+              <p className="text-xs text-gray-600 font-medium">Software Engineer</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm ${
                   isActive(item.path)
-                    ? 'text-[#e13a7a] bg-[#e13a7a]/10'
-                    : 'text-gray-700 hover:text-[#e13a7a] hover:bg-gray-50'
+                    ? 'text-[#e13a7a] bg-[#e13a7a]/5 border-b-2 border-[#e13a7a]'
+                    : 'text-gray-600 hover:text-[#e13a7a] hover:bg-gray-50'
                 }`}
               >
-                <item.icon className="text-lg" />
+                <item.icon className="text-base" />
                 {item.label}
               </Link>
             ))}
@@ -107,34 +107,38 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg border border-gray-300 hover:border-[#e13a7a] transition-colors duration-300"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            aria-label="Toggle menu"
           >
-            {isMenuOpen ? <FaTimes className="text-[#e13a7a]" /> : <FaBars className="text-gray-700" />}
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <span className={`w-5 h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
+              <span className={`w-5 h-0.5 bg-gray-600 transition-all duration-300 mt-1 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-5 h-0.5 bg-gray-600 transition-all duration-300 mt-1 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
+            </div>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden mt-4 pb-4"
+            className="lg:hidden mt-4 pb-4 border-t border-gray-200"
           >
-            <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4">
+            <div className="grid grid-cols-2 gap-2 pt-4">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-4 py-3 rounded-lg font-medium transition-all duration-300 text-sm ${
                     isActive(item.path)
-                      ? 'text-[#e13a7a] bg-[#e13a7a]/10'
-                      : 'text-gray-700 hover:text-[#e13a7a] hover:bg-gray-50'
+                      ? 'text-[#e13a7a] bg-[#e13a7a]/10 border-l-4 border-[#e13a7a]'
+                      : 'text-gray-600 hover:text-[#e13a7a] hover:bg-gray-50'
                   }`}
                 >
-                  <item.icon className="text-lg" />
+                  <item.icon className="text-base" />
                   {item.label}
                 </Link>
               ))}
@@ -171,7 +175,7 @@ const App = () => {
           <Navigation />
           
           {/* Routes */}
-          <Routes>
+      <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skills />} />
@@ -179,8 +183,8 @@ const App = () => {
             <Route path="/experience" element={<Experience />} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/blog" element={<BlogLanding />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/blog" element={<BlogLanding />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
 
           {/* Footer */}
@@ -192,11 +196,11 @@ const App = () => {
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold">VSC</span>
-                    </div>
+                  </div>
                     <div>
                       <h3 className="text-xl font-bold">Venkata Sai Charan</h3>
                       <p className="text-gray-400">Software Engineer</p>
-                    </div>
+                      </div>
                   </div>
                   <p className="text-gray-400 mb-6 max-w-md">
                     Passionate software engineer with expertise in full-stack development, 
@@ -237,7 +241,7 @@ const App = () => {
                     <li><Link to="/projects" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">Projects</Link></li>
                     <li><Link to="/experience" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">Experience</Link></li>
                     <li><Link to="/certifications" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">Certifications</Link></li>
-                  </ul>
+                        </ul>
                 </div>
 
                 {/* Contact Info */}
@@ -258,9 +262,9 @@ const App = () => {
                       <FaBriefcase className="text-[#e13a7a]" />
                       Available for opportunities
                     </li>
-                  </ul>
+                        </ul>
                 </div>
-              </div>
+                </div>
 
               <div className="border-t border-gray-800 mt-8 pt-8 text-center">
                 <p className="text-gray-400">
