@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaCode, 
+  FaBriefcase, FaCalendarAlt, FaMapMarker, FaCode, 
   FaFilter, FaSort, FaTimes, FaExternalLinkAlt, FaBuilding,
   FaUserTie, FaGraduationCap, FaRocket, FaChartLine
 } from 'react-icons/fa';
@@ -256,7 +256,7 @@ const Experience = () => {
                 
                 {/* Location and date */}
                 <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
-                  <FaMapMarkerAlt className="text-[#e13a7a]" />
+                  <FaMapMarker className="text-[#e13a7a]" />
                   <span>{exp.location}</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
@@ -382,7 +382,7 @@ const Experience = () => {
                   )}
                   <div className="flex items-center gap-4 text-gray-400 text-sm">
                     <span className="flex items-center gap-1">
-                      <FaMapMarkerAlt className="text-[#e13a7a]" />
+                      <FaMapMarker className="text-[#e13a7a]" />
                       {selectedExperience.location}
                     </span>
                     <span className="flex items-center gap-1">
