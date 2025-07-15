@@ -12,7 +12,7 @@ import {
   FaBriefcase, FaGraduationCap, FaExternalLinkAlt, FaChevronDown,
   FaTwitter, FaInstagram, FaUser, FaHome, FaInfoCircle, FaCogs as FaSkills,
   FaProjectDiagram as FaProjects, FaBriefcase as FaExperience, 
-  FaCertificate as FaCertifications, FaEnvelope as FaContact, FaBlog, FaMapMarker
+  FaCertificate as FaCertifications, FaEnvelope as FaContact, FaBlog, FaMapMarker, FaRocket
 } from 'react-icons/fa';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -49,6 +49,7 @@ import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Certifications from './pages/Certifications';
 import ContactPage from './pages/Contact';
+import Journey from './pages/Journey';
 
 // Navigation Component
 const Navigation = () => {
@@ -58,6 +59,7 @@ const Navigation = () => {
   const navItems = [
     { path: '/', label: 'Home', icon: FaHome },
     { path: '/about', label: 'About', icon: FaInfoCircle },
+    { path: '/journey', label: 'Journey', icon: FaRocket },
     { path: '/skills', label: 'Skills', icon: FaSkills },
     { path: '/projects', label: 'Projects', icon: FaProjects },
     { path: '/experience', label: 'Experience', icon: FaExperience },
@@ -178,13 +180,14 @@ const App = () => {
       <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/journey" element={<Journey />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blog" element={<BlogLanding />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/blog" element={<BlogLanding />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
 
           {/* Footer */}
