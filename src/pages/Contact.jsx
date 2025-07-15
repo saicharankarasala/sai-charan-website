@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub,
+  FaEnvelope, FaPhone, FaMapMarker, FaLinkedin, FaGithub,
   FaTwitter, FaInstagram, FaPaperPlane, FaUser, FaBuilding,
   FaComment, FaCheckCircle, FaTimes
 } from 'react-icons/fa';
@@ -62,7 +62,7 @@ const Contact = () => {
       color: 'bg-green-500'
     },
     {
-      icon: FaMapMarkerAlt,
+      icon: FaMapMarker,
       title: 'Location',
       value: 'Kansas City, MO, USA',
       link: null,
