@@ -61,11 +61,11 @@ const About = () => {
       {/* Main Content */}
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="max-w-4xl mx-auto">
             {/* Story */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
@@ -112,32 +112,31 @@ const About = () => {
                   system should be built with the user in mind."
                 </p>
               </div>
-            </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="text-3xl font-bold text-[#e13a7a] mb-2">{stat.number}</div>
-                    <div className="text-gray-600 font-medium">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="mt-12"
+              >
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
+                      viewport={{ once: true }}
+                      className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <div className="text-3xl font-bold text-[#e13a7a] mb-2">{stat.number}</div>
+                      <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
