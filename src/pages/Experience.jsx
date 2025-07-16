@@ -233,7 +233,7 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.8 }}
                 viewport={{ once: true }}
-                className="relative group bg-[#181f2a] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col h-full cursor-pointer"
+                className="relative group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col h-full cursor-pointer border border-gray-200"
                 onClick={() => setSelectedExperience(exp)}
               >
                 {/* Domain badge */}
@@ -251,15 +251,15 @@ const Experience = () => {
                 </div>
                 
                 {/* Title and company */}
-                <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{exp.title}</h3>
                 <p className="text-[#e13a7a] mb-2 font-semibold">{exp.company}</p>
                 
                 {/* Location and date */}
-                <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
+                <div className="flex items-center gap-2 text-gray-600 text-sm mb-4">
                   <FaMapMarker className="text-[#e13a7a]" />
                   <span>{exp.location}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
+                <div className="flex items-center gap-2 text-gray-600 text-sm mb-4">
                   <FaCalendarAlt className="text-[#e13a7a]" />
                   <span>{exp.date}</span>
                 </div>
@@ -269,13 +269,13 @@ const Experience = () => {
                   {exp.tech.slice(0, 3).map(tech => (
                     <span 
                       key={tech} 
-                      className="px-2 py-1 bg-[#e13a7a]/20 text-[#e13a7a] rounded text-xs font-medium"
+                      className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                   {exp.tech.length > 3 && (
-                    <span className="px-2 py-1 bg-gray-600 text-white rounded text-xs font-medium">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
                       +{exp.tech.length - 3} more
                     </span>
                   )}
@@ -340,17 +340,17 @@ const Experience = () => {
 
       {/* Experience Modal */}
       {selectedExperience && (
-        <div className="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-4" onClick={() => setSelectedExperience(null)}>
+        <div className="fixed inset-0 bg-black/50 z-[200] flex items-center justify-center p-4" onClick={() => setSelectedExperience(null)}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-[#181f2a] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto text-white"
+            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-200"
             onClick={e => e.stopPropagation()}
           >
             <button
-              className="absolute top-4 right-4 text-white bg-[#e13a7a] hover:bg-[#6d217f] rounded-full p-2 text-xl z-20"
+              className="absolute top-4 right-4 text-gray-600 bg-gray-100 hover:bg-[#e13a7a] hover:text-white rounded-full p-2 text-xl z-20 transition-colors duration-300"
               onClick={() => setSelectedExperience(null)}
               aria-label="Close"
             >
@@ -363,7 +363,7 @@ const Experience = () => {
                   <FaBuilding />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-white mb-2">{selectedExperience.title}</h3>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedExperience.title}</h3>
                   <div className="flex items-center gap-4 text-[#e13a7a] mb-2">
                     <span className="font-semibold">{selectedExperience.company}</span>
                     {selectedExperience.companyUrl && (
@@ -371,16 +371,16 @@ const Experience = () => {
                         href={selectedExperience.companyUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-[#e13a7a] hover:text-white transition-colors"
+                        className="text-[#e13a7a] hover:text-[#6d217f] transition-colors"
                       >
                         <FaExternalLinkAlt />
                       </a>
                     )}
                   </div>
                   {selectedExperience.client && (
-                    <p className="text-gray-400 mb-2">Client: {selectedExperience.client}</p>
+                    <p className="text-gray-600 mb-2">Client: {selectedExperience.client}</p>
                   )}
-                  <div className="flex items-center gap-4 text-gray-400 text-sm">
+                  <div className="flex items-center gap-4 text-gray-600 text-sm">
                     <span className="flex items-center gap-1">
                       <FaMapMarker className="text-[#e13a7a]" />
                       {selectedExperience.location}
@@ -398,11 +398,11 @@ const Experience = () => {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <FaCode className="text-[#e13a7a]" />
                   Key Responsibilities
                 </h4>
-                <ul className="space-y-3 text-gray-300 leading-relaxed">
+                <ul className="space-y-3 text-gray-600 leading-relaxed">
                   {selectedExperience.bullets.map((bullet, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-[#e13a7a] rounded-full mt-2 flex-shrink-0"></div>
@@ -413,11 +413,11 @@ const Experience = () => {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <FaChartLine className="text-[#e13a7a]" />
                   Key Achievements
                 </h4>
-                <ul className="space-y-3 text-gray-300 leading-relaxed">
+                <ul className="space-y-3 text-gray-600 leading-relaxed">
                   {selectedExperience.achievements.map((achievement, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-[#e13a7a] rounded-full mt-2 flex-shrink-0"></div>
@@ -428,7 +428,7 @@ const Experience = () => {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-xl font-bold text-white mb-4">Technologies Used</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedExperience.tech.map(tech => (
                     <span 
