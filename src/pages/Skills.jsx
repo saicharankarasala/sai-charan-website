@@ -261,10 +261,6 @@ const Skills = () => {
 
                   <div className="space-y-4 mb-6">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Expert</span>
-                      <span className="text-sm font-semibold text-green-600">{expertCount}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Advanced</span>
                       <span className="text-sm font-semibold text-blue-600">{advancedCount}</span>
                     </div>
