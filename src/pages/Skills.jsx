@@ -6,7 +6,6 @@ import {
   FaJava, FaPython, FaJs, FaHtml5, FaCss3Alt, FaReact, 
   FaGitAlt, FaLinux, FaWindows, FaAws, FaMicrosoft
 } from 'react-icons/fa';
-import SkillsCarousel from '../components/SkillsCarousel';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -126,7 +125,7 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Skills Overview */}
+      {/* Skills Grid Section */}
       <section className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
@@ -137,18 +136,13 @@ const Skills = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Skills <span className="text-[#e13a7a]">Overview</span>
+              Technical <span className="text-[#e13a7a]">Expertise</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From programming languages to cloud platforms, I've built expertise across the full 
               technology stack to deliver comprehensive solutions.
             </p>
           </motion.div>
-
-          {/* Skills Carousel */}
-          <div className="mb-16">
-            <SkillsCarousel skills={skills} />
-          </div>
 
           {/* Category Filter */}
           <motion.div
