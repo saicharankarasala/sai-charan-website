@@ -126,7 +126,7 @@ const Certifications = () => {
           </motion.div>
 
           {/* Certifications Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {filteredCertifications.map((certification, index) => (
               <motion.div
                 key={certification.title}
@@ -134,7 +134,7 @@ const Certifications = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.8 }}
                 viewport={{ once: true }}
-                className="group cursor-pointer"
+                className="group cursor-pointer h-full"
                 onClick={() => setSelectedCertification(certification)}
               >
                 <AnimatedCertificationCard certification={certification} />

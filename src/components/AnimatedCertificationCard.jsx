@@ -22,7 +22,7 @@ const AnimatedCertificationCard = ({ certification }) => {
       style={{ perspective: 1000 }}
     >
       <div
-        className="bg-white p-6 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between"
+        className="bg-white p-6 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col"
         style={{
           transformStyle: 'preserve-3d',
         }}
@@ -41,42 +41,40 @@ const AnimatedCertificationCard = ({ certification }) => {
         </p>
         {/* Issue date */}
         {certification.issueDate && (
-          <p className="text-gray-600 text-center mb-3 text-sm">
+          <p className="text-gray-600 text-center mb-4 text-sm">
             Issued: {certification.issueDate}
           </p>
         )}
-        {/* Credential ID */}
-        {certification.credentialId && (
-          <p className="text-gray-500 text-center mb-4 text-xs">
-            ID: {certification.credentialId}
-          </p>
-        )}
-        {/* Action button */}
-        {certification.verifyUrl && (
-          <a
-            href={certification.verifyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-[#e13a7a] text-white py-2 px-3 rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-sm mt-4 z-10 cursor-pointer border border-[#e13a7a]"
-            style={{ pointerEvents: 'auto' }}
-            tabIndex={0}
-          >
-            <FaExternalLinkAlt />
-            Verify
-          </a>
-        )}
-        {certification.downloadUrl && (
-          <a
-            href={certification.downloadUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-[#e13a7a] text-white py-2 px-3 rounded-lg font-bold hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-base mt-4 z-10 cursor-pointer border border-[#e13a7a]"
-            style={{ pointerEvents: 'auto' }}
-            tabIndex={0}
-          >
-            View Certificate
-          </a>
-        )}
+        {/* Spacer to push button to bottom */}
+        <div className="flex-grow"></div>
+        {/* Action button - always present for consistent spacing */}
+        <div>
+          {certification.verifyUrl && (
+            <a
+              href={certification.verifyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-[#e13a7a] text-white py-2 px-3 rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-sm cursor-pointer border border-[#e13a7a]"
+              style={{ pointerEvents: 'auto' }}
+              tabIndex={0}
+            >
+              <FaExternalLinkAlt />
+              Verify
+            </a>
+          )}
+          {certification.downloadUrl && (
+            <a
+              href={certification.downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-[#e13a7a] text-white py-2 px-3 rounded-lg font-bold hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2 text-base cursor-pointer border border-[#e13a7a]"
+              style={{ pointerEvents: 'auto' }}
+              tabIndex={0}
+            >
+              View Certificate
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
