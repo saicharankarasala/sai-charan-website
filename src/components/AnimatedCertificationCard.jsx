@@ -22,7 +22,7 @@ const AnimatedCertificationCard = ({ certification }) => {
       style={{ perspective: 1000 }}
     >
       <div
-        className="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col justify-between"
+        className="bg-white p-6 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between"
         style={{
           transformStyle: 'preserve-3d',
         }}
@@ -32,7 +32,7 @@ const AnimatedCertificationCard = ({ certification }) => {
           <Icon className="text-4xl" style={{ color: '#e13a7a' }} />
         </div>
         {/* Certification title */}
-        <h3 className="text-xl font-bold text-white text-center mb-3 leading-tight">
+        <h3 className="text-xl font-bold text-gray-900 text-center mb-3 leading-tight">
           {certification.title}
         </h3>
         {/* Issuing organization */}
@@ -41,7 +41,7 @@ const AnimatedCertificationCard = ({ certification }) => {
         </p>
         {/* Issue date */}
         {certification.issueDate && (
-          <p className="text-gray-400 text-center mb-3 text-sm">
+          <p className="text-gray-600 text-center mb-3 text-sm">
             Issued: {certification.issueDate}
           </p>
         )}
