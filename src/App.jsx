@@ -34,7 +34,7 @@ import { motion } from 'framer-motion';
 // import ParticleBackground from './components/ParticleBackground';
 import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';
-import LoadingScreen from './components/LoadingScreen';
+// import LoadingScreen from './components/LoadingScreen';
 import EnhancedContact from './components/EnhancedContact';
 import ProjectShowcase from './components/ProjectShowcase';
 import AnimatedSkillCard from './components/AnimatedSkillCard';
@@ -153,23 +153,11 @@ const Navigation = () => {
 };
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <HelmetProvider>
       <BrowserRouter>
         <div className="min-h-screen bg-white">
           {/* Enhanced Components */}
-          {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
           <ScrollProgress />
           <CustomCursor />
           
@@ -177,7 +165,7 @@ const App = () => {
           <Navigation />
           
           {/* Routes */}
-      <Routes>
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/journey" element={<Journey />} />
