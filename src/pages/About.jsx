@@ -114,7 +114,7 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Photo and Stats */}
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -122,16 +122,6 @@ const About = () => {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              {/* Profile Photo */}
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-2xl blur-xl opacity-30"></div>
-                <img 
-                  src="/images/profile.JPG" 
-                  alt="Venkata Sai Charan - Software Engineer" 
-                  className="relative w-full h-96 object-cover object-top rounded-2xl shadow-2xl z-10"
-                />
-              </div>
-
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6">
                 {stats.map((stat, index) => (
