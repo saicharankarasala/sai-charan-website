@@ -35,7 +35,7 @@ const ProjectShowcase = ({ projects }) => {
             className={`px-6 py-2 rounded-full border-2 transition-all duration-300 ${
               filter === category
                 ? 'border-[#e13a7a] bg-[#e13a7a] text-white'
-                : 'border-gray-600 text-gray-300 hover:border-[#e13a7a] hover:text-[#e13a7a]'
+                : 'border-gray-300 text-gray-600 hover:border-[#e13a7a] hover:text-[#e13a7a] bg-white'
             }`}
           >
             {category}
@@ -45,7 +45,7 @@ const ProjectShowcase = ({ projects }) => {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white"
+          className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:border-[#e13a7a] transition-colors"
         >
           <option value="Newest">Newest First</option>
           <option value="Oldest">Oldest First</option>
@@ -62,14 +62,14 @@ const ProjectShowcase = ({ projects }) => {
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="relative group bg-[#181f2a] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col h-full"
-              whileHover={{ scale: 1.025 }}
+              className="relative group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col h-full border border-gray-200"
+              whileHover={{ scale: 1.025, y: -5 }}
               onClick={() => setSelectedProject(project)}
               style={{ cursor: 'pointer' }}
             >
-              {/* Card content remains always visible */}
-              <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 
-                              shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+              {/* Card content */}
+              <div className="relative bg-white rounded-xl p-6 border border-gray-200 
+                              shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
                 
                 {/* Year badge */}
                 <div className="absolute top-4 right-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -82,24 +82,24 @@ const ProjectShowcase = ({ projects }) => {
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#e13a7a] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#e13a7a] transition-colors duration-300">
                   {project.title}
                 </h3>
                 
                 {/* Description preview */}
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                   {project.description[0]}
                 </p>
                 
                 {/* Tech stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.slice(0, 3).map(tech => (
-                    <span key={tech} className="px-2 py-1 bg-gray-700 text-xs text-gray-300 rounded">
+                    <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
                       {tech}
                     </span>
                   ))}
                   {project.tech.length > 3 && (
-                    <span className="px-2 py-1 bg-gray-700 text-xs text-gray-300 rounded">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
                       +{project.tech.length - 3}
                     </span>
                   )}
@@ -108,8 +108,8 @@ const ProjectShowcase = ({ projects }) => {
                 {/* Action buttons */}
                 <div className="flex gap-2">
                   <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className="flex-1 bg-[#e13a7a] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300 flex items-center justify-center gap-2"
                   >
                     <FaEye />
@@ -118,9 +118,9 @@ const ProjectShowcase = ({ projects }) => {
                   
                   {project.links && project.links.length > 0 && (
                     <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-2 bg-gray-700 text-white rounded-lg hover:bg-[#e13a7a] hover:text-white transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="p-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-[#e13a7a] hover:text-white transition-colors duration-300"
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(project.links[0].url, '_blank');
@@ -143,21 +143,21 @@ const ProjectShowcase = ({ projects }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-gray-900 rounded-xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-700"
+              className="bg-white rounded-xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-200 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-start mb-6">
-                <h2 className="text-2xl font-bold text-white">{selectedProject.title}</h2>
+                <h2 className="text-2xl font-bold text-gray-900">{selectedProject.title}</h2>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-gray-400 hover:text-white text-2xl"
+                  className="text-gray-400 hover:text-gray-600 text-2xl"
                 >
                   ×
                 </button>
@@ -165,25 +165,25 @@ const ProjectShowcase = ({ projects }) => {
               
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <span className="text-[#00ffee] font-medium">{selectedProject.type}</span>
-                  <span className="text-gray-400">{selectedProject.year}</span>
+                  <span className="text-[#e13a7a] font-medium">{selectedProject.type}</span>
+                  <span className="text-gray-500">{selectedProject.year}</span>
                 </div>
                 
                 <div className="space-y-3">
                   {selectedProject.description.map((desc, index) => (
-                    <p key={index} className="text-gray-300 leading-relaxed">
+                    <p key={index} className="text-gray-700 leading-relaxed">
                       {desc}
                     </p>
                   ))}
                 </div>
                 
                 <div>
-                  <h4 className="text-white font-medium mb-2">Technologies Used:</h4>
+                  <h4 className="text-gray-900 font-medium mb-2">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.tech.map(tech => (
-                                              <span key={tech} className="px-3 py-1 bg-[#e13a7a] text-white rounded-full text-sm">
-                          {tech}
-                        </span>
+                      <span key={tech} className="px-3 py-1 bg-[#e13a7a] text-white rounded-full text-sm">
+                        {tech}
+                      </span>
                     ))}
                   </div>
                 </div>
