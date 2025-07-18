@@ -5,7 +5,7 @@ import {
   FaTwitter, FaInstagram, FaPaperPlane, FaUser, FaBuilding,
   FaComment, FaCheckCircle, FaTimes
 } from 'react-icons/fa';
-import EnhancedContact from '../components/EnhancedContact';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -348,28 +348,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Enhanced Contact Component */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Let's <span className="text-[#e13a7a]">Connect</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Whether you have a project in mind or just want to discuss technology, 
-              I'm here to help bring your ideas to life.
-            </p>
-          </motion.div>
-          
-          <EnhancedContact />
-        </div>
-      </section>
+
 
       {/* Call to Action */}
       <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
