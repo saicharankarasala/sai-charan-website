@@ -64,7 +64,7 @@ const Contact = () => {
     {
       icon: FaMapMarker,
       title: 'Location',
-      value: 'Kansas City, MO, USA',
+      value: 'Merrimack, NH, USA',
       link: null,
       color: 'bg-blue-500'
     }

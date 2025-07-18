@@ -258,7 +258,7 @@ const App = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <FaMapMarker className="text-[#e13a7a]" />
-                      Kansas City, MO, USA
+                      Merrimack, NH, USA
                     </li>
                     <li className="flex items-center gap-2">
                       <FaBriefcase className="text-[#e13a7a]" />
