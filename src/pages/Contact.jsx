@@ -100,18 +100,18 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Get In <span className="text-white">Touch</span>
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed px-4">
               Ready to start a project or just want to say hello? I'd love to hear from you. 
               Let's discuss how we can work together to bring your ideas to life.
             </p>
@@ -120,7 +120,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
           {/* Section Header */}
           <motion.div
@@ -128,12 +128,12 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-gray-900">
               Get In <span className="text-[#e13a7a]">Touch</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               Ready to start a project or just want to say hello? I'd love to hear from you.
             </p>
           </motion.div>
@@ -144,10 +144,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
+            className="max-w-2xl mx-auto px-4"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Name *
@@ -158,7 +158,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 text-base"
                     placeholder="Your name"
                   />
                 </div>
@@ -172,7 +172,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 text-base"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -188,7 +188,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300"
+                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 text-base"
                   placeholder="What's this about?"
                 />
               </div>
@@ -202,8 +202,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 resize-none"
+                  rows={5}
+                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 resize-none text-base"
                   placeholder="Tell me about your project or inquiry..."
                 />
               </div>
@@ -211,11 +211,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#e13a7a] text-white py-4 px-8 rounded-lg font-semibold hover:bg-[#6d217f] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#e13a7a] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-semibold hover:bg-[#6d217f] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-base"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    <div className="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white"></div>
                     Sending...
                   </>
                 ) : (
@@ -232,7 +232,7 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`mt-4 p-4 rounded-lg flex items-center gap-2 ${
+                className={`mt-4 p-3 sm:p-4 rounded-lg flex items-center gap-2 text-sm sm:text-base ${
                   submitStatus === 'success' 
                     ? 'bg-green-100 text-green-800 border border-green-200' 
                     : 'bg-red-100 text-red-800 border border-red-200'
@@ -240,13 +240,13 @@ const Contact = () => {
               >
                 {submitStatus === 'success' ? (
                   <>
-                    <FaCheckCircle className="text-green-600" />
-                    Message sent successfully! I'll get back to you soon.
+                    <FaCheckCircle className="text-green-600 flex-shrink-0" />
+                    <span>Message sent successfully! I'll get back to you soon.</span>
                   </>
                 ) : (
                   <>
-                    <FaTimes className="text-red-600" />
-                    Something went wrong. Please try again.
+                    <FaTimes className="text-red-600 flex-shrink-0" />
+                    <span>Something went wrong. Please try again.</span>
                   </>
                 )}
               </motion.div>
@@ -259,9 +259,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-16"
+            className="mt-12 sm:mt-16 px-4"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.title}
@@ -269,21 +269,21 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="text-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300"
+                  className="text-center p-4 sm:p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300"
                 >
-                  <div className={`w-12 h-12 ${info.color} text-white rounded-lg flex items-center justify-center text-xl mx-auto mb-4`}>
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 ${info.color} text-white rounded-lg flex items-center justify-center text-lg sm:text-xl mx-auto mb-3 sm:mb-4`}>
                     <info.icon />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{info.title}</h3>
                   {info.link ? (
                     <a 
                       href={info.link} 
-                      className="text-[#e13a7a] hover:text-[#6d217f] transition-colors duration-300"
+                      className="text-[#e13a7a] hover:text-[#6d217f] transition-colors duration-300 text-sm sm:text-base break-words"
                     >
                       {info.value}
                     </a>
                   ) : (
-                    <p className="text-gray-600">{info.value}</p>
+                    <p className="text-gray-600 text-sm sm:text-base">{info.value}</p>
                   )}
                 </motion.div>
               ))}
@@ -295,10 +295,10 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="mt-12 text-center"
+              className="mt-8 sm:mt-12 text-center"
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Connect With Me</h3>
-              <div className="flex justify-center gap-4">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Connect With Me</h3>
+              <div className="flex justify-center gap-3 sm:gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.name}
@@ -309,7 +309,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1, duration: 0.6 }}
                     viewport={{ once: true }}
-                    className={`w-12 h-12 ${social.color} text-white rounded-lg flex items-center justify-center text-xl transition-all duration-300 hover:scale-110`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 ${social.color} text-white rounded-lg flex items-center justify-center text-lg sm:text-xl transition-all duration-300 hover:scale-110`}
                     aria-label={social.name}
                   >
                     <social.icon />
@@ -321,10 +321,8 @@ const Contact = () => {
         </div>
       </section>
 
-
-
       {/* Call to Action */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -332,17 +330,17 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
               Ready to <span className="text-white">Start</span>?
             </h2>
-            <p className="text-xl mb-8 text-white/90 leading-relaxed">
+            <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-white/90 leading-relaxed px-4">
               Don't wait to bring your ideas to life. Let's discuss your project 
               and see how we can work together to achieve your goals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <a 
                 href="mailto:saicharankarasala@gmail.com" 
-                className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#e13a7a] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300 text-sm sm:text-base"
               >
                 <FaEnvelope />
                 Send Email
@@ -351,7 +349,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/sai-charan-k-v/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white hover:text-[#e13a7a] transition-all duration-300 text-sm sm:text-base"
               >
                 <FaLinkedin />
                 Connect on LinkedIn

@@ -77,10 +77,12 @@ const Navigation = () => {
           {/* Logo and Name */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
-                <span className="text-white font-bold text-sm">VSC</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg blur-md opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+              <img 
+                src="/images/vsclogo.jpeg" 
+                alt="Venkata Sai Charan Logo" 
+                className="w-10 h-10 object-contain rounded-lg shadow-md group-hover:shadow-lg transition-all duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg blur-md opacity-10 group-hover:opacity-20 transition-all duration-300"></div>
             </div>
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold text-gray-900 leading-tight">Venkata Sai Charan</h1>
@@ -185,13 +187,15 @@ const App = () => {
                 {/* Brand */}
                 <div className="col-span-1 md:col-span-2">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold">VSC</span>
-                  </div>
+                    <img 
+                      src="/images/vsclogo.jpeg" 
+                      alt="Venkata Sai Charan Logo" 
+                      className="w-10 h-10 object-contain rounded-lg"
+                    />
                     <div>
                       <h3 className="text-xl font-bold">Venkata Sai Charan</h3>
                       <p className="text-gray-400">Software Engineer</p>
-                      </div>
+                    </div>
                   </div>
                   <p className="text-gray-400 mb-6 max-w-md">
                     Passionate software engineer with expertise in full-stack development, 
