@@ -72,23 +72,30 @@ const Navigation = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="container mx-auto px-6 py-3">
+      <div className="container mx-auto px-6 py-2">
         <div className="flex justify-between items-center">
           {/* Logo and Name */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative">
+          <div className="flex items-center gap-8">
+            {/* Logo */}
+            <Link 
+              to="/" 
+              className="group"
+              aria-label="Go to homepage"
+            >
               <img 
-                src="/images/vsclogo.jpeg" 
-                alt="Venkata Sai Charan Logo" 
-                className="w-10 h-10 object-contain rounded-lg shadow-md group-hover:shadow-lg transition-all duration-300"
+                src="/images/vsclogo.png" 
+                alt="Venkata Sai Charan - Software Engineer Logo" 
+                className="w-40 sm:w-48 h-auto object-contain group-hover:scale-110 transition-all duration-300"
+                style={{ minWidth: '150px' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] rounded-lg blur-md opacity-10 group-hover:opacity-20 transition-all duration-300"></div>
-            </div>
+            </Link>
+            
+            {/* Name */}
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-gray-900 leading-tight">Venkata Sai Charan</h1>
-              <p className="text-xs text-gray-600 font-medium">Software Engineer</p>
+              <h1 className="text-2xl font-bold text-gray-900 leading-tight">Venkata Sai Charan</h1>
+              <p className="text-base text-gray-600 font-medium">Software Engineer</p>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
@@ -96,13 +103,13 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all duration-300 text-xs ${
                   isActive(item.path)
                     ? 'text-[#e13a7a] bg-[#e13a7a]/5 border-b-2 border-[#e13a7a]'
                     : 'text-gray-600 hover:text-[#e13a7a] hover:bg-gray-50'
                 }`}
               >
-                <item.icon className="text-base" />
+                <item.icon className="text-sm" />
                 {item.label}
               </Link>
             ))}
@@ -111,13 +118,13 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            className="lg:hidden p-1.5 rounded-lg hover:bg-gray-100 transition-colors duration-300"
             aria-label="Toggle menu"
           >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`w-5 h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-gray-600 transition-all duration-300 mt-1 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-gray-600 transition-all duration-300 mt-1 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
+            <div className="w-5 h-5 flex flex-col justify-center items-center">
+              <span className={`w-4 h-0.5 bg-gray-600 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
+              <span className={`w-4 h-0.5 bg-gray-600 transition-all duration-300 mt-1 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-4 h-0.5 bg-gray-600 transition-all duration-300 mt-1 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
             </div>
           </button>
         </div>
@@ -128,21 +135,21 @@ const Navigation = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden mt-4 pb-4 border-t border-gray-200"
+            className="lg:hidden mt-3 pb-3 border-t border-gray-200"
           >
-            <div className="grid grid-cols-2 gap-2 pt-4">
+            <div className="grid grid-cols-2 gap-2 pt-3">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 px-4 py-3 rounded-lg font-medium transition-all duration-300 text-sm ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 text-xs ${
                     isActive(item.path)
                       ? 'text-[#e13a7a] bg-[#e13a7a]/10 border-l-4 border-[#e13a7a]'
                       : 'text-gray-600 hover:text-[#e13a7a] hover:bg-gray-50'
                   }`}
                 >
-                  <item.icon className="text-base" />
+                  <item.icon className="text-sm" />
                   {item.label}
                 </Link>
               ))}
@@ -167,7 +174,7 @@ const App = () => {
           <Navigation />
           
           {/* Routes */}
-          <Routes>
+      <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/journey" element={<Journey />} />
@@ -176,8 +183,8 @@ const App = () => {
             <Route path="/experience" element={<Experience />} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/blog" element={<BlogLanding />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/blog" element={<BlogLanding />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
 
           {/* Footer */}
@@ -189,13 +196,13 @@ const App = () => {
                   <div className="flex items-center gap-3 mb-4">
                     <img 
                       src="/images/vsclogo.jpeg" 
-                      alt="Venkata Sai Charan Logo" 
-                      className="w-10 h-10 object-contain rounded-lg"
+                      alt="Venkata Sai Charan - Software Engineer Logo" 
+                      className="w-8 h-8 sm:w-9 sm:h-9 object-contain"
                     />
                     <div>
                       <h3 className="text-xl font-bold">Venkata Sai Charan</h3>
                       <p className="text-gray-400">Software Engineer</p>
-                    </div>
+                      </div>
                   </div>
                   <p className="text-gray-400 mb-6 max-w-md">
                     Passionate software engineer with expertise in full-stack development, 
