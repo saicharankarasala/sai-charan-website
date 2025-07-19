@@ -10,7 +10,7 @@ import {
   FaCodeBranch, FaProjectDiagram, FaNetworkWired, FaCertificate,
   FaCogs, FaTools, FaLaptopCode, FaTerminal, FaCode as FaCodeAlt,
   FaBriefcase, FaGraduationCap, FaExternalLinkAlt, FaChevronDown,
-  FaTwitter, FaInstagram, FaUser, FaHome, FaInfoCircle, FaCogs as FaSkills,
+  FaUser, FaHome, FaInfoCircle, FaCogs as FaSkills,
   FaProjectDiagram as FaProjects, FaBriefcase as FaExperience, 
   FaCertificate as FaCertifications, FaEnvelope as FaContact, FaBlog, FaMapMarker, FaRocket
 } from 'react-icons/fa';

@@ -104,7 +104,6 @@ const Blog = () => {
       {/* Sticky Share Buttons (always visible, top-level) */}
       <div className="sticky-share-buttons">
         <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.venkatasaicharan.com/blog" target="_blank" rel="noopener noreferrer" className="share-button linkedin">LinkedIn</a>
-        <a href="https://twitter.com/intent/tweet?url=https://www.venkatasaicharan.com/blog&text=Check out this awesome portfolio blog!" target="_blank" rel="noopener noreferrer" className="share-button twitter">Twitter</a>
         <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="share-button github">GitHub</a>
       </div>
       {/* Reading Progress Bar */}
