@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaEnvelope, FaPhone, FaMapMarker, FaLinkedin, FaGithub,
+  FaEnvelope, FaMapMarker, FaLinkedin, FaGithub,
   FaTwitter, FaInstagram, FaPaperPlane, FaUser, FaBuilding,
   FaComment, FaCheckCircle, FaTimes
 } from 'react-icons/fa';
@@ -53,13 +53,6 @@ const Contact = () => {
       value: 'saicharankarasala@gmail.com',
       link: 'mailto:saicharankarasala@gmail.com',
       color: 'bg-red-500'
-    },
-    {
-      icon: FaPhone,
-      title: 'Phone',
-      value: '+1 (816) 555-0123',
-      link: 'tel:+18165550123',
-      color: 'bg-green-500'
     },
     {
       icon: FaMapMarker,
