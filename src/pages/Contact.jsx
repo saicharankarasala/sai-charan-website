@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   FaEnvelope, FaMapMarker, FaLinkedin, FaGithub,
-  FaTwitter, FaInstagram, FaPaperPlane, FaUser, FaBuilding,
+  FaPaperPlane, FaUser, FaBuilding,
   FaComment, FaCheckCircle, FaTimes
 } from 'react-icons/fa';
 
@@ -75,18 +75,6 @@ const Contact = () => {
       icon: FaGithub,
       url: 'https://github.com/KVSC1511',
       color: 'bg-gray-800 hover:bg-gray-900'
-    },
-    {
-      name: 'Twitter',
-      icon: FaTwitter,
-      url: 'https://twitter.com/saicharankv',
-      color: 'bg-blue-400 hover:bg-blue-500'
-    },
-    {
-      name: 'Instagram',
-      icon: FaInstagram,
-      url: 'https://instagram.com/saicharankv',
-      color: 'bg-pink-500 hover:bg-pink-600'
     }
   ];
 
