@@ -72,10 +72,10 @@ const Navigation = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="container mx-auto px-6 py-1.5">
+      <div className="container mx-auto px-2 py-1.5">
         <div className="flex justify-between items-center">
           {/* Logo and Name */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 min-w-[320px]">
             {/* Logo */}
             <Link 
               to="/" 
@@ -85,15 +85,15 @@ const Navigation = () => {
               <img 
                 src="/images/vsclogo.png" 
                 alt="Venkata Sai Charan - Software Engineer Logo" 
-                className="w-40 sm:w-48 h-auto object-contain group-hover:scale-110 transition-all duration-300"
-                style={{ minWidth: '150px' }}
+                className="w-16 sm:w-20 h-auto object-contain group-hover:scale-110 transition-all duration-300"
+                style={{ minWidth: '56px' }}
               />
             </Link>
-            
-            {/* Name */}
-            <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold text-gray-900 leading-tight">Venkata Sai Charan</h1>
-              <p className="text-base text-gray-600 font-medium">Software Engineer</p>
+            {/* Name Block */}
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl sm:text-2xl font-bold text-gray-900">Venkata</span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-900">Sai Charan</span>
+              <span className="text-sm sm:text-base text-gray-600 font-medium">Software Engineer</span>
             </div>
           </div>
 
