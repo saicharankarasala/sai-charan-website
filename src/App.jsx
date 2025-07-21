@@ -162,13 +162,22 @@ const Navigation = () => {
 };
 
 const App = () => {
+  // Responsive check for desktop
+  const [isDesktop, setIsDesktop] = useState(true);
+  useEffect(() => {
+    const checkScreen = () => setIsDesktop(window.innerWidth >= 768);
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
+
   return (
     <HelmetProvider>
       <BrowserRouter>
         <div className="min-h-screen bg-white pt-20">
           {/* Enhanced Components */}
           <ScrollProgress />
-          <CustomCursor />
+          {isDesktop && <CustomCursor />}
           
           {/* Navigation */}
           <Navigation />
