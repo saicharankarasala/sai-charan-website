@@ -165,7 +165,7 @@ const App = () => {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white pt-20">
           {/* Enhanced Components */}
           <ScrollProgress />
           <CustomCursor />
