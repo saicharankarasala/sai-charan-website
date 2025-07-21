@@ -72,7 +72,7 @@ const Navigation = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="container mx-auto px-6 py-2">
+      <div className="container mx-auto px-6 py-1.5">
         <div className="flex justify-between items-center">
           {/* Logo and Name */}
           <div className="flex items-center gap-8">
@@ -103,13 +103,13 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all duration-300 text-xs ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all duration-300 text-sm lg:text-base ${
                   isActive(item.path)
                     ? 'text-[#e13a7a] bg-[#e13a7a]/5 border-b-2 border-[#e13a7a]'
                     : 'text-gray-600 hover:text-[#e13a7a] hover:bg-gray-50'
                 }`}
               >
-                <item.icon className="text-sm" />
+                <item.icon className="text-base" />
                 {item.label}
               </Link>
             ))}
