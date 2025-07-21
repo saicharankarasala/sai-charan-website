@@ -163,37 +163,34 @@ const Journey = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  className={`relative flex flex-col md:flex-row items-center ${
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
                   {/* Content */}
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                  <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} mb-6 md:mb-0`}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
-                      className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                      className="bg-white px-3 py-4 md:p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 cursor-pointer break-words"
                       onClick={() => setSelectedMilestone(milestone)}
                     >
                       <div className="flex items-center gap-3 mb-4">
-                        <div className={`w-12 h-12 ${milestone.color} text-white rounded-xl flex items-center justify-center text-xl`}>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 ${milestone.color} text-white rounded-xl flex items-center justify-center text-lg md:text-xl`}>
                           <milestone.icon />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold text-gray-900">{milestone.title}</h3>
-                          <p className="text-[#e13a7a] font-semibold">{milestone.subtitle}</p>
+                          <h3 className="text-lg md:text-xl font-bold text-gray-900">{milestone.title}</h3>
+                          <p className="text-[#e13a7a] font-semibold text-base md:text-lg">{milestone.subtitle}</p>
                         </div>
                       </div>
-                      
                       <div className="mb-4">
-                        <span className="inline-block bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
+                        <span className="inline-block bg-[#e13a7a] text-white px-3 py-1 rounded-full text-xs md:text-sm font-bold">
                           {milestone.year}
                         </span>
                       </div>
-                      
-                      <p className="text-gray-600 leading-relaxed mb-4">
+                      <p className="text-gray-600 leading-relaxed mb-4 break-words text-sm md:text-base">
                         {milestone.description}
                       </p>
-                      
                       <div className="flex flex-wrap gap-2">
                         {milestone.skills.slice(0, 3).map(skill => (
                           <span 
@@ -211,7 +208,6 @@ const Journey = () => {
                       </div>
                     </motion.div>
                   </div>
-
                   {/* Timeline Dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-[#e13a7a] rounded-full shadow-lg"></div>
                 </motion.div>
