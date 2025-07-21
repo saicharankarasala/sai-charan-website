@@ -75,7 +75,7 @@ const Navigation = () => {
       <div className="container mx-auto px-2 py-1.5">
         <div className="flex justify-between items-center">
           {/* Logo and Name */}
-          <div className="flex items-center gap-4 min-w-[320px]">
+          <div className="flex items-center gap-2 min-w-0 md:gap-4 md:min-w-[320px]">
             {/* Logo */}
             <Link 
               to="/" 
@@ -85,15 +85,15 @@ const Navigation = () => {
               <img 
                 src="/images/vsclogo.png" 
                 alt="Venkata Sai Charan - Software Engineer Logo" 
-                className="w-16 sm:w-20 h-auto object-contain group-hover:scale-110 transition-all duration-300"
-                style={{ minWidth: '56px' }}
+                className="w-12 sm:w-16 md:w-20 h-auto object-contain group-hover:scale-110 transition-all duration-300"
+                style={{ minWidth: '48px' }}
               />
             </Link>
             {/* Name Block */}
             <div className="flex flex-col leading-tight">
-              <span className="text-xl sm:text-2xl font-bold text-gray-900">Venkata</span>
-              <span className="text-xl sm:text-2xl font-bold text-gray-900">Sai Charan</span>
-              <span className="text-sm sm:text-base text-gray-600 font-medium">Software Engineer</span>
+              <span className="text-base sm:text-xl md:text-2xl font-bold text-gray-900">Venkata</span>
+              <span className="text-base sm:text-xl md:text-2xl font-bold text-gray-900">Sai Charan</span>
+              <span className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">Software Engineer</span>
             </div>
           </div>
 
