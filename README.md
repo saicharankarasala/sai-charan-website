@@ -11,10 +11,15 @@ Welcome to the GitHub repository for my personal portfolio website! This project
 ---
 
 ## 🆕 Recent Major Improvements (2025)
+- **Organization Logo Integration**: Added authentic company logos (UMKC, Trbhi INC, Source Consulting LLC, Wipro Technologies, St. Joseph's College, Merizon Technologies) throughout the portfolio for enhanced visual credibility.
+- **Accurate Timeline Data**: Updated Journey page with precise education and work experience timeline matching real career progression.
+- **Enhanced Mobile Experience**: Fixed timeline squeeze issues, improved responsive design, and optimized mobile navigation.
+- **UI/UX Refinements**: Reduced header size, improved logo placement, fixed navbar stability, and removed custom cursor for better accessibility.
+- **Privacy & Cleanup**: Removed phone number, Instagram, and Twitter links for enhanced privacy and cleaner presentation.
+- **Performance Optimizations**: Fixed AnimatePresence warnings and improved animation performance across all components.
 - **Deep Clean:** Removed all unused files, Dockerfile, Angular project, and legacy API endpoints.
 - **SPA Routing Fix:** Corrected Vercel deployment to support client-side routing for all pages (including `/blog`).
 - **Single Branch Deployment:** Now deployed exclusively from the `main` branch on Vercel. No more `gh-pages` branch or GitHub Pages.
-- **Performance & Structure:** Optimized build, improved project structure, and ensured all assets are in the root `assets/` directory.
 - **Removed AI Chat:** All AI Chat Assistant and related backend code have been fully removed for a cleaner, faster site.
 
 ---
@@ -27,6 +32,7 @@ Welcome to the GitHub repository for my personal portfolio website! This project
 - **Professional Blog**: Single-page blog with sticky Table of Contents and anchor links.
 - **Contact Form**: EmailJS-powered, with confetti animation on success.
 - **Integrated Social Links**: LinkedIn, Email, GitHub, and more.
+- **Organization Branding**: Authentic company logos integrated throughout experience and journey sections.
 - **Optimized for Performance**: Fast builds and global delivery via Vercel.
 
 ---
@@ -92,6 +98,9 @@ npm run preview
     - To add or update blog sections, edit the relevant components in `src/` and update the TOC/sidebar for new anchor links.
 - **Animated Hero Roles:**
     - To customize the animated roles/titles in the hero section, edit the `words` array in the `<Typewriter />` component in `src/App.jsx`.
+- **Organization Logos:**
+    - Add your organization logos to `public/images/` and update the logo constants in `src/pages/Journey.jsx` and `src/pages/Experience.jsx`.
+    - Ensure logos have transparent backgrounds for optimal display.
 
 ---
 
@@ -109,6 +118,15 @@ MyPortfolio/
 │   │   ├── ...
 │   └── icons/
 │       ├── ...
+├── public/           # Public files and organization logos
+│   ├── images/
+│   │   ├── umkclogo.png
+│   │   ├── trbhilogo.png
+│   │   ├── sc_logo.png
+│   │   ├── wiprologo.svg
+│   │   ├── SJCElogo.png
+│   │   ├── MTlogo.png
+│   │   └── ...
 ├── src/              # React source code
 │   ├── components/   # Reusable React components
 │   ├── data/         # Data files (e.g., blogData.js)
@@ -117,7 +135,6 @@ MyPortfolio/
 │   ├── index.css     # Global styles and Tailwind directives
 │   ├── main.jsx      # Entry point for the React application
 │   └── ...
-├── public/           # Public files (favicon, etc.)
 ├── dist/             # Build output (auto-generated)
 ├── vercel.json       # Vercel SPA routing config
 ├── package.json      # Project metadata and scripts
