@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import { 
   FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight,
-  FaUser, FaCode, FaServer, FaCloud, FaDatabase
+  FaUser, FaCode, FaServer, FaCloud, FaDatabase, FaMapMarker, FaBriefcase
 } from 'react-icons/fa';
 
 const Home = () => {
@@ -75,6 +75,23 @@ const Home = () => {
                 Let's build what matters and create solutions that make a difference.
               </motion.p>
 
+              {/* SEO-friendly location and availability info */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="flex flex-wrap gap-4 mb-6 text-sm text-white/80"
+              >
+                <div className="flex items-center gap-2">
+                  <FaMapMarker className="text-[#e13a7a]" />
+                  <span>Merrimack, NH, USA</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FaBriefcase className="text-[#e13a7a]" />
+                  <span>Available for opportunities</span>
+                </div>
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -144,7 +161,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-full blur-xl opacity-30 animate-pulse"></div>
                 <img 
                   src="/images/profile.JPG" 
-                  alt="Venkata Sai Charan - Software Engineer" 
+                  alt="Venkata Sai Charan - Software Engineer Portfolio" 
                   className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full border-4 border-white shadow-2xl object-cover object-top z-10"
                 />
               </div>
@@ -199,12 +216,12 @@ const Home = () => {
                 key={item.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.8 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="text-center p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:shadow-lg transition-all duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#e13a7a] text-white rounded-full mb-4 text-2xl">
-                  <item.icon />
+                <div className="w-16 h-16 bg-gradient-to-br from-[#e13a7a] to-[#6d217f] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="text-white text-2xl" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
@@ -214,39 +231,77 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
-        <div className="container mx-auto max-w-4xl text-center">
+      {/* SEO-friendly About Section */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Ready to Build Something <span className="text-white">Amazing</span>?
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+              About <span className="text-[#e13a7a]">Venkata Sai Charan</span>
             </h2>
-            <p className="text-xl mb-8 text-white/90 leading-relaxed">
-              Let's collaborate on your next project. Whether it's a web application, 
-              data pipeline, or cloud infrastructure, I'm here to help bring your vision to life.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Software Engineer with expertise in React, Node.js, and modern web technologies. 
+              Based in Merrimack, NH, specializing in full-stack development and cloud solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/projects" 
-                className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300 group"
-              >
-                View My Work
-                <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a 
-                href="/contact" 
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-[#e13a7a] transition-all duration-300 group"
-              >
-                Get In Touch
-                <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Technical Expertise</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Specializing in React, Node.js, JavaScript, and modern web development technologies. 
+                  Experienced in cloud platforms like AWS and Azure, with a strong foundation in 
+                  database design and API development.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Professional Experience</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Currently working as a Software Engineer at Source Consulting LLC, with previous 
+                  experience at Trbhi INC, Wipro Technologies, and Merizon Technologies. 
+                  Passionate about creating innovative solutions and driving business value.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-lg shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Key Skills</h3>
+              <div className="space-y-4">
+                {[
+                  "React & JavaScript Development",
+                  "Node.js & Backend Development", 
+                  "AWS & Cloud Infrastructure",
+                  "Database Design & Management",
+                  "API Development & Integration",
+                  "DevOps & CI/CD Pipelines"
+                ].map((skill, index) => (
+                  <div key={skill} className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-[#e13a7a] rounded-full"></div>
+                    <span className="text-gray-700">{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
