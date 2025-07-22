@@ -11,93 +11,106 @@ const Journey = () => {
 
   const journeyMilestones = [
     {
-      year: 2020,
-      title: "Academic Foundation",
-      subtitle: "Computer Science Education",
+      year: "2017-2021",
+      title: "Bachelor of Engineering in Electronics and Communication",
+      subtitle: "St. Joseph's College of Engineering",
       icon: FaGraduationCap,
       type: "education",
-      description: "Started my journey in computer science, building a strong foundation in programming fundamentals, algorithms, and software engineering principles.",
+      description: "Completed Bachelor of Engineering in Electronics and Communication. Built a strong foundation in engineering principles, electronics, and communication systems.",
       achievements: [
-        "Completed core computer science courses",
-        "Developed first programming projects",
-        "Joined coding communities and hackathons"
+        "GPA: 3.7",
+        "Strong foundation in electronics and communication"
       ],
-      skills: ["Java", "Python", "Data Structures", "Algorithms"],
+      skills: ["Electronics", "Communication", "Engineering", "Problem Solving"],
+      color: "bg-yellow-500"
+    },
+    {
+      year: "2019-2021",
+      title: "Software Engineer",
+      subtitle: "Merizon Technologies LLC",
+      icon: FaBriefcase,
+      type: "work",
+      description: "Developed full-stack apps with Java, Spring Boot, MySQL, and JavaScript. Implemented CI with GitHub Actions, improved test coverage, and optimized API performance.",
+      achievements: [
+        "Improved API performance by 25%",
+        "Increased test coverage by 40%",
+        "Reduced deployment time by 60%"
+      ],
+      skills: ["Java", "Spring Boot", "MySQL", "JavaScript", "GitHub Actions", "JUnit", "Selenium", "SQL"],
       color: "bg-blue-500"
     },
     {
-      year: 2021,
-      title: "First Professional Experience",
-      subtitle: "Software Development Intern",
+      year: "2021-2022",
+      title: "Software Engineer",
+      subtitle: "Wipro Technologies",
       icon: FaBriefcase,
       type: "work",
-      description: "Landed my first professional role, working on real-world projects and learning industry best practices.",
+      description: "Built ETL pipelines using Informatica, PL/SQL, Unix Shell, and CI via GitLab. Automated reporting flows, managed metadata, and supported cross-functional teams.",
       achievements: [
-        "Contributed to production applications",
-        "Learned version control and collaboration",
-        "Gained experience with modern development tools"
+        "Improved ETL efficiency by 30%",
+        "Reduced manual reporting time by 50%",
+        "Enhanced data quality by 25%"
       ],
-      skills: ["JavaScript", "React", "Git", "Agile"],
+      skills: ["Informatica", "PL/SQL", "Unix Shell", "GitLab CI", "Python", "Excel Macros", "SQL"],
       color: "bg-green-500"
     },
     {
-      year: 2022,
-      title: "Full-Stack Development",
-      subtitle: "Expanding Technical Skills",
-      icon: FaCode,
-      type: "skill",
-      description: "Dived deep into full-stack development, mastering both frontend and backend technologies.",
+      year: "2022-2023",
+      title: "Master of Science in Computer Science",
+      subtitle: "University of Missouri - Kansas City",
+      icon: FaGraduationCap,
+      type: "education",
+      description: "Completed Master of Science in Computer Science, focusing on software engineering, data engineering, and cloud technologies.",
       achievements: [
-        "Built complete web applications",
-        "Learned database design and management",
-        "Implemented RESTful APIs"
+        "GPA: 3.75",
+        "Specialized in software engineering and data engineering"
       ],
-      skills: ["Node.js", "MongoDB", "Express", "React"],
-      color: "bg-purple-500"
-    },
-    {
-      year: 2023,
-      title: "Cloud & DevOps",
-      subtitle: "Modern Infrastructure",
-      icon: FaRocket,
-      type: "skill",
-      description: "Explored cloud computing and DevOps practices, understanding scalable architecture and deployment.",
-      achievements: [
-        "Deployed applications to cloud platforms",
-        "Learned containerization with Docker",
-        "Implemented CI/CD pipelines"
-      ],
-      skills: ["AWS", "Docker", "CI/CD", "Linux"],
-      color: "bg-orange-500"
-    },
-    {
-      year: 2024,
-      title: "Data Engineering",
-      subtitle: "Big Data & Analytics",
-      icon: FaChartLine,
-      type: "skill",
-      description: "Ventured into data engineering, working with large datasets and building data pipelines.",
-      achievements: [
-        "Processed large datasets efficiently",
-        "Built ETL pipelines",
-        "Created data visualizations"
-      ],
-      skills: ["Python", "Pandas", "Hadoop", "Tableau"],
+      skills: ["Software Engineering", "Data Engineering", "Cloud Technologies"],
       color: "bg-red-500"
     },
     {
-      year: 2025,
-      title: "Senior Software Engineer",
-      subtitle: "Source Consulting LLC",
+      year: 2023,
+      title: "Graduate Student Technical Assistant",
+      subtitle: "University of Missouri - Kansas City",
+      icon: FaGraduationCap,
+      type: "education",
+      description: "Managed 150+ lab systems, automated diagnostics, and improved student support. Used PXE, GPO, Linux/Windows, Python, and Bash for IT support and automation.",
+      achievements: [
+        "Reduced support tickets by 35% through automation",
+        "Improved student satisfaction by 40%",
+        "Managed 150+ systems efficiently"
+      ],
+      skills: ["PXE", "GPO", "Linux", "Windows", "Python", "Bash", "Support Automation"],
+      color: "bg-purple-500"
+    },
+    {
+      year: 2024,
+      title: "Network Operation Analyst",
+      subtitle: "Trbhi INC (Ziply Fiber Technology)",
+      icon: FaRocket,
+      type: "work",
+      description: "Reduced MTTR by 40% with Python/Bash automation and Dynatrace monitoring. Debugged D365 and APIs, improved system uptime, and streamlined troubleshooting.",
+      achievements: [
+        "Improved system uptime by 25%",
+        "Reduced incident response time by 40%",
+        "Streamlined troubleshooting processes"
+      ],
+      skills: ["Python", "Bash", "Dynatrace", "PowerShell", "SQL Server", "ServiceNow", "D365"],
+      color: "bg-orange-500"
+    },
+    {
+      year: "2025-Present",
+      title: "Software Engineer",
+      subtitle: "Source Consulting LLC (Touch Screens Inc)",
       icon: FaAward,
       type: "work",
-      description: "Current role as a senior software engineer, leading projects and mentoring junior developers.",
+      description: "Automated pricing for 100K+ SKUs, built ETL pipelines, visualized KPIs, and implemented REST & Bash scripts. Led automation and data engineering projects.",
       achievements: [
-        "Leading development teams",
-        "Architecting scalable solutions",
-        "Mentoring junior developers"
+        "Reduced manual pricing time by 80% through automation",
+        "Improved data processing efficiency by 60%",
+        "Enhanced reporting accuracy by 95%"
       ],
-      skills: ["Leadership", "System Design", "Mentoring", "Project Management"],
+      skills: ["Python", "Pandas", "AWS Lambda", "Google Sheets API", "Hadoop", "Snowflake", "Pentaho", "Tableau", "Power BI", "REST", "Bash"],
       color: "bg-pink-500"
     }
   ];

@@ -177,7 +177,6 @@ const App = () => {
         <div className="min-h-screen bg-white pt-20">
           {/* Enhanced Components */}
           <ScrollProgress />
-          {isDesktop && <CustomCursor />}
           
           {/* Navigation */}
           <Navigation />
