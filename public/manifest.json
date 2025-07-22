@@ -1,0 +1,21 @@
+{
+  "name": "Venkata Sai Charan - Software Engineer",
+  "short_name": "VSC Portfolio",
+  "description": "Software Engineer Portfolio - Full-stack developer with expertise in React, Node.js, and modern web technologies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e13a7a",
+  "icons": [
+    {
+      "src": "/images/vsclogo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/vsclogo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+} 
