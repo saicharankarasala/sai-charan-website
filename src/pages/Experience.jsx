@@ -102,7 +102,7 @@ const Experience = () => {
     },
     {
       title: 'Software Engineer',
-      company: 'Merizon Technologies LLC',
+      company: 'Merizon Technologies',
       companyUrl: '',
       client: '',
       date: 'May 2019 – August 2021',
@@ -262,7 +262,7 @@ const Experience = () => {
                     <img src={WIPRO_LOGO} alt="Wipro Logo" className="w-full h-full object-contain" />
                   ) : exp.company === "St. Joseph's College of Engineering" ? (
                     <img src={SJCE_LOGO} alt="SJCE Logo" className="w-full h-full object-contain" />
-                  ) : exp.company === 'Merizon Technologies LLC' ? (
+                  ) : exp.company === 'Merizon Technologies' ? (
                     <img src={MT_LOGO} alt="Merizon Technologies Logo" className="w-full h-full object-contain" />
                   ) : exp.company === 'University of Missouri - Kansas City' ? (
                     <img src={UMKC_LOGO} alt="UMKC Logo" className="w-full h-full object-contain" />
