@@ -9,6 +9,9 @@ import {
 const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
+      {/* SEO-friendly H1 tag for search engines */}
+      <h1 className="sr-only">Venkata Sai Charan - Software Engineer Portfolio</h1>
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] text-white overflow-hidden">
         {/* Background Pattern */}
@@ -34,10 +37,10 @@ const Home = () => {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="mb-6"
               >
-                <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
+                <h2 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
                   Hi, I'm{' '}
                   <span className="text-white drop-shadow-lg">Venkata Sai Charan</span>
-                </h1>
+                </h2>
               </motion.div>
 
               <motion.div
@@ -46,7 +49,7 @@ const Home = () => {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="mb-6"
               >
-                <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-pink-200 min-h-[3rem]">
+                <h3 className="text-2xl lg:text-3xl font-semibold mb-4 text-pink-200 min-h-[3rem]">
                   <Typewriter
                     words={[
                       'Cloud & Backend Developer',
@@ -62,7 +65,7 @@ const Home = () => {
                     deleteSpeed={40}
                     delaySpeed={1500}
                   />
-                </h2>
+                </h3>
               </motion.div>
 
               <motion.p
