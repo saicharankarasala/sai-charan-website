@@ -99,28 +99,6 @@ const Experience = () => {
         'Reduced manual reporting time by 50%',
         'Enhanced data quality by 25%'
       ]
-    },
-    {
-      title: 'Software Engineer',
-      company: 'Merizon Technologies LLC',
-      companyUrl: '',
-      client: '',
-      date: 'May 2019 – August 2021',
-      year: 2021,
-      type: 'Full-time',
-      domain: 'Full Stack',
-      location: 'Remote',
-      tech: ['Java', 'Spring Boot', 'MySQL', 'JavaScript', 'GitHub Actions', 'JUnit', 'Selenium', 'SQL'],
-      bullets: [
-        'Developed full-stack apps with Java, Spring Boot, MySQL, JS',
-        'Implemented CI using GitHub Actions, improved test coverage via JUnit & Selenium',
-        'Improved API performance by 25% through SQL query optimization.'
-      ],
-      achievements: [
-        'Improved API performance by 25%',
-        'Increased test coverage by 40%',
-        'Reduced deployment time by 60%'
-      ]
     }
   ];
 
