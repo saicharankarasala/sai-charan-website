@@ -260,11 +260,6 @@ const About = () => {
                     <p className="text-[#e13a7a] font-semibold">Wipro Technologies</p>
                     <p className="text-gray-600">September 2021 – July 2022</p>
                   </div>
-                  <div className="p-6 bg-gray-50 rounded-xl">
-                    <h4 className="font-bold text-gray-900">Software Engineer</h4>
-                    <p className="text-[#e13a7a] font-semibold">Merizon Technologies</p>
-                    <p className="text-gray-600">May 2019 – August 2021</p>
-                  </div>
                 </div>
               </div>
             </motion.div>
