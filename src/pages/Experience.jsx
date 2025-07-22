@@ -99,6 +99,28 @@ const Experience = () => {
         'Reduced manual reporting time by 50%',
         'Enhanced data quality by 25%'
       ]
+    },
+    {
+      title: 'Software Engineer',
+      company: 'Merizon Technologies LLC',
+      companyUrl: '',
+      client: '',
+      date: 'May 2019 – August 2021',
+      year: 2021,
+      type: 'Full-time',
+      domain: 'Full Stack',
+      location: 'Remote',
+      tech: ['Java', 'Spring Boot', 'MySQL', 'JavaScript', 'GitHub Actions', 'JUnit', 'Selenium', 'SQL'],
+      bullets: [
+        'Developed full-stack apps with Java, Spring Boot, MySQL, JS',
+        'Implemented CI using GitHub Actions, improved test coverage via JUnit & Selenium',
+        'Improved API performance by 25% through SQL query optimization.'
+      ],
+      achievements: [
+        'Improved API performance by 25%',
+        'Increased test coverage by 40%',
+        'Reduced deployment time by 60%'
+      ]
     }
   ];
 
@@ -115,6 +137,13 @@ const Experience = () => {
   if (experienceSort === 'Oldest') filteredExperiences.sort((a, b) => a.year - b.year);
   if (experienceSort === 'A-Z') filteredExperiences.sort((a, b) => a.title.localeCompare(b.title));
   if (experienceSort === 'Z-A') filteredExperiences.sort((a, b) => b.title.localeCompare(a.title));
+
+  const UMKC_LOGO = '/images/umkclogo.png';
+  const TRBHI_LOGO = '/images/trbhilogo.png';
+  const SC_LOGO = '/images/sc_logo.png';
+  const WIPRO_LOGO = '/images/wiprologo.svg';
+  const SJCE_LOGO = '/images/SJCElogo.png';
+  const MT_LOGO = '/images/MTlogo.png';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
@@ -223,9 +252,23 @@ const Experience = () => {
                   {exp.year}
                 </div>
                 
-                {/* Company logo placeholder */}
-                <div className="w-16 h-16 bg-[#e13a7a] rounded-xl flex items-center justify-center text-white text-2xl mb-4 mt-8">
-                  <FaBuilding />
+                {/* Company logo */}
+                <div className={`w-16 h-16 rounded-xl flex items-center justify-center text-white text-2xl mb-4 mt-8 bg-white`}>
+                  {exp.company === 'Source Consulting LLC' ? (
+                    <img src={SC_LOGO} alt="Source Consulting Logo" className="w-full h-full object-contain" />
+                  ) : exp.company === 'Trbhi INC' ? (
+                    <img src={TRBHI_LOGO} alt="Trbhi Logo" className="w-full h-full object-contain" />
+                  ) : exp.company === 'Wipro Technologies' ? (
+                    <img src={WIPRO_LOGO} alt="Wipro Logo" className="w-full h-full object-contain" />
+                  ) : exp.company === "St. Joseph's College of Engineering" ? (
+                    <img src={SJCE_LOGO} alt="SJCE Logo" className="w-full h-full object-contain" />
+                  ) : exp.company === 'Merizon Technologies LLC' ? (
+                    <img src={MT_LOGO} alt="Merizon Technologies Logo" className="w-full h-full object-contain" />
+                  ) : exp.company === 'University of Missouri - Kansas City' ? (
+                    <img src={UMKC_LOGO} alt="UMKC Logo" className="w-full h-full object-contain" />
+                  ) : (
+                    <FaBuilding />
+                  )}
                 </div>
                 
                 {/* Title and company */}
