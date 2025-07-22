@@ -8,6 +8,10 @@ import {
 
 const UMKC_LOGO = '/images/umkclogo.png';
 const TRBHI_LOGO = '/images/trbhilogo.png';
+const SC_LOGO = '/images/sc_logo.png';
+const WIPRO_LOGO = '/images/wiprologo.svg';
+const SJCE_LOGO = '/images/SJCElogo.png';
+const MT_LOGO = '/images/MTlogo.png';
 
 const Journey = () => {
   const [selectedMilestone, setSelectedMilestone] = useState(null);
@@ -192,12 +196,27 @@ const Journey = () => {
                     >
                       <div className="flex items-center gap-3 mb-4">
                         <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-lg md:text-xl overflow-hidden ${
-                          (milestone.subtitle === 'University of Missouri - Kansas City' || milestone.subtitle.startsWith('Trbhi INC')) ? 'bg-white' : milestone.color
+                          [
+                            'University of Missouri - Kansas City',
+                            'Trbhi INC (Ziply Fiber Technology)',
+                            'Source Consulting LLC (Touch Screens Inc)',
+                            "Wipro Technologies",
+                            "St. Joseph's College of Engineering",
+                            "Merizon Technologies LLC"
+                          ].includes(milestone.subtitle) ? 'bg-white' : milestone.color
                         }`}>
                           {milestone.subtitle === 'University of Missouri - Kansas City' ? (
                             <img src={UMKC_LOGO} alt="UMKC Logo" className="w-full h-full object-contain" />
                           ) : milestone.subtitle.startsWith('Trbhi INC') ? (
                             <img src={TRBHI_LOGO} alt="Trbhi Logo" className="w-full h-full object-contain" />
+                          ) : milestone.subtitle.startsWith('Source Consulting LLC') ? (
+                            <img src={SC_LOGO} alt="Source Consulting Logo" className="w-full h-full object-contain" />
+                          ) : milestone.subtitle === 'Wipro Technologies' ? (
+                            <img src={WIPRO_LOGO} alt="Wipro Logo" className="w-full h-full object-contain" />
+                          ) : milestone.subtitle === "St. Joseph's College of Engineering" ? (
+                            <img src={SJCE_LOGO} alt="SJCE Logo" className="w-full h-full object-contain" />
+                          ) : milestone.subtitle === 'Merizon Technologies LLC' ? (
+                            <img src={MT_LOGO} alt="Merizon Technologies Logo" className="w-full h-full object-contain" />
                           ) : (
                             <milestone.icon className="text-white" />
                           )}
