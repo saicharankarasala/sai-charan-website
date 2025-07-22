@@ -50,6 +50,7 @@ import Experience from './pages/Experience';
 import Certifications from './pages/Certifications';
 import ContactPage from './pages/Contact';
 import Journey from './pages/Journey';
+import Logo from './pages/Logo';
 
 // Navigation Component
 const Navigation = () => {
@@ -191,6 +192,7 @@ const App = () => {
             <Route path="/experience" element={<Experience />} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/contact" element={<ContactPage />} />
+          <Route path="/logo" element={<Logo />} />
           <Route path="/blog" element={<BlogLanding />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
