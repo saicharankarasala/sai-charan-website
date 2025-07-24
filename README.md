@@ -53,11 +53,11 @@ Welcome to the GitHub repository for my personal portfolio website! This project
 - Node.js (https://nodejs.org/)
 
 ### Installation
-```bash
+    ```bash
 git clone https://github.com/KVSC1511/MyPortfolio.git
 cd MyPortfolio
-npm install
-```
+    npm install
+    ```
 
 ### Running the Development Server
 ```bash
@@ -97,7 +97,7 @@ npm run preview
 - **Edit Blog Sections & TOC:**
     - To add or update blog sections, edit the relevant components in `src/` and update the TOC/sidebar for new anchor links.
 - **Animated Hero Roles:**
-    - To customize the animated roles/titles in the hero section, edit the `words` array in the `<Typewriter />` component in `src/App.jsx`.
+  - To customize the animated roles/titles in the hero section, edit the `words` array in the `<Typewriter />` component in `src/App.jsx`.
 - **Organization Logos:**
     - Add your organization logos to `public/images/` and update the logo constants in `src/pages/Journey.jsx` and `src/pages/Experience.jsx`.
     - Ensure logos have transparent backgrounds for optimal display.
