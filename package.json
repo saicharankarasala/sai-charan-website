@@ -16,6 +16,7 @@
     "aos": "^2.3.4",
     "boxicons": "^2.1.4",
     "framer-motion": "^11.0.8",
+    "gsap": "^3.13.0",
     "mermaid": "^11.6.0",
     "react": "^18.2.0",
     "react-confetti": "^6.4.0",
