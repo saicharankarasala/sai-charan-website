@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   FaCogs, FaCode, FaServer, FaDatabase, FaCloud, FaTools,
@@ -108,6 +108,77 @@ const Skills = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const skillCardVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      y: -10,
+      scale: 1.05,
+      boxShadow: "0 20px 40px rgba(225, 58, 122, 0.15)",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const iconVariants = {
+    hover: {
+      rotate: 360,
+      scale: 1.2,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const progressBarVariants = {
+    hidden: { width: 0 },
+    visible: (level) => ({
+      width: level === 'advanced' ? '85%' : level === 'intermediate' ? '65%' : '50%',
+      transition: {
+        duration: 1,
+        delay: 0.3,
+        ease: "easeOut"
+      }
+    })
+  };
+
+  const filterButtonVariants = {
+    hover: {
+      scale: 1.05,
+      backgroundColor: "#e13a7a",
+      color: "white",
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut"
+      }
+    },
+    tap: {
+      scale: 0.95
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
@@ -123,99 +194,107 @@ const Skills = () => {
               My <span className="text-white">Skills</span>
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              A comprehensive collection of technologies, tools, and platforms I've mastered 
-              through years of hands-on experience and continuous learning.
+              A comprehensive showcase of my technical expertise across programming languages, 
+              frameworks, tools, and platforms that I've mastered through years of experience.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Skills Grid Section */}
+      {/* Skills Grid */}
       <section className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
+          {/* Category Filter */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
               Technical <span className="text-[#e13a7a]">Expertise</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From programming languages to cloud platforms, I've built expertise across the full 
-              technology stack to deliver comprehensive solutions.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Filter by category to explore my skills in specific domains
             </p>
-          </motion.div>
-
-          {/* Category Filter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
-          >
-            {skillCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? 'bg-[#e13a7a] text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                <category.icon className="text-lg" />
-                {category.name}
-              </button>
-            ))}
+            
+            <motion.div 
+              className="flex flex-wrap justify-center gap-3"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {skillCategories.map((category) => (
+                <motion.button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    activeCategory === category.id
+                      ? 'bg-[#e13a7a] text-white shadow-lg'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                  variants={filterButtonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  <category.icon className="text-sm" />
+                  {category.name}
+                </motion.button>
+              ))}
+            </motion.div>
           </motion.div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredSkills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.02, duration: 0.4 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 p-6"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#e13a7a] text-white rounded-xl flex items-center justify-center text-xl">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            key={activeCategory}
+          >
+            <AnimatePresence mode="wait">
+              {filteredSkills.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  variants={skillCardVariants}
+                  whileHover="hover"
+                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100"
+                  layout
+                >
+                  {/* Skill Icon */}
+                  <motion.div
+                    className="w-12 h-12 bg-gradient-to-br from-[#e13a7a] to-[#6d217f] text-white rounded-xl flex items-center justify-center text-xl mb-4"
+                    variants={iconVariants}
+                    whileHover="hover"
+                  >
                     <skill.icon />
+                  </motion.div>
+                  
+                  {/* Skill Name */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#e13a7a] transition-colors duration-300">
+                    {skill.name}
+                  </h3>
+                  
+                  {/* Progress Bar */}
+                  <div className="w-full bg-gray-200 rounded-full h-2 mb-2 overflow-hidden">
+                    <motion.div 
+                      className={`h-2 rounded-full bg-gradient-to-r ${getLevelColor(skill.level)}`}
+                      variants={progressBarVariants}
+                      custom={skill.level}
+                      initial="hidden"
+                      animate="visible"
+                    />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-gray-900 text-lg">{skill.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${getLevelColor(skill.level)}`}></div>
-                      <span className="text-sm text-gray-600 font-medium">
-                        {getLevelText(skill.level)}
-                      </span>
-                    </div>
+                  
+                  <div className="text-xs text-gray-500">
+                    {skill.category} • {getLevelText(skill.level)} Level
                   </div>
-                </div>
-                
-                {/* Progress Bar */}
-                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                  <div 
-                    className={`h-2 rounded-full bg-gradient-to-r ${getLevelColor(skill.level)} transition-all duration-500`}
-                    style={{ 
-                      width: skill.level === 'advanced' ? '85%' : 
-                             skill.level === 'intermediate' ? '65%' : '50%' 
-                    }}
-                  ></div>
-                </div>
-                
-                <div className="text-xs text-gray-500">
-                  {skill.category} • {getLevelText(skill.level)} Level
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
@@ -237,7 +316,13 @@ const Skills = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {skillCategories.filter(cat => cat.id !== 'All').map((category, index) => {
               const categorySkills = skills.filter(skill => skill.category === category.id);
               const advancedCount = categorySkills.filter(s => s.level === 'advanced').length;
@@ -246,52 +331,78 @@ const Skills = () => {
               return (
                 <motion.div
                   key={category.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05, duration: 0.5 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300"
+                  variants={skillCardVariants}
+                  whileHover="hover"
+                  className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-gray-100"
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-[#e13a7a] text-white rounded-xl flex items-center justify-center text-xl">
+                  <motion.div 
+                    className="flex items-center gap-4 mb-6"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <motion.div 
+                      className="w-12 h-12 bg-[#e13a7a] text-white rounded-xl flex items-center justify-center text-xl"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
+                    >
                       <category.icon />
-                    </div>
+                    </motion.div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">{category.name}</h3>
                       <p className="text-gray-600">{categorySkills.length} skills</p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center">
+                    <motion.div 
+                      className="flex justify-between items-center"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       <span className="text-sm text-gray-600">Advanced</span>
                       <span className="text-sm font-semibold text-blue-600">{advancedCount}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
+                    </motion.div>
+                    <motion.div 
+                      className="flex justify-between items-center"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       <span className="text-sm text-gray-600">Intermediate</span>
                       <span className="text-sm font-semibold text-yellow-600">{intermediateCount}</span>
-                    </div>
+                    </motion.div>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {categorySkills.slice(0, 6).map(skill => (
-                      <span 
+                    {categorySkills.slice(0, 6).map((skill, skillIndex) => (
+                      <motion.span 
                         key={skill.name}
                         className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                        whileHover={{ 
+                          scale: 1.1, 
+                          backgroundColor: "#e13a7a",
+                          color: "white"
+                        }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: skillIndex * 0.1, duration: 0.3 }}
                       >
                         {skill.name}
-                      </span>
+                      </motion.span>
                     ))}
                     {categorySkills.length > 6 && (
-                      <span className="px-3 py-1 bg-[#e13a7a] text-white rounded-full text-sm font-medium">
+                      <motion.span 
+                        className="px-3 py-1 bg-[#e13a7a] text-white rounded-full text-sm font-medium"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.2 }}
+                      >
                         +{categorySkills.length - 6} more
-                      </span>
+                      </motion.span>
                     )}
                   </div>
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -299,24 +410,34 @@ const Skills = () => {
       <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to <span className="text-white">Collaborate</span>?
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Ready to <span className="text-white">Start</span> a Project?
             </h2>
             <p className="text-xl mb-8 text-white/90 leading-relaxed">
-              With expertise across the full technology stack, I'm ready to tackle your next project. 
-              Let's discuss how my skills can help bring your vision to life.
+              Let's discuss how my skills and experience can help bring your ideas to life.
             </p>
-            <Link 
-              to="/contact" 
-              className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Start a Project
-            </Link>
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+              >
+                Start a Project
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                >
+                  →
+                </motion.div>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
