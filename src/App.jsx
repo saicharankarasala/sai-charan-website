@@ -42,6 +42,7 @@ import AnimatedCertificationCard from './components/AnimatedCertificationCard';
 import SkillsCarousel from './components/SkillsCarousel';
 
 // Page Components
+import Intro from './pages/Intro';
 import Home from './pages/Home';
 import About from './pages/About';
 import Skills from './pages/Skills';
@@ -58,7 +59,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'Home', icon: FaHome },
+    { path: '/home', label: 'Home', icon: FaHome },
     { path: '/about', label: 'About', icon: FaInfoCircle },
     { path: '/journey', label: 'Journey', icon: FaRocket },
     { path: '/skills', label: 'Skills', icon: FaSkills },
@@ -81,7 +82,7 @@ const Navigation = () => {
             <Link 
               to="/" 
               className="group"
-              aria-label="Go to homepage"
+              aria-label="Go to intro page"
             >
               <img 
                 src="/images/vsclogo.png" 
@@ -184,7 +185,8 @@ const App = () => {
           
           {/* Routes */}
       <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Intro />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/journey" element={<Journey />} />
             <Route path="/skills" element={<Skills />} />
