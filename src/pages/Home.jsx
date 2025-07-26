@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import { 
   FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight,
@@ -7,6 +7,82 @@ import {
 } from 'react-icons/fa';
 
 const Home = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 10px 30px rgba(225, 58, 122, 0.3)",
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut"
+      }
+    },
+    tap: {
+      scale: 0.95
+    }
+  };
+
+  const socialButtonVariants = {
+    hover: {
+      scale: 1.1,
+      rotate: 5,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut"
+      }
+    },
+    tap: {
+      scale: 0.9
+    }
+  };
+
+  const profileImageVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      scale: 1.05,
+      rotate: 2,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* SEO-friendly H1 tag for search engines */}
@@ -14,39 +90,108 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] text-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full"></div>
-          <div className="absolute top-40 right-32 w-24 h-24 bg-white rounded-full"></div>
-          <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-white rounded-full"></div>
-          <div className="absolute bottom-20 right-20 w-20 h-20 bg-white rounded-full"></div>
-        </div>
+        {/* Animated Background Pattern */}
+        <motion.div 
+          className="absolute inset-0 opacity-10"
+          animate={{
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <motion.div 
+            className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div 
+            className="absolute top-40 right-32 w-24 h-24 bg-white rounded-full"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.6, 0.3, 0.6],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-32 left-1/4 w-16 h-16 bg-white rounded-full"
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.4, 0.7, 0.4],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-20 right-20 w-20 h-20 bg-white rounded-full"
+            animate={{
+              scale: [1.3, 1, 1.3],
+              opacity: [0.7, 0.4, 0.7],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5
+            }}
+          />
+        </motion.div>
 
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
               className="text-center lg:text-left"
             >
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
+                variants={itemVariants}
                 className="mb-6"
               >
                 <h2 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
                   Hi, I'm{' '}
-                  <span className="text-white drop-shadow-lg">Venkata Sai Charan</span>
+                  <motion.span 
+                    className="text-white drop-shadow-lg"
+                    animate={{
+                      textShadow: [
+                        "0 0 0px rgba(255,255,255,0)",
+                        "0 0 20px rgba(255,255,255,0.5)",
+                        "0 0 0px rgba(255,255,255,0)"
+                      ]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    Venkata Sai Charan
+                  </motion.span>
                 </h2>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                variants={itemVariants}
                 className="mb-6"
               >
                 <h3 className="text-2xl lg:text-3xl font-semibold mb-4 text-pink-200 min-h-[3rem]">
@@ -69,9 +214,7 @@ const Home = () => {
               </motion.div>
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
+                variants={itemVariants}
                 className="text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0"
               >
                 Software Engineer & Problem Solver. Engineer by skill, problem-solver by mindset. 
@@ -80,92 +223,133 @@ const Home = () => {
 
               {/* SEO-friendly location and availability info */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
+                variants={itemVariants}
                 className="flex flex-wrap gap-4 mb-6 text-sm text-white/80"
               >
-                <div className="flex items-center gap-2">
+                <motion.div 
+                  className="flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <FaMapMarker className="text-[#e13a7a]" />
                   <span>Merrimack, NH, USA</span>
-                </div>
-                <div className="flex items-center gap-2">
+                </motion.div>
+                <motion.div 
+                  className="flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <FaBriefcase className="text-[#e13a7a]" />
                   <span>Available for opportunities</span>
-                </div>
+                </motion.div>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
+                variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
               >
-                <a 
+                <motion.a 
                   href="/cv.pdf" 
                   className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300 group"
                   target="_blank" 
                   rel="noopener noreferrer"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <FaDownload className="text-lg" />
                   Download CV
-                  <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a 
+                  <motion.div
+                    className="text-lg"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                  >
+                    <FaArrowRight />
+                  </motion.div>
+                </motion.a>
+                <motion.a 
                   href="/contact" 
                   className="inline-flex items-center gap-2 bg-[#e13a7a] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-400 hover:text-white transition-all duration-300 group"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   Contact Me
-                  <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <motion.div
+                    className="text-lg"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1, repeat: Infinity, delay: 0.5 }}
+                  >
+                    <FaArrowRight />
+                  </motion.div>
+                </motion.a>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0, duration: 0.8 }}
+                variants={itemVariants}
                 className="flex justify-center lg:justify-start gap-4"
               >
-                <a 
+                <motion.a 
                   href="https://www.linkedin.com/in/sai-charan-k-v/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex justify-center items-center w-12 h-12 bg-white/20 border-2 border-white text-white rounded-full text-xl hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                  variants={socialButtonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <FaLinkedin />
-                </a>
-                <a 
+                </motion.a>
+                <motion.a 
                   href="mailto:saicharankarasala@gmail.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex justify-center items-center w-12 h-12 bg-white/20 border-2 border-white text-white rounded-full text-xl hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                  variants={socialButtonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <FaEnvelope />
-                </a>
-                <a 
+                </motion.a>
+                <motion.a 
                   href="https://github.com/KVSC1511" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex justify-center items-center w-12 h-12 bg-white/20 border-2 border-white text-white rounded-full text-xl hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                  variants={socialButtonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <FaGithub />
-                </a>
+                </motion.a>
               </motion.div>
             </motion.div>
 
             {/* Profile Image */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
               className="flex justify-center lg:justify-end"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-full blur-xl opacity-30 animate-pulse"></div>
-                <img 
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-full blur-xl opacity-30"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.5, 0.3],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.img 
                   src="/images/profile.JPG" 
                   alt="Venkata Sai Charan - Software Engineer Portfolio" 
                   className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full border-4 border-white shadow-2xl object-cover object-top z-10"
+                  variants={profileImageVariants}
                 />
               </div>
             </motion.div>
@@ -192,7 +376,13 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {[
               {
                 icon: FaUser,
@@ -201,36 +391,45 @@ const Home = () => {
               },
               {
                 icon: FaCode,
-                title: "Full-Stack Expertise",
-                description: "From frontend to backend, I build complete solutions"
+                title: "50+ Skills",
+                description: "Comprehensive technical expertise across multiple domains"
               },
               {
                 icon: FaServer,
-                title: "Cloud & DevOps",
-                description: "AWS, Azure, and infrastructure automation expertise"
+                title: "10+ Projects",
+                description: "Successfully delivered projects from concept to deployment"
               },
               {
                 icon: FaDatabase,
-                title: "Data-Driven",
-                description: "Analytics, visualization, and data pipeline development"
+                title: "3 Certifications",
+                description: "Industry-recognized credentials in cloud and programming"
               }
             ].map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:shadow-lg transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  y: -10,
+                  transition: { duration: 0.2 }
+                }}
+                className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#e13a7a] to-[#6d217f] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="text-white text-2xl" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                <motion.div
+                  className="w-16 h-16 bg-[#e13a7a] text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4"
+                  whileHover={{ 
+                    rotate: 360,
+                    scale: 1.1,
+                    transition: { duration: 0.5 }
+                  }}
+                >
+                  <item.icon />
+                </motion.div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
