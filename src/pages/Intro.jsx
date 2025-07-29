@@ -360,44 +360,7 @@ const Intro = () => {
         </motion.div>
       </div>
 
-      {/* Quick Navigation */}
-      <motion.div
-        className="absolute top-8 right-8 z-20"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
-      >
-        <div className="flex flex-col gap-2">
-          {[
-            { path: '/home', label: 'Home', icon: FaUser },
-            { path: '/skills', label: 'Skills', icon: FaCode },
-            { path: '/projects', label: 'Projects', icon: FaRocket },
-            { path: '/contact', label: 'Contact', icon: FaEnvelope }
-          ].map((item) => (
-            <motion.div
-              key={item.path}
-              whileHover={{ scale: 1.1, x: -5 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Link
-                to={item.path}
-                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 group"
-              >
-                <item.icon className="text-[#e13a7a]" />
-                <span className="text-sm font-medium">{item.label}</span>
-                <motion.div
-                  className="text-xs opacity-0 group-hover:opacity-100 transition-opacity"
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                >
-                  →
-                </motion.div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+
     </div>
   );
 };
