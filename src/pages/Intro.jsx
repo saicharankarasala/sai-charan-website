@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  FaArrowRight, FaMouse, FaCode, FaRocket, FaUser, FaBriefcase,
+  FaArrowRight, FaCode, FaRocket, FaUser, FaBriefcase,
   FaGithub, FaLinkedin, FaEnvelope, FaDownload
 } from 'react-icons/fa';
 
@@ -49,16 +49,7 @@ const Intro = () => {
     }
   };
 
-  const floatingVariants = {
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
+
 
   const pulseVariants = {
     animate: {
@@ -343,20 +334,7 @@ const Intro = () => {
             </motion.a>
           </motion.div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            variants={itemVariants}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              className="flex flex-col items-center text-gray-400"
-              variants={floatingVariants}
-              animate="animate"
-            >
-              <FaMouse className="text-2xl mb-2" />
-              <span className="text-sm">Scroll to explore</span>
-            </motion.div>
-          </motion.div>
+
         </motion.div>
       </div>
 
