@@ -22,16 +22,20 @@ const Experience = () => {
       type: 'Full-time',
       domain: 'Backend',
       location: 'Remote',
-      tech: ['Python', 'Pandas', 'AWS Lambda', 'Google Sheets API', 'Hadoop', 'Snowflake', 'Pentaho', 'Tableau', 'Power BI', 'REST', 'Bash'],
+      tech: ['Python', 'AWS Lambda', 'Terraform', 'AWS CloudFormation', 'Ansible', 'Packer', 'Amazon EKS', 'CloudWatch', 'New Relic', 'Datadog', 'Dynatrace', 'Snowflake', 'Power BI', 'CI/CD', 'EC2', 'S3', 'RDS'],
       bullets: [
-        'Automated pricing for 100K+ SKUs using Python, Pandas, AWS Lambda, Google Sheets API',
-        'Built ETL pipelines with Hadoop, Snowflake, Pentaho, improving vendor data sync',
-        'Visualized KPIs with Tableau, Power BI; implemented REST & Bash scripts for backups'
+        'Engineered and deployed a fully automated pricing system using Python, AWS Lambda, and Google Sheets API, streamlining updates for 100K+ products and enhancing pricing accuracy and operational efficiency.',
+        'Converted legacy Terraform modules with version conflicts to AWS CloudFormation, while also developing and maintaining Terraform scripts to provision AWS resources such as EC2, S3, Lambda, and RDS—ensuring reusable, consistent, and version-controlled infrastructure across environments.',
+        'Integrated Terraform with Ansible and Packer to automate the creation and versioning of Amazon Machine Images (AMIs), supporting scalable and repeatable infrastructure deployments across the AWS cloud.',
+        'Automated Amazon EKS cluster provisioning and scaling using Terraform, reducing manual effort, optimizing resource usage, and improving cloud cost management.',
+        'Implemented full-stack observability by integrating CloudWatch, New Relic, Datadog, and Dynatrace, enabling real-time performance monitoring, rapid incident detection, and improved SLA adherence.',
+        'Developed ETL pipelines and operational dashboards using Snowflake, Power BI, and CloudWatch, enabling data-driven diagnostics and supporting incident triage through well-documented runbooks and CI/CD-integrated monitoring alerts.'
       ],
       achievements: [
-        'Reduced manual pricing time by 80% through automation',
-        'Improved data processing efficiency by 60%',
-        'Enhanced reporting accuracy by 95%'
+        'Streamlined pricing updates for 100K+ products through automation',
+        'Reduced manual infrastructure provisioning effort by 70%',
+        'Improved system observability and incident response time by 50%',
+        'Enhanced cloud cost management and resource optimization'
       ]
     },
     {

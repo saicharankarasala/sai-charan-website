@@ -19,7 +19,22 @@ const Certifications = () => {
       downloadUrl: null,
       description: 'Comprehensive understanding of AWS services and architectural best practices for designing and deploying scalable, highly available, and fault-tolerant systems on AWS.',
       skills: ['AWS Services', 'Cloud Architecture', 'Security', 'Networking', 'Storage', 'Compute'],
-      category: 'Cloud & DevOps'
+      category: 'Cloud & DevOps',
+      image: '/images/AWS-SA-logo.png',
+      featured: true
+    },
+    {
+      title: 'HashiCorp Certified: Terraform Associate',
+      issuer: 'HashiCorp',
+      issueDate: 'January 2025',
+      credentialId: 'HCT-2025-001234',
+      verifyUrl: 'https://www.credly.com/badges/aef53d94-4b9f-491e-a02c-6bf11609a2d6/public_url',
+      downloadUrl: null,
+      description: 'Demonstrates proficiency in using Terraform for infrastructure as code, including provisioning, managing, and updating infrastructure across multiple cloud providers.',
+      skills: ['Terraform', 'Infrastructure as Code', 'Cloud Provisioning', 'State Management', 'Modules', 'AWS', 'Azure', 'GCP'],
+      category: 'Cloud & DevOps',
+      image: '/images/Terraform-Badge.png',
+      featured: true
     },
     {
       title: 'Programming with Python – Professional Certificate',
@@ -30,7 +45,9 @@ const Certifications = () => {
       downloadUrl: null,
       description: 'Advanced Python programming skills including data structures, algorithms, object-oriented programming, and best practices for software development.',
       skills: ['Python', 'Data Structures', 'Algorithms', 'OOP', 'Software Development', 'Best Practices'],
-      category: 'Programming'
+      category: 'Programming',
+      image: '/images/Linkdin-Python-icon.jpg',
+      featured: true
     },
     {
       title: 'Python Professional',
@@ -41,7 +58,9 @@ const Certifications = () => {
       downloadUrl: '/certifications/edureka-python.pdf',
       description: 'Comprehensive Python training covering core concepts, advanced features, and practical applications in data science and web development.',
       skills: ['Python', 'Data Science', 'Web Development', 'Machine Learning', 'Automation', 'Testing'],
-      category: 'Programming'
+      category: 'Programming',
+      image: '/images/edureka-python.jpg',
+      featured: false
     }
   ];
 
@@ -126,7 +145,7 @@ const Certifications = () => {
           </motion.div>
 
           {/* Certifications Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {filteredCertifications.map((certification, index) => (
               <motion.div
                 key={certification.title}

@@ -401,7 +401,7 @@ const Home = () => {
               },
               {
                 icon: FaDatabase,
-                title: "3 Certifications",
+                title: "4 Certifications",
                 description: "Industry-recognized credentials in cloud and programming"
               }
             ].map((item, index) => (

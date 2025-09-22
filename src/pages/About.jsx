@@ -33,7 +33,7 @@ const About = () => {
     { number: "4+", label: "Years Experience" },
     { number: "50+", label: "Skills & Technologies" },
     { number: "10+", label: "Projects Completed" },
-    { number: "3", label: "Professional Certifications" }
+    { number: "4", label: "Professional Certifications" }
   ];
 
   return (
