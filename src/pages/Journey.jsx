@@ -126,7 +126,7 @@ const Journey = () => {
   const stats = [
     { number: "5+", label: "Years Experience", icon: FaBriefcase },
     { number: "50+", label: "Skills Mastered", icon: FaCode },
-    { number: "10+", label: "Projects Completed", icon: FaRocket },
+    { number: "6", label: "Projects Completed", icon: FaRocket },
     { number: "4", label: "Certifications", icon: FaCertificate }
   ];
 

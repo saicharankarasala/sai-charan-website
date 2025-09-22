@@ -396,7 +396,7 @@ const Home = () => {
               },
               {
                 icon: FaServer,
-                title: "10+ Projects",
+                title: "6 Projects",
                 description: "Successfully delivered projects from concept to deployment"
               },
               {
