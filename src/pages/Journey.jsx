@@ -111,13 +111,14 @@ const Journey = () => {
       subtitle: "Source Consulting LLC (Touch Screens Inc)",
       icon: FaAward,
       type: "work",
-      description: "Automated pricing for 100K+ SKUs, built ETL pipelines, visualized KPIs, and implemented REST & Bash scripts. Led automation and data engineering projects.",
+      description: "Engineered and deployed a fully automated pricing system using Python, AWS Lambda, and Google Sheets API, streamlining updates for 100K+ products. Converted legacy Terraform modules to AWS CloudFormation, integrated Terraform with Ansible and Packer for AMI automation, and automated Amazon EKS cluster provisioning and scaling.",
       achievements: [
-        "Reduced manual pricing time by 80% through automation",
-        "Improved data processing efficiency by 60%",
-        "Enhanced reporting accuracy by 95%"
+        "Streamlined pricing updates for 100K+ products through automation",
+        "Reduced manual infrastructure provisioning effort by 70%",
+        "Improved system observability and incident response time by 50%",
+        "Enhanced cloud cost management and resource optimization"
       ],
-      skills: ["Python", "Pandas", "AWS Lambda", "Google Sheets API", "Hadoop", "Snowflake", "Pentaho", "Tableau", "Power BI", "REST", "Bash"],
+      skills: ["Python", "AWS Lambda", "Terraform", "AWS CloudFormation", "Ansible", "Packer", "Amazon EKS", "CloudWatch", "New Relic", "Datadog", "Dynatrace", "Snowflake", "Power BI", "CI/CD", "EC2", "S3", "RDS"],
       color: "bg-pink-500"
     }
   ];
@@ -126,7 +127,7 @@ const Journey = () => {
     { number: "5+", label: "Years Experience", icon: FaBriefcase },
     { number: "50+", label: "Skills Mastered", icon: FaCode },
     { number: "10+", label: "Projects Completed", icon: FaRocket },
-    { number: "3", label: "Certifications", icon: FaCertificate }
+    { number: "4", label: "Certifications", icon: FaCertificate }
   ];
 
   return (

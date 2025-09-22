@@ -26,8 +26,9 @@ const Projects = () => {
         { label: 'GitHub', url: 'https://github.com/KVSC1511/Portfolio' },
         { label: 'Live Site', url: 'https://www.venkatasaicharan.com' }
       ],
-      image: '/images/vsc-logo.png',
-      category: 'Full Stack'
+      image: '/images/Portfolio.jpg',
+      category: 'Full Stack',
+      githubUrl: 'https://github.com/KVSC1511/Portfolio'
     },
     {
       title: 'Enhancing Security & Privacy of Cryptocurrency Transactions',
@@ -40,7 +41,12 @@ const Projects = () => {
         'Used Snowflake for data analysis and performance optimization.',
         'Strengthened transaction integrity and reduced vulnerabilities.'
       ],
-      category: 'Security'
+      links: [
+        { label: 'GitHub', url: 'https://github.com/saicharankarasala/Enhancing-Security-Privacy-of-Cryptocurrency-Transactions.git' }
+      ],
+      image: '/images/Encrypt.png',
+      category: 'Security',
+      githubUrl: 'https://github.com/saicharankarasala/Enhancing-Security-Privacy-of-Cryptocurrency-Transactions.git'
     },
     {
       title: 'YouTube Data Analysis',
@@ -53,7 +59,12 @@ const Projects = () => {
         'Built interactive dashboards in Tableau to visualize key metrics.',
         'Provided strategic recommendations for content optimization and audience growth.'
       ],
-      category: 'Data Engineering'
+      links: [
+        { label: 'GitHub', url: 'https://github.com/saicharankarasala/YouTube-Data-Analysis-using-Hadoop-Ecosystem.git' }
+      ],
+      image: '/images/YTAnalysis.png',
+      category: 'Data Engineering',
+      githubUrl: 'https://github.com/saicharankarasala/YouTube-Data-Analysis-using-Hadoop-Ecosystem.git'
     },
     {
       title: 'IoT Sensor Data Analysis for Soil Moisture',
@@ -66,7 +77,9 @@ const Projects = () => {
         'Processed large-scale IoT data with PySpark and Hadoop.',
         'Created dashboards in Tableau and Power BI; automated ETL with Azure Data Factory and Synapse Analytics.'
       ],
-      category: 'IoT'
+      image: '/images/IOT.png',
+      category: 'IoT',
+      githubUrl: 'https://github.com/saicharankarasala/iot-soil-moisture-analysis.git'
     },
     {
       title: 'A 120 Mbps WDM-Based VLC System for IoT Implementation',
@@ -79,7 +92,9 @@ const Projects = () => {
         'Analyzed system performance with SQL and Python; presented results using Tableau.',
         'Enhanced collaboration and system design for mobile and front-end applications.'
       ],
-      category: 'Research'
+      image: '/images/120Mbps.png',
+      category: 'Research',
+      githubUrl: 'https://github.com/saicharankarasala/WDM-VLC-IoT-120Mbps.git'
     },
     {
       title: 'Therapy for Autistic Children Using Robot',
@@ -92,7 +107,9 @@ const Projects = () => {
         'Conducted usability testing and implemented iterative improvements.',
         'Used data visualization to present insights and drive design decisions.'
       ],
-      category: 'AI/Robotics'
+      image: '/images/Autistic.png',
+      category: 'AI/Robotics',
+      githubUrl: 'https://github.com/saicharankarasala/autism-therapy-robot-spark.git'
     }
   ];
 

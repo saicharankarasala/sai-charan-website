@@ -56,57 +56,63 @@ const ProjectShowcase = ({ projects }) => {
       {/* Projects Grid */}
       <motion.div 
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
       >
         <AnimatePresence>
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="relative group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col h-full border border-gray-200"
+              className="relative group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full"
               whileHover={{ scale: 1.025, y: -5 }}
               onClick={() => setSelectedProject(project)}
               style={{ cursor: 'pointer' }}
             >
-              {/* Card content */}
-              <div className="relative bg-white rounded-xl p-6 border border-gray-200 
-                              shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
                 
-                {/* Year badge */}
-                <div className="absolute top-4 right-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
-                  {project.year}
+                {/* Project Image */}
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-contain bg-gray-50 p-4"
+                  />
+                  {/* Year badge */}
+                  <div className="absolute top-4 right-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
+                    {project.year}
+                  </div>
+                  {/* Project type badge */}
+                  <div className="absolute top-4 left-4 bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold">
+                    {project.type}
+                  </div>
                 </div>
                 
-                {/* Project type */}
-                <div className="text-[#e13a7a] text-sm font-medium mb-3">
-                  {project.type}
-                </div>
+                {/* Card content */}
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#e13a7a] transition-colors duration-300">
+                    {project.title}
+                  </h3>
                 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#e13a7a] transition-colors duration-300">
-                  {project.title}
-                </h3>
-                
-                {/* Description preview */}
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {project.description[0]}
-                </p>
-                
-                {/* Tech stack */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.slice(0, 3).map(tech => (
-                    <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
-                      {tech}
-                    </span>
-                  ))}
-                  {project.tech.length > 3 && (
-                    <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
-                      +{project.tech.length - 3}
-                    </span>
-                  )}
-                </div>
-                
-                {/* Action buttons */}
-                <div className="flex gap-2">
+                  {/* Description preview */}
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                    {project.description[0]}
+                  </p>
+                  
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.slice(0, 3).map(tech => (
+                      <span key={tech} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.tech.length > 3 && (
+                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                        +{project.tech.length - 3}
+                      </span>
+                    )}
+                  </div>
+                  
+                  {/* Action buttons */}
+                  <div className="flex gap-2 mt-auto pt-2">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -116,21 +122,21 @@ const ProjectShowcase = ({ projects }) => {
                     View Details
                   </motion.button>
                   
-                  {project.links && project.links.length > 0 && (
+                  {project.githubUrl && (
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="p-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-[#e13a7a] hover:text-white transition-colors duration-300"
                       onClick={(e) => {
                         e.stopPropagation();
-                        window.open(project.links[0].url, '_blank');
+                        window.open(project.githubUrl, '_blank');
                       }}
                     >
-                      <FaExternalLinkAlt />
+                      <FaGithub />
                     </motion.button>
                   )}
                 </div>
-              </div>
+                </div>
             </motion.div>
           ))}
         </AnimatePresence>
@@ -163,6 +169,15 @@ const ProjectShowcase = ({ projects }) => {
                 </button>
               </div>
               
+              {/* Project Image */}
+              <div className="mb-6">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-64 object-contain bg-gray-50 rounded-lg p-4"
+                />
+              </div>
+              
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <span className="text-[#e13a7a] font-medium">{selectedProject.type}</span>
@@ -188,9 +203,22 @@ const ProjectShowcase = ({ projects }) => {
                   </div>
                 </div>
                 
-                {selectedProject.links && selectedProject.links.length > 0 && (
-                  <div className="flex gap-4 pt-4">
-                    {selectedProject.links.map(link => (
+                <div className="flex gap-4 pt-4">
+                  {selectedProject.githubUrl && (
+                    <motion.a
+                      href={selectedProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-900 transition-colors duration-300"
+                    >
+                      <FaGithub />
+                      GitHub
+                    </motion.a>
+                  )}
+                  {selectedProject.links && selectedProject.links.length > 0 && (
+                    selectedProject.links.map(link => (
                       <motion.a
                         key={link.label}
                         href={link.url}
@@ -200,12 +228,12 @@ const ProjectShowcase = ({ projects }) => {
                         whileTap={{ scale: 0.95 }}
                         className="flex items-center gap-2 px-4 py-2 bg-[#e13a7a] text-white rounded-lg font-medium hover:bg-[#6d217f] transition-colors duration-300"
                       >
-                        {link.label === 'GitHub' ? <FaGithub /> : <FaExternalLinkAlt />}
+                        <FaExternalLinkAlt />
                         {link.label}
                       </motion.a>
-                    ))}
-                  </div>
-                )}
+                    ))
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.div>
