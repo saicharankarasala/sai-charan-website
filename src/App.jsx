@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { useOutsideClick } from './hooks/useOutsideClick';
 import { HelmetProvider } from 'react-helmet-async';
 import { Link as ScrollLink } from 'react-scroll';
 import { 
@@ -34,6 +35,7 @@ import { motion } from 'framer-motion';
 // import ParticleBackground from './components/ParticleBackground';
 import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';
+import FluidCursor from './components/FluidCursor';
 // import LoadingScreen from './components/LoadingScreen';
 import EnhancedContact from './components/EnhancedContact';
 import ProjectShowcase from './components/ProjectShowcase';
@@ -57,6 +59,14 @@ import Logo from './pages/Logo';
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const menuRef = useRef(null);
+
+  // Close menu when clicking outside
+  useOutsideClick(menuRef, () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  });
 
   const navItems = [
     { path: '/home', label: 'Home', icon: FaHome },
@@ -73,7 +83,7 @@ const Navigation = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <nav ref={menuRef} className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-2 py-1.5">
         <div className="flex justify-between items-center">
           {/* Logo and Name */}
@@ -105,14 +115,14 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all duration-300 text-sm lg:text-base ${
+                className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg font-medium transition-all duration-300 text-sm lg:text-base whitespace-nowrap ${
                   isActive(item.path)
-                    ? 'text-[#e13a7a] bg-[#e13a7a]/5 border-b-2 border-[#e13a7a]'
-                    : 'text-gray-600 hover:text-[#e13a7a] hover:bg-gray-50'
+                    ? 'text-gray-900 bg-gray-100 border-b-2 border-gray-900'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
               >
-                <item.icon className="text-base" />
-                {item.label}
+                <item.icon className="text-sm flex-shrink-0" />
+                <span className="truncate">{item.label}</span>
               </Link>
             ))}
           </div>
@@ -145,14 +155,14 @@ const Navigation = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 text-xs ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 text-xs min-h-[44px] ${
                     isActive(item.path)
-                      ? 'text-[#e13a7a] bg-[#e13a7a]/10 border-l-4 border-[#e13a7a]'
-                      : 'text-gray-600 hover:text-[#e13a7a] hover:bg-gray-50'
+                      ? 'text-gray-900 bg-gray-100 border-l-4 border-gray-900'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`}
                 >
-                  <item.icon className="text-sm" />
-                  {item.label}
+                  <item.icon className="text-sm flex-shrink-0" />
+                  <span className="truncate">{item.label}</span>
                 </Link>
               ))}
             </div>
@@ -176,9 +186,10 @@ const App = () => {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-white pt-20">
+        <div className="min-h-screen bg-[#F7F7F7] pt-20">
           {/* Enhanced Components */}
           <ScrollProgress />
+          <FluidCursor />
           
           {/* Navigation */}
           <Navigation />
@@ -225,7 +236,7 @@ const App = () => {
                       href="https://www.linkedin.com/in/sai-charan-k-v/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-[#e13a7a] text-white rounded-lg flex items-center justify-center hover:bg-[#6d217f] transition-colors duration-300"
+                      className="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors duration-300"
                     >
                       <FaLinkedin />
                     </a>
@@ -233,13 +244,13 @@ const App = () => {
                       href="https://github.com/KVSC1511" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-[#e13a7a] text-white rounded-lg flex items-center justify-center hover:bg-[#6d217f] transition-colors duration-300"
+                      className="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors duration-300"
                     >
                       <FaGithub />
                     </a>
                     <a 
                       href="mailto:saicharankarasala@gmail.com" 
-                      className="w-10 h-10 bg-[#e13a7a] text-white rounded-lg flex items-center justify-center hover:bg-[#6d217f] transition-colors duration-300"
+                      className="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors duration-300"
                     >
                       <FaEnvelope />
                     </a>
@@ -250,11 +261,11 @@ const App = () => {
                 <div>
                   <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                   <ul className="space-y-2">
-                    <li><Link to="/about" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">About</Link></li>
-                    <li><Link to="/skills" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">Skills</Link></li>
-                    <li><Link to="/projects" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">Projects</Link></li>
-                    <li><Link to="/experience" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">Experience</Link></li>
-                    <li><Link to="/certifications" className="text-gray-400 hover:text-[#e13a7a] transition-colors duration-300">Certifications</Link></li>
+                    <li><Link to="/about" className="text-gray-400 hover:text-gray-900 transition-colors duration-300">About</Link></li>
+                    <li><Link to="/skills" className="text-gray-400 hover:text-gray-900 transition-colors duration-300">Skills</Link></li>
+                    <li><Link to="/projects" className="text-gray-400 hover:text-gray-900 transition-colors duration-300">Projects</Link></li>
+                    <li><Link to="/experience" className="text-gray-400 hover:text-gray-900 transition-colors duration-300">Experience</Link></li>
+                    <li><Link to="/certifications" className="text-gray-400 hover:text-gray-900 transition-colors duration-300">Certifications</Link></li>
                         </ul>
                 </div>
 
@@ -263,17 +274,17 @@ const App = () => {
                   <h4 className="text-lg font-semibold mb-4">Contact</h4>
                   <ul className="space-y-2 text-gray-400">
                     <li className="flex items-center gap-2">
-                      <FaEnvelope className="text-[#e13a7a]" />
-                      <a href="mailto:saicharankarasala@gmail.com" className="hover:text-[#e13a7a] transition-colors duration-300">
+                      <FaEnvelope className="text-gray-900" />
+                      <a href="mailto:saicharankarasala@gmail.com" className="hover:text-gray-900 transition-colors duration-300">
                         saicharankarasala@gmail.com
                       </a>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaMapMarker className="text-[#e13a7a]" />
+                      <FaMapMarker className="text-gray-900" />
                       Merrimack, NH, USA
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaBriefcase className="text-[#e13a7a]" />
+                      <FaBriefcase className="text-gray-900" />
                       Available for opportunities
                     </li>
                         </ul>

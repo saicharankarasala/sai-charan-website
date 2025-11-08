@@ -20,7 +20,7 @@ const SkillsCarousel = ({ skills }) => {
       {/* Arrow Buttons */}
       {page > 0 && (
         <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-[#e13a7a] text-[#e13a7a] hover:bg-[#e13a7a] hover:text-white rounded-full p-3 shadow transition-colors duration-200"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white rounded-full p-3 shadow transition-colors duration-200"
           onClick={handlePrev}
           aria-label="Previous"
         >
@@ -29,7 +29,7 @@ const SkillsCarousel = ({ skills }) => {
       )}
       {page < totalPages - 1 && (
         <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-[#e13a7a] text-[#e13a7a] hover:bg-[#e13a7a] hover:text-white rounded-full p-3 shadow transition-colors duration-200"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white rounded-full p-3 shadow transition-colors duration-200"
           onClick={handleNext}
           aria-label="Next"
         >
@@ -63,7 +63,7 @@ const SkillsCarousel = ({ skills }) => {
           {Array.from({ length: totalPages }).map((_, i) => (
             <span
               key={i}
-              className={`w-2 h-2 rounded-full ${i === page ? 'bg-[#e13a7a]' : 'bg-gray-300'}`}
+              className={`w-2 h-2 rounded-full ${i === page ? 'bg-gray-900' : 'bg-gray-300'}`}
             />
           ))}
         </div>

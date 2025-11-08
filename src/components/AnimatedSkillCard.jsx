@@ -14,7 +14,7 @@ const AnimatedSkillCard = ({ skill, icon: Icon, level, color = "#00ffee" }) => {
   const levelInfo = skillLevels[level] || skillLevels.intermediate;
   
   // Use your brand colors instead of individual tech colors
-  const brandColor = "#e13a7a"; // Your main pink accent
+  const brandColor = "#374151"; // Your main gray accent
 
   return (
     <motion.div

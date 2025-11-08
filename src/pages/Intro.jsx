@@ -5,6 +5,7 @@ import {
   FaArrowRight, FaCode, FaRocket, FaUser, FaBriefcase,
   FaGithub, FaLinkedin, FaEnvelope, FaDownload
 } from 'react-icons/fa';
+import FluidCursor from '../components/FluidCursor';
 
 const Intro = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -92,22 +93,25 @@ const Intro = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#2d014d] relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-gray-900 relative overflow-hidden">
+      {/* Fluid Cursor Animation */}
+      <FluidCursor />
+      
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-full opacity-10 blur-3xl"
+          className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-gray-900 to-gray-800 rounded-full opacity-10 blur-3xl"
           variants={pulseVariants}
           animate="animate"
         />
         <motion.div
-          className="absolute top-40 right-32 w-48 h-48 bg-gradient-to-r from-[#00FFEE] to-[#e13a7a] rounded-full opacity-10 blur-3xl"
+          className="absolute top-40 right-32 w-48 h-48 bg-gradient-to-r from-[#00FFEE] to-gray-900 rounded-full opacity-10 blur-3xl"
           variants={pulseVariants}
           animate="animate"
           style={{ animationDelay: '1s' }}
         />
         <motion.div
-          className="absolute bottom-32 left-1/3 w-56 h-56 bg-gradient-to-r from-[#6d217f] to-[#00FFEE] rounded-full opacity-10 blur-3xl"
+          className="absolute bottom-32 left-1/3 w-56 h-56 bg-gradient-to-r from-gray-800 to-[#00FFEE] rounded-full opacity-10 blur-3xl"
           variants={pulseVariants}
           animate="animate"
           style={{ animationDelay: '2s' }}
@@ -157,7 +161,7 @@ const Intro = () => {
             >
               <div className="relative">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-full blur-2xl opacity-30"
+                  className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 rounded-full blur-2xl opacity-30"
                   variants={pulseVariants}
                   animate="animate"
                 />
@@ -205,7 +209,7 @@ const Intro = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="text-2xl md:text-3xl font-semibold text-[#e13a7a] min-h-[3rem] flex items-center justify-center"
+                className="text-2xl md:text-3xl font-semibold text-gray-900 min-h-[3rem] flex items-center justify-center"
               >
                 {texts[currentText]}
               </motion.h2>
@@ -228,18 +232,18 @@ const Intro = () => {
           >
             <motion.div
               className="flex items-center gap-2"
-              whileHover={{ scale: 1.05, color: "#e13a7a" }}
+              whileHover={{ scale: 1.05, color: "#374151" }}
               transition={{ duration: 0.2 }}
             >
-              <FaUser className="text-[#e13a7a]" />
+              <FaUser className="text-gray-900" />
               <span>Merrimack, NH, USA</span>
             </motion.div>
             <motion.div
               className="flex items-center gap-2"
-              whileHover={{ scale: 1.05, color: "#e13a7a" }}
+              whileHover={{ scale: 1.05, color: "#374151" }}
               transition={{ duration: 0.2 }}
             >
-              <FaBriefcase className="text-[#e13a7a]" />
+              <FaBriefcase className="text-gray-900" />
               <span>Available for opportunities</span>
             </motion.div>
           </motion.div>
@@ -256,7 +260,7 @@ const Intro = () => {
             >
               <Link
                 to="/home"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <FaRocket className="text-lg" />
                 Explore Portfolio

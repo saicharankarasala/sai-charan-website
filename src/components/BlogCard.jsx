@@ -6,14 +6,14 @@ const BlogCard = ({ post }) => (
     <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
     <div className="p-5 flex-1 flex flex-col">
       {post.category && (
-        <span className="inline-block bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+        <span className="inline-block bg-gray-100 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full mb-2">
           {post.category}
         </span>
       )}
       <h3 className="text-lg font-bold mb-1 text-gray-900">{post.title}</h3>
       <span className="text-xs text-gray-500 mb-2">{post.date}</span>
       <p className="text-gray-700 flex-1">{post.excerpt}</p>
-      <Link to={`/blog/${post.slug}`} className="mt-4 text-pink-600 font-semibold hover:underline">
+      <Link to={`/blog/${post.slug}`} className="mt-4 text-gray-900 font-semibold hover:underline">
         Read more &rarr;
       </Link>
     </div>

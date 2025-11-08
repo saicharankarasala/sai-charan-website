@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useOutsideClick } from '../hooks/useOutsideClick';
 import { 
   FaCertificate, FaDownload, FaExternalLinkAlt, FaCheckCircle,
   FaCalendarAlt, FaBuilding, FaIdCard, FaEye, FaTimes
@@ -8,6 +9,14 @@ import AnimatedCertificationCard from '../components/AnimatedCertificationCard';
 
 const Certifications = () => {
   const [selectedCertification, setSelectedCertification] = useState(null);
+  const modalRef = useRef(null);
+
+  // Close modal when clicking outside
+  useOutsideClick(modalRef, () => {
+    if (selectedCertification) {
+      setSelectedCertification(null);
+    }
+  });
 
   const certifications = [
     {
@@ -79,7 +88,7 @@ const Certifications = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -109,7 +118,7 @@ const Certifications = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Professional <span className="text-[#e13a7a]">Certifications</span>
+              Professional <span className="text-gray-900">Certifications</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Industry-recognized credentials that demonstrate my technical expertise 
@@ -131,7 +140,7 @@ const Certifications = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-[#e13a7a] text-white shadow-lg'
+                    ? 'bg-gray-900 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -174,7 +183,7 @@ const Certifications = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Certification <span className="text-[#e13a7a]">Highlights</span>
+              Certification <span className="text-gray-900">Highlights</span>
             </h2>
           </motion.div>
 
@@ -193,10 +202,10 @@ const Certifications = () => {
                 viewport={{ once: true }}
                 className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#e13a7a] text-white rounded-full mb-6 text-2xl">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-900 text-white rounded-full mb-6 text-2xl">
                   <stat.icon />
                 </div>
-                <div className="text-4xl font-bold text-[#e13a7a] mb-2">{stat.number}</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -206,13 +215,14 @@ const Certifications = () => {
 
       {/* Certification Modal */}
       {selectedCertification && (
-        <div className="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-4" onClick={() => setSelectedCertification(null)}>
+        <div className="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-2 sm:p-4" onClick={() => setSelectedCertification(null)}>
           <motion.div
+            ref={modalRef}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             <button
@@ -223,27 +233,27 @@ const Certifications = () => {
               <FaTimes />
             </button>
 
-            <div className="p-8">
-              <div className="flex items-start gap-6 mb-6">
-                <div className="w-20 h-20 bg-[#e13a7a] rounded-xl flex items-center justify-center text-white text-3xl">
+            <div className="p-4 sm:p-6 lg:p-8">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-900 rounded-xl flex items-center justify-center text-white text-2xl sm:text-3xl flex-shrink-0">
                   <FaCertificate />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedCertification.title}</h3>
-                  <div className="flex items-center gap-4 text-[#e13a7a] mb-2">
-                    <span className="font-semibold">{selectedCertification.issuer}</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 break-words">{selectedCertification.title}</h3>
+                  <div className="flex items-center gap-2 sm:gap-4 text-gray-900 mb-2">
+                    <span className="font-semibold text-sm sm:text-base">{selectedCertification.issuer}</span>
                   </div>
-                  <div className="flex items-center gap-4 text-gray-600 text-sm">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-600 text-xs sm:text-sm">
                     <span className="flex items-center gap-1">
-                      <FaCalendarAlt className="text-[#e13a7a]" />
+                      <FaCalendarAlt className="text-gray-900" />
                       {selectedCertification.issueDate}
                     </span>
                     <span className="flex items-center gap-1">
-                      <FaIdCard className="text-[#e13a7a]" />
+                      <FaIdCard className="text-gray-900" />
                       ID: {selectedCertification.credentialId}
                     </span>
                     <span className="flex items-center gap-1">
-                      <FaBuilding className="text-[#e13a7a]" />
+                      <FaBuilding className="text-gray-900" />
                       {selectedCertification.category}
                     </span>
                   </div>
@@ -251,17 +261,17 @@ const Certifications = () => {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Description</h4>
-                <p className="text-gray-700 leading-relaxed">{selectedCertification.description}</p>
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Description</h4>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed break-words">{selectedCertification.description}</p>
               </div>
 
               <div className="mb-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Skills Covered</h4>
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Skills Covered</h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedCertification.skills.map(skill => (
                     <span 
                       key={skill} 
-                      className="px-4 py-2 bg-[#e13a7a] text-white rounded-full text-sm font-medium"
+                      className="px-3 py-1 sm:px-4 sm:py-2 bg-gray-900 text-white rounded-full text-xs sm:text-sm font-medium"
                     >
                       {skill}
                     </span>
@@ -269,13 +279,13 @@ const Certifications = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {selectedCertification.verifyUrl && (
                   <a
                     href={selectedCertification.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#e13a7a] text-white rounded-full font-semibold hover:bg-[#6d217f] transition-colors duration-300"
+                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300 text-sm sm:text-base"
                   >
                     <FaEye />
                     Verify Certificate
@@ -286,7 +296,7 @@ const Certifications = () => {
                     href={selectedCertification.downloadUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300"
+                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 text-sm sm:text-base"
                   >
                     <FaDownload />
                     View Certificate
@@ -299,7 +309,7 @@ const Certifications = () => {
       )}
 
       {/* Call to Action */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -316,7 +326,7 @@ const Certifications = () => {
             </p>
             <a 
               href="/contact" 
-              className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 hover:text-gray-800 transition-all duration-300"
             >
               Start a Project
             </a>

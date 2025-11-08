@@ -14,7 +14,7 @@ const BlogLanding = () => {
   return (
     <div className="bg-white min-h-screen text-gray-900 font-sans">
       {/* Hero Section */}
-      <div className="w-full min-h-[380px] flex flex-col items-center justify-center bg-gradient-to-tr from-[#2d014d] via-[#6d217f] to-[#e13a7a] text-white text-center px-4 relative">
+      <div className="w-full min-h-[380px] flex flex-col items-center justify-center bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 text-white text-center px-4 relative">
         <h1 className="text-5xl md:text-6xl font-bold mb-4">Welcome to the <span className="text-white">SAI CHARAN'S Blog</span></h1>
         <p className="text-xl md:text-2xl font-normal text-white/80 mb-8">Join us on my Journey of Web Development</p>
         <div className="max-w-xl w-full mx-auto flex items-center mt-2">
@@ -26,7 +26,7 @@ const BlogLanding = () => {
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search"
-            className="w-full px-4 py-3 rounded-md bg-transparent text-white placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
+            className="w-full px-4 py-3 rounded-md bg-transparent text-white placeholder-gray-300 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 transition"
           />
         </div>
       </div>

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useOutsideClick } from '../hooks/useOutsideClick';
 import { motion } from 'framer-motion';
 import { 
   FaGraduationCap, FaBriefcase, FaCode, FaAward, FaRocket,
@@ -15,6 +16,14 @@ const MT_LOGO = '/images/MTlogo.png';
 
 const Journey = () => {
   const [selectedMilestone, setSelectedMilestone] = useState(null);
+  const modalRef = useRef(null);
+
+  // Close modal when clicking outside
+  useOutsideClick(modalRef, () => {
+    if (selectedMilestone) {
+      setSelectedMilestone(null);
+    }
+  });
 
   const journeyMilestones = [
     {
@@ -88,7 +97,7 @@ const Journey = () => {
         "Managed 150+ systems efficiently"
       ],
       skills: ["PXE", "GPO", "Linux", "Windows", "Python", "Bash", "Support Automation"],
-      color: "bg-purple-500"
+      color: "bg-gray-500"
     },
     {
       year: 2024,
@@ -119,7 +128,7 @@ const Journey = () => {
         "Enhanced cloud cost management and resource optimization"
       ],
       skills: ["Python", "AWS Lambda", "Terraform", "AWS CloudFormation", "Ansible", "Packer", "Amazon EKS", "CloudWatch", "New Relic", "Datadog", "Dynatrace", "Snowflake", "Power BI", "CI/CD", "EC2", "S3", "RDS"],
-      color: "bg-pink-500"
+      color: "bg-gray-600"
     }
   ];
 
@@ -133,7 +142,7 @@ const Journey = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -163,7 +172,7 @@ const Journey = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Professional <span className="text-[#e13a7a]">Timeline</span>
+              Professional <span className="text-gray-900">Timeline</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A chronological journey through my career milestones, achievements, and growth.
@@ -173,7 +182,7 @@ const Journey = () => {
           {/* Timeline */}
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#6d217f] to-[#e13a7a]"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gray-900 to-gray-800"></div>
 
             {/* Milestones */}
             <div className="space-y-12">
@@ -224,11 +233,11 @@ const Journey = () => {
                         </div>
                         <div>
                           <h3 className="text-lg md:text-xl font-bold text-gray-900">{milestone.title}</h3>
-                          <p className="text-[#e13a7a] font-semibold text-base md:text-lg">{milestone.subtitle}</p>
+                          <p className="text-gray-900 font-semibold text-base md:text-lg">{milestone.subtitle}</p>
                         </div>
                       </div>
                       <div className="mb-4">
-                        <span className="inline-block bg-[#e13a7a] text-white px-3 py-1 rounded-full text-xs md:text-sm font-bold">
+                        <span className="inline-block bg-gray-900 text-white px-3 py-1 rounded-full text-xs md:text-sm font-bold">
                           {milestone.year}
                         </span>
                       </div>
@@ -253,7 +262,7 @@ const Journey = () => {
                     </motion.div>
                   </div>
                   {/* Timeline Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-[#e13a7a] rounded-full shadow-lg"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-gray-900 rounded-full shadow-lg"></div>
                 </motion.div>
               ))}
             </div>
@@ -272,7 +281,7 @@ const Journey = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Journey <span className="text-[#e13a7a]">Statistics</span>
+              Journey <span className="text-gray-900">Statistics</span>
             </h2>
           </motion.div>
 
@@ -286,7 +295,7 @@ const Journey = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                <div className="w-20 h-20 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4">
                   <stat.icon />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</h3>
@@ -298,7 +307,7 @@ const Journey = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -315,14 +324,14 @@ const Journey = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact" 
-                className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 hover:text-gray-800 transition-all duration-300"
               >
                 <FaUsers />
                 Let's Work Together
               </a>
               <a 
                 href="/experience" 
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
               >
                 <FaBriefcase />
                 View Experience
@@ -335,6 +344,7 @@ const Journey = () => {
       {/* Milestone Modal */}
       {selectedMilestone && (
         <motion.div
+          ref={modalRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -355,8 +365,8 @@ const Journey = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">{selectedMilestone.title}</h3>
-                  <p className="text-[#e13a7a] font-semibold">{selectedMilestone.subtitle}</p>
-                  <span className="inline-block bg-[#e13a7a] text-white px-3 py-1 rounded-full text-sm font-bold mt-2">
+                  <p className="text-gray-900 font-semibold">{selectedMilestone.subtitle}</p>
+                  <span className="inline-block bg-gray-900 text-white px-3 py-1 rounded-full text-sm font-bold mt-2">
                     {selectedMilestone.year}
                   </span>
                 </div>
@@ -380,7 +390,7 @@ const Journey = () => {
                 <ul className="space-y-2">
                   {selectedMilestone.achievements.map((achievement, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <FaStar className="text-[#e13a7a] mt-1 flex-shrink-0" />
+                      <FaStar className="text-gray-900 mt-1 flex-shrink-0" />
                       <span className="text-gray-600">{achievement}</span>
                     </li>
                   ))}

@@ -29,63 +29,63 @@ const Skills = () => {
 
   const skills = [
     // Programming Languages
-    { name: 'Python', icon: FaPython, level: 'advanced', category: 'Programming', color: '#e13a7a' },
-    { name: 'Java', icon: FaJava, level: 'advanced', category: 'Programming', color: '#e13a7a' },
-    { name: 'JavaScript', icon: FaJs, level: 'advanced', category: 'Programming', color: '#e13a7a' },
-    { name: 'HTML5', icon: FaHtml5, level: 'advanced', category: 'Frontend', color: '#e13a7a' },
-    { name: 'CSS3', icon: FaCss3Alt, level: 'advanced', category: 'Frontend', color: '#e13a7a' },
-    { name: 'React', icon: FaReact, level: 'advanced', category: 'Frontend', color: '#e13a7a' },
+    { name: 'Python', icon: FaPython, level: 'advanced', category: 'Programming', color: '#374151' },
+    { name: 'Java', icon: FaJava, level: 'advanced', category: 'Programming', color: '#374151' },
+    { name: 'JavaScript', icon: FaJs, level: 'advanced', category: 'Programming', color: '#374151' },
+    { name: 'HTML5', icon: FaHtml5, level: 'advanced', category: 'Frontend', color: '#374151' },
+    { name: 'CSS3', icon: FaCss3Alt, level: 'advanced', category: 'Frontend', color: '#374151' },
+    { name: 'React', icon: FaReact, level: 'advanced', category: 'Frontend', color: '#374151' },
     
     // Backend Technologies
-    { name: 'Spring Boot', icon: FaSpring, level: 'advanced', category: 'Backend', color: '#e13a7a' },
-    { name: 'REST API', icon: FaGlobe, level: 'advanced', category: 'Backend', color: '#e13a7a' },
-    { name: 'Server', icon: FaServer, level: 'advanced', category: 'Backend', color: '#e13a7a' },
+    { name: 'Spring Boot', icon: FaSpring, level: 'advanced', category: 'Backend', color: '#374151' },
+    { name: 'REST API', icon: FaGlobe, level: 'advanced', category: 'Backend', color: '#374151' },
+    { name: 'Server', icon: FaServer, level: 'advanced', category: 'Backend', color: '#374151' },
     
     // Database Technologies
-    { name: 'SQL', icon: FaSql, level: 'advanced', category: 'Database', color: '#e13a7a' },
-    { name: 'MySQL', icon: FaDatabase, level: 'advanced', category: 'Database', color: '#e13a7a' },
-    { name: 'PL/SQL', icon: FaDatabase, level: 'advanced', category: 'Database', color: '#e13a7a' },
-    { name: 'Snowflake', icon: FaSnowflake, level: 'intermediate', category: 'Database', color: '#e13a7a' },
-    { name: 'Hadoop', icon: FaHadoop, level: 'intermediate', category: 'Database', color: '#e13a7a' },
+    { name: 'SQL', icon: FaSql, level: 'advanced', category: 'Database', color: '#374151' },
+    { name: 'MySQL', icon: FaDatabase, level: 'advanced', category: 'Database', color: '#374151' },
+    { name: 'PL/SQL', icon: FaDatabase, level: 'advanced', category: 'Database', color: '#374151' },
+    { name: 'Snowflake', icon: FaSnowflake, level: 'intermediate', category: 'Database', color: '#374151' },
+    { name: 'Hadoop', icon: FaHadoop, level: 'intermediate', category: 'Database', color: '#374151' },
     
     // Cloud & DevOps
-    { name: 'AWS', icon: FaAws, level: 'intermediate', category: 'Cloud', color: '#e13a7a' },
-    { name: 'AWS Lambda', icon: FaBolt, level: 'intermediate', category: 'Cloud', color: '#e13a7a' },
-    { name: 'Azure', icon: FaMicrosoft, level: 'intermediate', category: 'Cloud', color: '#e13a7a' },
-    { name: 'Linux', icon: FaLinux, level: 'advanced', category: 'Cloud', color: '#e13a7a' },
-    { name: 'Windows', icon: FaWindows, level: 'advanced', category: 'Cloud', color: '#e13a7a' },
-    { name: 'Git', icon: FaGitAlt, level: 'advanced', category: 'Cloud', color: '#e13a7a' },
-    { name: 'GitLab CI', icon: FaCodeBranch, level: 'intermediate', category: 'Cloud', color: '#e13a7a' },
-    { name: 'Bash', icon: FaTerminal, level: 'advanced', category: 'Cloud', color: '#e13a7a' },
-    { name: 'PowerShell', icon: FaTerminal, level: 'intermediate', category: 'Cloud', color: '#e13a7a' },
-    { name: 'Unix Shell', icon: FaTerminal, level: 'advanced', category: 'Cloud', color: '#e13a7a' },
+    { name: 'AWS', icon: FaAws, level: 'intermediate', category: 'Cloud', color: '#374151' },
+    { name: 'AWS Lambda', icon: FaBolt, level: 'intermediate', category: 'Cloud', color: '#374151' },
+    { name: 'Azure', icon: FaMicrosoft, level: 'intermediate', category: 'Cloud', color: '#374151' },
+    { name: 'Linux', icon: FaLinux, level: 'advanced', category: 'Cloud', color: '#374151' },
+    { name: 'Windows', icon: FaWindows, level: 'advanced', category: 'Cloud', color: '#374151' },
+    { name: 'Git', icon: FaGitAlt, level: 'advanced', category: 'Cloud', color: '#374151' },
+    { name: 'GitLab CI', icon: FaCodeBranch, level: 'intermediate', category: 'Cloud', color: '#374151' },
+    { name: 'Bash', icon: FaTerminal, level: 'advanced', category: 'Cloud', color: '#374151' },
+    { name: 'PowerShell', icon: FaTerminal, level: 'intermediate', category: 'Cloud', color: '#374151' },
+    { name: 'Unix Shell', icon: FaTerminal, level: 'advanced', category: 'Cloud', color: '#374151' },
     
     // Tools & Platforms
-    { name: 'Tableau', icon: FaChartBar, level: 'advanced', category: 'Tools', color: '#e13a7a' },
-    { name: 'Power BI', icon: FaChartPie, level: 'advanced', category: 'Tools', color: '#e13a7a' },
-    { name: 'Informatica', icon: FaStream, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'Pentaho', icon: FaWrench, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'Dynatrace', icon: FaEye, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'ServiceNow', icon: FaCog, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'D365', icon: FaMicrosoft, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'JUnit', icon: FaShieldAlt, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'Selenium', icon: FaRobot, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'PXE', icon: FaNetworkWired, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'GPO', icon: FaSitemap, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
+    { name: 'Tableau', icon: FaChartBar, level: 'advanced', category: 'Tools', color: '#374151' },
+    { name: 'Power BI', icon: FaChartPie, level: 'advanced', category: 'Tools', color: '#374151' },
+    { name: 'Informatica', icon: FaStream, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'Pentaho', icon: FaWrench, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'Dynatrace', icon: FaEye, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'ServiceNow', icon: FaCog, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'D365', icon: FaMicrosoft, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'JUnit', icon: FaShieldAlt, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'Selenium', icon: FaRobot, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'PXE', icon: FaNetworkWired, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'GPO', icon: FaSitemap, level: 'intermediate', category: 'Tools', color: '#374151' },
     
     // Data & Analytics
-    { name: 'Pandas', icon: FaLeaf, level: 'advanced', category: 'Programming', color: '#e13a7a' },
-    { name: 'PySpark', icon: FaRocket, level: 'intermediate', category: 'Programming', color: '#e13a7a' },
-    { name: 'Matplotlib', icon: FaChartLine, level: 'advanced', category: 'Tools', color: '#e13a7a' },
-    { name: 'Plotly', icon: FaChartBar, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: 'Data Visualization', icon: FaChartPie, level: 'advanced', category: 'Tools', color: '#e13a7a' },
+    { name: 'Pandas', icon: FaLeaf, level: 'advanced', category: 'Programming', color: '#374151' },
+    { name: 'PySpark', icon: FaRocket, level: 'intermediate', category: 'Programming', color: '#374151' },
+    { name: 'Matplotlib', icon: FaChartLine, level: 'advanced', category: 'Tools', color: '#374151' },
+    { name: 'Plotly', icon: FaChartBar, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: 'Data Visualization', icon: FaChartPie, level: 'advanced', category: 'Tools', color: '#374151' },
     
     // Specialized Technologies
-    { name: 'IoT', icon: FaIot, level: 'intermediate', category: 'Programming', color: '#e13a7a' },
-    { name: 'VLC', icon: FaVlc, level: 'intermediate', category: 'Programming', color: '#e13a7a' },
-    { name: 'OptiSystem', icon: FaBroadcastTower, level: 'intermediate', category: 'Tools', color: '#e13a7a' },
-    { name: '.NET', icon: FaDotnet, level: 'intermediate', category: 'Programming', color: '#e13a7a' },
-    { name: 'UI/UX', icon: FaPalette, level: 'intermediate', category: 'Frontend', color: '#e13a7a' }
+    { name: 'IoT', icon: FaIot, level: 'intermediate', category: 'Programming', color: '#374151' },
+    { name: 'VLC', icon: FaVlc, level: 'intermediate', category: 'Programming', color: '#374151' },
+    { name: 'OptiSystem', icon: FaBroadcastTower, level: 'intermediate', category: 'Tools', color: '#374151' },
+    { name: '.NET', icon: FaDotnet, level: 'intermediate', category: 'Programming', color: '#374151' },
+    { name: 'UI/UX', icon: FaPalette, level: 'intermediate', category: 'Frontend', color: '#374151' }
   ];
 
   const filteredSkills = activeCategory === 'All' 
@@ -167,7 +167,7 @@ const Skills = () => {
   const filterButtonVariants = {
     hover: {
       scale: 1.05,
-      backgroundColor: "#e13a7a",
+      backgroundColor: "#374151",
       color: "white",
       transition: {
         duration: 0.2,
@@ -182,7 +182,7 @@ const Skills = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -213,7 +213,7 @@ const Skills = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Technical <span className="text-[#e13a7a]">Expertise</span>
+              Technical <span className="text-gray-900">Expertise</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Filter by category to explore my skills in specific domains
@@ -232,7 +232,7 @@ const Skills = () => {
                   onClick={() => setActiveCategory(category.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                     activeCategory === category.id
-                      ? 'bg-[#e13a7a] text-white shadow-lg'
+                      ? 'bg-gray-900 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                   variants={filterButtonVariants}
@@ -248,7 +248,7 @@ const Skills = () => {
 
           {/* Skills Grid */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -260,12 +260,12 @@ const Skills = () => {
                   key={skill.name}
                   variants={skillCardVariants}
                   whileHover="hover"
-                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100"
+                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-100"
                   layout
                 >
                   {/* Skill Icon */}
                   <motion.div
-                    className="w-12 h-12 bg-gradient-to-br from-[#e13a7a] to-[#6d217f] text-white rounded-xl flex items-center justify-center text-xl mb-4"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-xl flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4"
                     variants={iconVariants}
                     whileHover="hover"
                   >
@@ -273,7 +273,7 @@ const Skills = () => {
                   </motion.div>
                   
                   {/* Skill Name */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#e13a7a] transition-colors duration-300">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-300">
                     {skill.name}
                   </h3>
                   
@@ -289,7 +289,7 @@ const Skills = () => {
                   </div>
                   
                   <div className="text-xs text-gray-500">
-                    {skill.category} • {getLevelText(skill.level)} Level
+                    {skill.category} • {getLevelText(skill.level)}
                   </div>
                 </motion.div>
               ))}
@@ -309,7 +309,7 @@ const Skills = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Skills by <span className="text-[#e13a7a]">Category</span>
+              Skills by <span className="text-gray-900">Category</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Organized by domain expertise to showcase my comprehensive technical capabilities.
@@ -317,7 +317,7 @@ const Skills = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -333,27 +333,27 @@ const Skills = () => {
                   key={category.id}
                   variants={skillCardVariants}
                   whileHover="hover"
-                  className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100"
                 >
                   <motion.div 
-                    className="flex items-center gap-4 mb-6"
+                    className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
                     <motion.div 
-                      className="w-12 h-12 bg-[#e13a7a] text-white rounded-xl flex items-center justify-center text-xl"
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center text-lg sm:text-xl"
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
                     >
                       <category.icon />
                     </motion.div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">{category.name}</h3>
-                      <p className="text-gray-600">{categorySkills.length} skills</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900">{category.name}</h3>
+                      <p className="text-sm sm:text-base text-gray-600">{categorySkills.length} skills</p>
                     </div>
                   </motion.div>
 
-                  <div className="space-y-4 mb-6">
+                  <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
                     <motion.div 
                       className="flex justify-between items-center"
                       whileHover={{ x: 5 }}
@@ -379,7 +379,7 @@ const Skills = () => {
                         className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
                         whileHover={{ 
                           scale: 1.1, 
-                          backgroundColor: "#e13a7a",
+                          backgroundColor: "#374151",
                           color: "white"
                         }}
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -391,7 +391,7 @@ const Skills = () => {
                     ))}
                     {categorySkills.length > 6 && (
                       <motion.span 
-                        className="px-3 py-1 bg-[#e13a7a] text-white rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-gray-900 text-white rounded-full text-sm font-medium"
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -407,7 +407,7 @@ const Skills = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -427,7 +427,7 @@ const Skills = () => {
             >
               <Link 
                 to="/contact" 
-                className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-gray-100 hover:text-gray-800 transition-all duration-300 text-sm sm:text-base min-h-[44px]"
               >
                 Start a Project
                 <motion.div

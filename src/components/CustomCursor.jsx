@@ -16,7 +16,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 w-5 h-5 bg-[#e13a7a] rounded-full pointer-events-none z-[9999]"
+      className="fixed top-0 left-0 w-5 h-5 bg-gray-900 rounded-full pointer-events-none z-[9999]"
       style={{ transform: 'translate3d(-100px, -100px, 0)', willChange: 'transform' }}
     />
   );

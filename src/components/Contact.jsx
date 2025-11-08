@@ -101,9 +101,9 @@ const Contact = () => {
       <section className="w-full" id="contact">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-            <FaEnvelopeOpenText className="text-[#e13a7a] text-4xl mb-2" />
-            <h2 className="text-3xl font-extrabold mb-2 text-center text-[#e13a7a]">Contact Me</h2>
-            <div className="w-16 h-1 bg-[#e13a7a] rounded-full mb-4"></div>
+            <FaEnvelopeOpenText className="text-gray-900 text-4xl mb-2" />
+            <h2 className="text-3xl font-extrabold mb-2 text-center text-gray-900">Contact Me</h2>
+            <div className="w-16 h-1 bg-gray-900 rounded-full mb-4"></div>
             <p className="text-gray-500 text-center mb-6">I'd love to hear from you! Fill out the form and I'll get back to you soon.</p>
             <form
               ref={form}
@@ -121,21 +121,21 @@ const Contact = () => {
                 name="from_name"
                 placeholder="Full Name"
                 required
-                className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#e13a7a] transition"
+                className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 transition"
               />
               <input
                 type="email"
                 name="reply_to"
                 placeholder="Email Address"
                 required
-                className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#e13a7a] transition"
+                className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 transition"
               />
               <input
                 type="text"
                 name="subject"
                 placeholder="Subject"
                 required
-                className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#e13a7a] transition"
+                className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 transition"
               />
               <textarea
                 name="message"
@@ -159,7 +159,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full md:w-auto bg-[#e13a7a] hover:bg-[#6d217f] text-white font-bold px-8 py-3 rounded-full shadow transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed mx-auto mt-2"
+                className="w-full md:w-auto bg-gray-900 hover:bg-gray-800 text-white font-bold px-8 py-3 rounded-full shadow transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed mx-auto mt-2"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

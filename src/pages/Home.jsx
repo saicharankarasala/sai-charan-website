@@ -11,6 +11,7 @@ const Home = () => {
   const y = useTransform(scrollY, [0, 300], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
 
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,7 +38,7 @@ const Home = () => {
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "0 10px 30px rgba(225, 58, 122, 0.3)",
+      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
       transition: {
         duration: 0.2,
         ease: "easeInOut"
@@ -89,72 +90,7 @@ const Home = () => {
       <h1 className="sr-only">Venkata Sai Charan - Software Engineer Portfolio</h1>
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-tr from-[#6d217f] via-[#e13a7a] to-[#00FFEE] text-white overflow-hidden">
-        {/* Animated Background Pattern */}
-        <motion.div 
-          className="absolute inset-0 opacity-10"
-          animate={{
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 60,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <motion.div 
-            className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div 
-            className="absolute top-40 right-32 w-24 h-24 bg-white rounded-full"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.6, 0.3, 0.6],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-          />
-          <motion.div 
-            className="absolute bottom-32 left-1/4 w-16 h-16 bg-white rounded-full"
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.4, 0.7, 0.4],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-          />
-          <motion.div 
-            className="absolute bottom-20 right-20 w-20 h-20 bg-white rounded-full"
-            animate={{
-              scale: [1.3, 1, 1.3],
-              opacity: [0.7, 0.4, 0.7],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5
-            }}
-          />
-        </motion.div>
-
+      <section className="relative min-h-screen flex items-center justify-center bg-white text-gray-900 overflow-hidden">
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
@@ -170,23 +106,9 @@ const Home = () => {
               >
                 <h2 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
                   Hi, I'm{' '}
-                  <motion.span 
-                    className="text-white drop-shadow-lg"
-                    animate={{
-                      textShadow: [
-                        "0 0 0px rgba(255,255,255,0)",
-                        "0 0 20px rgba(255,255,255,0.5)",
-                        "0 0 0px rgba(255,255,255,0)"
-                      ]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
+                  <span className="text-gray-900">
                     Venkata Sai Charan
-                  </motion.span>
+                  </span>
                 </h2>
               </motion.div>
 
@@ -194,7 +116,7 @@ const Home = () => {
                 variants={itemVariants}
                 className="mb-6"
               >
-                <h3 className="text-2xl lg:text-3xl font-semibold mb-4 text-pink-200 min-h-[3rem]">
+                <h3 className="text-2xl lg:text-3xl font-semibold mb-4 text-gray-600 min-h-[3rem]">
                   <Typewriter
                     words={[
                       'Cloud & Backend Developer',
@@ -215,7 +137,7 @@ const Home = () => {
 
               <motion.p
                 variants={itemVariants}
-                className="text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0"
+                className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0"
               >
                 Software Engineer & Problem Solver. Engineer by skill, problem-solver by mindset. 
                 Let's build what matters and create solutions that make a difference.
@@ -224,14 +146,14 @@ const Home = () => {
               {/* SEO-friendly location and availability info */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap gap-4 mb-6 text-sm text-white/80"
+                className="flex flex-wrap gap-4 mb-6 text-sm text-gray-600"
               >
                 <motion.div 
                   className="flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <FaMapMarker className="text-[#e13a7a]" />
+                  <FaMapMarker className="text-gray-500" />
                   <span>Merrimack, NH, USA</span>
                 </motion.div>
                 <motion.div 
@@ -239,7 +161,7 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <FaBriefcase className="text-[#e13a7a]" />
+                  <FaBriefcase className="text-gray-500" />
                   <span>Available for opportunities</span>
                 </motion.div>
               </motion.div>
@@ -250,7 +172,7 @@ const Home = () => {
               >
                 <motion.a 
                   href="/cv.pdf" 
-                  className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300 group"
+                  className="inline-flex items-center gap-2 bg-gray-900 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-gray-800 hover:text-white transition-all duration-300 group"
                   target="_blank" 
                   rel="noopener noreferrer"
                   variants={buttonVariants}
@@ -269,7 +191,7 @@ const Home = () => {
                 </motion.a>
                 <motion.a 
                   href="/contact" 
-                  className="inline-flex items-center gap-2 bg-[#e13a7a] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-400 hover:text-white transition-all duration-300 group"
+                  className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 hover:text-gray-800 transition-all duration-300 group border-2 border-gray-900"
                   variants={buttonVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -293,7 +215,7 @@ const Home = () => {
                   href="https://www.linkedin.com/in/sai-charan-k-v/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="inline-flex justify-center items-center w-12 h-12 bg-white/20 border-2 border-white text-white rounded-full text-xl hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                  className="inline-flex justify-center items-center w-12 h-12 bg-gray-100 border-2 border-gray-300 text-gray-700 rounded-full text-xl hover:bg-gray-900 hover:text-white transition-all duration-300"
                   variants={socialButtonVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -304,7 +226,7 @@ const Home = () => {
                   href="mailto:saicharankarasala@gmail.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="inline-flex justify-center items-center w-12 h-12 bg-white/20 border-2 border-white text-white rounded-full text-xl hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                  className="inline-flex justify-center items-center w-12 h-12 bg-gray-100 border-2 border-gray-300 text-gray-700 rounded-full text-xl hover:bg-gray-900 hover:text-white transition-all duration-300"
                   variants={socialButtonVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -315,7 +237,7 @@ const Home = () => {
                   href="https://github.com/KVSC1511" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="inline-flex justify-center items-center w-12 h-12 bg-white/20 border-2 border-white text-white rounded-full text-xl hover:bg-white hover:text-[#e13a7a] transition-all duration-300"
+                  className="inline-flex justify-center items-center w-12 h-12 bg-gray-100 border-2 border-gray-300 text-gray-700 rounded-full text-xl hover:bg-gray-900 hover:text-white transition-all duration-300"
                   variants={socialButtonVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -334,7 +256,7 @@ const Home = () => {
             >
               <div className="relative">
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-r from-[#e13a7a] to-[#6d217f] rounded-full blur-xl opacity-30"
+                  className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full blur-xl opacity-30"
                   animate={{
                     scale: [1, 1.1, 1],
                     opacity: [0.3, 0.5, 0.3],
@@ -348,7 +270,7 @@ const Home = () => {
                 <motion.img 
                   src="/images/profile.JPG" 
                   alt="Venkata Sai Charan - Software Engineer Portfolio" 
-                  className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full border-4 border-white shadow-2xl object-cover object-top z-10"
+                  className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-full border-4 border-white shadow-2xl object-cover object-top z-10"
                   variants={profileImageVariants}
                 />
               </div>
@@ -368,7 +290,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-              Why Choose <span className="text-[#e13a7a]">Me</span>?
+              Why Choose <span className="text-gray-900">Me</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               I combine technical expertise with creative problem-solving to deliver innovative solutions 
@@ -416,7 +338,7 @@ const Home = () => {
                 className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
                 <motion.div
-                  className="w-16 h-16 bg-[#e13a7a] text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4"
+                  className="w-16 h-16 bg-gray-900 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4"
                   whileHover={{ 
                     rotate: 360,
                     scale: 1.1,
@@ -444,7 +366,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-              About <span className="text-[#e13a7a]">Venkata Sai Charan</span>
+              About <span className="text-gray-900">Venkata Sai Charan</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Software Engineer with expertise in React, Node.js, and modern web technologies. 
@@ -497,7 +419,7 @@ const Home = () => {
                   "DevOps & CI/CD Pipelines"
                 ].map((skill, index) => (
                   <div key={skill} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#e13a7a] rounded-full"></div>
+                    <div className="w-2 h-2 bg-gray-900 rounded-full"></div>
                     <span className="text-gray-700">{skill}</span>
                   </div>
                 ))}
@@ -510,4 +432,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;

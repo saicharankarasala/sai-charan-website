@@ -7,27 +7,43 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
-        'bg-color': '#080808',
-        'second-bg': '#131313',
-        'main': '#00ffee',
-        black: {
-          DEFAULT: "#000",
-          100: "#000319",
-          200: "rgba(17, 25, 40, 0.75)",
-          300: "rgba(255, 255, 255, 0.125)",
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0a0a0a',
         },
-        white: {
-          DEFAULT: "#FFF",
-          100: "#BEC1DD",
-          200: "#C1C2D3",
+        gray: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+          950: '#030712',
         },
-        blue: {
-          "100": "#E4ECFF",
-        },
-        purple: "#CBACF9",
+      },
+      backgroundImage: {
+        'dot-grid': 'radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px)',
+        'dot-grid-light': 'radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        'dot-grid': '20px 20px',
+        'dot-grid-sm': '16px 16px',
       },
       scale: {
         '130': '1.3',

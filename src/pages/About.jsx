@@ -39,7 +39,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -70,7 +70,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-3">
-                <FaUser className="text-[#e13a7a] text-2xl" />
+                <FaUser className="text-gray-900 text-2xl" />
                 My Story
               </h2>
               
@@ -101,7 +101,7 @@ const About = () => {
               </div>
 
               {/* Philosophy */}
-              <div className="mt-12 p-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] rounded-2xl text-white">
+              <div className="mt-12 p-6 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl text-white">
                 <div className="flex items-center gap-3 mb-4">
                   <FaLightbulb className="text-2xl" />
                   <h3 className="text-xl font-bold">My Philosophy</h3>
@@ -121,7 +121,7 @@ const About = () => {
                 viewport={{ once: true }}
                 className="mt-12"
               >
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
                   {stats.map((stat, index) => (
                     <motion.div
                       key={stat.label}
@@ -129,10 +129,10 @@ const About = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1, duration: 0.6 }}
                       viewport={{ once: true }}
-                      className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                     >
-                      <div className="text-3xl font-bold text-[#e13a7a] mb-2">{stat.number}</div>
-                      <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
+                      <div className="text-gray-600 font-medium text-xs sm:text-sm">{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -153,7 +153,7 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              What Makes Me <span className="text-[#e13a7a]">Different</span>
+              What Makes Me <span className="text-gray-900">Different</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               I combine technical expertise with creative problem-solving to deliver innovative solutions 
@@ -161,7 +161,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {highlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}
@@ -169,13 +169,13 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.8 }}
                 viewport={{ once: true }}
-                className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="text-center p-6 sm:p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#e13a7a] text-white rounded-full mb-6 text-2xl">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gray-900 text-white rounded-full mb-4 sm:mb-6 text-lg sm:text-2xl">
                   <highlight.icon />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{highlight.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{highlight.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900">{highlight.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{highlight.description}</p>
               </motion.div>
             ))}
           </div>
@@ -193,7 +193,7 @@ const About = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              My <span className="text-[#e13a7a]">Journey</span>
+              My <span className="text-gray-900">Journey</span>
             </h2>
           </motion.div>
 
@@ -206,7 +206,7 @@ const About = () => {
               viewport={{ once: true }}
               className="flex items-start gap-6"
             >
-              <div className="flex-shrink-0 w-12 h-12 bg-[#e13a7a] rounded-full flex items-center justify-center text-white">
+              <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white">
                 <FaGraduationCap />
               </div>
               <div className="flex-1">
@@ -214,12 +214,12 @@ const About = () => {
                 <div className="space-y-4">
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h4 className="font-bold text-gray-900">Master of Science in Computer Science</h4>
-                    <p className="text-[#e13a7a] font-semibold">University of Missouri - Kansas City</p>
+                    <p className="text-gray-900 font-semibold">University of Missouri - Kansas City</p>
                     <p className="text-gray-600">August 2022 – December 2023 • GPA: 3.75</p>
                   </div>
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h4 className="font-bold text-gray-900">Bachelor of Engineering in Electronics and Communication</h4>
-                    <p className="text-[#e13a7a] font-semibold">St. Joseph's College of Engineering</p>
+                    <p className="text-gray-900 font-semibold">St. Joseph's College of Engineering</p>
                     <p className="text-gray-600">August 2017 – August 2021 • GPA: 3.7</p>
                   </div>
                 </div>
@@ -234,7 +234,7 @@ const About = () => {
               viewport={{ once: true }}
               className="flex items-start gap-6"
             >
-              <div className="flex-shrink-0 w-12 h-12 bg-[#e13a7a] rounded-full flex items-center justify-center text-white">
+              <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white">
                 <FaBriefcase />
               </div>
               <div className="flex-1">
@@ -242,27 +242,27 @@ const About = () => {
                 <div className="space-y-4">
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h4 className="font-bold text-gray-900">Software Engineer</h4>
-                    <p className="text-[#e13a7a] font-semibold">Source Consulting LLC</p>
+                    <p className="text-gray-900 font-semibold">Source Consulting LLC</p>
                     <p className="text-gray-600">January 2025 – Present</p>
                   </div>
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h4 className="font-bold text-gray-900">Network Operation Analyst</h4>
-                    <p className="text-[#e13a7a] font-semibold">Trbhi INC</p>
+                    <p className="text-gray-900 font-semibold">Trbhi INC</p>
                     <p className="text-gray-600">April 2024 – December 2024</p>
                   </div>
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h4 className="font-bold text-gray-900">Graduate Student Technical Assistant</h4>
-                    <p className="text-[#e13a7a] font-semibold">University of Missouri - Kansas City</p>
+                    <p className="text-gray-900 font-semibold">University of Missouri - Kansas City</p>
                     <p className="text-gray-600">May 2023 – December 2023</p>
                   </div>
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h4 className="font-bold text-gray-900">Software Engineer</h4>
-                    <p className="text-[#e13a7a] font-semibold">Wipro Technologies</p>
+                    <p className="text-gray-900 font-semibold">Wipro Technologies</p>
                     <p className="text-gray-600">September 2021 – July 2022</p>
                   </div>
                   <div className="p-6 bg-gray-50 rounded-xl">
                     <h4 className="font-bold text-gray-900">Software Engineer</h4>
-                    <p className="text-[#e13a7a] font-semibold">Merizon Technologies</p>
+                    <p className="text-gray-900 font-semibold">Merizon Technologies</p>
                     <p className="text-gray-600">May 2019 – August 2021</p>
                   </div>
                 </div>
@@ -273,7 +273,7 @@ const About = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -290,7 +290,7 @@ const About = () => {
             </p>
             <a 
               href="/contact" 
-              className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 hover:text-gray-800 transition-all duration-300"
             >
               Get In Touch
             </a>

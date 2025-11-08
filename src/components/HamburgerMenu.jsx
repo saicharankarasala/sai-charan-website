@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
+import { useOutsideClick } from '../hooks/useOutsideClick';
 import { 
   FaHome, 
   FaUser, 
@@ -10,35 +11,32 @@ import {
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest('.hamburger-menu')) {
-        setIsOpen(false);
-      }
-    };
+  useOutsideClick(menuRef, () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  });
 
-    // Close menu when pressing Escape key
+  // Close menu when pressing Escape key
+  React.useEffect(() => {
     const handleEscKey = (event) => {
       if (isOpen && event.key === 'Escape') {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleEscKey);
-
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscKey);
     };
   }, [isOpen]);
 
   return (
-    <>
+    <div ref={menuRef} className="hamburger-menu md:hidden">
       <button
-        className="hamburger-menu md:hidden"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
         aria-expanded={isOpen}
@@ -76,7 +74,7 @@ const HamburgerMenu = () => {
           Contact
         </a>
       </div>
-    </>
+    </div>
   );
 };
 

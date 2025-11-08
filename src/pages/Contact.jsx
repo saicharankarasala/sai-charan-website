@@ -81,7 +81,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -112,7 +112,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto px-4"
           >
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 border-2 border-gray-300 rounded-2xl p-6 sm:p-8 bg-gray-50">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -124,7 +124,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 text-base"
+                    className="w-full px-3 sm:px-4 py-3 border-2 border-gray-400 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-300 text-base bg-white"
                     placeholder="Your name"
                   />
                 </div>
@@ -138,7 +138,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 text-base"
+                    className="w-full px-3 sm:px-4 py-3 border-2 border-gray-400 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-300 text-base bg-white"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -154,7 +154,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 text-base"
+                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all duration-300 text-base"
                   placeholder="What's this about?"
                 />
               </div>
@@ -169,7 +169,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e13a7a] focus:border-transparent transition-all duration-300 resize-none text-base"
+                  className="w-full px-3 sm:px-4 py-3 border-2 border-gray-400 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-300 resize-none text-base bg-white"
                   placeholder="Tell me about your project or inquiry..."
                 />
               </div>
@@ -177,7 +177,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#e13a7a] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-semibold hover:bg-[#6d217f] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-base"
+                className="w-full bg-gray-900 text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base min-h-[44px]"
               >
                 {isSubmitting ? (
                   <>
@@ -244,7 +244,7 @@ const Contact = () => {
                   {info.link ? (
                     <a 
                       href={info.link} 
-                      className="text-[#e13a7a] hover:text-[#6d217f] transition-colors duration-300 text-sm sm:text-base break-words"
+                      className="text-gray-900 hover:text-gray-700 transition-colors duration-300 text-sm sm:text-base break-words"
                     >
                       {info.value}
                     </a>
@@ -288,7 +288,7 @@ const Contact = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -304,22 +304,22 @@ const Contact = () => {
               and see how we can work together to achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-              <a 
-                href="mailto:saicharankarasala@gmail.com" 
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#e13a7a] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300 text-sm sm:text-base"
-              >
-                <FaEnvelope />
-                Send Email
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/sai-charan-k-v/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white hover:text-[#e13a7a] transition-all duration-300 text-sm sm:text-base"
-              >
-                <FaLinkedin />
-                Connect on LinkedIn
-              </a>
+                <a 
+                  href="mailto:saicharankarasala@gmail.com" 
+                  className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-gray-100 hover:text-gray-800 transition-all duration-300 text-sm sm:text-base min-h-[44px]"
+                >
+                  <FaEnvelope />
+                  Send Email
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/sai-charan-k-v/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 text-sm sm:text-base min-h-[44px]"
+                >
+                  <FaLinkedin />
+                  Connect on LinkedIn
+                </a>
             </div>
           </motion.div>
         </div>

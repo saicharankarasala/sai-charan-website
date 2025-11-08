@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useOutsideClick } from '../hooks/useOutsideClick';
 import { 
   FaProjectDiagram, FaCode, FaExternalLinkAlt, FaGithub,
   FaFilter, FaSort, FaTimes, FaEye, FaCalendarAlt, FaTag
@@ -10,6 +11,14 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [projectFilter, setProjectFilter] = useState('All');
   const [projectSort, setProjectSort] = useState('Newest');
+  const modalRef = useRef(null);
+
+  // Close modal when clicking outside
+  useOutsideClick(modalRef, () => {
+    if (selectedProject) {
+      setSelectedProject(null);
+    }
+  });
 
   const projects = [
     {
@@ -130,7 +139,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -160,7 +169,7 @@ const Projects = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Featured <span className="text-[#e13a7a]">Projects</span>
+              Featured <span className="text-gray-900">Projects</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From full-stack web applications to cutting-edge research projects, 
@@ -177,9 +186,9 @@ const Projects = () => {
             className="flex flex-wrap gap-4 mb-12 justify-center items-center"
           >
             <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
-              <FaFilter className="text-[#e13a7a]" />
+              <FaFilter className="text-gray-900" />
               <select 
-                className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" 
+                className="px-4 py-2 rounded-full border border-gray-900 text-gray-900 font-semibold bg-white shadow-sm" 
                 value={projectFilter} 
                 onChange={e => setProjectFilter(e.target.value)}
               >
@@ -199,9 +208,9 @@ const Projects = () => {
               </select>
             </div>
             <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
-              <FaSort className="text-[#e13a7a]" />
+              <FaSort className="text-gray-900" />
               <select 
-                className="px-4 py-2 rounded-full border border-[#e13a7a] text-[#e13a7a] font-semibold bg-white shadow-sm" 
+                className="px-4 py-2 rounded-full border border-gray-900 text-gray-900 font-semibold bg-white shadow-sm" 
                 value={projectSort} 
                 onChange={e => setProjectSort(e.target.value)}
               >
@@ -229,7 +238,7 @@ const Projects = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Project <span className="text-[#e13a7a]">Statistics</span>
+              Project <span className="text-gray-900">Statistics</span>
             </h2>
           </motion.div>
 
@@ -248,10 +257,10 @@ const Projects = () => {
                 viewport={{ once: true }}
                 className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#e13a7a] text-white rounded-full mb-6 text-2xl">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-900 text-white rounded-full mb-6 text-2xl">
                   <stat.icon />
                 </div>
-                <div className="text-4xl font-bold text-[#e13a7a] mb-2">{stat.number}</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -261,13 +270,14 @@ const Projects = () => {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-4" onClick={() => setSelectedProject(null)}>
+        <div className="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-2 sm:p-4" onClick={() => setSelectedProject(null)}>
           <motion.div
+            ref={modalRef}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             <button
@@ -278,28 +288,28 @@ const Projects = () => {
               <FaTimes />
             </button>
 
-            <div className="p-8">
-              <div className="flex items-start gap-6 mb-6">
+            <div className="p-4 sm:p-6 lg:p-8">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
                 {selectedProject.image && (
                   <img 
                     src={selectedProject.image} 
                     alt={selectedProject.title}
-                    className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover shadow-lg flex-shrink-0"
                   />
                 )}
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedProject.title}</h3>
-                  <div className="flex items-center gap-4 text-gray-600 mb-4">
-                    <span className="flex items-center gap-1">
-                      <FaCalendarAlt className="text-[#e13a7a]" />
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 break-words">{selectedProject.title}</h3>
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-600 mb-4">
+                    <span className="flex items-center gap-1 text-sm">
+                      <FaCalendarAlt className="text-gray-900" />
                       {selectedProject.year}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <FaTag className="text-[#e13a7a]" />
+                    <span className="flex items-center gap-1 text-sm">
+                      <FaTag className="text-gray-900" />
                       {selectedProject.category}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <FaCode className="text-[#e13a7a]" />
+                    <span className="flex items-center gap-1 text-sm">
+                      <FaCode className="text-gray-900" />
                       {selectedProject.type}
                     </span>
                   </div>
@@ -307,24 +317,24 @@ const Projects = () => {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Description</h4>
-                <ul className="space-y-3 text-gray-700 leading-relaxed">
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Description</h4>
+                <ul className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
                   {selectedProject.description.map((desc, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-[#e13a7a] rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{desc}</span>
+                      <div className="w-2 h-2 bg-gray-900 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="break-words">{desc}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="mb-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h4>
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tech.map(tech => (
                     <span 
                       key={tech} 
-                      className="px-4 py-2 bg-[#e13a7a] text-white rounded-full text-sm font-medium"
+                      className="px-3 py-1 sm:px-4 sm:py-2 bg-gray-900 text-white rounded-full text-xs sm:text-sm font-medium"
                     >
                       {tech}
                     </span>
@@ -334,15 +344,15 @@ const Projects = () => {
 
               {selectedProject.links && selectedProject.links.length > 0 && (
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">Project Links</h4>
-                  <div className="flex flex-wrap gap-3">
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Project Links</h4>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {selectedProject.links.map(link => (
                       <a
                         key={link.label}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#e13a7a] text-white rounded-full font-semibold hover:bg-[#6d217f] transition-colors duration-300"
+                        className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300 text-sm sm:text-base"
                       >
                         {link.label === 'GitHub' ? <FaGithub /> : <FaExternalLinkAlt />}
                         {link.label}
@@ -357,7 +367,7 @@ const Projects = () => {
       )}
 
       {/* Call to Action */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#6d217f] to-[#e13a7a] text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -374,7 +384,7 @@ const Projects = () => {
             </p>
             <a 
               href="/contact" 
-              className="inline-flex items-center gap-2 bg-white text-[#e13a7a] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-pink-100 hover:text-[#6d217f] transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 hover:text-gray-800 transition-all duration-300"
             >
               Let's Build Together
             </a>

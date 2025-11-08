@@ -65,10 +65,16 @@ const BlogPost = () => {
   const [feedback, setFeedback] = useState(null);
   const [toc, setToc] = useState([]);
   const [activeId, setActiveId] = useState(null);
+  const [sidebarTop, setSidebarTop] = useState('50%');
   const articleRef = useRef(null);
+  const sidebarRef = useRef(null);
 
   useEffect(() => {
-    mermaid.initialize({ startOnLoad: true });
+    mermaid.initialize({ 
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose'
+    });
     mermaid.contentLoaded();
   }, []);
 
@@ -90,7 +96,7 @@ const BlogPost = () => {
     setToc(headings);
   }, [post.content]);
 
-  // Scroll spy for active section
+  // Scroll spy for active section and prevent sidebar overlap with footer
   useEffect(() => {
     const handleScroll = () => {
       if (!articleRef.current) return;
@@ -105,8 +111,34 @@ const BlogPost = () => {
         }
       }
       setActiveId(lastId);
+
+      // Prevent sidebar from overlapping footer
+      if (sidebarRef.current) {
+        const footer = document.querySelector('footer');
+        if (footer) {
+          const footerRect = footer.getBoundingClientRect();
+          const sidebarRect = sidebarRef.current.getBoundingClientRect();
+          const sidebarHeight = sidebarRect.height;
+          const viewportHeight = window.innerHeight;
+          
+          // Calculate if sidebar would overlap footer
+          const footerTop = footerRect.top;
+          const sidebarBottom = sidebarRect.top + sidebarHeight;
+          
+          if (sidebarBottom >= footerTop - 20) {
+            // Adjust sidebar position to stay above footer
+            const maxTop = footerTop - sidebarHeight - 20;
+            const calculatedTop = Math.min(maxTop, viewportHeight / 2);
+            setSidebarTop(`${calculatedTop}px`);
+          } else {
+            // Reset to center when not near footer
+            setSidebarTop('50%');
+          }
+        }
+      }
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, [toc]);
 
@@ -121,7 +153,21 @@ const BlogPost = () => {
     "Tech Stack Overview": "Tech Stack Overview",
     "🧠 Lessons Learned": "Lessons Learned",
     "📣 Takeaway for Employers": "Takeaway for Employers",
-    "🙌 Want to Build Your Own?": "Build Your Own"
+    "🙌 Want to Build Your Own?": "Build Your Own",
+    // AI Rollercoaster blog post
+    "I. Introduction: It's Not Just for Robots Anymore!": "Introduction",
+    "II. Back to the Future: A Whistle-Stop Tour of AI's Past": "AI's History",
+    "III. Your Daily Dose of AI: What's Happening Right Now?": "AI Today",
+    "IV. The Great AI Debate: Excited, Scared, or Just Confused?": "AI Debate",
+    "V. The Elephant in the Room: AI's Big Controversies & Ethical Headaches": "Controversies",
+    "VI. Peeking into the Future: What's Next for Our AI Journey?": "Future of AI",
+    "VII. Conclusion: Steering the AI Ship": "Conclusion"
+  };
+
+  // Function to truncate long text
+  const truncateText = (text, maxLength = 30) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + '...';
   };
 
   // Smooth scroll handler for TOC links
@@ -154,14 +200,21 @@ const BlogPost = () => {
 
       </Helmet>
       {/* Fixed Social Bar (Desktop only) */}
-      <div className="hidden lg:flex flex-col items-center gap-4 fixed left-8 top-1/2 -translate-y-1/2 z-30">
+      <div 
+        ref={sidebarRef}
+        className="hidden lg:flex flex-col items-center gap-4 fixed left-8 z-30 transition-all duration-300"
+        style={{ 
+          top: sidebarTop, 
+          transform: typeof sidebarTop === 'string' && sidebarTop.includes('%') ? 'translateY(-50%)' : 'none'
+        }}
+      >
         {shareLinks(post.title, url).map(link => (
           <a
             key={link.name}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-100 hover:bg-pink-100 text-gray-700 hover:text-pink-600 rounded-full p-3 shadow transition-colors"
+            className="bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 rounded-full p-3 shadow transition-colors"
             title={`Share on ${link.name}`}
           >
             {link.icon}
@@ -171,19 +224,28 @@ const BlogPost = () => {
       </div>
       {/* Sticky TOC (Desktop only) */}
       {toc.length > 1 && (
-        <nav className="hidden lg:block fixed right-4 top-24 w-48 max-w-xs z-30">
-          <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-3 sticky top-24">
+        <nav className="hidden lg:block fixed right-4 w-48 max-w-xs z-30" style={{ top: '96px', maxHeight: 'calc(100vh - 200px)', bottom: '200px' }}>
+          <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-3" style={{ maxHeight: 'calc(100vh - 200px)', overflowY: 'auto' }}>
             <div className="font-bold text-gray-800 mb-2 text-base">On this page</div>
             <ul className="space-y-0.5">
               {toc.filter(h => h.level === 2).map((h, idx) => {
-                // Remove any leading number and dot from the heading text for TOC
-                const cleanText = (tocLabelMap[h.text] || h.text).replace(/^[0-9]+\.\s*/, "");
+                // Get mapped text or use original
+                let cleanText = tocLabelMap[h.text] || h.text;
+                // Remove any leading Roman numerals (I., II., III., etc.) or numbers
+                cleanText = cleanText.replace(/^[IVX]+\.\s*/, "").replace(/^[0-9]+\.\s*/, "");
+                // Remove emojis and extra punctuation
+                cleanText = cleanText.replace(/[🚀🧱✨📂🛠️🧠📣🙌]/g, "").trim();
+                // Truncate if still too long
+                if (cleanText.length > 30) {
+                  cleanText = truncateText(cleanText, 30);
+                }
                 return (
                   <li key={h.id} className="ml-0" style={{listStyle: 'none'}}>
                     <a
                       href={`#${h.id}`}
                       onClick={e => handleTocClick(e, h.id)}
-                      className={`block px-2 py-1 rounded transition text-gray-700 hover:text-[#e13a7a] hover:bg-pink-50 ${activeId === h.id ? "bg-pink-100 text-[#e13a7a]" : ""} text-sm font-medium`}
+                      className={`block px-2 py-1 rounded transition text-gray-700 hover:text-gray-900 hover:bg-gray-100 ${activeId === h.id ? "bg-gray-100 text-gray-900" : ""} text-sm font-medium`}
+                      title={h.text} // Show full text on hover
                     >
                       {`${idx + 1}. ${cleanText}`}
                     </a>
@@ -198,17 +260,17 @@ const BlogPost = () => {
         <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-12">
           {/* Breadcrumb Navigation */}
           <nav className="mb-6 text-sm text-gray-500 flex items-center gap-2" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-[#e13a7a] font-medium">Home</Link>
+            <Link to="/" className="hover:text-gray-900 font-medium">Home</Link>
             <span className="mx-1">&gt;</span>
-            <Link to="/blog" className="hover:text-[#e13a7a] font-medium">Blog</Link>
+            <Link to="/blog" className="hover:text-gray-900 font-medium">Blog</Link>
             <span className="mx-1">&gt;</span>
             <span className="text-gray-700 font-semibold truncate max-w-xs" title={post.title}>{post.title}</span>
           </nav>
-          <Link to="/blog" className="text-pink-600 font-semibold hover:underline mb-8 inline-block text-base">&larr; Back to Blog</Link>
-          <img src={post.image} alt={post.title + ' preview'} loading="lazy" className="w-full h-80 object-cover rounded-2xl shadow-lg mb-8" />
+          <Link to="/blog" className="text-gray-900 font-semibold hover:underline mb-8 inline-block text-base">&larr; Back to Blog</Link>
+          <img src={post.image} alt={post.title + ' preview'} loading="lazy" className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl shadow-lg mb-8" />
           <div className="mb-6 flex items-center gap-4">
             {post.category && (
-              <span className="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">
+              <span className="bg-gray-100 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full">
                 {post.category}
               </span>
             )}
