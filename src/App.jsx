@@ -196,7 +196,7 @@ const App = () => {
           
           {/* Routes */}
       <Routes>
-            <Route path="/" element={<Intro />} />
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/journey" element={<Journey />} />
