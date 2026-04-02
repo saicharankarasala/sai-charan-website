@@ -2,6 +2,8 @@
 
 A cinematic, dark-premium personal portfolio built with React + Vite. Designed to make recruiters stop and say **wow**.
 
+![Portfolio Preview](public/images/preview.png)
+
 ---
 
 ## Live Site
