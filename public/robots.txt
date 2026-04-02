@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.venkatasaicharan.com/sitemap.xml
+
+# Allow crawling of all pages
+Allow: /about
+Allow: /skills
+Allow: /experience
+Allow: /projects
+Allow: /journey
+Allow: /certifications
+Allow: /contact
+Allow: /blog
+
+# Allow crawling of assets
+Allow: /assets/
+Allow: /public/images/ 
