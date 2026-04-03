@@ -35,22 +35,22 @@ const experiences = [
   {
     year: '2025',
     period: 'Jan 2025 – Present',
-    role: 'Software Engineer',
+    role: 'DevOps / CI-CD Engineer',
     company: 'Source Consulting LLC',
     client: 'Touch Screens Inc',
-    location: 'Remote',
-    domain: 'Backend / Cloud',
+    location: 'Hopkinton, MA',
+    domain: 'DevOps / CI-CD',
     logo: '/images/sc_logo.png',
     color: 'var(--accent)',
-    tech: ['Python', 'AWS Lambda', 'Terraform', 'AWS CloudFormation', 'Ansible', 'Packer', 'Amazon EKS', 'CloudWatch', 'New Relic', 'Datadog', 'Dynatrace', 'Snowflake', 'Power BI', 'CI/CD', 'EC2', 'S3', 'RDS'],
-    highlights: ['100K+ product pricing automated', '70% less manual infra work', '50% faster incident response'],
+    tech: ['Jenkins', 'GitLab CI/CD', 'Ansible', 'JFrog Artifactory', 'Maven', 'Python', 'Bash', 'PowerShell', 'Terraform', 'AWS EC2', 'AWS CloudWatch', 'Dynatrace', 'IIS', 'JBOSS', 'Apache Tomcat'],
+    highlights: ['40% faster deployments', '40% less manual intervention', '30% MTTR reduction'],
     bullets: [
-      'Engineered and deployed a fully automated pricing system using Python, AWS Lambda, and Google Sheets API, streamlining updates for 100K+ products and enhancing pricing accuracy and operational efficiency.',
-      'Converted legacy Terraform modules with version conflicts to AWS CloudFormation, while also developing and maintaining Terraform scripts to provision AWS resources such as EC2, S3, Lambda, and RDS—ensuring reusable, consistent, and version-controlled infrastructure across environments.',
-      'Integrated Terraform with Ansible and Packer to automate the creation and versioning of Amazon Machine Images (AMIs), supporting scalable and repeatable infrastructure deployments across the AWS cloud.',
-      'Automated Amazon EKS cluster provisioning and scaling using Terraform, reducing manual effort, optimizing resource usage, and improving cloud cost management.',
-      'Implemented full-stack observability by integrating CloudWatch, New Relic, Datadog, and Dynatrace, enabling real-time performance monitoring, rapid incident detection, and improved SLA adherence.',
-      'Developed ETL pipelines and operational dashboards using Snowflake, Power BI, and CloudWatch, enabling data-driven diagnostics and supporting incident triage through well-documented runbooks and CI/CD-integrated monitoring alerts.',
+      'Built automated CI/CD pipelines for Java/.NET applications using Jenkins, GitLab CI/CD, Ansible, and JFrog Artifactory, cutting deployment time by 40% and accelerating release cycles.',
+      'Configured Linux and Windows middleware platforms (IIS, JBOSS, Apache Tomcat) on AWS EC2, enforcing secure access control and authentication standards.',
+      'Automated build, packaging, and deployment using Maven, Python, Bash, and PowerShell scripting, reducing manual intervention by 40%.',
+      'Deployed Infrastructure as Code using Terraform to provision AWS VPC, EC2, S3, and RDS resources for repeatable, scalable infrastructure.',
+      'Implemented monitoring dashboards using AWS CloudWatch and Dynatrace, improving system uptime and reducing MTTR by 30%.',
+      'Executed change management for CI/CD onboarding/decommissioning, adhering to risk, audit, and compliance policies with separation of duties.',
     ],
     companyUrl: 'https://touchwindow.com',
   },
@@ -59,16 +59,18 @@ const experiences = [
     period: 'Apr 2024 – Dec 2024',
     role: 'Network Operation Analyst',
     company: 'Trbhi INC',
-    client: 'Ziply Fiber Technology',
+    client: 'Ziply Fiber',
     location: 'Remote',
     domain: 'DevOps / NOC',
     logo: '/images/trbhilogo.png',
     color: 'var(--accent2)',
-    tech: ['Python', 'Bash', 'Dynatrace', 'PowerShell', 'SQL Server', 'ServiceNow', 'D365'],
-    highlights: ['40% MTTR reduction', '25% system uptime improvement', 'RCA flows streamlined'],
+    tech: ['Python', 'Bash', 'AWS CloudWatch', 'Dynatrace', 'Jenkins', 'ServiceNow', 'IAM', 'PowerShell'],
+    highlights: ['25% better reliability', 'IAM compliance validated', 'Jenkins + ServiceNow automation'],
     bullets: [
-      'Reduced MTTR by 40% with Python/Bash automation & Dynatrace-based monitoring.',
-      'Debugged D365 and APIs using PowerShell, SQL Server, and ServiceNow RCA flows.',
+      'Monitored production/pre-production AWS environments using CloudWatch, Dynatrace, and Python/Bash automation, improving infrastructure reliability by 25%.',
+      'Managed IAM access controls and user roles on AWS, validating compliance during audit reviews and software release cycles.',
+      'Integrated Jenkins CI/CD pipelines with ServiceNow for incident management automation, ensuring traceability and escalation.',
+      'Implemented proactive alerting using AWS CloudWatch alarms and logging tools to detect and resolve production issues before impact.',
     ],
     companyUrl: 'https://ziplyfiber.com',
   },
@@ -94,39 +96,39 @@ const experiences = [
   {
     year: '2021',
     period: 'Sep 2021 – Jul 2022',
-    role: 'Software Engineer',
+    role: 'DevOps & Middleware Automation Engineer',
     company: 'Wipro Technologies',
     client: '',
     location: 'Bengaluru, India',
-    domain: 'Data Engineering',
+    domain: 'DevOps / Middleware',
     logo: '/images/wiprologo.svg',
     color: 'var(--accent)',
-    tech: ['Informatica', 'PL/SQL', 'Unix Shell', 'GitLab CI', 'Python', 'Excel Macros', 'SQL'],
-    highlights: ['30% ETL efficiency gain', '50% less manual reporting', '25% better data quality'],
+    tech: ['GitLab CI/CD', 'Jenkins', 'Maven', 'Ansible', 'Docker', 'Kubernetes', 'Amazon EKS', 'AWS EC2', 'JBOSS', 'WebSphere', 'Python', 'Bash'],
+    highlights: ['Containerized microservices on EKS', 'Automated rollback strategies', 'HA deployments on AWS'],
     bullets: [
-      'Built ETL pipelines using Informatica, PL/SQL, Unix Shell, and CI via GitLab.',
-      'Automated reporting flows with Python, Excel Macros, improving ETL transparency.',
-      'Managed metadata and repositories to streamline project execution.',
-      'Supported cross-functional teams with technical insights using SQL and Python.',
+      'Built CI/CD workflows using GitLab CI/CD and Jenkins with Maven builds for Java microservices, deploying via Ansible automation.',
+      'Deployed Docker containers and Kubernetes (EKS) applications on AWS EC2, ensuring high availability and scalability.',
+      'Managed JBOSS and WebSphere application servers for secure enterprise module deployments with automated health checks.',
+      'Implemented automated rollback strategies and Git branching for multiple Agile release trains.',
     ],
     companyUrl: '',
   },
   {
     year: '2019',
     period: 'May 2019 – Aug 2021',
-    role: 'Software Engineer',
+    role: 'Software Engineer – Java & Build Automation',
     company: 'Merizon Technologies',
     client: '',
     location: 'Remote',
-    domain: 'Full Stack',
+    domain: 'Backend / CI-CD',
     logo: '/images/MTlogo.png',
     color: 'var(--accent2)',
-    tech: ['Java', 'Spring Boot', 'MySQL', 'JavaScript', 'GitHub Actions', 'JUnit', 'Selenium', 'SQL'],
-    highlights: ['25% API performance boost', '40% more test coverage', '60% faster deployments'],
+    tech: ['Java', 'Spring Boot', 'Jenkins', 'SonarQube', 'JFrog Artifactory', 'Apache Tomcat', 'Python', 'Bash', 'AWS', 'SQL'],
+    highlights: ['25% API performance boost', 'Jenkins CI/CD pipelines', 'SonarQube code quality gates'],
     bullets: [
-      'Developed full-stack apps with Java, Spring Boot, MySQL, JS.',
-      'Implemented CI using GitHub Actions, improved test coverage via JUnit & Selenium.',
-      'Improved API performance by 25% through SQL query optimization.',
+      'Built backend microservices using Java/Spring Boot, deployed via Jenkins CI/CD with automated versioning and rollback capabilities.',
+      'Integrated SonarQube code analysis and JFrog Artifactory into CI/CD workflows to maintain build integrity.',
+      'Supported Apache Tomcat deployments on AWS with log monitoring via custom Python and Bash scripts.',
     ],
     companyUrl: '',
   },
@@ -379,8 +381,8 @@ const Experience = () => {
               className="mt-8 text-lg leading-relaxed"
               style={{ color: 'var(--text-muted)' }}
             >
-              5 companies across cloud engineering, data engineering, full-stack
-              development, and network operations. Click any role to see the full picture.
+              5 companies across DevOps, CI/CD engineering, cloud infrastructure,
+              and network operations. Click any role to see the full picture.
             </motion.p>
           </div>
 
@@ -393,11 +395,11 @@ const Experience = () => {
             style={{ border: '1px solid var(--border)' }}
           >
             {[
-              { logo: '/images/sc_logo.png', company: 'Source Consulting LLC', role: 'Software Engineer', year: '2025', color: 'var(--accent)' },
+              { logo: '/images/sc_logo.png', company: 'Source Consulting LLC', role: 'DevOps / CI-CD Engineer', year: '2025', color: 'var(--accent)' },
               { logo: '/images/trbhilogo.png', company: 'Trbhi INC', role: 'Network Operation Analyst', year: '2024', color: 'var(--accent2)' },
               { logo: '/images/umkclogo.png', company: 'UMKC', role: 'Graduate Technical Assistant', year: '2023', color: 'var(--accent3)' },
-              { logo: '/images/wiprologo.svg', company: 'Wipro Technologies', role: 'Software Engineer', year: '2021', color: 'var(--accent)' },
-              { logo: '/images/MTlogo.png', company: 'Merizon Technologies', role: 'Software Engineer', year: '2019', color: 'var(--accent2)' },
+              { logo: '/images/wiprologo.svg', company: 'Wipro Technologies', role: 'DevOps & Middleware Engineer', year: '2021', color: 'var(--accent)' },
+              { logo: '/images/MTlogo.png', company: 'Merizon Technologies', role: 'Software Engineer – Java & Build', year: '2019', color: 'var(--accent2)' },
             ].map((item, i) => (
               <div
                 key={item.company}
@@ -419,13 +421,13 @@ const Experience = () => {
       </section>
 
       {/* ── SCROLL BAND ─────────────────────────────────────────────────── */}
-      <ScrollBand text="SOURCE CONSULTING · TRBHI INC · UMKC · WIPRO TECHNOLOGIES · MERIZON TECHNOLOGIES · CLOUD ENGINEER · DATA ENGINEER · FULL STACK · " />
+      <ScrollBand text="SOURCE CONSULTING · TRBHI INC · UMKC · WIPRO TECHNOLOGIES · MERIZON TECHNOLOGIES · DEVOPS · CI/CD ENGINEER · CLOUD INFRASTRUCTURE · " />
 
       {/* ── STATS ROW ─────────────────────────────────────────────────── */}
       <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4">
           {[
-            { num: '4+', label: 'Years Experience' },
+            { num: '5+', label: 'Years Experience' },
             { num: '5', label: 'Companies' },
             { num: '4', label: 'Domains' },
             { num: '50+', label: 'Technologies' },

@@ -3,12 +3,11 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   FaCogs, FaCode, FaServer, FaDatabase, FaCloud, FaTools,
-  FaLaptopCode, FaJava, FaPython, FaJs, FaHtml5, FaCss3Alt,
-  FaReact, FaGitAlt, FaLinux, FaWindows, FaAws, FaMicrosoft,
-  FaLeaf, FaGlobe, FaTerminal, FaShieldAlt, FaEye, FaPalette,
-  FaChartLine, FaChartPie, FaBolt, FaRocket, FaCog, FaWrench,
-  FaStream, FaSitemap, FaCodeBranch, FaRobot, FaBroadcastTower,
-  FaNetworkWired, FaMicrochip,
+  FaJava, FaPython, FaGitAlt, FaLinux, FaWindows, FaAws, FaMicrosoft,
+  FaGlobe, FaTerminal, FaShieldAlt, FaEye,
+  FaChartLine, FaChartPie, FaCog, FaWrench,
+  FaStream, FaSitemap, FaCodeBranch, FaRobot,
+  FaNetworkWired,
 } from 'react-icons/fa';
 import GradientOrb from '../components/GradientOrb';
 import ScrollBand from '../components/ScrollBand';
@@ -43,100 +42,90 @@ const ScrambleWord = ({ text, color, stroke, delay = 0 }) => {
   );
 };
 
-// ─── Alias messy re-exports ────────────────────────────────────────────────────
-const FaSpring = FaCogs;
-const FaSql = FaDatabase;
-const FaHadoop = FaServer;
-const FaSnowflake = FaCloud;
-const FaVlc = FaNetworkWired;
-const FaIot = FaMicrochip;
-const FaDotnet = FaCode;
-
 const CATEGORIES = [
   {
-    id: 'Programming',
-    label: 'Programming Languages',
+    id: 'Scripting',
+    label: 'Scripting & Programming',
     accent: 'var(--accent)',
     skills: [
       { name: 'Python', icon: FaPython, level: 'Advanced' },
+      { name: 'Bash', icon: FaTerminal, level: 'Advanced' },
+      { name: 'Shell Scripting', icon: FaTerminal, level: 'Advanced' },
       { name: 'Java', icon: FaJava, level: 'Advanced' },
-      { name: 'JavaScript', icon: FaJs, level: 'Advanced' },
-      { name: 'Pandas', icon: FaLeaf, level: 'Advanced' },
-      { name: 'PySpark', icon: FaRocket, level: 'Intermediate' },
-      { name: 'IoT', icon: FaIot, level: 'Intermediate' },
-      { name: 'VLC', icon: FaVlc, level: 'Intermediate' },
-      { name: '.NET', icon: FaDotnet, level: 'Intermediate' },
-    ],
-  },
-  {
-    id: 'Frontend',
-    label: 'Frontend',
-    accent: 'var(--accent2)',
-    skills: [
-      { name: 'React', icon: FaReact, level: 'Advanced' },
-      { name: 'HTML5', icon: FaHtml5, level: 'Advanced' },
-      { name: 'CSS3', icon: FaCss3Alt, level: 'Advanced' },
-      { name: 'UI/UX', icon: FaPalette, level: 'Intermediate' },
-    ],
-  },
-  {
-    id: 'Backend',
-    label: 'Backend',
-    accent: 'var(--accent)',
-    skills: [
-      { name: 'Spring Boot', icon: FaSpring, level: 'Advanced' },
-      { name: 'REST API', icon: FaGlobe, level: 'Advanced' },
-      { name: 'Server', icon: FaServer, level: 'Advanced' },
-    ],
-  },
-  {
-    id: 'Database',
-    label: 'Databases',
-    accent: 'var(--accent3)',
-    skills: [
-      { name: 'SQL', icon: FaSql, level: 'Advanced' },
-      { name: 'MySQL', icon: FaDatabase, level: 'Advanced' },
-      { name: 'PL/SQL', icon: FaDatabase, level: 'Advanced' },
-      { name: 'Snowflake', icon: FaSnowflake, level: 'Intermediate' },
-      { name: 'Hadoop', icon: FaHadoop, level: 'Intermediate' },
+      { name: 'PowerShell', icon: FaTerminal, level: 'Intermediate' },
+      { name: 'Groovy', icon: FaCode, level: 'Intermediate' },
     ],
   },
   {
     id: 'Cloud',
-    label: 'Cloud & DevOps',
+    label: 'Cloud & Containerization',
     accent: 'var(--accent2)',
     skills: [
-      { name: 'AWS', icon: FaAws, level: 'Intermediate' },
-      { name: 'AWS Lambda', icon: FaBolt, level: 'Intermediate' },
+      { name: 'AWS', icon: FaAws, level: 'Advanced' },
+      { name: 'Kubernetes', icon: FaSitemap, level: 'Advanced' },
+      { name: 'Docker', icon: FaStream, level: 'Advanced' },
+      { name: 'Amazon EKS', icon: FaCloud, level: 'Advanced' },
       { name: 'Azure', icon: FaMicrosoft, level: 'Intermediate' },
+      { name: 'K3s', icon: FaServer, level: 'Intermediate' },
+    ],
+  },
+  {
+    id: 'CICD',
+    label: 'CI/CD & Automation',
+    accent: 'var(--accent)',
+    skills: [
+      { name: 'Jenkins', icon: FaCog, level: 'Advanced' },
+      { name: 'GitLab CI/CD', icon: FaCodeBranch, level: 'Advanced' },
+      { name: 'Ansible', icon: FaRobot, level: 'Advanced' },
+      { name: 'Terraform', icon: FaTools, level: 'Advanced' },
+      { name: 'GitHub Actions', icon: FaGitAlt, level: 'Advanced' },
+      { name: 'Maven', icon: FaWrench, level: 'Advanced' },
+      { name: 'CloudFormation', icon: FaCloud, level: 'Intermediate' },
+      { name: 'JFrog Artifactory', icon: FaServer, level: 'Intermediate' },
+      { name: 'Packer', icon: FaCogs, level: 'Intermediate' },
+    ],
+  },
+  {
+    id: 'Monitoring',
+    label: 'Monitoring & Security',
+    accent: 'var(--accent3)',
+    skills: [
+      { name: 'AWS CloudWatch', icon: FaEye, level: 'Advanced' },
+      { name: 'Dynatrace', icon: FaEye, level: 'Advanced' },
+      { name: 'Datadog', icon: FaChartLine, level: 'Intermediate' },
+      { name: 'Splunk', icon: FaChartPie, level: 'Intermediate' },
+      { name: 'Prometheus', icon: FaChartLine, level: 'Intermediate' },
+      { name: 'Grafana', icon: FaChartPie, level: 'Intermediate' },
+      { name: 'IAM', icon: FaShieldAlt, level: 'Advanced' },
+      { name: 'VPN / Firewall', icon: FaNetworkWired, level: 'Intermediate' },
+    ],
+  },
+  {
+    id: 'Systems',
+    label: 'Systems & Middleware',
+    accent: 'var(--accent2)',
+    skills: [
       { name: 'Linux', icon: FaLinux, level: 'Advanced' },
-      { name: 'Windows', icon: FaWindows, level: 'Advanced' },
-      { name: 'Git', icon: FaGitAlt, level: 'Advanced' },
-      { name: 'GitLab CI', icon: FaCodeBranch, level: 'Intermediate' },
-      { name: 'Bash', icon: FaTerminal, level: 'Advanced' },
-      { name: 'PowerShell', icon: FaTerminal, level: 'Intermediate' },
-      { name: 'Unix Shell', icon: FaTerminal, level: 'Advanced' },
+      { name: 'Windows Server', icon: FaWindows, level: 'Advanced' },
+      { name: 'Apache Tomcat', icon: FaServer, level: 'Advanced' },
+      { name: 'JBOSS', icon: FaServer, level: 'Intermediate' },
+      { name: 'WebSphere', icon: FaServer, level: 'Intermediate' },
+      { name: 'Nginx', icon: FaServer, level: 'Intermediate' },
+      { name: 'IIS', icon: FaWindows, level: 'Intermediate' },
     ],
   },
   {
     id: 'Tools',
-    label: 'Tools & Analytics',
+    label: 'Tools & Databases',
     accent: 'var(--accent3)',
     skills: [
-      { name: 'Tableau', icon: FaChartLine, level: 'Advanced' },
-      { name: 'Power BI', icon: FaChartPie, level: 'Advanced' },
-      { name: 'Informatica', icon: FaStream, level: 'Intermediate' },
-      { name: 'Pentaho', icon: FaWrench, level: 'Intermediate' },
-      { name: 'Dynatrace', icon: FaEye, level: 'Intermediate' },
+      { name: 'Git', icon: FaGitAlt, level: 'Advanced' },
+      { name: 'SQL', icon: FaDatabase, level: 'Advanced' },
+      { name: 'Jira', icon: FaCog, level: 'Advanced' },
       { name: 'ServiceNow', icon: FaCog, level: 'Intermediate' },
-      { name: 'D365', icon: FaMicrosoft, level: 'Intermediate' },
-      { name: 'JUnit', icon: FaShieldAlt, level: 'Intermediate' },
-      { name: 'Selenium', icon: FaRobot, level: 'Intermediate' },
-      { name: 'PXE', icon: FaNetworkWired, level: 'Intermediate' },
-      { name: 'GPO', icon: FaSitemap, level: 'Intermediate' },
-      { name: 'Matplotlib', icon: FaChartLine, level: 'Advanced' },
-      { name: 'Plotly', icon: FaChartPie, level: 'Intermediate' },
-      { name: 'OptiSystem', icon: FaBroadcastTower, level: 'Intermediate' },
+      { name: 'Confluence', icon: FaGlobe, level: 'Intermediate' },
+      { name: 'Snowflake', icon: FaCloud, level: 'Intermediate' },
+      { name: 'Power BI', icon: FaChartPie, level: 'Intermediate' },
     ],
   },
 ];
@@ -213,8 +202,8 @@ const Skills = () => {
                 className="mt-8 text-lg leading-relaxed"
                 style={{ color: 'var(--text-muted)' }}
               >
-                50+ technologies across programming languages, frameworks, cloud platforms,
-                and data tools — built through years of real-world delivery.
+                50+ technologies across DevOps, CI/CD automation, cloud infrastructure,
+                monitoring, and systems engineering — built through real-world delivery.
               </motion.p>
             </div>
 
@@ -229,7 +218,7 @@ const Skills = () => {
               {[
                 { num: '50+', label: 'Technologies', color: 'var(--accent)' },
                 { num: '6', label: 'Domains', color: 'var(--accent2)' },
-                { num: '4+', label: 'Years Practice', color: 'var(--accent3)' },
+                { num: '5+', label: 'Years Practice', color: 'var(--accent3)' },
                 { num: '20+', label: 'Advanced Skills', color: 'var(--accent)' },
                 { num: '3', label: 'Cloud Platforms', color: 'var(--accent2)' },
                 { num: '4', label: 'Certifications', color: 'var(--accent3)' },
@@ -245,7 +234,7 @@ const Skills = () => {
       </section>
 
       {/* ── SCROLL BAND ─────────────────────────────────────────────────── */}
-      <ScrollBand text="PYTHON · REACT · AWS · TERRAFORM · JAVA · SPRING BOOT · SQL · SNOWFLAKE · TABLEAU · POWER BI · PANDAS · PYSPARK · " reverse />
+      <ScrollBand text="PYTHON · JENKINS · AWS · TERRAFORM · KUBERNETES · DOCKER · ANSIBLE · GITLAB CI/CD · JAVA · CLOUDWATCH · DYNATRACE · BASH · " reverse />
 
       {/* ── FILTER NAV ──────────────────────────────────────────────────── */}
       <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>

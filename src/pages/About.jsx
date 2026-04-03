@@ -133,7 +133,7 @@ const About = () => {
               className="text-xs font-bold tracking-[0.3em] uppercase mb-8"
               style={{ color: 'var(--accent)' }}
             >
-              Software Engineer & Problem Solver
+              DevOps Engineer & Problem Solver
             </motion.p>
 
             <h1 className="font-extrabold" style={{ fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', color: 'var(--text)', letterSpacing: '-0.03em', lineHeight: 1.05 }}>
@@ -147,8 +147,8 @@ const About = () => {
               className="mt-6 text-lg leading-relaxed"
               style={{ color: 'var(--text-muted)' }}
             >
-              4+ years building scalable systems across cloud, data engineering,
-              and full-stack. From Bengaluru to Kansas City to New Hampshire —
+              5+ years building resilient CI/CD pipelines, cloud infrastructure,
+              and containerized platforms. From Bengaluru to Kansas City to New Hampshire —
               the journey shapes the engineer.
             </motion.p>
 
@@ -173,9 +173,9 @@ const About = () => {
           >
             {[
               { label: 'Based in', value: 'Merrimack, NH · USA', color: 'var(--accent)' },
-              { label: 'Experience', value: '4+ Years in Software Engineering', color: 'var(--accent2)' },
+              { label: 'Experience', value: '5+ Years in DevOps & Cloud Engineering', color: 'var(--accent2)' },
               { label: 'Education', value: 'MS Computer Science — UMKC', color: 'var(--accent3)' },
-              { label: 'Specialization', value: 'Cloud · Data Engineering · Full Stack', color: 'var(--accent)' },
+              { label: 'Specialization', value: 'DevOps · CI/CD · Cloud Infrastructure', color: 'var(--accent)' },
               { label: 'Certifications', value: 'AWS · Terraform · Python', color: 'var(--accent2)' },
               { label: 'Status', value: 'Open to full-time opportunities', color: 'var(--accent)', pulse: true },
             ].map((item, i, arr) => (
@@ -202,7 +202,7 @@ const About = () => {
       {/* ── STATS ROW ─────────────────────────────────────────────────────── */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="grid grid-cols-2 lg:grid-cols-4">
-          <Counter value="4" suffix="+" label="Years Experience" />
+          <Counter value="5" suffix="+" label="Years Experience" />
           <Counter value="5" suffix="" label="Companies" />
           <Counter value="50" suffix="+" label="Technologies" />
           <Counter value="4" suffix="" label="Certifications" />
@@ -247,19 +247,19 @@ const About = () => {
             {[
               {
                 head: "Engineer by mindset.",
-                body: "I'm Venkata Sai Charan — a Software Engineer with 4+ years of experience turning complex problems into elegant solutions. My journey started with a fascination for how things work and a drive to build what matters."
+                body: "I'm Venkata Sai Charan — a DevOps Engineer with 5+ years of experience building automated CI/CD pipelines, managing hybrid cloud infrastructure, and securing containerized platforms. My journey started with a fascination for how systems work and a drive to automate everything."
               },
               {
-                head: "Full-stack roots, cloud ambitions.",
-                body: "With an MS in Computer Science from University of Missouri – Kansas City and a BE in Electronics and Communication Engineering, I bridge theoretical depth with hands-on delivery. I've shipped production systems across data engineering, cloud infrastructure, and full-stack web applications."
+                head: "DevOps at the core.",
+                body: "With an MS in Computer Science from University of Missouri – Kansas City and a BE in Electronics and Communication Engineering, I bridge theoretical depth with hands-on delivery. I specialize in Kubernetes, Docker, Jenkins, Terraform, and AWS — bringing infrastructure to life through code."
               },
               {
                 head: "Impact over activity.",
-                body: "From automating pricing for 100K+ products at Source Consulting to cutting MTTR by 40% at Trbhi, I measure success by outcomes — not lines of code. I believe clean architecture and obsessive attention to detail are what separate good engineers from great ones."
+                body: "From cutting deployment time by 40% at Touch Screens Inc with CI/CD automation to improving infrastructure reliability by 25% at Ziply Fiber, I measure success by outcomes — not lines of code. Clean pipelines, secure systems, and zero-downtime deployments are non-negotiable."
               },
               {
                 head: "Always learning.",
-                body: "Whether it's Terraform, PySpark, or React animations — I stay current because technology doesn't stand still. AWS and Terraform certified, I'm always pushing the boundary of what I know."
+                body: "Whether it's K3s edge deployments, Ansible playbooks, or Grafana dashboards — I stay current because infrastructure never stops evolving. AWS Solutions Architect and Terraform certified, I'm always pushing the boundary of what I know."
               },
             ].map((item, i) => (
               <motion.div
