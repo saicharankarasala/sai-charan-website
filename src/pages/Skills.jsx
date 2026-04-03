@@ -218,7 +218,7 @@ const Skills = () => {
               {[
                 { num: '50+', label: 'Technologies', color: 'var(--accent)' },
                 { num: '6', label: 'Domains', color: 'var(--accent2)' },
-                { num: '5+', label: 'Years Practice', color: 'var(--accent3)' },
+                { num: '6+', label: 'Years Practice', color: 'var(--accent3)' },
                 { num: '20+', label: 'Advanced Skills', color: 'var(--accent)' },
                 { num: '3', label: 'Cloud Platforms', color: 'var(--accent2)' },
                 { num: '4', label: 'Certifications', color: 'var(--accent3)' },

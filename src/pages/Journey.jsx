@@ -231,8 +231,8 @@ const Journey = () => {
               className="mt-8 text-lg leading-relaxed"
               style={{ color: 'var(--text-muted)' }}
             >
-              From a BE in Electronics to Cloud Engineer in the US — 7 milestones,
-              4 companies, 2 degrees, and a relentless drive to keep building.
+              From a BE in Electronics to DevOps Engineer in the US — 7 milestones,
+              5 companies, 2 degrees, and a relentless drive to keep building.
             </motion.p>
           </div>
 
@@ -274,7 +274,7 @@ const Journey = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4">
           {[
             { num: '7', label: 'Milestones' },
-            { num: '5+', label: 'Years' },
+            { num: '6+', label: 'Years' },
             { num: '2', label: 'Degrees' },
             { num: '4', label: 'Certifications' },
           ].map((s, i) => (

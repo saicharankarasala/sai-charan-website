@@ -12,10 +12,10 @@ const Intro = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const texts = [
-    "Software Engineer",
-    "Cloud & Backend Developer", 
+    "DevOps Engineer",
+    "CI/CD Automation Expert",
+    "Cloud Infrastructure Engineer",
     "Problem Solver",
-    "Data Enthusiast",
     "Innovation Driver"
   ];
 

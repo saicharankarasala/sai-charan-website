@@ -110,7 +110,7 @@ const Navigation = () => {
                   Venkata Sai Charan
                 </span>
                 <span className="block text-xs font-medium" style={{ color: 'var(--blue)' }}>
-                  Software Engineer
+                  DevOps Engineer
                 </span>
               </div>
             </Link>
@@ -262,7 +262,7 @@ const Footer = () => (
             />
             <div>
               <h3 className="text-lg font-bold text-[var(--text)]">Venkata Sai Charan</h3>
-              <p className="text-xs" style={{ color: 'var(--blue)' }}>Software Engineer</p>
+              <p className="text-xs" style={{ color: 'var(--blue)' }}>DevOps Engineer</p>
             </div>
           </div>
           <p className="text-sm text-[var(--text-muted)] mb-6 leading-relaxed">
@@ -332,7 +332,7 @@ const Footer = () => (
 
       <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
         <p className="text-center text-xs text-[var(--text-muted)]">
-          © 2025 Venkata Sai Charan. All rights reserved.{' '}
+          © 2026 Venkata Sai Charan. All rights reserved.{' '}
           <span role="img" aria-label="USA">🇺🇸</span>
         </p>
       </div>

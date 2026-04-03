@@ -147,7 +147,7 @@ const About = () => {
               className="mt-6 text-lg leading-relaxed"
               style={{ color: 'var(--text-muted)' }}
             >
-              5+ years building resilient CI/CD pipelines, cloud infrastructure,
+              6+ years building resilient CI/CD pipelines, cloud infrastructure,
               and containerized platforms. From Bengaluru to Kansas City to New Hampshire —
               the journey shapes the engineer.
             </motion.p>
@@ -173,7 +173,7 @@ const About = () => {
           >
             {[
               { label: 'Based in', value: 'Merrimack, NH · USA', color: 'var(--accent)' },
-              { label: 'Experience', value: '5+ Years in DevOps & Cloud Engineering', color: 'var(--accent2)' },
+              { label: 'Experience', value: '6+ Years in DevOps & Cloud Engineering', color: 'var(--accent2)' },
               { label: 'Education', value: 'MS Computer Science — UMKC', color: 'var(--accent3)' },
               { label: 'Specialization', value: 'DevOps · CI/CD · Cloud Infrastructure', color: 'var(--accent)' },
               { label: 'Certifications', value: 'AWS · Terraform · Python', color: 'var(--accent2)' },
@@ -202,7 +202,7 @@ const About = () => {
       {/* ── STATS ROW ─────────────────────────────────────────────────────── */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="grid grid-cols-2 lg:grid-cols-4">
-          <Counter value="5" suffix="+" label="Years Experience" />
+          <Counter value="6" suffix="+" label="Years Experience" />
           <Counter value="5" suffix="" label="Companies" />
           <Counter value="50" suffix="+" label="Technologies" />
           <Counter value="4" suffix="" label="Certifications" />
@@ -247,7 +247,7 @@ const About = () => {
             {[
               {
                 head: "Engineer by mindset.",
-                body: "I'm Venkata Sai Charan — a DevOps Engineer with 5+ years of experience building automated CI/CD pipelines, managing hybrid cloud infrastructure, and securing containerized platforms. My journey started with a fascination for how systems work and a drive to automate everything."
+                body: "I'm Venkata Sai Charan — a DevOps Engineer with 6+ years of experience building automated CI/CD pipelines, managing hybrid cloud infrastructure, and securing containerized platforms. My journey started with a fascination for how systems work and a drive to automate everything."
               },
               {
                 head: "DevOps at the core.",

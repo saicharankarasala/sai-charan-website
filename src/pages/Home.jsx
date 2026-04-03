@@ -124,7 +124,7 @@ const Home = () => (
           <div className="h-px w-10" style={{ background: 'var(--accent)' }} />
           <span className="text-xs font-bold tracking-[0.25em] uppercase"
             style={{ color: 'var(--accent)' }}>
-            Software Engineer
+            DevOps Engineer
           </span>
         </motion.div>
 
@@ -166,8 +166,8 @@ const Home = () => (
           >
             <p className="text-base leading-relaxed mb-5 max-w-sm"
               style={{ color: 'var(--text-muted)' }}>
-              4+ years building cloud-native systems, data pipelines,
-              and scalable backends that ship at speed and scale.
+              6+ years building CI/CD pipelines, cloud infrastructure,
+              and containerized platforms that ship at speed and scale.
             </p>
             <div className="flex flex-wrap gap-5 text-sm mb-8"
               style={{ color: 'var(--text-muted)' }}>
@@ -274,7 +274,7 @@ const Home = () => (
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4">
           {[
-            { val: 4,  sfx: '+', label: 'Years',   sub: 'Experience'     },
+            { val: 6,  sfx: '+', label: 'Years',   sub: 'Experience'     },
             { val: 50, sfx: '+', label: 'Technical',sub: 'Skills'        },
             { val: 6,  sfx: '',  label: 'Projects', sub: 'Shipped'       },
             { val: 4,  sfx: '',  label: 'Industry', sub: 'Certifications'},

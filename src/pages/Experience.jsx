@@ -427,7 +427,7 @@ const Experience = () => {
       <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4">
           {[
-            { num: '5+', label: 'Years Experience' },
+            { num: '6+', label: 'Years Experience' },
             { num: '5', label: 'Companies' },
             { num: '4', label: 'Domains' },
             { num: '50+', label: 'Technologies' },

@@ -113,7 +113,7 @@ const LoadingScreen = ({ onComplete }) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              Software Engineer · Cloud · Full-Stack
+              DevOps Engineer · CI/CD · Cloud Infrastructure
             </motion.p>
 
             {/* Progress bar */}
