@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter, Routes, Route, Link, useLocation,
 } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useOutsideClick } from './hooks/useOutsideClick';
 import { HelmetProvider } from 'react-helmet-async';
 import {
   FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes,
@@ -65,9 +64,6 @@ const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const menuRef  = useRef(null);
-
-  useOutsideClick(menuRef, () => menuOpen && setMenuOpen(false));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -84,7 +80,6 @@ const Navigation = () => {
   return (
     <>
       <nav
-        ref={menuRef}
         className="fixed top-0 left-0 w-full z-50 transition-all duration-300"
         style={{
           background: scrolled

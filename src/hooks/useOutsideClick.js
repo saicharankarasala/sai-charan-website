@@ -10,12 +10,11 @@ export const useOutsideClick = (ref, callback) => {
       callback(event);
     };
 
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    // Use 'click' only — avoids touchstart firing before React Router navigation
+    document.addEventListener('click', listener);
 
     return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener('click', listener);
     };
   }, [ref, callback]);
 };
