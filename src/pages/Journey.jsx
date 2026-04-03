@@ -248,8 +248,8 @@ const Journey = () => {
               { year: '2025', label: 'DevOps / CI-CD Engineer @ Source Consulting', color: 'var(--accent)' },
               { year: '2024', label: 'Network Op Analyst @ Trbhi INC', color: 'var(--accent2)' },
               { year: '2023', label: 'MS Computer Science — UMKC', color: 'var(--accent3)' },
-              { year: '2021', label: 'Software Engineer @ Wipro', color: 'var(--accent)' },
-              { year: '2019', label: 'Software Engineer @ Merizon Tech', color: 'var(--accent2)' },
+              { year: '2021', label: 'DevOps Engineer @ Wipro Technologies', color: 'var(--accent)' },
+              { year: '2019', label: 'Build Automation Engineer @ Merizon Tech', color: 'var(--accent2)' },
               { year: '2017', label: 'BE Electronics — SJCE', color: 'var(--accent3)' },
             ].map((item, i) => (
               <div

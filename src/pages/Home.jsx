@@ -8,9 +8,9 @@ import {
 
 /* ─── Ticker items ───────────────────────────────────────────────────────── */
 const TICKER = [
-  'Python', 'AWS Lambda', 'React', 'Node.js', 'Terraform', 'Snowflake',
-  'TypeScript', 'PostgreSQL', 'Docker', 'CI/CD', 'Java', 'Spring Boot',
-  'Power BI', 'Azure', 'Kubernetes', 'Pandas', 'PySpark', 'Selenium',
+  'Python', 'Jenkins', 'AWS', 'Terraform', 'Kubernetes', 'Docker',
+  'Ansible', 'GitLab CI/CD', 'Java', 'CloudWatch', 'Dynatrace', 'Bash',
+  'JFrog Artifactory', 'Maven', 'Packer', 'GitHub Actions', 'Splunk', 'Prometheus',
 ];
 
 /* ─── Featured projects (for homepage list) ─────────────────────────────── */

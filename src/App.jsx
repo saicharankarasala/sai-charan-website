@@ -266,7 +266,7 @@ const Footer = () => (
             </div>
           </div>
           <p className="text-sm text-[var(--text-muted)] mb-6 leading-relaxed">
-            Full-stack engineer with cloud expertise. Let's build something amazing.
+            DevOps engineer specializing in CI/CD, cloud infrastructure, and automation. Let's build something together.
           </p>
           <div className="flex gap-3">
             {[

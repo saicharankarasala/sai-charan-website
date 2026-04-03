@@ -74,7 +74,7 @@ const About = () => {
   const journey = [
     {
       year: '2025',
-      role: 'Software Engineer',
+      role: 'DevOps / CI-CD Engineer',
       org: 'Source Consulting LLC',
       tag: 'Current',
       side: 'right',
@@ -95,16 +95,16 @@ const About = () => {
     },
     {
       year: '2021',
-      role: 'Software Engineer',
+      role: 'DevOps & Middleware Automation Engineer',
       org: 'Wipro Technologies',
-      tag: 'Data Eng',
+      tag: 'DevOps',
       side: 'left',
     },
     {
       year: '2019',
-      role: 'Software Engineer',
+      role: 'Software Engineer – Java & Build Automation',
       org: 'Merizon Technologies',
-      tag: 'Full Stack',
+      tag: 'CI/CD',
       side: 'right',
     },
     {
