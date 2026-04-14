@@ -218,6 +218,13 @@ const Navigation = () => {
   );
 };
 
+// ── Scroll to top on every route change ──────────────────────────────────
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]);
+  return null;
+};
+
 // ── Route Renderer with transitions ──────────────────────────────────────
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -349,6 +356,9 @@ const App = () => {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        {/* Scroll to top on every page navigation */}
+        <ScrollToTop />
+
         {/* Global premium cursor (desktop only — hidden via CSS on mobile) */}
         <MagneticCursor />
 
