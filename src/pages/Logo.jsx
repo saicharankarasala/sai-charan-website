@@ -36,22 +36,24 @@ const Logo = () => {
         </script>
       </Helmet>
       
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-20">
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mx-4">
+      <div className="min-h-screen flex items-center justify-center py-20" style={{ background: 'var(--bg, #030712)' }}>
+        <div className="rounded-2xl p-8 max-w-md w-full mx-4" style={{ background: 'var(--bg-surface, #0d1117)', border: '1px solid var(--border, rgba(255,255,255,0.08))' }}>
           <div className="text-center">
-            <img 
-              src="/images/kvslogo.png" 
+            <img
+              src="/images/kvslogo.png"
               alt="Venkata Sai Charan - DevOps Engineer Logo"
-              className="w-64 h-auto mx-auto mb-6 rounded-lg shadow-md"
+              className="w-64 h-auto mx-auto mb-6"
+              style={{ mixBlendMode: 'screen' }}
             />
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Venkata Sai Charan</h1>
-            <p className="text-xl text-gray-600 mb-6">DevOps Engineer</p>
-            <p className="text-gray-500 mb-8">
+            <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--text, #fff)' }}>Venkata Sai Charan</h1>
+            <p className="text-xl mb-6" style={{ color: 'var(--blue, #00bcd4)' }}>DevOps Engineer</p>
+            <p className="mb-8" style={{ color: 'var(--text-muted, #888)' }}>
               Official logo and brand identity for my professional portfolio.
             </p>
-            <Link 
-              to="/" 
-              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-300"
+            <Link
+              to="/"
+              className="inline-flex items-center px-6 py-3 font-medium rounded-xl transition-colors duration-300"
+              style={{ background: 'var(--blue, #00bcd4)', color: '#030712' }}
             >
               ← Back to Portfolio
             </Link>
