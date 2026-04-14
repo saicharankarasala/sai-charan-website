@@ -98,7 +98,6 @@ const Navigation = () => {
                 src="/images/kvslogo.png"
                 alt="KVSC Logo"
                 className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
-                style={{ mixBlendMode: 'screen' }}
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
               <div className="leading-tight">
@@ -254,7 +253,6 @@ const Footer = () => (
               src="/images/kvslogo.png"
               alt="KVSC"
               className="w-10 h-10 object-contain"
-              style={{ mixBlendMode: 'screen' }}
               onError={(e) => { e.target.style.display = 'none'; }}
             />
             <div>

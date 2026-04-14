@@ -10,7 +10,6 @@ const BackgroundLogo = () => {
             src="/images/kvslogo.png" 
             alt="VSC Logo" 
             className="absolute inset-0 w-full h-full object-contain opacity-[0.15] grayscale brightness-125 contrast-[1.3]"
-            style={{ mixBlendMode: 'screen' }}
           />
         </div>
       </div>
@@ -22,7 +21,6 @@ const BackgroundLogo = () => {
             src="/images/kvslogo.png" 
             alt="VSC Logo" 
             className="absolute inset-0 w-full h-full object-contain opacity-[0.15] grayscale brightness-125 contrast-[1.3]"
-            style={{ mixBlendMode: 'screen' }}
           />
         </div>
       </div>

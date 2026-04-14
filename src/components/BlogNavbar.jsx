@@ -12,7 +12,7 @@ const BlogNavbar = ({
             src="/images/kvslogo.png"
             alt="KVSC Logo"
             className="w-10 h-auto object-contain"
-            style={{ maxWidth: '48px', mixBlendMode: 'screen' }}
+            style={{ maxWidth: '48px' }}
           />
         </div>
         {/* Title */}

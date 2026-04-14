@@ -31,7 +31,6 @@ const VscLogo = () => {
           src="/images/kvslogo.png"
           alt="KVSC Logo" 
           className={`vsc-logo ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-          style={{ mixBlendMode: 'screen' }}
           onLoad={() => setImageLoaded(true)}
         />
       </div>

@@ -69,7 +69,6 @@ const LoadingScreen = ({ onComplete }) => {
               src="/images/kvslogo.png"
               alt="KVSC Logo"
               className="w-20 h-20 object-contain mb-8 animate-float"
-              style={{ mixBlendMode: 'screen' }}
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: [0.34, 1.56, 0.64, 1] }}

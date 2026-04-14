@@ -43,7 +43,6 @@ const Logo = () => {
               src="/images/kvslogo.png"
               alt="Venkata Sai Charan - DevOps Engineer Logo"
               className="w-64 h-auto mx-auto mb-6"
-              style={{ mixBlendMode: 'screen' }}
             />
             <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--text, #fff)' }}>Venkata Sai Charan</h1>
             <p className="text-xl mb-6" style={{ color: 'var(--blue, #00bcd4)' }}>DevOps Engineer</p>
