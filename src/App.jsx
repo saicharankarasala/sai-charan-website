@@ -95,9 +95,10 @@ const Navigation = () => {
             {/* Logo + Name */}
             <Link to="/" className="flex items-center gap-3 group" aria-label="Home">
               <img
-                src="/images/vsclogo.png"
-                alt="VSC Logo"
+                src="/images/kvslogo.png"
+                alt="KVSC Logo"
                 className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                style={{ mixBlendMode: 'screen' }}
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
               <div className="leading-tight">
@@ -250,9 +251,10 @@ const Footer = () => (
         <div className="md:col-span-1">
           <div className="flex items-center gap-3 mb-4">
             <img
-              src="/images/vsclogo.png"
-              alt="VSC"
+              src="/images/kvslogo.png"
+              alt="KVSC"
               className="w-10 h-10 object-contain"
+              style={{ mixBlendMode: 'screen' }}
               onError={(e) => { e.target.style.display = 'none'; }}
             />
             <div>

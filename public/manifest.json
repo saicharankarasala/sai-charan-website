@@ -1,21 +1,21 @@
 {
-  "name": "Venkata Sai Charan - Software Engineer",
-  "short_name": "VSC Portfolio",
-  "description": "Software Engineer Portfolio - Full-stack developer with expertise in React, Node.js, and modern web technologies",
+  "name": "Venkata Sai Charan - DevOps Engineer",
+  "short_name": "KVSC Portfolio",
+  "description": "DevOps Engineer Portfolio - CI/CD pipelines, cloud infrastructure, Kubernetes, Docker, Jenkins, Terraform & Ansible",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#e13a7a",
+  "background_color": "#030712",
+  "theme_color": "#00bcd4",
   "icons": [
     {
-      "src": "/images/vsclogo.jpeg",
+      "src": "/images/kvslogo.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
-      "src": "/images/vsclogo.jpeg",
+      "src": "/images/kvslogo.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
-} 
+}

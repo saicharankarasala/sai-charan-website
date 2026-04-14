@@ -9,10 +9,10 @@ const BlogNavbar = ({
         {/* Logo */}
         <div className="shrink-0 flex items-center" style={{ minWidth: '40px', maxWidth: '48px' }}>
           <img
-            src="/images/Navlogo.png"
-            alt="Logo"
+            src="/images/kvslogo.png"
+            alt="KVSC Logo"
             className="w-10 h-auto object-contain"
-            style={{ maxWidth: '48px' }}
+            style={{ maxWidth: '48px', mixBlendMode: 'screen' }}
           />
         </div>
         {/* Title */}

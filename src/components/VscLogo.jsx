@@ -28,9 +28,10 @@ const VscLogo = () => {
         <div className="logo-glow-inner"></div>
         <div className="logo-rays"></div>
         <img 
-          src="/images/vsc-logo.png" 
-          alt="VSC Logo" 
+          src="/images/kvslogo.png"
+          alt="KVSC Logo" 
           className={`vsc-logo ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ mixBlendMode: 'screen' }}
           onLoad={() => setImageLoaded(true)}
         />
       </div>
