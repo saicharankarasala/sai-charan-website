@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useOutsideClick } from '../hooks/useOutsideClick';
 import {
   FaCertificate, FaExternalLinkAlt, FaCheckCircle,
   FaCalendarAlt, FaIdCard, FaTimes, FaArrowRight, FaEye, FaDownload
@@ -175,9 +174,6 @@ const CertRow = ({ cert, onClick }) => {
 
 // ─── Modal ─────────────────────────────────────────────────────────────────────
 const Modal = ({ cert, onClose }) => {
-  const ref = useRef(null);
-  useOutsideClick(ref, onClose);
-
   return (
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4"
@@ -185,7 +181,6 @@ const Modal = ({ cert, onClose }) => {
       onClick={onClose}
     >
       <motion.div
-        ref={ref}
         initial={{ opacity: 0, scale: 0.92, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.92, y: 10 }}
